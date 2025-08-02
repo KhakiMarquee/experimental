@@ -1,4 +1,4 @@
-import { initThreeScene } from './three_scene.js';
+import { initThreeScene } from '/src/three_scene.js';
 
 let threeSceneInitialized = false;
 

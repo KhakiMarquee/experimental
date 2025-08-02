@@ -1,6 +1,6 @@
-import { initUI } from './ui.js';
-import { initStrudelPlayer } from './strudel_player.js';
-import { initThreeScene } from './three_scene.js';
+import { initUI } from '/src/ui.js';
+import { initStrudelPlayer } from '/src/strudel_player.js';
+import { initThreeScene } from '/src/three_scene.js';
 
 
 document.addEventListener('DOMContentLoaded', () => {
