@@ -1,0 +1,528 @@
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box; /* Ensures consistent box sizing */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: calc(var(--base-size) * var(--mobile-scale)); /* Responsive base font size */
+}
+
+html, body {
+  height: 100vh; /* Ensures full height for body */
+  width: 100vw; /* Ensures full width for body */
+}
+
+body {
+  font-family: system-ui; /* Sets base font */
+  background: #fff; /* Sets background color */
+  color: rgba(0, 0, 0, 0.6); /* Sets text color */
+  line-height: 1.2; /* Improves readability */
+  letter-spacing: 0em; /* Default letter spacing */
+}
+
+
+/* Icons */
+.icon{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  scale: 4.5;
+}
+
+button{
+  border: 0px;
+  background: transparent;
+  width: auto;
+  margin: 0 auto;
+  transition: background-color, color 0.2s ease;
+  cursor: pointer;
+  color: blue;
+}
+
+/* (tap) Button Next to Headline Word */
+.tap-button {
+  all: unset; /* Remove default button styles */
+  font-style: italic;
+  font-size: 0.8em;
+  margin-left: 0.3em;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  top: -0.1em;
+  transition: color 0.2s ease;
+  text-transform: lowercase;
+}
+
+.tap-button.small {
+  font-size: 0.8rem;
+}
+
+button:hover{
+  text-decoration: line-through;
+  color: black
+}
+
+.trigger-text-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Header */
+.site-header {
+  padding: 0; /* Vertical spacing */  
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* Thin top border */
+  position:fixed;
+  z-index: 1000; /* Ensures header is above other content */
+  background-color: #fff;
+}
+
+.container {
+  margin: 0 auto; /* Centers container */
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12-column grid layout */
+  gap: 1rem; /* Spacing between columns */
+  align-items: center;
+}
+
+.site-header .container {
+  display: grid;
+  padding: 1rem 2rem;
+  grid-template-columns: repeat(12, 1fr); /* Matches main grid */
+  align-items: center;
+  width: 100vw;
+}
+
+.nav-left {
+  grid-column: 1 / span 3; /* Left-aligned section */
+  font-size: 0.9rem;
+  text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+.logo {
+  grid-column: 5 / span 4; /* Centers logo */
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.nav-right {
+  grid-column: 10 / span 3; /* Right-aligned section */
+  font-size: 0.9rem;
+  text-transform: capitalize;
+  text-align: right;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Main Content Area */
+.site-body {
+  position: relative; /* For absolute positioning of the new div */
+  min-height: calc(100vh - var(--header-height, 60px)); /* Adjust header height */
+  width: 100%;
+}
+
+.site-body .container {
+  display: flex; /* Switch to flex for vertical alignment */
+  flex-direction: column;
+  justify-content: center; /* Vertically center */
+  align-items: center; /* Horizontally center */
+  height: calc(100vh - 10%);
+  text-align: center;
+}
+
+.headline {
+  font-size: 3rem;
+  font-weight: lighter;
+  text-transform: uppercase;
+  margin-bottom: 1rem; /* Space between headline and music_player */
+  font-style: italic;
+}
+
+.subhead {
+  font-size: 1rem;
+  font-weight:normal;
+}
+
+.music_player {
+  justify-content: center;
+  flex-wrap: wrap;
+  display:none;
+  box-sizing: border-box;
+  width: 100%; /* Full width of the viewport */
+  min-height: calc(-100vh - var(--header-height, 60px)); /* Adjust header height */
+}
+
+/* Secondary Section */
+
+.secondary-text {
+  
+  display:block;
+  background-color:#fff;
+  width: 100vw;
+  height: auto;
+  padding: 0px;
+}
+
+.secondary-text ul {
+  list-style: none; /* Remove default list styles */
+  padding: 5% 0px; /* Remove padding */
+  margin: 0; /* Remove margin */
+  display: block; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow items to wrap */
+  font-weight: bolder;
+  overflow: hidden;
+  font-style: italic;
+}
+
+.secondary-text ul li{
+  cursor: pointer; /* Pointer cursor for interactivity */
+  font-size:17em;
+}
+
+.secondary-text ul li:first-child {
+  text-align: left; /* Align text to the left */
+}
+
+.secondary-text ul li:nth-last-child(2) {
+  text-align: right; /* Align text to the right */
+}
+
+/* Transition Space (New Div) */
+.transition-space {
+  background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent background */
+  width: 100%;
+  height: 0; /* Initially collapsed */
+  opacity: 0;
+  transition: height 1s ease-in-out, opacity 1s ease-in-out;
+  top: 0;
+  left: 0;
+}
+
+/* When active (for animation) */
+.transition-space.active {
+  height: 100vh; /* Adjust to the height of previous content */
+  opacity: 1;
+}
+
+.main-text {
+  transition: opacity 0.6s ease-in-out, max-height 0.6s ease-in-out, margin 0.6s ease-in-out;
+  overflow: hidden; /* Prevent content overflow when collapsing */
+  padding:20% 0 30% 0;
+}
+
+.main-text.hide {
+  opacity: 0;
+  max-height: 0;     /* Collapse the space */
+  margin: 0;         /* Remove vertical margin */
+  padding: 0;
+}
+
+.container.collapse {
+  padding: 0;
+  display:block;
+  z-index: 1;
+  position: absolute;
+}
+
+#three-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: rgba(0, 0, 0, 0.2) 1px solid; /* Optional border for visual separation */
+}
+
+/* Fullscreen overlay */
+.fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 3rem;
+  z-index: 1;
+  transition: display 1s ease-in;
+}
+
+.fullscreen-overlay.show {
+  display: flex;
+}
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.overlay.show {
+  display: flex;
+}
+
+.close-overlay {
+  position: absolute;
+  right: 20px;
+  top: 4em;
+  z-index: 1000;
+  background: none;
+  color: #fff;
+  border: none;
+  font-size: 1.2rem;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+/* Close button */
+#close-three-container {
+  position: absolute;
+  right: 20px;
+  top:4em;
+  z-index: 2;
+  background-color: none;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Third Section */
+.third-section {
+  background-color: rgba(0, 0, 0, 0.1); /* Light gray background */
+  border-top:rgba(0, 0, 0, 0.2) 1px solid; /* Top border */
+  padding: 0% 5%;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 2em;
+
+}
+
+.third-section span {
+  text-transform: lowercase;
+}
+
+.third-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100vh
+}
+
+/* Left black box */
+.third-box {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* 16:9 aspect ratio */
+  background-color: #000;
+  border-radius: 6px;
+}
+
+/* Center text */
+.third-text p {
+  margin: 0;
+  text-align: right;
+  letter-spacing: 0.02em;
+  font-weight: lighter;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+/* Right list */
+.third-list p {
+  text-align: right;
+  font-weight: bold;
+}
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(6, 1fr); /* Simpler grid for mobile */
+  }
+
+  .site-header .container {
+     padding: 1rem 2rem;
+  }
+
+  .logo {
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+
+  .nav-left {
+    width: 100%;
+  }  
+
+  .nav-right {
+    width: 100%;
+    padding:0px;
+  }
+
+  .site-body .container {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .headline {
+    font-size: 1.5rem; /* Scaled down for mobile */
+    margin-bottom: 1rem;
+  }
+
+  .subhead {
+    font-size: 0.7rem;
+    margin: 0 auto;
+    transition: font-size 1s ease-in;
+    width: 65%;
+  }
+
+  .music_player {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .transition-space.active {
+    height: 50vh; /* Adjust to the height of previous content */
+    opacity: 1;
+  }
+
+    .container.collapse {
+    padding: 0;
+    }
+
+.secondary-text ul li{
+    font-size: 4em;
+  }
+  
+
+  .third-section {
+    padding: 10% 2%;
+  }
+
+  .third-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    height: 60vh
+  }
+
+  .third-box {
+    max-width: 200px;
+    margin: 0 auto 1.5rem auto;
+  }
+
+  .third-text p {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+    .third-list {
+      height:auto;
+      overflow: hidden;
+      min-height: 150px;
+    }
+  
+  .third-list p {
+    font-size: 4rem;
+    color: rgba(0, 0, 0, 0.8);
+    line-height: 60%;
+    position: relative;
+    animation: chromatic-glitch 1.5s infinite linear, move-horizontal 6s infinite ease-in-out;
+    transform: translateZ(0); /* Force GPU acceleration */
+    will-change: text-shadow, transform;
+  }
+
+  /* Chromatic Aberration Animation */
+ 
+
+  #chromatic-text span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+
+  #chromatic-text .red {
+    color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+
+  #chromatic-text .cyan {
+    color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+  }
+
+  #chromatic-text .main {
+    color: rgba(0, 0, 0, 0.8);
+    z-index: 3; /* Main text stays on top */
+    position: relative;
+  }
+
+  /* Chromatic Aberration Animation */
+  @keyframes chromatic-glitch {
+    0% {
+      text-shadow:
+        2px 2px 0 rgba(255, 0, 0, 0.2),
+        -2px -2px 0 rgba(0, 255, 255, 0.2),
+        4px 4px 0 rgba(0, 0, 255, 0.2);
+    }
+    50% {
+      text-shadow:
+        -2px 2px 0 rgba(255, 0, 0, 0.2),
+        2px -2px 0 rgba(0, 255, 255, 0.2),
+        -4px 4px 0 rgba(0, 0, 255, 0.2);
+    }
+    100% {
+      text-shadow:
+        2px 2px 0 rgba(255, 0, 0, 0.2),
+        -2px -2px 0 rgba(0, 255, 255, 0.2),
+        4px 4px 0 rgba(0, 0, 255, 0.2);
+    }
+  }
+
+  /* Horizontal Movement */
+  @keyframes move-horizontal {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(30px); /* Adjust distance */
+    }
+    
+  }
+    .third-list p:first-of-type {
+      text-align: left;
+      width:100%;
+    }
+    .third-list p:nth-of-type(2) {
+      text-align: center;
+    }
+
+}
+
