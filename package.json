@@ -74,8 +74,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-   "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
