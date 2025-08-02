@@ -24,7 +24,6 @@
     "find-up": "^4.1.0",
     "fraction.js": "^5.2.2",
     "fs-extra": "^11.3.0",
-    "fsevents": "^2.3.3",
     "glob-parent": "^5.1.2",
     "globby": "^11.1.0",
     "graceful-fs": "^4.2.11",
