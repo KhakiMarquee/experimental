@@ -1,6 +1,6 @@
-import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import * as THREE from '../public/three/build/three.module.js';
+import { OrbitControls } from '../public/three/examples/jsm/controls/OrbitControls.js';
+import { GLTFLoader } from '../public/three/examples/jsm/loaders/GLTFLoader.js';
 
 // Initialize the Three.js scene
 
