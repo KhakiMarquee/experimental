@@ -17,8 +17,8 @@
       }
     }
   </script>
-  <script type="module" crossorigin src="/experimental/assets/index-CMy86M3O.js"></script>
-  <link rel="stylesheet" crossorigin href="/experimental/assets/index-Cs9qRo1R.css">
+  <script type="module" crossorigin src="/experimental/assets/index-CDyl7GDM.js"></script>
+  <link rel="stylesheet" crossorigin href="/experimental/assets/index-CLpx_xjY.css">
 </head>
 
 <body>
@@ -58,7 +58,7 @@
         </div>  
 
       </div>
-      <div class="main-text">
+      <div class="main-text fade-in-section fade-in-delay-1">
         <h1 class="headline">
           We tell 
           <u>stories</u>
@@ -96,7 +96,7 @@
         </button>
       </div>
 
-      <div class="secondary-text">
+      <div class="secondary-text fade-in-section fade-in-delay-2">
         <ul>
           <li>
             <span class="trigger-text-container">
@@ -135,7 +135,7 @@
 
         
       </div>
-        <div class="third-section">
+        <div class="third-section fade-in-section fade-in-delay-3">
           <div class="third-grid">
 
             <div class="third-box"></div>
@@ -154,6 +154,23 @@
     </div> 
   </main>
 
+  <script>
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll('.fade-in-section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 
 </body>
 </html>
