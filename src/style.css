@@ -23,7 +23,7 @@ body {
 }
 
 
-/* Icons */
+/* ICONS */
 .icon{
   align-items: center;
   display: flex;
@@ -41,7 +41,7 @@ button{
   color: blue;
 }
 
-/*LOADER*/
+/*LOADER */
 
 #loading-screen {
   position: fixed;
@@ -167,7 +167,7 @@ button:hover{
   gap: 0.5rem;
 }
 
-/* Header */
+/* HEADER */
 .site-header {
   padding: 0; /* Vertical spacing */  
   border-bottom: 1px solid #dee2e6; /* Thin top border */
@@ -218,7 +218,7 @@ button:hover{
   text-overflow: ellipsis;
 }
 
-/* Main Content Area */
+/*MAIN */
 .site-body {
   position: relative; /* For absolute positioning of the new div */
   min-height: calc(100vh - var(--header-height, 60px)); /* Adjust header height */
@@ -258,7 +258,7 @@ button:hover{
   width: 100%; /* Full width of the viewport */
 }
 
-/* Secondary Section */
+/*SECOND*/
 
 .secondary-text {
   display:block;
@@ -302,7 +302,7 @@ button:hover{
   text-align: right; /* Align text to the right */
 }
 
-/* Transition Space (New Div) */
+/* Transition Space */
 .transition-space {
   background-color: #e9ecef; /* Semi-transparent background */
   width: 100%;
@@ -348,7 +348,7 @@ button:hover{
   border-bottom: #dee2e6 1px solid; /* Optional border for visual separation */
 }
 
-/**/
+/*OVERLAY*/
 /* Full-screen overlay styles - Updated to work with existing CSS */
 .overlay {
   position: fixed;
@@ -435,7 +435,7 @@ button:hover{
   margin-bottom: 0;
 }
 
-/**/
+/*OVERLAY ENDS*/
 
 /* Close button */
 #close-three-container {
@@ -452,7 +452,7 @@ button:hover{
   cursor: pointer;
 }
 
-/* Third Section */
+/*THIRD*/
 .third-section {
   background-color: #e9ecef; /* Light gray background */
   border-top:#dee2e6 1px solid; /* Top border */
@@ -502,7 +502,6 @@ button:hover{
   text-align: right;
   font-weight: bold;
 }
-
 
 
 
