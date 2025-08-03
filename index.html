@@ -5,12 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>studio G O K E studio</title>
   <link rel="stylesheet" href="/src/style.css" />
+  <!-- Development: Use local files -->
+  <!-- Import map to resolve Three.js modules -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/examples/jsm/controls/OrbitControls.js": "https://unpkg.com/three@0.160.0/examples/jsm/controls/OrbitControls.js",
+        "three/examples/jsm/loaders/GLTFLoader.js": "https://unpkg.com/three@0.160.0/examples/jsm/loaders/GLTFLoader.js"
+      }
+    }
+  </script>
 
 </head>
 
 <body>
-    <script type="module" src="/src/main.js"></script>
-    <script type="module" src="/src/strudel.js"></script>
+    <script type="module" src="./src/main.js"></script>
+    <script type="module" src="./src/strudel.js"></script>
   <!-- Header -->
   <header class="site-header">
     <div class="container">
