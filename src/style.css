@@ -479,21 +479,12 @@ button:hover{
 @media (max-width: 768px) {
 
 /*LOADER*/
-
-#loading-screen {
-  position: fixed;
-  inset: 0;
-  background: #111;
-  color: #fff;
-  display: flex;
-  justify-content: flex-end; /* align content to right */
-  align-items: center;
-  font-size: 2rem;
-  z-index: 1000;
-  padding-right: 5vw; /* optional: breathing room from edge */
-}
   .container {
     grid-template-columns: repeat(6, 1fr); /* Simpler grid for mobile */
+  }
+
+  #loading-screen {
+    font-size:1.5em
   }
 
   .site-header .container {
