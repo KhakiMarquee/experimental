@@ -16,8 +16,8 @@ html, body {
 
 body {
   font-family: system-ui; /* Sets base font */
-  background: #fff; /* Sets background color */
-  color: rgba(0, 0, 0, 0.6); /* Sets text color */
+  background: #f8f9fa; /* Sets background color */
+  color: #6c757d; /* Sets text color */
   line-height: 1.2; /* Improves readability */
   letter-spacing: 0em; /* Default letter spacing */
 }
@@ -46,8 +46,8 @@ button{
 #loading-screen {
   position: fixed;
   inset: 0;
-  background: #111;
-  color: #fff;
+  background: #212529;
+  color: #f8f9fa;
   display: flex;
   justify-content: flex-end; /* align content to right */
   align-items: center;
@@ -87,7 +87,7 @@ button{
   left: 0;
   width: 100%;
   height: 100%;
-  color: #222; /* or any low-opacity value */
+  color: #343a40; /* or any low-opacity value */
   font-size: 2rem;
   line-height: 1.4;
   z-index: 0;
@@ -145,7 +145,7 @@ button{
   font-size: 0.8em;
   margin-left: 0.3em;
   cursor: pointer;
-  color: rgba(0, 0, 0, 0.5);
+  color: #ced4da;
   position: relative;
   top: -0.1em;
   transition: color 0.2s ease;
@@ -158,7 +158,7 @@ button{
 
 button:hover{
   text-decoration: line-through;
-  color: black
+  color: #212529
 }
 
 .trigger-text-container {
@@ -170,10 +170,10 @@ button:hover{
 /* Header */
 .site-header {
   padding: 0; /* Vertical spacing */  
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* Thin top border */
+  border-bottom: 1px solid #dee2e6; /* Thin top border */
   position:fixed;
   z-index: 1000; /* Ensures header is above other content */
-  background-color: #fff;
+  background-color: #f8f9fa;
 }
 
 .container {
@@ -239,12 +239,15 @@ button:hover{
   font-weight: lighter;
   text-transform: uppercase;
   margin-bottom: 1rem; /* Space between headline and music_player */
+}
+
+.headline u{
   font-style: italic;
 }
 
 .subhead {
   font-size: 1rem;
-  font-weight:normal;
+  font-weight:500;
 }
 
 .music_player {
@@ -259,7 +262,7 @@ button:hover{
 
 .secondary-text {
   display:block;
-  background-color:#fff;
+  background-color:#f8f9fa;
   width: 100vw;
   height: auto;
   padding: 0px;
@@ -268,7 +271,7 @@ button:hover{
 
 .secondary-text ul li:hover {
   transform: scale(1.05);
-  text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  text-shadow: 2px 2px 10px e9ecef;
   transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
 
@@ -285,7 +288,10 @@ button:hover{
 
 .secondary-text ul li{
   cursor: pointer; /* Pointer cursor for interactivity */
-  font-size:17em;
+  font-size:12em;
+  color: #adb5bd;
+  transition: all ease-in;
+  
 }
 
 .secondary-text ul li:first-child {
@@ -298,7 +304,7 @@ button:hover{
 
 /* Transition Space (New Div) */
 .transition-space {
-  background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent background */
+  background-color: #e9ecef; /* Semi-transparent background */
   width: 100%;
   height: 0; /* Initially collapsed */
   opacity: 0;
@@ -339,7 +345,7 @@ button:hover{
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: rgba(0, 0, 0, 0.2) 1px solid; /* Optional border for visual separation */
+  border-bottom: #dee2e6 1px solid; /* Optional border for visual separation */
 }
 
 /* Fullscreen overlay */
@@ -349,11 +355,11 @@ button:hover{
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.9);
+  background: #343a40;
   display: none;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: f8#f9fa;
   font-size: 3rem;
   z-index: 1;
   transition: display 1s ease-in;
@@ -381,8 +387,8 @@ button:hover{
   top: 0; left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.8);
-  color: white;
+  background: #212529;
+  color: #f8f9fa;
   display: none;
   justify-content: center;
   align-items: center;
@@ -399,7 +405,7 @@ button:hover{
   top: 4em;
   z-index: 1000;
   background: none;
-  color: #fff;
+  color: #f8f9fa;
   border: none;
   font-size: 1.2rem;
   padding: 8px 12px;
@@ -413,7 +419,7 @@ button:hover{
   top:4em;
   z-index: 2;
   background-color: none;
-  color: #fff;
+  color: #f8f9fa;
   border: none;
   padding: 8px 12px;
   border-radius: 4px;
@@ -423,8 +429,8 @@ button:hover{
 
 /* Third Section */
 .third-section {
-  background-color: rgba(0, 0, 0, 0.1); /* Light gray background */
-  border-top:rgba(0, 0, 0, 0.2) 1px solid; /* Top border */
+  background-color: #e9ecef; /* Light gray background */
+  border-top:#dee2e6 1px solid; /* Top border */
   padding: 0% 5%;
   width: 100%;
   white-space: nowrap;
@@ -452,7 +458,7 @@ button:hover{
 .third-box {
   width: 100%;
   aspect-ratio: 16 / 9; /* 16:9 aspect ratio */
-  background-color: #000;
+  background-color: #dee2e6;
   border-radius: 6px;
 }
 
@@ -520,7 +526,7 @@ button:hover{
     font-size: 0.7rem;
     margin: 0 auto;
     transition: font-size 1s ease-in;
-    width: 65%;
+    width: 75%;
   }
 
   .music_player {
@@ -542,8 +548,7 @@ button:hover{
 
   .secondary-text ul li{
       font-size: 4em;
-      color: rgba(1, 1, 1, 0.5);
-      text-shadow: rgba(255, 255, 255, 0.5) -1px 1px 50px;
+      color: #adb5bd;
       transition: all ease-in;
 
     }
@@ -576,8 +581,8 @@ button:hover{
     }
   
   .third-list p {
-    font-size: 4rem;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 1rem;
+    color: #495057;
     line-height: 60%;
     position: relative;
     animation: chromatic-glitch 1.5s infinite linear, move-horizontal 6s infinite ease-in-out;
@@ -596,17 +601,17 @@ button:hover{
   }
 
   #chromatic-text .red {
-    color: rgba(0, 0, 0, 0.3);
+    color: #adb5bd;
     z-index: 1;
   }
 
   #chromatic-text .cyan {
-    color: rgba(0, 0, 0, 0.4);
+    color: #343a40;
     z-index: 2;
   }
 
   #chromatic-text .main {
-    color: rgba(0, 0, 0, 0.8);
+    color: #212529;
     z-index: 3; /* Main text stays on top */
     position: relative;
   }
@@ -615,21 +620,21 @@ button:hover{
   @keyframes chromatic-glitch {
     0% {
       text-shadow:
-        2px 2px 0 rgba(255, 0, 0, 0.2),
-        -2px -2px 0 rgba(0, 255, 255, 0.2),
-        4px 4px 0 rgba(0, 0, 255, 0.2);
+        2px 2px 0 #e9ecef,
+        -2px -2px 0 #adb5bd,
+        4px 4px 0 #343a40;
     }
     50% {
       text-shadow:
-        -2px 2px 0 rgba(255, 0, 0, 0.2),
-        2px -2px 0 rgba(0, 255, 255, 0.2),
-        -4px 4px 0 rgba(0, 0, 255, 0.2);
+        -2px 2px 0 #e9ecef,
+        2px -2px 0 #adb5bd,
+        -4px 4px 0 #343a40;
     }
     100% {
       text-shadow:
-        2px 2px 0 rgba(255, 0, 0, 0.2),
-        -2px -2px 0 rgba(0, 255, 255, 0.2),
-        4px 4px 0 rgba(0, 0, 255, 0.2);
+        2px 2px 0 #e9ecef,
+        -2px -2px 0 #adb5bd,
+        4px 4px 0 #343a40
     }
   }
 
