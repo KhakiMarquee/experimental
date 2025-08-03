@@ -121,6 +121,23 @@ button{
   transition: all 0.3s ease;
 }
 
+/*FADERS*/
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-delay-1 { transition-delay: 0.1s; }
+.fade-in-delay-2 { transition-delay: 0.2s; }
+.fade-in-delay-3 { transition-delay: 0.3s; }
+
 /* (tap) Button Next to Headline Word */
 .tap-button {
   all: unset; /* Remove default button styles */
@@ -236,7 +253,6 @@ button:hover{
   display:none;
   box-sizing: border-box;
   width: 100%; /* Full width of the viewport */
-  min-height: calc(-100vh - var(--header-height, 60px)); /* Adjust header height */
 }
 
 /* Secondary Section */
@@ -248,6 +264,12 @@ button:hover{
   height: auto;
   padding: 0px;
 
+}
+
+.secondary-text ul li:hover {
+  transform: scale(1.05);
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
 
 .secondary-text ul {
@@ -335,6 +357,19 @@ button:hover{
   font-size: 3rem;
   z-index: 1;
   transition: display 1s ease-in;
+}
+.fullscreen-overlay,
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  max-height: none;
+  overflow: hidden;
 }
 
 .fullscreen-overlay.show {
@@ -503,21 +538,23 @@ button:hover{
     gap: 1rem;
   }
 
-  .transition-space.active {
-    height: 50vh; /* Adjust to the height of previous content */
-    opacity: 1;
-  }
+  .transition-space.active ~ .secondary-text {
+  opacity: 0;
+  height:0;
+  pointer-events: none;
+  transition: opacity 0.6s ease, height 0.6s ease;
+}
 
   .container.collapse {
     padding: 0;
   }
-
 
   .secondary-text ul li{
       font-size: 4em;
       color: rgba(1, 1, 1, 0.5);
       text-shadow: rgba(255, 255, 255, 0.5) -1px 1px 50px;
       transition: all ease-in;
+
     }
   
 
