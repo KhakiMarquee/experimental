@@ -49,15 +49,76 @@ button{
   background: #111;
   color: #fff;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end; /* align content to right */
   align-items: center;
-  font-size: 2rem;
+  font-size: 4rem;
   z-index: 1000;
+  padding-right: 5vw; /* optional: breathing room from edge */
 }
 
+#loading-screen .shuffling-wrapper {
+  display: flex;
+  justify-content: flex-end; /* align contents inside wrapper to right */
+  width: 100%;
+  max-width: 800px; /* optional: control max width */
+}
+
+#loading-screen #shuffling-word {
+  display: inline-block;
+  white-space: nowrap;
+  text-align: right;
+  direction: rtl; /* makes text grow leftward */
+  min-width: 10ch; /* stabilize size */
+}
+
+#loading-screen span {
+  padding: 0;
+  margin: 0;
+}
+
+
 #app {
-  display: none;
-  padding: 20px;
+  padding: 0px;
+}
+
+.background-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #222; /* or any low-opacity value */
+  font-size: 2rem;
+  line-height: 1.4;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  word-break: break-word;
+  white-space: pre-wrap;
+  animation: growText 30s infinite linear;
+  transform-origin: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+@keyframes growText {
+  0% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0.05;
+  }
+}
+
+.center-text {
+  position: relative;
+  z-index: 2;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  max-width: 80%;
+  transition: all 0.3s ease;
 }
 
 /* (tap) Button Next to Headline Word */
@@ -381,6 +442,21 @@ button:hover{
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+
+/*LOADER*/
+
+#loading-screen {
+  position: fixed;
+  inset: 0;
+  background: #111;
+  color: #fff;
+  display: flex;
+  justify-content: flex-end; /* align content to right */
+  align-items: center;
+  font-size: 2rem;
+  z-index: 1000;
+  padding-right: 5vw; /* optional: breathing room from edge */
+}
   .container {
     grid-template-columns: repeat(6, 1fr); /* Simpler grid for mobile */
   }

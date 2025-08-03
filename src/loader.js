@@ -1,10 +1,68 @@
-// loader.js
+function randInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+const words = [
+    "studio",
+    "carving", 
+    "lab",
+    "research",
+    "experimental",
+    "rendering",
+    "sculpting",
+    "studio",
+    "lab",
+    "audiovisual",
+    "research",
+    "experimental",
+    "cutting",
+    "studio"
+];
+
+const finalWord = "studio";
+
+let wordIndex = 0;
+let shuffleCount = 0;
+const totalShuffles = randInt(20, 50);
+
+const updateCenterText = () => {
+  const shuffleSpan = document.getElementById('shuffling-word');
+  if (!shuffleSpan) return;
+
+  if (shuffleCount >= totalShuffles) {
+    shuffleSpan.textContent = finalWord;
+  } else {
+    shuffleSpan.textContent = words[wordIndex];
+    wordIndex = (wordIndex + 1) % words.length;
+    shuffleCount++;
+  }
+};
+
+const fillBackgroundText = () => {
+  const background = document.querySelector('.background-text');
+  if (!background) return;
+
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; // capital letters
+  const repeatCount = 2000; // adjust as needed to fill screen
+
+  let randomText = '';
+  for (let i = 0; i < repeatCount; i++) {
+    const randomIndex = Math.floor(Math.random() * chars.length);
+    randomText += chars[randomIndex];
+  }
+
+  background.textContent = randomText;
+};
+
+
+
+fillBackgroundText();
+updateCenterText();
 
 const showLoading = () => {
   const screen = document.getElementById('loading-screen');
   if (screen) {
     screen.style.display = 'flex';
-    screen.innerText = 'Loading...'; // Customize if needed
   }
 };
 
@@ -16,21 +74,33 @@ const hideLoading = () => {
 const moveSiteBodyToApp = () => {
   const app = document.getElementById('app');
   const siteBody = document.querySelector('.site-body');
-
   if (app && siteBody) {
-    app.appendChild(siteBody); // Move the full <main class="site-body"> into #app
+    app.appendChild(siteBody);
     app.style.display = 'block';
   }
 };
 
+const intervalDelay = 150;
+
 const bootstrap = async () => {
   showLoading();
 
-  // Simulate async load — replace with actual async logic as needed
-  await new Promise(resolve => setTimeout(resolve, 1500));
+  return new Promise(resolve => {
+    const intervalId = setInterval(() => {
+      updateCenterText();
 
-  moveSiteBodyToApp(); // Move content into #app
-  hideLoading();       // Hide the loader
+      if (shuffleCount >= totalShuffles) {
+        clearInterval(intervalId);
+        resolve();
+      }
+    }, intervalDelay);
+  }).then(async () => {
+    moveSiteBodyToApp();
+    hideLoading();
+
+    const { initApp } = await import('/src/main.js');
+    initApp();
+  });
 };
 
 bootstrap();
