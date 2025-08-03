@@ -162,12 +162,12 @@ button:hover{
 /* Secondary Section */
 
 .secondary-text {
-  
   display:block;
   background-color:#fff;
   width: 100vw;
   height: auto;
   padding: 0px;
+
 }
 
 .secondary-text ul {
@@ -413,13 +413,17 @@ button:hover{
     opacity: 1;
   }
 
-    .container.collapse {
+  .container.collapse {
     padding: 0;
-    }
-
-.secondary-text ul li{
-    font-size: 4em;
   }
+
+
+  .secondary-text ul li{
+      font-size: 4em;
+      color: rgba(1, 1, 1, 0.5);
+      text-shadow: rgba(255, 255, 255, 0.5) -1px 1px 50px;
+      transition: all ease-in;
+    }
   
 
   .third-section {
