@@ -1,9 +1,13 @@
 import { initThreeScene } from '/src/three_scene.js';
+import { initAnimations, animateThreeSceneOpen, animateThreeSceneClose, animateOverlayOpen, animateOverlayClose } from '/src/animations.js';
 
 let threeSceneInitialized = false;
-let threeSceneData = null; // Store renderer and camera references
+let threeSceneData = null;
 
 export function initUI() {
+  // Initialize GSAP animations
+  initAnimations();
+
   // --- Tap buttons for overlays ONLY ---
   const overlayTapButtons = document.querySelectorAll('.tap-button[data-overlay]');
   let activeOverlay = null;
@@ -18,13 +22,13 @@ export function initUI() {
       e.stopPropagation();
 
       if (activeOverlay === overlayEl) {
-        overlayEl.classList.remove('show');
+        animateOverlayClose(overlayEl);
         activeOverlay = null;
       } else {
         if (activeOverlay) {
-          activeOverlay.classList.remove('show');
+          animateOverlayClose(activeOverlay);
         }
-        overlayEl.classList.add('show');
+        animateOverlayOpen(overlayEl);
         activeOverlay = overlayEl;
       }
     });
@@ -43,12 +47,18 @@ export function initUI() {
 
       if (activeOverlay === overlayEl) {
         overlayEl.classList.remove('show');
+        // Show main content when overlay closes
+        mainContent.classList.remove('main-content-hidden');
+        siteHeader.classList.remove('main-content-hidden');
         activeOverlay = null;
       } else {
         if (activeOverlay) {
           activeOverlay.classList.remove('show');
         }
         overlayEl.classList.add('show');
+        // Hide main content when overlay opens
+        mainContent.classList.add('main-content-hidden');
+        siteHeader.classList.add('main-content-hidden');
         activeOverlay = overlayEl;
       }
     });
@@ -57,7 +67,7 @@ export function initUI() {
   // Click outside overlays to close
   document.addEventListener('click', () => {
     if (activeOverlay) {
-      activeOverlay.classList.remove('show');
+      animateOverlayClose(activeOverlay);
       activeOverlay = null;
     }
   });
@@ -69,7 +79,7 @@ export function initUI() {
       e.stopPropagation(); // Prevent closing immediately from the outer listener
       const overlay = button.closest('.overlay');
       if (overlay) {
-        overlay.classList.remove('show');
+        animateOverlayClose(overlay);
         if (activeOverlay === overlay) {
           activeOverlay = null;
         }
@@ -90,32 +100,34 @@ export function initUI() {
 
   if (transitionButton && transitionSpace && mainText && container && closeContainer) {
     transitionButton.addEventListener('click', () => {
-      const isActive = transitionSpace.classList.toggle('active');
-      mainText.classList.toggle('hide', isActive);
-      container.classList.toggle('collapse', isActive);
+      const isActive = transitionSpace.classList.contains('active');
+      
+      if (!isActive) {
+        transitionSpace.classList.add('active');
+        animateThreeSceneOpen();
+        
+        if (!threeSceneInitialized) {
+          threeSceneData = initThreeScene();
+          threeSceneInitialized = true;
 
-      if (isActive && !threeSceneInitialized) {
-        threeSceneData = initThreeScene();
-        threeSceneInitialized = true;
-
-        // Resize renderer after initialization
-        setTimeout(() => {
-          const threeContainer = document.getElementById('three-container');
-          if (threeContainer && threeSceneData) {
-            const width = threeContainer.clientWidth;
-            const height = window.innerHeight;
-            threeSceneData.renderer.setSize(width, height);
-            threeSceneData.camera.aspect = width / height;
-            threeSceneData.camera.updateProjectionMatrix();
-          }
-        }, 500);
+          // Resize renderer after initialization
+          setTimeout(() => {
+            const threeContainer = document.getElementById('three-container');
+            if (threeContainer && threeSceneData) {
+              const width = threeContainer.clientWidth;
+              const height = window.innerHeight;
+              threeSceneData.renderer.setSize(width, height);
+              threeSceneData.camera.aspect = width / height;
+              threeSceneData.camera.updateProjectionMatrix();
+            }
+          }, 800); // Wait for animation to complete
+        }
       }
     });
 
     closeContainer.addEventListener('click', () => {
       transitionSpace.classList.remove('active');
-      mainText.classList.remove('hide');
-      container.classList.remove('collapse');
+      animateThreeSceneClose();
     });
   }
 
