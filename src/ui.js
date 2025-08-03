@@ -1,6 +1,7 @@
 import { initThreeScene } from '/src/three_scene.js';
 
 let threeSceneInitialized = false;
+let threeSceneData = null; // Store renderer and camera references
 
 export function initUI() {
   // --- Tap buttons for overlays ONLY ---
@@ -29,29 +30,29 @@ export function initUI() {
     });
   });
 
-    const clickableWords = document.querySelectorAll('.clickable-word[data-overlay]');
+  const clickableWords = document.querySelectorAll('.clickable-word[data-overlay]');
 
-    clickableWords.forEach(word => {
-      const overlayId = word.dataset.overlay;
-      const overlayEl = document.getElementById(overlayId);
+  clickableWords.forEach(word => {
+    const overlayId = word.dataset.overlay;
+    const overlayEl = document.getElementById(overlayId);
 
-      if (!overlayEl) return;
+    if (!overlayEl) return;
 
-      word.addEventListener('click', (e) => {
-        e.stopPropagation();
+    word.addEventListener('click', (e) => {
+      e.stopPropagation();
 
-        if (activeOverlay === overlayEl) {
-          overlayEl.classList.remove('show');
-          activeOverlay = null;
-        } else {
-          if (activeOverlay) {
-            activeOverlay.classList.remove('show');
-          }
-          overlayEl.classList.add('show');
-          activeOverlay = overlayEl;
+      if (activeOverlay === overlayEl) {
+        overlayEl.classList.remove('show');
+        activeOverlay = null;
+      } else {
+        if (activeOverlay) {
+          activeOverlay.classList.remove('show');
         }
-      });
+        overlayEl.classList.add('show');
+        activeOverlay = overlayEl;
+      }
     });
+  });
 
   // Click outside overlays to close
   document.addEventListener('click', () => {
@@ -94,18 +95,18 @@ export function initUI() {
       container.classList.toggle('collapse', isActive);
 
       if (isActive && !threeSceneInitialized) {
-        initThreeScene();
+        threeSceneData = initThreeScene();
         threeSceneInitialized = true;
 
-        // Resize renderer
+        // Resize renderer after initialization
         setTimeout(() => {
-          const container = document.getElementById('three-container');
-          if (container) {
-            const width = container.clientWidth;
+          const threeContainer = document.getElementById('three-container');
+          if (threeContainer && threeSceneData) {
+            const width = threeContainer.clientWidth;
             const height = window.innerHeight;
-            renderer.setSize(width, height);
-            camera.aspect = width / height;
-            camera.updateProjectionMatrix();
+            threeSceneData.renderer.setSize(width, height);
+            threeSceneData.camera.aspect = width / height;
+            threeSceneData.camera.updateProjectionMatrix();
           }
         }, 500);
       }
