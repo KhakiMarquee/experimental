@@ -64,14 +64,14 @@ export function initAnimations() {
     ease: 'back.out(1.7)'
   });
 
-  gsap.from('.chromatic-text', {
+  gsap.to('.chromatic-text', {
     scrollTrigger: {
       trigger: '.third-list',
       start: 'top 80%'
     },
     duration: 1,
-    x: -50,
-    opacity: 0,
+    x: 0,
+    opacity: 1,
     stagger: 0.1,
     ease: 'power3.out'
   });
