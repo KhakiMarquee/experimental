@@ -1,78 +1,172 @@
 import { initThreeScene } from '/src/three_scene.js';
-import {  animateThreeSceneOpen, animateThreeSceneClose, animateOverlayOpen, animateOverlayClose } from '/src/animations.js';
+import { initAnimations, animateThreeSceneOpen, animateThreeSceneClose, animateOverlayOpen, animateOverlayClose } from '/src/animations.js';
 
 let threeSceneInitialized = false;
 let threeSceneData = null;
-let activeOverlay = null;
 
-export function initUI() {
-  // Initialize GSAP animations
+// Unified overlay management system
+class OverlayManager {
+  constructor() {
+    this.activeOverlay = null;
+    this.mainText = document.querySelector('.main-text') || document.querySelector('.headline')?.parentElement;
+    this.secondaryText = document.querySelector('.trigger-text-container');
+    this.isAnimating = false;
+  }
 
-  const overlayTapButtons = document.querySelectorAll('.tap-button[data-overlay]');
-  const clickableWords = document.querySelectorAll('.clickable-word[data-overlay]');
-  const mainText = document.querySelector('.main-text');
-  const secondaryText = document.querySelector('.overlay');
-  const transitionButton = document.querySelector('.main-text .tap-button:not([data-overlay])');
-  const transitionSpace = document.querySelector('.transition-space');
-  const container = document.querySelector('.site-body .container');
-  const closeContainer = document.querySelector('#close-three-container');
+  async openOverlay(overlayEl) {
+    if (this.isAnimating || this.activeOverlay === overlayEl) return;
+    
+    this.isAnimating = true;
+    console.log('Opening overlay:', overlayEl.id); // Debug log
 
-  // Tap buttons for overlays
-  overlayTapButtons.forEach(button => {
-    const overlayId = button.dataset.overlay;
-    const overlayEl = document.getElementById(overlayId);
-    if (!overlayEl) return;
-
-    button.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (activeOverlay === overlayEl) {
-        animateOverlayClose(overlayEl);
-        activeOverlay = null;
-      } else {
-        if (activeOverlay) {
-          animateOverlayClose(activeOverlay);
-        }
-        animateOverlayOpen(overlayEl);
-        activeOverlay = overlayEl;
-      }
-    });
-  });
-
-  // Clickable words for overlays
-  clickableWords.forEach(word => {
-    const overlayId = word.dataset.overlay;
-    const overlayEl = document.getElementById(overlayId);
-    if (!overlayEl) return;
-
-    word.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (activeOverlay === overlayEl) {
-        overlayEl.classList.remove('show');
-        mainText?.classList.remove('main-content-hidden');
-        secondaryText?.classList.remove('main-content-hidden');
-        activeOverlay = null;
-      } else {
-        if (activeOverlay) {
-          activeOverlay.classList.remove('show');
-          mainText?.classList.remove('main-content-hidden')
-          secondaryText?.classList.remove('main-content-hidden');
-        }
-        overlayEl.classList.add('show');
-        mainText?.classList.add('main-content-hidden');
-        secondaryText?.classList.add('main-content-hidden');
-        activeOverlay = overlayEl;
-      }
-    });
-  });
-
-  // Close overlays by clicking outside
-  document.addEventListener('click', () => {
-    if (activeOverlay) {
-      animateOverlayClose(activeOverlay);
-      mainText?.classList.remove('main-content-hidden');
-      secondaryText?.classList.remove('main-content-hidden');
-      activeOverlay = null;
+    // Close current overlay first if exists
+    if (this.activeOverlay && this.activeOverlay !== overlayEl) {
+      await this.closeOverlay(this.activeOverlay, false);
     }
+
+    // Open new overlay
+    try {
+      if (typeof animateOverlayOpen === 'function') {
+        await animateOverlayOpen(overlayEl);
+      } else {
+        overlayEl.classList.add('show');
+        console.log('Added show class to:', overlayEl.id); // Debug log
+      }
+
+      // Hide main content
+      this.mainText?.classList.add('main-content-hidden');
+      this.secondaryText?.classList.add('main-content-hidden');
+      
+      this.activeOverlay = overlayEl;
+    } catch (error) {
+      console.error('Error opening overlay:', error);
+    }
+    
+    this.isAnimating = false;
+  }
+
+  async closeOverlay(overlayEl = null, updateMainContent = true) {
+    const targetOverlay = overlayEl || this.activeOverlay;
+    if (!targetOverlay || this.isAnimating) return;
+
+    this.isAnimating = true;
+    console.log('Closing overlay:', targetOverlay.id); // Debug log
+
+    try {
+      // Close overlay
+      if (typeof animateOverlayClose === 'function') {
+        await animateOverlayClose(targetOverlay);
+      } else {
+        targetOverlay.classList.remove('show');
+      }
+
+      // Show main content
+      if (updateMainContent) {
+        this.mainText?.classList.remove('main-content-hidden');
+        this.secondaryText?.classList.remove('main-content-hidden');
+      }
+
+      if (this.activeOverlay === targetOverlay) {
+        this.activeOverlay = null;
+      }
+    } catch (error) {
+      console.error('Error closing overlay:', error);
+    }
+    
+    this.isAnimating = false;
+  }
+
+  toggleOverlay(overlayEl) {
+    if (this.isAnimating) {
+      console.log('⛔ Prevented toggle during animation');
+      return;
+    }
+    
+    if (this.activeOverlay === overlayEl) {
+      this.closeOverlay(overlayEl);
+    } else {
+      this.openOverlay(overlayEl);
+    }
+    console.log('🌀 toggleOverlay called for:', overlayEl.id);
+  }
+}
+
+// Initialize overlay manager
+const overlayManager = new OverlayManager();
+
+// Helper function to find overlay element
+function findOverlayElement(trigger) {
+  const overlayId = trigger.dataset.overlay;
+  return overlayId ? document.getElementById(overlayId) : null;
+}
+
+// Unified event handler for all overlay triggers
+function handleOverlayTrigger(e, triggerElement) {
+  e.stopPropagation();
+  
+  const overlayEl = findOverlayElement(triggerElement);
+  if (!overlayEl) {
+    console.warn('Overlay element not found for trigger:', triggerElement);
+    return;
+  }
+
+  console.log('Trigger clicked, overlay found:', overlayEl.id); // Debug log
+  overlayManager.toggleOverlay(overlayEl);
+}
+
+// Initialize overlay system
+function initOverlays() {
+  console.log('Initializing overlays...');
+
+  // Stop propagation on all triggers (assuming triggers have [data-overlay])
+  document.querySelectorAll('[data-overlay]').forEach(trigger => {
+    trigger.addEventListener('click', e => {
+      console.log('Trigger clicked (stopPropagation):', trigger.dataset.overlay);
+      e.stopPropagation();
+    });
+  });
+
+  // Stop propagation inside overlays
+  document.querySelectorAll('.overlay').forEach(overlay => {
+    overlay.addEventListener('click', e => {
+      console.log('Overlay clicked (stopPropagation):', overlay.id);
+      e.stopPropagation();
+    });
+  });
+
+  // Document click listener — close overlay if click outside triggers or overlays
+  document.addEventListener('click', (e) => {
+    if (overlayManager.isAnimating) {
+      console.log('🔒 Ignoring outside click during animation');
+      return;
+    }
+
+    if (e.target.closest('[data-overlay]') || e.target.closest('.overlay')) {
+      console.log('Click inside trigger or overlay — do not close');
+      return;
+    }
+
+    if (overlayManager.activeOverlay) {
+      console.log('Closing overlay via outside click');
+      overlayManager.closeOverlay();
+    }
+  });
+
+  // Setup overlay triggers for toggling overlays
+  const allTriggers = document.querySelectorAll('[data-overlay]');
+  console.log('Found overlay triggers:', allTriggers.length);
+
+  allTriggers.forEach((trigger, index) => {
+    console.log(`Setting up trigger ${index}:`, trigger.dataset.overlay);
+
+    // Replace with clone to remove old listeners if needed
+    const newTrigger = trigger.cloneNode(true);
+    trigger.parentNode?.replaceChild(newTrigger, trigger);
+
+    newTrigger.addEventListener('click', (e) => {
+      console.log('Trigger clicked (toggleOverlay):', newTrigger.dataset.overlay);
+      handleOverlayTrigger(e, newTrigger);
+    });
   });
 
   // Close overlays via close buttons
@@ -81,20 +175,35 @@ export function initUI() {
       e.stopPropagation();
       const overlay = button.closest('.overlay');
       if (overlay) {
-        animateOverlayClose(overlay);
-        mainText?.classList.remove('main-content-hidden');
-        secondaryText?.classList.remove('main-content-hidden');
-        if (activeOverlay === overlay) {
-          activeOverlay = null;
-        }
+        console.log('Closing overlay via close button');
+        overlayManager.closeOverlay(overlay);
       }
     });
   });
 
-  // Prevent click bubbling from inside overlays
-  document.querySelectorAll('.overlay').forEach(overlay => {
-    overlay.addEventListener('click', e => e.stopPropagation());
+  // Escape key to close overlays
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlayManager.activeOverlay) {
+      console.log('Closing overlay via Escape key');
+      overlayManager.closeOverlay();
+    }
   });
+}
+
+export function initUI() {
+  console.log('Initializing UI...'); // Debug log
+  
+  // Initialize GSAP animations
+  initAnimations();
+
+  // Initialize overlays - THIS WAS MISSING!
+  initOverlays();
+
+  const mainText = document.querySelector('.main-text');
+  const transitionButton = document.querySelector('.main-text .tap-button:not([data-overlay])');
+  const transitionSpace = document.querySelector('.transition-space');
+  const container = document.querySelector('.site-body .container');
+  const closeContainer = document.querySelector('#close-three-container');
 
   // Tap button for 3D scene
   if (transitionButton && transitionSpace && mainText && container && closeContainer) {
@@ -158,4 +267,13 @@ export function initUI() {
     }
     animateText();
   }
+
+  console.log('UI initialization complete'); // Debug log
 }
+
+// Debug function to test overlays manually
+window.debugOverlays = () => {
+  console.log('Active overlay:', overlayManager.activeOverlay);
+  console.log('All overlays:', document.querySelectorAll('.overlay'));
+  console.log('All triggers:', document.querySelectorAll('[data-overlay]'));
+};
