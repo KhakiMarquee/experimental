@@ -9,7 +9,7 @@ class OverlayManager {
   constructor() {
     this.activeOverlay = null;
     this.mainText = document.querySelector('.main-text') || document.querySelector('.headline')?.parentElement;
-    this.secondaryText = document.querySelectorAll('.trigger-text-container');
+
     this.isAnimating = false;
   }
 
@@ -35,14 +35,7 @@ class OverlayManager {
 
       // Hide main content
       this.mainText?.classList.add('main-content-hidden');
-      this.secondaryText.forEach(el => {
-        el.classList.add('main-content-hidden');
-            if (this.secondaryText.length > 0) {
-              this.secondaryText.forEach(el => {
-                console.log(el); // See what you're targeting
-              });
-            }
-      });
+
 
       
       this.activeOverlay = overlayEl;
@@ -71,10 +64,7 @@ class OverlayManager {
       // Show main content
       if (updateMainContent) {
         this.mainText?.classList.remove('main-content-hidden');
-        this.secondaryText.forEach(el => {
-          el.classList.remove('main-content-hidden');
 
-        });
       }
 
       if (this.activeOverlay === targetOverlay) {
