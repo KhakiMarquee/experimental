@@ -173,7 +173,6 @@ button:hover{
 .nav-left {
   grid-column: 1 / span 3; /* Left-aligned section */
   font-size: 0.9rem;
-  text-transform: capitalize;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -190,7 +189,6 @@ button:hover{
 .nav-right {
   grid-column: 10 / span 3; /* Right-aligned section */
   font-size: 0.9rem;
-  text-transform: capitalize;
   text-align: right;
   white-space: nowrap;
   text-overflow: ellipsis;
