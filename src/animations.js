@@ -58,7 +58,7 @@ export function initAnimations() {
     {
       scrollTrigger: {
         trigger: '.secondary-text',
-        start: isMobile ? 'top 80%': 'top 70%',
+        start: 'top 70%',
         end: 'bottom 20%',
         toggleActions: 'play none none reverse'
       },
@@ -80,7 +80,7 @@ export function initAnimations() {
     {
       scrollTrigger: {
         trigger: '.third-section',
-        start: isMobile ? 'top 80%':'top 85%', 
+        start: 'top 80%',
         toggleActions: 'play none none reverse'
       },
       duration: 1.2,
@@ -101,7 +101,7 @@ export function initAnimations() {
   gsap.to('.chromatic-text', {
     scrollTrigger: {
       trigger: '.third-list',
-      start: isMobile ? 'top 65%' : 'top 85%',
+      start: 'top 50%',
       toggleActions: 'play none none reverse'
     },
     duration: 1,
