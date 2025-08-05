@@ -1,5 +1,5 @@
 import { initThreeScene } from '/src/three_scene.js';
-import { initAnimations, animateThreeSceneOpen, animateThreeSceneClose, animateOverlayOpen, animateOverlayClose } from '/src/animations.js';
+import {  animateThreeSceneOpen, animateThreeSceneClose, animateOverlayOpen, animateOverlayClose } from '/src/animations.js';
 
 let threeSceneInitialized = false;
 let threeSceneData = null;
@@ -7,7 +7,6 @@ let activeOverlay = null;
 
 export function initUI() {
   // Initialize GSAP animations
-  initAnimations();
 
   const overlayTapButtons = document.querySelectorAll('.tap-button[data-overlay]');
   const clickableWords = document.querySelectorAll('.clickable-word[data-overlay]');
