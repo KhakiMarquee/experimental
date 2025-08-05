@@ -37,6 +37,11 @@ class OverlayManager {
       this.mainText?.classList.add('main-content-hidden');
       this.secondaryText.forEach(el => {
         el.classList.add('main-content-hidden');
+            if (this.secondaryText.length > 0) {
+              this.secondaryText.forEach(el => {
+                console.log(el); // See what you're targeting
+              });
+            }
       });
 
       
@@ -68,6 +73,7 @@ class OverlayManager {
         this.mainText?.classList.remove('main-content-hidden');
         this.secondaryText.forEach(el => {
           el.classList.remove('main-content-hidden');
+
         });
       }
 
