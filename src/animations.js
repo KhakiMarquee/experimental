@@ -90,7 +90,7 @@ export function animateThreeSceneOpen() {
   .to('.main-text', {
     duration: 0.6,
     y: -50,
-    autoAlpha: 0,
+    opacity: 0,
     padding:'0',
     ease: 'power3.in'
   }, 0.2)
@@ -115,7 +115,7 @@ export function animateThreeSceneClose() {
   .to('.main-text', {
     duration: 0.8,
     y: 0,
-    autoAlpha: 1,
+    opacity: 1,
     padding:'20% 0 30% 0;',
     ease: 'power3.out'
   }, 0.3)
