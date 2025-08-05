@@ -5,6 +5,9 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export function initAnimations() {
+  // ===== PAGE LOAD ANIMATIONS =====
+  // These animate once when the page loads
+  
   // Animate main text on load
   gsap.from('.headline', {
     duration: 1.5,
@@ -22,7 +25,7 @@ export function initAnimations() {
     delay: 0.6
   });
 
-  // Animate navigation
+  // Animate navigation on load
   gsap.from('.site-header .container > div', {
     duration: 1,
     y: -20,
@@ -31,43 +34,69 @@ export function initAnimations() {
     ease: 'power3.out'
   });
 
-  // Animate transition space
+  // Set initial state for transition space (no animation on load)
   gsap.set('.transition-space', {
     scale: 0.9,
     opacity: 0
   });
 
-  // Scroll-triggered animations
-  gsap.from('.secondary-text li', {
-    scrollTrigger: {
-      trigger: '.secondary-text',
-      start: 'top 80%',
-      end: 'bottom 20%',
-      toggleActions: 'play none none reverse'
+  // ===== SCROLL-TRIGGERED ANIMATIONS =====
+  // These animate when elements come into view
+  
+  // Animate secondary text list items on scroll
+  gsap.fromTo('.secondary-text li', 
+    {
+      y: 30,
+      opacity: 0
     },
-    duration: 0.8,
-    y: 30,
-    opacity: 0,
-    stagger: 0.2,
-    ease: 'power3.out'
-  });
+    {
+      scrollTrigger: {
+        trigger: '.secondary-text',
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse'
+      },
+      duration: 0.8,
+      y: 0,
+      opacity: 1,
+      stagger: 0.2,
+      ease: 'power3.out'
+    }
+  );
 
-  gsap.from('.third-section .third-box', {
-    scrollTrigger: {
-      trigger: '.third-section',
-      start: 'top 80%'
+  // Animate third section boxes on scroll
+  gsap.fromTo('.third-section .third-box',
+    {
+      scale: 0.8,
+      rotation: 10,
+      opacity: 0
     },
-    duration: 1.2,
-    scale: 0.8,
-    rotation: 10,
-    opacity: 0,
-    ease: 'back.out(1.7)'
+    {
+      scrollTrigger: {
+        trigger: '.third-section',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      duration: 1.2,
+      scale: 1,
+      rotation: 0,
+      opacity: 1,
+      ease: 'back.out(1.7)'
+    }
+  );
+
+  // Animate chromatic text on scroll
+  // Note: Set initial state in CSS or here
+  gsap.set('.chromatic-text', {
+    x: -50, // or whatever initial offset you want
+    opacity: 0
   });
 
   gsap.to('.chromatic-text', {
     scrollTrigger: {
       trigger: '.third-list',
-      start: 'top 80%'
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
     },
     duration: 1,
     x: 0,
