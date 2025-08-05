@@ -51,10 +51,11 @@ button{
   display: flex;
   justify-content: flex-end; /* align content to right */
   align-items: center;
-  font-size: 4rem;
+  font-size: 3rem;
   z-index: 1000;
   padding-right: 5vw; /* optional: breathing room from edge */
   cursor:progress;
+  font-weight: bold;
 }
 
 #loading-screen .shuffling-wrapper {
@@ -152,6 +153,7 @@ button:hover{
   position:fixed;
   z-index: 1000; /* Ensures header is above other content */
   background-color: #f8f9fa;
+  font-weight: bold;
 }
 
 .container {
@@ -491,7 +493,7 @@ button:hover{
   }
 
   #loading-screen {
-    font-size:1.5em
+    font-size:1.2em
   }
 
   .site-header .container {
