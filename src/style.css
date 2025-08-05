@@ -54,6 +54,7 @@ button{
   font-size: 4rem;
   z-index: 1000;
   padding-right: 5vw; /* optional: breathing room from edge */
+  cursor:progress;
 }
 
 #loading-screen .shuffling-wrapper {
@@ -98,6 +99,7 @@ button{
   animation: growText 30s infinite linear;
   transform-origin: center;
   font-family: 'Courier New', Courier, monospace;
+  cursor:progress;
 }
 
 @keyframes growText {
@@ -112,15 +114,6 @@ button{
   }
 }
 
-.center-text {
-  position: relative;
-  z-index: 2;
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: center;
-  max-width: 80%;
-  transition: all 0.3s ease;
-}
 
 /* (tap) Button Next to Headline Word */
 .tap-button {
@@ -134,6 +127,7 @@ button{
   top: -0.1em;
   transition: color 0.2s ease;
   text-transform: lowercase;
+  font-weight: bold;
 }
 
 .tap-button.small {
@@ -142,7 +136,7 @@ button{
 
 button:hover{
   text-decoration: line-through;
-  color: #212529
+  color: #212529;
 }
 
 .trigger-text-container {
@@ -307,6 +301,7 @@ button:hover{
   transition: opacity 0.6s ease-in-out, max-height 0.6s ease-in-out, margin 0.6s ease-in-out;
   overflow: hidden; /* Prevent content overflow when collapsing */
   padding:20% 0 30% 0;
+  cursor: context-menu;
 }
 
 .main-text.hide {
@@ -376,7 +371,7 @@ button:hover{
 }
 
 .overlay .close-overlay:hover {
-  background-color: rgba(248, 249, 250, 0.1);
+  background-color: #212529;;
   border-radius: 4px;
 }
 

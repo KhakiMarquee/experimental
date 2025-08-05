@@ -12,6 +12,7 @@ export function initUI() {
   const overlayTapButtons = document.querySelectorAll('.tap-button[data-overlay]');
   const clickableWords = document.querySelectorAll('.clickable-word[data-overlay]');
   const mainText = document.querySelector('.main-text');
+  const secondaryText = document.querySelector('.overlay');
   const transitionButton = document.querySelector('.main-text .tap-button:not([data-overlay])');
   const transitionSpace = document.querySelector('.transition-space');
   const container = document.querySelector('.site-body .container');
@@ -49,14 +50,17 @@ export function initUI() {
       if (activeOverlay === overlayEl) {
         overlayEl.classList.remove('show');
         mainText?.classList.remove('main-content-hidden');
+        secondaryText?.classList.remove('main-content-hidden');
         activeOverlay = null;
       } else {
         if (activeOverlay) {
           activeOverlay.classList.remove('show');
           mainText?.classList.remove('main-content-hidden')
+          secondaryText?.classList.remove('main-content-hidden');
         }
         overlayEl.classList.add('show');
         mainText?.classList.add('main-content-hidden');
+        secondaryText?.classList.add('main-content-hidden');
         activeOverlay = overlayEl;
       }
     });
@@ -67,6 +71,7 @@ export function initUI() {
     if (activeOverlay) {
       animateOverlayClose(activeOverlay);
       mainText?.classList.remove('main-content-hidden');
+      secondaryText?.classList.remove('main-content-hidden');
       activeOverlay = null;
     }
   });
@@ -79,6 +84,7 @@ export function initUI() {
       if (overlay) {
         animateOverlayClose(overlay);
         mainText?.classList.remove('main-content-hidden');
+        secondaryText?.classList.remove('main-content-hidden');
         if (activeOverlay === overlay) {
           activeOverlay = null;
         }
