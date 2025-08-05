@@ -58,7 +58,7 @@ export function initAnimations() {
     {
       scrollTrigger: {
         trigger: '.secondary-text',
-        start: 'top 70%',
+        start: 'top 80%',
         end: 'bottom 20%',
         toggleActions: 'play none none reverse'
       },
@@ -101,7 +101,7 @@ export function initAnimations() {
   gsap.to('.chromatic-text', {
     scrollTrigger: {
       trigger: '.third-list',
-      start: 'top 50%',
+      start: 'top 90%',
       toggleActions: 'play none none reverse'
     },
     duration: 1,
