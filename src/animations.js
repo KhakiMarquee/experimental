@@ -41,7 +41,7 @@ export function initAnimations() {
   gsap.from('.secondary-text li', {
     scrollTrigger: {
       trigger: '.secondary-text',
-      start: 'top 90%',
+      start: 'top 80%',
       end: 'bottom 20%',
       toggleActions: 'play none none reverse'
     },
