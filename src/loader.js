@@ -56,7 +56,7 @@ const fillBackgroundText = () => {
 
 
 
-fillBackgroundText();
+//fillBackgroundText();
 updateCenterText();
 
 const showLoading = () => {
