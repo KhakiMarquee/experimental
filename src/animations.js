@@ -101,7 +101,7 @@ export function initAnimations() {
   gsap.to('.chromatic-text', {
     scrollTrigger: {
       trigger: '.third-list',
-      start: 'top 85%',
+      start: 'top 50%',
       toggleActions: 'play none none reverse'
     },
     duration: 1,
