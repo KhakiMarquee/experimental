@@ -83,8 +83,8 @@ button{
 #loading-screen.loaded {
   background: none !important;
   z-index: 0 !important;
-  opacity:0.3;
-  scale:1.6;
+  opacity:0.2;
+  scale:3;
   cursor: default;
 }
 #app {
@@ -224,7 +224,6 @@ footer ul{
   list-style: none;
   margin: 0 auto;
   display: grid;
-  padding: 1rem 2rem;
   grid-template-columns: repeat(12, 1fr); /* Matches main grid */
 }
 
@@ -553,7 +552,9 @@ footer li:last-of-type{
   .site-header .container {
      padding: 1rem 2rem;
   }
-
+  footer{
+    padding: 1rem 2rem;
+  }
   .logo {
     text-align: center;
     width: 100%;
