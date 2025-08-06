@@ -22,6 +22,18 @@ body {
   letter-spacing: 0em; /* Default letter spacing */
 }
 
+a, #location-toggle {
+  text-decoration: none; 
+  color:inherit;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover, #location-toggle:hover{
+  
+  transform: scale(1.05);
+  text-shadow: 2px 2px 10px #e9ecef;
+}
+
 .blend-edges {
   mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
@@ -45,6 +57,22 @@ button{
   color: #495057;
 }
 
+/*FADE*/
+.fade-text {
+  transition: opacity 0.4s ease;
+  cursor: pointer;
+}
+
+.fade-text.fade-out {
+  opacity: 0;
+}
+
+/*BOLD TEXT*/
+
+.logo, footer li p:first-of-type, #loading-screen, .site-header, .third-list p{
+  font-weight:bold;
+}
+
 /*LOADER */
 
 #loading-screen {
@@ -58,7 +86,6 @@ button{
   font-size: 3rem;
   z-index: 1000;
   cursor:progress;
-  font-weight: bold;
   font-size: 2rem;
   line-height: 1.4;
   padding-right: 5vw;
@@ -133,24 +160,25 @@ button{
 .tap-button {
   all: unset; /* Remove default button styles */
   font-style: italic;
-  font-size: 0.8em;
-  margin-left: 0.3em;
+  font-size: 0.8rem;
   cursor: pointer;
   color: #ced4da;
   position: relative;
-  top: -0.1em;
   transition: color 0.2s ease;
   text-transform: lowercase;
-  font-weight: bold;
+  font-weight:bold;
+  
+
 }
 
 .tap-button.small {
-  font-size: 0.8rem;
+  right:50%;
 }
 
 button:hover{
-  text-decoration: line-through;
-  color: #212529;
+  transform: scale(1.05);
+  text-shadow: 2px 2px 10px #e9ecef;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
 
 .trigger-text-container {
@@ -166,7 +194,6 @@ button:hover{
   position:fixed;
   z-index: 1000; /* Ensures header is above other content */
   background-color: #f8f9fa;
-  font-weight: bold;
 }
 
 .container {
@@ -197,7 +224,6 @@ button:hover{
 .logo {
   grid-column: 5 / span 4; /* Centers logo */
   text-align: center;
-  font-weight: bold;
   font-size: 1rem;
 }
 
@@ -239,9 +265,12 @@ footer li:first-of-type{
     text-overflow: ellipsis;
 }
 
+
+
 footer li p:last-of-type{
   font-weight:lighter;
-  text-decoration: underline;
+  text-decoration: underline!important;
+  text-underline-offset: 0.15em;
   font-style: italics;
   line-height:2em;
 }
@@ -429,7 +458,7 @@ footer li:last-of-type{
 }
 
 .overlay .close-overlay:hover {
-  background-color: #212529;;
+  opacity: 0.5;
   border-radius: 4px;
 }
 
@@ -537,7 +566,6 @@ footer li:last-of-type{
 /* Right list */
 .third-list p {
   text-align: right;
-  font-weight: bold;
 }
 
 
@@ -637,7 +665,7 @@ footer li:last-of-type{
   }
 
   .secondary-text ul li{
-      font-size: 4em;
+      font-size: 4.5em;
       color: #adb5bd;
       transition: all ease-in;
 

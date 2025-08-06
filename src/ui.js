@@ -190,6 +190,22 @@ function initOverlays() {
     }
   });
 }
+  // Working Globally
+  const locationText = document.getElementById('location-toggle');
+
+  locationText.addEventListener('click', () => {
+    // Start fade out
+    locationText.classList.add('fade-out');
+
+    // After fade out is done, switch text and fade back in
+    setTimeout(() => {
+      const isLondon = locationText.textContent.trim().toLowerCase() === 'based in london';
+      locationText.textContent = isLondon ? 'working globally' : 'based in london';
+
+      // Fade back in
+      locationText.classList.remove('fade-out');
+    }, 400); // Matches CSS transition duration
+  });
 
 export function initUI() {
   console.log('Initializing UI...'); // Debug log
