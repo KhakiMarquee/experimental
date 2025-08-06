@@ -207,6 +207,22 @@ function initOverlays() {
     }, 400); // Matches CSS transition duration
   });
 
+    const contactText = document.getElementById('contact-toggle');
+
+  contactText.addEventListener('click', () => {
+    // Start fade out
+    contactText.classList.add('fade-out');
+
+    // After fade out is done, switch text and fade back in
+    setTimeout(() => {
+      const isLondon = contactText.textContent.trim().toLowerCase() === 'goke.studio@gmail.com';
+      contactText.textContent = isLondon ? 'work with us' : 'goke.studio@gmail.com';
+
+      // Fade back in
+      contactText.classList.remove('fade-out');
+    }, 400); // Matches CSS transition duration
+  });
+
 export function initUI() {
   console.log('Initializing UI...'); // Debug log
   

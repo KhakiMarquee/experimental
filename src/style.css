@@ -22,15 +22,13 @@ body {
   letter-spacing: 0em; /* Default letter spacing */
 }
 
-a, #location-toggle {
+a{
   text-decoration: none; 
   color:inherit;
   transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
 
 a:hover, #location-toggle:hover{
-  
-  transform: scale(1.05);
   text-shadow: 2px 2px 10px #e9ecef;
 }
 
@@ -164,7 +162,6 @@ button{
   cursor: pointer;
   color: #ced4da;
   position: relative;
-  transition: color 0.2s ease;
   text-transform: lowercase;
   font-weight:bold;
   
@@ -176,7 +173,7 @@ button{
 }
 
 button:hover{
-  transform: scale(1.05);
+  transform: scale(1.05)!important;
   text-shadow: 2px 2px 10px #e9ecef;
   transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
@@ -247,8 +244,11 @@ footer {
   justify-content: flex-end;
   border-top: 1px solid #dee2e6; 
   min-height: 250px;
-  text-transform: capitalize;
   color: white;
+}
+
+footer li p::first-letter{
+  text-transform: capitalize;
 }
 
 footer ul{
