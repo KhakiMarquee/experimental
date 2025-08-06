@@ -195,7 +195,9 @@ export function initUI() {
   console.log('Initializing UI...'); // Debug log
   
   // Initialize GSAP animations
-  initAnimations();
+  document.addEventListener("DOMContentLoaded", () => {
+    initAnimations();
+  });
 
   // Initialize overlays - THIS WAS MISSING!
   initOverlays();
