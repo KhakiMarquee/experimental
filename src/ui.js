@@ -195,9 +195,9 @@ export function initUI() {
   console.log('Initializing UI...'); // Debug log
   
   // Initialize GSAP animations
-  document.addEventListener("DOMContentLoaded", () => {
-    initAnimations();
-  });
+  
+  if (window.innerWidth >= 769) {initAnimations();}
+  
 
   // Initialize overlays - THIS WAS MISSING!
   initOverlays();
