@@ -22,6 +22,10 @@ body {
   letter-spacing: 0em; /* Default letter spacing */
 }
 
+.blend-edges {
+  mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+}
 
 /* ICONS */
 .icon{
