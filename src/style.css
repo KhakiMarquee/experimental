@@ -16,7 +16,7 @@ html, body {
 
 body {
   font-family: system-ui; /* Sets base font */
-  background: inherit; /* Sets background color */
+  background-color: inherit; /* Sets background color */
   color: inherit; /* Sets text color */
   line-height: 1.2; /* Improves readability */
   letter-spacing: 0em; /* Default letter spacing */
