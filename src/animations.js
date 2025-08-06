@@ -91,6 +91,25 @@ export function initAnimations() {
     }
   );
 
+    // Animate footerboxes on scroll
+  gsap.fromTo('footer',
+    {
+      opacity: 0,
+       y: 30
+    },
+    {
+      scrollTrigger: {
+        trigger: 'footer',
+        start: 'top 90%',
+        toggleActions: 'play none none reverse'
+      },
+      duration: 1.2,
+      y:0,
+      opacity: 1,
+      ease: 'back.out(1.7)'
+    }
+  );
+
   // Animate chromatic text on scroll
   // Note: Set initial state in CSS or here
   gsap.set('.chromatic-text', {
