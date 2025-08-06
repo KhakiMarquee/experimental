@@ -56,6 +56,7 @@ const fillBackgroundText = () => {
 
 
 
+
 //fillBackgroundText();
 updateCenterText();
 
@@ -67,8 +68,10 @@ const showLoading = () => {
 };
 
 const hideLoading = () => {
-  const screen = document.getElementById('loading-screen');
+  const screen = document.getElementById('ls-small');
+  const lscreen = document.getElementById('loading-screen');
   if (screen) screen.style.display = 'none';
+  if (lscreen) lscreen.classList.add('loaded');
 };
 
 const moveSiteBodyToApp = () => {

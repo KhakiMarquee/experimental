@@ -58,8 +58,8 @@ export function initAnimations() {
     {
       scrollTrigger: {
         trigger: '.secondary-text',
-        start: 'top 80%',
-        end: 'bottom 20%',
+        start: 'top 90%',
+        end: 'bottom 10%',
         toggleActions: 'play none none reverse'
       },
       duration: 0.8,

@@ -42,7 +42,7 @@ export function initThreeScene() {
   // Load Model
   const loader = new GLTFLoader();
   loader.load(
-    'https://freight.cargo.site/m/B2481934295382523787350179663841/landscape.glb',
+    'hhttps://freight.cargo.site/m/H2488513855210970242933808517089/landscape.glb',
     (gltf) => {
       const model = gltf.scene;
       scene.add(model);
