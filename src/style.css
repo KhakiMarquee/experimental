@@ -16,7 +16,7 @@ html, body {
 
 body {
   font-family: system-ui; /* Sets base font */
-  background-color: inherit; /* Sets background color */
+  background: inherit; /* Sets background color */
   color: inherit; /* Sets text color */
   line-height: 1.2; /* Improves readability */
   letter-spacing: 0em; /* Default letter spacing */
@@ -67,7 +67,7 @@ button{
 
 /*BOLD TEXT*/
 
-.logo, footer li p:first-of-type, #loading-screen, .site-header, .third-list p{
+.logo, footer li p:first-of-type, #loading-screen, .site-header, .third-list p, .close-overlay, #close-three-container {
   font-weight:bold;
 }
 
@@ -173,9 +173,9 @@ button{
 }
 
 button:hover{
-  transform: scale(1.05)!important;
-  text-shadow: 2px 2px 10px #e9ecef;
-  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  transform: scale(1.05);
+  color: #495057;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .trigger-text-container {
@@ -211,11 +211,6 @@ button:hover{
 
 .nav-left {
   grid-column: 1 / span 3; /* Left-aligned section */
-  font-size: 0.9rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
 }
 
 .logo {
@@ -226,8 +221,13 @@ button:hover{
 
 .nav-right {
   grid-column: 10 / span 3; /* Right-aligned section */
-  font-size: 0.9rem;
   text-align: right;
+
+}
+
+.nav-left, .nav-right, .logo{
+  font-size:0.9rem;
+  opacity:0.5;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
@@ -336,8 +336,8 @@ footer li:last-of-type{
 
 .secondary-text ul li:hover {
   transform: scale(1.05);
-  text-shadow: 2px 2px 10px #e9ecef;
-  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  color: #495057;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .secondary-text ul {
@@ -443,7 +443,7 @@ footer li:last-of-type{
   opacity: 1;
 }
 
-.overlay .close-overlay {
+.overlay .close-overlay, #close-three-container {
   position: absolute;
   top: 4em; /* Match your existing #close-three-container positioning */
   right: 20px; /* Match your existing positioning */
@@ -454,12 +454,11 @@ footer li:last-of-type{
   cursor: pointer;
   z-index: 1001;
   padding: 8px 12px; /* Match your existing padding */
-  transition: background-color 0.3s ease;
+  transition: text-shadow 0.3s ease;
 }
 
-.overlay .close-overlay:hover {
-  opacity: 0.5;
-  border-radius: 4px;
+.overlay .close-overlay:hover, #close-three-container:hover {
+  text-shadow: 2px 2px 10px #e9ecef;
 }
 
 /* Hide main content when overlay is active */
@@ -502,21 +501,6 @@ footer li:last-of-type{
 }
 
 /*OVERLAY ENDS*/
-
-/* Close button */
-#close-three-container {
-  position: absolute;
-  right: 20px;
-  top:4em;
-  z-index: 2;
-  background-color: none;
-  color: #f8f9fa;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-}
 
 /*THIRD*/
 .third-section {
