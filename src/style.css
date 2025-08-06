@@ -61,6 +61,7 @@ button{
   font-weight: bold;
   font-size: 2rem;
   line-height: 1.4;
+  padding-right: 5vw;
 }
 
 #loading-screen .shuffling-wrapper {
@@ -109,7 +110,7 @@ button{
   animation: growText 30s infinite linear;
   transform-origin: center;
   font-family: 'Courier New', Courier, monospace;
-  cursor:progress;
+  cursor: progress;
   padding-right: 5vw; /* optional: breathing room from edge */
 }
 
