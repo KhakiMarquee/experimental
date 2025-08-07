@@ -1,8 +1,7 @@
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-
-// Initialize the Three.js scene
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 export function initThreeScene() {
   const container = document.getElementById('three-container');
@@ -20,7 +19,77 @@ export function initThreeScene() {
   renderer.setPixelRatio(window.devicePixelRatio);
   container.appendChild(renderer.domElement);
 
-  // Resize listener
+  const controls = new OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+
+  // Lighting
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x444444, 1));
+  const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+  dirLight.position.set(5, 10, 7.5);
+  scene.add(dirLight);
+
+  // ✅ Declare and set up DRACO and GLTF loaders
+  const dracoLoader = new DRACOLoader();
+  dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
+
+  const loader = new GLTFLoader();
+  loader.setDRACOLoader(dracoLoader);
+
+  // Load the GLB
+  loader.load(
+    'https://freight.cargo.site/m/S2490051856888440866342665801697/landscape.glb',
+    (gltf) => {
+      const model = gltf.scene;
+      scene.add(model);
+
+      // Optional: center model
+      const box = new THREE.Box3().setFromObject(model);
+      const center = box.getCenter(new THREE.Vector3());
+      model.position.sub(center);
+
+      // Try to find a camera by name
+
+      console.log('Available cameras:', gltf.cameras?.map(cam => cam.name));
+
+      let namedCamera = gltf.cameras?.find(cam => cam.name === 'mainView');
+
+      if (!namedCamera) {
+        // fallback: search scene graph
+        namedCamera = model.getObjectByName('mainView');
+        if (namedCamera && !namedCamera.isCamera) namedCamera = null;
+      }
+      if (namedCamera) {
+        camera.copy(namedCamera);
+        camera.updateProjectionMatrix();
+        
+        // Extract camera world position
+        const camWorldPos = new THREE.Vector3();
+        namedCamera.getWorldPosition(camWorldPos);
+
+        // Extract camera world direction (normalized)
+        const camWorldDir = new THREE.Vector3();
+        namedCamera.getWorldDirection(camWorldDir);
+
+        // Calculate a target point some distance ahead along the direction vector
+        const targetDistance = 10; // adjust as needed
+        const camTarget = camWorldPos.clone().add(camWorldDir.multiplyScalar(targetDistance));
+        controls.object = camera;
+        controls.target.copy(camTarget);
+        controls.update();
+        
+      } else {
+        console.warn('Named camera not found in glTF file.');
+      }
+
+      dracoLoader.dispose();
+    },
+    undefined,
+    (error) => {
+      console.error('Error loading GLB:', error);
+    }
+  );
+
+  // Resize handling
   window.addEventListener('resize', () => {
     const newWidth = container.clientWidth;
     const newHeight = window.innerHeight;
@@ -29,39 +98,7 @@ export function initThreeScene() {
     renderer.setSize(newWidth, newHeight);
   });
 
-  // Lighting
-  scene.add(new THREE.HemisphereLight(0xffffff, 0x444444, 1));
-  const dirLight = new THREE.DirectionalLight(0xffffff, 1);
-  dirLight.position.set(5, 10, 7.5);
-  scene.add(dirLight);
-
-  // Controls
-  const controls = new OrbitControls(camera, renderer.domElement);
-  controls.enableDamping = true;
-
-  // Load Model
-  const loader = new GLTFLoader();
-  loader.load(
-    'hhttps://freight.cargo.site/m/H2488513855210970242933808517089/landscape.glb',
-    (gltf) => {
-      const model = gltf.scene;
-      scene.add(model);
-
-      const box = new THREE.Box3().setFromObject(model);
-      const center = box.getCenter(new THREE.Vector3());
-      model.position.sub(center);
-    },
-    undefined,
-    (err) => console.error('GLTF load error:', err)
-  );
-
-  // Resize
-  window.addEventListener('resize', () => {
-    camera.aspect = container.clientWidth / container.clientHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(container.clientWidth, container.clientHeight);
-  });
-
+  // Animate
   function animate() {
     requestAnimationFrame(animate);
     controls.update();
