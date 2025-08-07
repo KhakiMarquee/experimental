@@ -267,6 +267,33 @@ export function initUI() {
       }
     });
 
+      mainText.addEventListener('click', () => {
+      const isActive = transitionSpace.classList.contains('active');
+
+      if (!isActive) {
+        transitionSpace.classList.add('active');
+        animateThreeSceneOpen();
+
+        if (!threeSceneInitialized) {
+          threeSceneData = initThreeScene();
+          threeSceneInitialized = true;
+
+          setTimeout(() => {
+            const threeContainer = document.getElementById('three-container');
+            if (threeContainer && threeSceneData) {
+              const width = threeContainer.clientWidth;
+              const height = window.innerHeight;
+              threeSceneData.renderer.setSize(width, height);
+              threeSceneData.camera.aspect = width / height;
+              threeSceneData.camera.updateProjectionMatrix();
+            }
+          }, 800);
+        }
+      }
+    });
+
+
+
     closeContainer.addEventListener('click', () => {
       transitionSpace.classList.remove('active');
       animateThreeSceneClose();
