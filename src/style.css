@@ -556,6 +556,7 @@ footer li:last-of-type{
 /* Right list */
 .third-list p {
   text-align: right;
+  cursor: pointer;
 }
 
 
@@ -706,6 +707,7 @@ footer li:last-of-type{
     top: 0;
     left: 0;
     pointer-events: none;
+    
   }
 
   #chromatic-text .red {

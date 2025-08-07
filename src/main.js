@@ -8,17 +8,23 @@ export function initApp() {
     initUI();
     initStrudelPlayer();
 
-    document.addEventListener('DOMContentLoaded', () => {
-    const items = document.querySelectorAll('.chromatic-text');
+    const items = document.querySelectorAll('.third-list p');
+    console.log('DOMContentLoaded loaded');
+    console.log(document.querySelectorAll('.third-list p'));
+
+    // Determine base URL dynamically
+    const currentPath = window.location.pathname;
+    const basePath = currentPath.substring(0, currentPath.lastIndexOf('/'));
 
     items.forEach(item => {
       item.addEventListener('click', () => {
         const category = item.getAttribute('data-category');
         // Redirect to template page with category in the query string
-        window.location.href = `/template.html?category=${encodeURIComponent(category)}`;
+        window.location.href = `${basePath}/pages/projects.html?category=${encodeURIComponent(category)}`;
+        console.log(category);
       });
     });
-  });
+
   };
 
 
