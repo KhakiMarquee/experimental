@@ -47,9 +47,10 @@ export function initThreeScene() {
       const center = box.getCenter(new THREE.Vector3());
       model.position.sub(center);
 
-      // Try to find a camera by name
+      // Try to find a added objects
 
       console.log('Available cameras:', gltf.cameras?.map(cam => cam.name));
+      console.log('Scene lights:', scene.children.filter(obj => obj.isLight));
 
       let namedCamera = gltf.cameras?.find(cam => cam.name === 'mainView');
 
