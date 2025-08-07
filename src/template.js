@@ -1,3 +1,6 @@
+import 'css/style.css';
+import 'css/projects.css'
+
 function getCategoryFromURL() {
   const params = new URLSearchParams(window.location.search);
   return params.get('category');

@@ -1,6 +1,11 @@
 import { resolve } from 'path';
 
 export default {
+  resolve: {
+    alias: {
+      css: resolve(__dirname, 'css'), // <--- this maps 'css/' to the /css folder
+    },
+  },
   base: '/experimental/',
   build: {
     outDir: 'dist',
@@ -9,7 +14,6 @@ export default {
       input: {
         main: resolve(__dirname, 'index.html'),
         projects: resolve(__dirname, 'pages/projects.html'),
-        // Add other pages here if needed
       },
       output: {
         manualChunks: undefined,
@@ -20,6 +24,3 @@ export default {
     open: true,
   }
 };
-
-
-
