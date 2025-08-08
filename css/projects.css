@@ -3,7 +3,7 @@
 .projects-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 5rem;
+  padding: 5rem 2rem;
   font-family: 'Courier New', Courier, monospace;
   color: #212529;
 }
@@ -42,10 +42,8 @@
 #content {
   display: flex;
   flex-direction: column;
-  gap: 2rem; /* space between rows */
+  gap: 0rem; /* space between rows */
 }
-
-/*
 
 /* Wrap page title + toggle buttons */
 .projects-header {
@@ -87,12 +85,6 @@
   background: #CED4DA;
 }
 
-/* Row view matches PNG proportions */
-.projects-container.row-view .project-row {
-  grid-template-columns: 1fr 2fr;
-  padding: 1rem;
-}
-
 /* Meta info line inside project details */
 .project-meta {
   display: flex;
@@ -105,41 +97,58 @@
 .project-row {
   display: grid;
   gap: 1.5rem;
-  align-items: center;
+  align-items: start; /* Changed from center to start for better alignment */
 }
 
 .project-image img {
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 12px;
 }
-
+/* Update the .project-details to use flexbox for horizontal layout */
 .project-details {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.5rem;
+  flex-direction: row; /* Change to row for horizontal layout */
+  justify-content: space-between; /* This pushes items to opposite ends */
+  align-items: baseline; /* Align text baselines */
+  gap: 1rem; /* Add some gap for spacing */
 }
-
+/* Ensure the title takes up available space and stays on the left */
 .project-details h2 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  flex: 1; /* Allow title to grow and take available space */
 }
-
+/* Keep theme on the right */
 .project-theme {
-  font-weight: bold;
-  color: #495057;
+  flex-shrink: 0; /* Prevent theme from shrinking */
 }
 
 .project-description {
   color: #343A40;
   line-height: 1.5;
+  display: none; /* Hide descriptions by default */
 }
 
 /* ====== ROW VIEW ====== */
+/* Grid layout - each project is a single cell with details above image */
+.projects-container.row-view #content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
 .projects-container.row-view .project-row {
-  grid-template-columns: 1fr 1fr; /* image left, text right */
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-container.row-view .project-details {
+  order: 1; /* Details appear first */
+  margin-bottom: 1rem;
+}
+
+.projects-container.row-view .project-image {
+  order: 2; /* Image appears second */
 }
 
 /* ====== LIST VIEW ====== */
@@ -155,9 +164,28 @@
   display: none;
 }
 
-/* Responsive */
+/* Responsive - Mobile breakpoint */
 @media (max-width: 768px) {
-  .projects-container.row-view .project-row {
-    grid-template-columns: 1fr; /* stack image above text */
+  .projects-container {
+    padding: 2rem 1rem; /* Reduce padding on mobile */
+  }
+  
+  .projects-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .projects-header #page-title {
+    font-size: 2rem; /* Smaller title on mobile */
+  }
+  
+  .projects-container.row-view #content {
+    grid-template-columns: 1fr; /* Single column on mobile */
+  }
+  
+  .project-meta {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }
