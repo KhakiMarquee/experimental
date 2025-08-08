@@ -8,12 +8,11 @@
   display: flex;
   justify-content: flex-end; /* align content to right */
   align-items: center;
-  font-size: 3rem;
   z-index: 1000;
   cursor:progress;
-  font-size: 2rem;
   line-height: 1.4;
   padding-right: 5vw;
+  font-size: 2em;
 }
 
 #loading-screen .shuffling-wrapper {
@@ -48,9 +47,6 @@
 }
 
 .background-text {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   color: #343a40; /* or any low-opacity value */
@@ -63,7 +59,7 @@
   transform-origin: center;
   font-family: 'Courier New', Courier, monospace;
   cursor: progress;
-  padding-right: 5vw; /* optional: breathing room from edge */
+  scale: 2;
 }
 
 
