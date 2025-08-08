@@ -1,9 +1,6 @@
 import { initUI } from '/src/ui.js';
 import { initStrudelPlayer } from '/src/strudel_player.js';
 import { initThreeScene } from '/src/three_scene.js';
-import p5 from 'p5';
-import 'p5.sound';
-import { initSketch } from '/src/sketch.js';
 
 
 export function initApp() {
@@ -12,9 +9,6 @@ export function initApp() {
     initUI();
     initStrudelPlayer();
 
-    //Initilise mold 
-    const targetDiv = document.getElementById('canvas-container');
-    new p5(initSketch, targetDiv);
 
     console.log('Main file loaded successfully');
 
