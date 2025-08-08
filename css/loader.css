@@ -8,18 +8,19 @@
   display: flex;
   justify-content: flex-end; /* align content to right */
   align-items: center;
+  font-size: 3rem;
   z-index: 1000;
   cursor:progress;
+  font-size: 2rem;
   line-height: 1.4;
   padding-right: 5vw;
-  font-size: 2em;
 }
 
 #loading-screen .shuffling-wrapper {
   display: flex;
   justify-content: flex-end; /* align contents inside wrapper to right */
   width: 100%;
-  max-width: 800px; /* optional: control max width */
+  min-width: 225px;
 }
 
 #loading-screen #shuffling-word {
@@ -73,4 +74,11 @@
     transform: scale(2.4);
     opacity: 0.05;
   }
+}
+
+@media (max-width: 768px) {
+  #loading-screen {
+    font-size:1rem
+  }
+
 }

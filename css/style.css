@@ -293,13 +293,8 @@ footer li:last-of-type{
 /* Responsive Styles */
 @media (max-width: 768px) {
 
-/*LOADER*/
   .container {
     grid-template-columns: repeat(6, 1fr); /* Simpler grid for mobile */
-  }
-
-  #loading-screen {
-    font-size:1.2em
   }
   /* Initial hidden state */
   .fade-in {
