@@ -1,4 +1,4 @@
-@import 'css/style.css';
+@import './style.css';
 
 .projects-container {
   max-width: 1200px;
