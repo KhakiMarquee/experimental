@@ -23,7 +23,7 @@ const finalWord = "studio";
 
 let wordIndex = 0;
 let shuffleCount = 0;
-const totalShuffles = 50000;//randInt(20, 50);
+const totalShuffles = randInt(20, 50);
 
 const updateCenterText = () => {
   const shuffleSpan = document.getElementById('shuffling-word');
@@ -70,8 +70,10 @@ const showLoading = () => {
 const hideLoading = () => {
   const screen = document.getElementById('ls-small');
   const lscreen = document.getElementById('loading-screen');
+  const background = document.querySelector('.background-text');
   if (screen) screen.style.display = 'none';
-  if (lscreen) lscreen.classList.add('loaded');
+  if (lscreen) {lscreen.classList.add('loaded'), background.classList.add('loaded')};
+  
 };
 
 const moveSiteBodyToApp = () => {

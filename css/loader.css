@@ -6,21 +6,21 @@
   background: #212529;
   color: #f8f9fa;
   display: flex;
-  justify-content: flex-end; /* align content to right */
   align-items: center;
-  font-size: 3rem;
+  font-size: 2rem;
   z-index: 1000;
   cursor:progress;
-  font-size: 3rem;
   line-height: 1.4;
   padding-right: 5vw;
+  width:100%;
 }
 
 #loading-screen .shuffling-wrapper {
   display: flex;
   justify-content: flex-end; /* align contents inside wrapper to right */
   width: 100%;
-  min-width: 225px;
+  min-height: 1.4em; /* Maintain consistent height */
+  min-width:15ch
 }
 
 #loading-screen #shuffling-word {
@@ -28,12 +28,16 @@
   white-space: nowrap;
   text-align: right;
   direction: rtl; /* makes text grow leftward */
-  min-width: 10ch; /* stabilize size */
+  width: auto; /* Allow natural sizing within constraints */
+  overflow: hidden; /* Prevent text overflow */
+  font-size: inherit; /* Ensure it inherits parent font size */
+  flex-shrink: 0; /* Prevent shrinking in flex container */
 }
 
 #loading-screen span {
   padding: 0;
   margin: 0;
+  display: inline-block; /* Better control over span behavior */
 }
 
 #loading-screen.loaded {
@@ -47,7 +51,7 @@
   padding: 0px;
 }
 
-.background-text {
+.background-text{
   width: 100%;
   height: 100%;
   color: #343a40; /* or any low-opacity value */
@@ -56,30 +60,22 @@
   overflow: hidden;
   word-break: break-word;
   white-space: pre-wrap;
-  animation: growText 30s infinite linear;
   transform-origin: center;
   font-family: 'Courier New', Courier, monospace;
   cursor: progress;
-  position: absolute;
   background-color: #F8F9FA;
+  opacity: 0.2;
+  scale:5;
 }
 
-
-@keyframes growText {
-  0% {
-    /*transform: scale(1);*/
-    transform:scale(2);
-    opacity: 0.3;
-  }
-  100% {
-    transform: scale(2.4);
-    opacity: 0.05;
-  }
+.background-text.loaded{
+  scale:3;
 }
 
 @media (max-width: 768px) {
   #loading-screen {
-    font-size:1rem
+    font-size: 1rem;
+    min-width:20ch;
   }
 
 }
