@@ -4,7 +4,6 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 5rem 2rem;
-  font-family: 'Courier New', Courier, monospace;
   color: #212529;
   font-weight: lighter;
 }
@@ -21,8 +20,7 @@
   font-size: 2rem;
   line-height: 1.4;
   padding-right: 5vw;
-  background-color: #E9ECEF;
-  opacity: 0.5
+  background-color: #F8F9FA
 }
 
 .project-background{
@@ -33,10 +31,10 @@
   overflow: hidden;
   word-break: break-word;
   white-space: pre-wrap;
-  animation: growText 30s infinite linear;
   transform-origin: center;
   cursor: progress;
-  scale: 2;
+  scale: 5;
+  opacity:0.2;
 }
 
 /* Shared project row styling */
@@ -57,6 +55,7 @@
 .project-theme, .project-details h2, #page-title{
   font-weight: lighter;
 }
+
 
 #page-title{
   text-transform: uppercase;
@@ -90,7 +89,6 @@
 
 /* Meta info line inside project details */
 .project-meta {
-  display: flex;
   gap: 2rem;
   font-size: 0.9rem;
   margin-top: 0.5rem;
@@ -101,6 +99,7 @@
   display: grid;
   gap: 1.5rem;
   align-items: start; /* Changed from center to start for better alignment */
+  cursor: pointer;
 }
 
 .project-image img {
@@ -143,11 +142,20 @@
 .projects-container.row-view .project-row {
   display: flex;
   flex-direction: column;
-  margin-bottom: 5em;
+  border: 0px solid #ADB5BD;
+  transition: border 0.3s ease-in;
+  padding-top: 0.2rem;
+}
+
+.projects-container.row-view .project-row:hover .project-image {
+  animation: seeMe 0.3s ease-in forwards;
+}
+.projects-container.row-view .project-row:hover {
+  animation: borderMe 0.3s ease-in forwards;
 }
 
 .projects-container.row-view .project-details {
-  order: 1; /* Details appear first */
+  order: 2; /* Details appear first */
   margin-bottom: 1rem;
   width: 100%;
   position: relative;
@@ -155,7 +163,31 @@
 }
 
 .projects-container.row-view .project-image {
-  order: 2; /* Image appears second */
+  order: 1; /* Image appears second - FIXED */
+  opacity: 0.5;
+}
+
+@keyframes seeMe {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes borderMe {
+  from {
+    border: 0px solid #ADB5BD;
+  }
+  to {
+    border: 1px solid #ADB5BD
+  }
+}
+
+
+.projects-container.row-view .project-meta{
+  display: none;
 }
 
 /* ====== LIST VIEW ====== */
@@ -169,6 +201,10 @@
 
 .projects-container.list-view img{
   display: none;
+}
+
+.project-meta.list-view{
+  display:flex;
 }
 
 /* Responsive - Mobile breakpoint */

@@ -62,7 +62,7 @@ a:hover, #location-toggle:hover{
   position:fixed;
   z-index: 1000; /* Ensures header is above other content */
   background-color: #f8f9fa;
-  color: #ADB5BD
+  color: #6C757D
 }
 
 .container {

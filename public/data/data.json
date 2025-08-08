@@ -2,7 +2,18 @@
   "audiovisuals": [
     {     
       "title": "Project title",
-      "client": "",
+      "client": "One Place",
+      "theme": "Audiovisuals",
+      "description": "A large-scale installation along the Thames.",
+      "image": "https://freight.cargo.site/t/original/i/G2274511396381639602790189060065/Catalina-min.png",
+      "preview-image" : "",
+      "video": "",
+      "type": "Film"
+
+    },
+        {     
+      "title": "Project title",
+      "client": "Two Place",
       "theme": "Audiovisuals",
       "description": "A large-scale installation along the Thames.",
       "image": "https://freight.cargo.site/t/original/i/G2274511396381639602790189060065/Catalina-min.png",
@@ -13,18 +24,7 @@
     },
         {     
       "title": "Project title",
-      "client": "",
-      "theme": "Audiovisuals",
-      "description": "A large-scale installation along the Thames.",
-      "image": "https://freight.cargo.site/t/original/i/G2274511396381639602790189060065/Catalina-min.png",
-      "preview-image" : "",
-      "video": "",
-      "type": ""
-
-    },
-        {     
-      "title": "Project title",
-      "client": "",
+      "client": "Three Place",
       "theme": "Audiovisuals",
       "description": "A large-scale installation along the Thames.",
       "image": "https://freight.cargo.site/t/original/i/G2274511396381639602790189060065/Catalina-min.png",

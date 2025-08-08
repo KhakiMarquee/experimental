@@ -27,8 +27,12 @@ function renderContent(category, jsonPath) {
             </div>
             <div class="project-details">
               <h2>${entry.title}</h2>
-              <p class="project-theme">${entry.theme}</p>
-              <p class="project-description">${entry.body}</p>
+              <span class="project-client">${entry.client}</span>
+              <div class="project-meta">
+                <p class="project-theme">${entry.theme}</p>
+                <p class="project-description">${entry.description}</p>   
+                  <span class="project-type">${entry.type}</span>
+              </div>
             </div>
           `;
           container.appendChild(section);
@@ -53,38 +57,25 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('content').innerHTML = `<p>Invalid category.</p>`;
   }
 
-  // Attach toggle listener after DOM is ready
-  const toggleBtn = document.getElementById('toggle-view');
-  const container = document.querySelector('.projects-container');
+  document.getElementById('grid-view').addEventListener('click', () => {
+    const container = document.querySelector('.projects-container');
+    container.classList.add('row-view');
+    container.classList.remove('list-view');
+    document.getElementById('grid-view').classList.add('active');
+    document.getElementById('list-view').classList.remove('active');
 
-  if (toggleBtn && container) {
-    toggleBtn.addEventListener('click', () => {
-      container.classList.toggle('row-view');
-      container.classList.toggle('list-view');
+  });
 
-      // Change button text dynamically
-      if (container.classList.contains('list-view')) {
-        toggleBtn.textContent = 'Switch to Row View';
-      } else {
-        toggleBtn.textContent = 'Switch to List View';
-      }
-    });
-  }
+  document.getElementById('list-view').addEventListener('click', () => {
+    const container = document.querySelector('.projects-container');
+    container.classList.add('list-view');
+    container.classList.remove('row-view');
+    document.getElementById('list-view').classList.add('active');
+    document.getElementById('grid-view').classList.remove('active');
+    
+  });
+
 });
 
-document.getElementById('grid-view').addEventListener('click', () => {
-  const container = document.querySelector('.projects-container');
-  container.classList.add('row-view');
-  container.classList.remove('list-view');
-  document.getElementById('grid-view').classList.add('active');
-  document.getElementById('list-view').classList.remove('active');
-});
 
-document.getElementById('list-view').addEventListener('click', () => {
-  const container = document.querySelector('.projects-container');
-  container.classList.add('list-view');
-  container.classList.remove('row-view');
-  document.getElementById('list-view').classList.add('active');
-  document.getElementById('grid-view').classList.remove('active');
-});
 
