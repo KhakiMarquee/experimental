@@ -71,3 +71,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+document.getElementById('grid-view').addEventListener('click', () => {
+  const container = document.querySelector('.projects-container');
+  container.classList.add('row-view');
+  container.classList.remove('list-view');
+  document.getElementById('grid-view').classList.add('active');
+  document.getElementById('list-view').classList.remove('active');
+});
+
+document.getElementById('list-view').addEventListener('click', () => {
+  const container = document.querySelector('.projects-container');
+  container.classList.add('list-view');
+  container.classList.remove('row-view');
+  document.getElementById('list-view').classList.add('active');
+  document.getElementById('grid-view').classList.remove('active');
+});
+

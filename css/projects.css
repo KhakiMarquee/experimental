@@ -4,6 +4,38 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 5rem;
+  font-family: 'Courier New', Courier, monospace;
+  color: #212529;
+}
+
+.canvas-screen{
+  position: fixed;
+  inset: 0;
+  color: #f8f9fa;
+  display: flex;
+  justify-content: flex-end; /* align content to right */
+  align-items: center;
+  font-size: 3rem;
+  cursor:progress;
+  font-size: 2rem;
+  line-height: 1.4;
+  padding-right: 5vw;
+  background-color: #E9ECEF;
+  opacity: 0.5
+}
+
+.project-background{
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  word-break: break-word;
+  white-space: pre-wrap;
+  animation: growText 30s infinite linear;
+  transform-origin: center;
+  cursor: progress;
+  scale: 2;
 }
 
 /* Shared project row styling */
@@ -11,6 +43,63 @@
   display: flex;
   flex-direction: column;
   gap: 2rem; /* space between rows */
+}
+
+/*
+
+/* Wrap page title + toggle buttons */
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+#page-title{
+  text-transform: uppercase;
+}
+
+.projects-header #page-title {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+/* New toggle button styles */
+.view-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0; /* Remove margin-bottom from old CSS */
+}
+
+.view-toggle button {
+  padding: 0.4rem 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.view-toggle button.active {
+  background-color: #212529;
+  color: #F8F9FA;
+}
+
+.view-toggle button:hover {
+  background: #CED4DA;
+}
+
+/* Row view matches PNG proportions */
+.projects-container.row-view .project-row {
+  grid-template-columns: 1fr 2fr;
+  padding: 1rem;
+}
+
+/* Meta info line inside project details */
+.project-meta {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: #495057;
 }
 
 .project-row {
@@ -40,26 +129,12 @@
 
 .project-theme {
   font-weight: bold;
-  color: #666;
+  color: #495057;
 }
 
 .project-description {
-  color: #444;
+  color: #343A40;
   line-height: 1.5;
-}
-.view-toggle {
-  margin-bottom: 1.5rem;
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
-  cursor: pointer;
-  border: 1px solid #ccc;
-  background: white;
-  border-radius: 4px;
-  transition: background 0.2s;
-}
-
-.view-toggle:hover {
-  background: #f5f5f5;
 }
 
 /* ====== ROW VIEW ====== */
