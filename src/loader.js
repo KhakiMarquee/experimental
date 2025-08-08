@@ -23,7 +23,7 @@ const finalWord = "studio";
 
 let wordIndex = 0;
 let shuffleCount = 0;
-const totalShuffles = randInt(20, 50);
+const totalShuffles = 50000;//randInt(20, 50);
 
 const updateCenterText = () => {
   const shuffleSpan = document.getElementById('shuffling-word');
