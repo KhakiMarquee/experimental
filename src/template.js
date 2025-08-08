@@ -1,5 +1,5 @@
-import 'css/style.css';
-import 'css/projects.css'
+import '/css/style.css';
+import '/css/projects.css'
 
 function getCategoryFromURL() {
   const params = new URLSearchParams(window.location.search);
