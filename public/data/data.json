@@ -1,12 +1,26 @@
 {
   "audiovisuals": [
-    { "title": "Sound Piece", "body": "A rich soundscape experience." },
-    { "title": "Video Art", "body": "Exploring perception through video." }
+    {     
+      "title": "Project title",
+      "theme": "Audiovisuals",
+      "description": "A large-scale installation along the Thames.",
+      "image": "https://freight.cargo.site/t/original/i/G2274511396381639602790189060065/Catalina-min.png" 
+    }
   ],
   "sculptures": [
-    { "title": "Metal Form", "body": "Industrial design meets organic shape." }
+     {     
+      "title": "project title",
+      "theme": "Sculptures",
+      "description": "A large-scale installation along the Thames.",
+      "image": "https://freight.cargo.site/t/original/i/N962490950896853831746080644787/AI8A0343-1s.jpeg" 
+    }
   ],
   "people": [
-    { "title": "Portrait Series", "body": "An intimate look at strangers." }
+    {     
+      "title": "River Sculpture",
+      "theme": "People",
+      "description": "A large-scale installation along the Thames.",
+      "image": "https://freight.cargo.site/t/original/i/B2365688730285498448876967120865/Dance-Build-v1_00_02_03_04-min.png" 
+    }
   ]
 }
