@@ -1,4 +1,5 @@
 import p5 from 'p5';
+import 'p5.sound';
 import { initSketch } from '/src/sketch.js';
 
 function randInt(min, max) {
