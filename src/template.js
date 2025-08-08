@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const category = getCategoryFromURL();
   if (category) {
     const base = import.meta.env.BASE_URL || '/';
-    const jsonPath = `${base}data/data.json`;
+    const jsonPath = './data/data.json';
     renderContent(category, jsonPath);
   } else {
     document.getElementById('content').innerHTML = `<p>Invalid category.</p>`;
