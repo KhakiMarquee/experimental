@@ -4,6 +4,7 @@ export default {
   resolve: {
     alias: {
       css: resolve(__dirname, 'css'), // <--- this maps 'css/' to the /css folder
+      'p5.sound': resolve(__dirname, 'node_modules/p5.sound/dist/p5.sound.js')
     },
   },
   base: '/experimental/',
