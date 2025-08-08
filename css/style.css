@@ -1,7 +1,7 @@
 @import './ui.css';
 @import './loader.css';
-@import './768.css';
-@import './480.css';
+@import './768.css' screen and (max-width: 768px);
+@import './480.css' screen and (max-width: 480px);
 
 /* Reset & Base */
 *, *::before, *::after {
