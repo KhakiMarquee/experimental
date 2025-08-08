@@ -50,7 +50,6 @@ function renderContent(category, jsonPath) {
 document.addEventListener('DOMContentLoaded', () => {
   const category = getCategoryFromURL();
   if (category) {
-    const base = import.meta.env.BASE_URL || '/';
     const jsonPath = './data/data.json';
     renderContent(category, jsonPath);
   } else {

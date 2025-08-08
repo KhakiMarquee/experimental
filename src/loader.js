@@ -1,3 +1,6 @@
+import p5 from 'p5';
+import { initSketch } from '/src/sketch.js';
+
 function randInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -89,6 +92,9 @@ const intervalDelay = 150;
 
 const bootstrap = async () => {
   showLoading();
+  const targetDiv = document.getElementById('canvas-container');
+  new p5(initSketch, targetDiv);
+  
 
   return new Promise(resolve => {
     const intervalId = setInterval(() => {
