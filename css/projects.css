@@ -6,6 +6,7 @@
   padding: 5rem 2rem;
   font-family: 'Courier New', Courier, monospace;
   color: #212529;
+  font-weight: lighter;
 }
 
 .canvas-screen{
@@ -53,13 +54,15 @@
   margin-bottom: 2rem;
 }
 
-#page-title{
-  text-transform: uppercase;
+.project-theme, .project-details h2, #page-title{
+  font-weight: lighter;
 }
 
-.projects-header #page-title {
+#page-title{
+  text-transform: uppercase;
+  letter-spacing: 5px;
   font-size: 3rem;
-  font-weight: 900;
+  letter-spacing: 5px;
 }
 
 /* New toggle button styles */
@@ -140,11 +143,15 @@
 .projects-container.row-view .project-row {
   display: flex;
   flex-direction: column;
+  margin-bottom: 5em;
 }
 
 .projects-container.row-view .project-details {
   order: 1; /* Details appear first */
   margin-bottom: 1rem;
+  width: 100%;
+  position: relative;
+  padding: 0 0.5em;
 }
 
 .projects-container.row-view .project-image {
@@ -167,7 +174,7 @@
 /* Responsive - Mobile breakpoint */
 @media (max-width: 768px) {
   .projects-container {
-    padding: 2rem 1rem; /* Reduce padding on mobile */
+    padding: 5rem 1rem; /* Reduce padding on mobile */
   }
   
   .projects-header {
