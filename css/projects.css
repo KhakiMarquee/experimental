@@ -47,7 +47,7 @@
 
 .project-details{
   font-weight: 200;
-  letter-spacing: 10px;
+  letter-spacing: 3px;
   text-transform: uppercase;
 }
 
@@ -151,7 +151,6 @@
 
 .projects-container.row-view .project-row:hover .project-details{
   transition: all 0.3s ease-in;
-  letter-spacing: 3px;
 }
 
 .projects-container.row-view .project-details {

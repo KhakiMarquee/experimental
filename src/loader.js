@@ -78,10 +78,12 @@ const hideLoading = () => {
   const background = document.querySelector('.background-text');
   const sheader = document.querySelector('.site-header');
     if (screen) screen.style.display = 'none';
-    if (lscreen) {lscreen.classList.add('loaded')};
-    if(background){background.classList.add('loaded')};
+    if (lscreen instanceof HTMLElement && lscreen.dataset['main']) {
+      lscreen.classList.add('loaded');
+      background.classList.add('loaded');
+    }else if(lscreen instanceof HTMLElement){lscreen.classList.add('loaded');}
+
     if (sheader) sheader.classList.add('loaded');
-  
 };
 
 const moveSiteBodyToApp = () => {
