@@ -20,7 +20,7 @@
   justify-content: flex-end; /* align contents inside wrapper to right */
   width: 100%;
   min-height: 1.4em; /* Maintain consistent height */
-  min-width:15ch
+  min-width:22ch
 }
 
 #loading-screen #shuffling-word {
