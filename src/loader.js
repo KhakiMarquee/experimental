@@ -1,5 +1,4 @@
 import p5 from 'p5';
-import 'p5.sound';
 import { initSketch } from '/src/sketch.js';
 
 function randInt(min, max) {
@@ -93,6 +92,8 @@ const intervalDelay = 150;
 
 const bootstrap = async () => {
   showLoading();
+
+  // p5 sketch
   const targetDiv = document.getElementById('canvas-container');
   new p5(initSketch, targetDiv);
   

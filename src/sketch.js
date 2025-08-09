@@ -1,4 +1,5 @@
 import{ Mold } from '/src/mold.js';
+
 export function initSketch(p) {
     let molds = [];
     let num = 4000;
