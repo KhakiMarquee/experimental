@@ -41,7 +41,7 @@
   margin-bottom: 2rem;
 }
 
-.project-theme, #page-title, .project-details {
+.project-theme, #page-title {
   font-weight: lighter;
 }
 
@@ -54,7 +54,7 @@
 
 #page-title{
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: 10px;
   font-size: 6rem;
   }
 
@@ -79,6 +79,7 @@
 
 .view-toggle button:hover {
   background: #f8f9fa;
+  color: #212529;
 }
 
 /* Meta info line inside project details */
@@ -151,7 +152,6 @@
 .projects-container.row-view .project-row:hover .project-details{
   transition: all 0.3s ease-in;
   letter-spacing: 3px;
-  font-weight:500;
 }
 
 .projects-container.row-view .project-details {
@@ -160,6 +160,7 @@
   width: 100%;
   position: relative;
   padding: 0 0.5em;
+  font-weight:500;
 }
 
 .projects-container.row-view .project-image {
