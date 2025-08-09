@@ -50,7 +50,9 @@ function renderContent(category, jsonPath) {
 document.addEventListener('DOMContentLoaded', () => {
   const category = getCategoryFromURL();
   if (category) {
-    const jsonPath = './data/data.json';
+    const basePath = '/experimental'; // or for local previews
+    const jsonPath = `${basePath}/data/data.json`;
+    // const jsonPath = `/data/data.json`;
     renderContent(category, jsonPath);
   } else {
     document.getElementById('content').innerHTML = `<p>Invalid category.</p>`;
