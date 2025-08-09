@@ -78,7 +78,7 @@ const hideLoading = () => {
   const background = document.querySelector('.background-text');
   const sheader = document.querySelector('.site-header');
     if (screen) screen.style.display = 'none';
-    if (lscreen instanceof HTMLElement && lscreen.dataset['main']) {
+    if (lscreen instanceof HTMLElement && lscreen.dataset.overlay === 'main') {
       lscreen.classList.add('loaded');
       background.classList.add('loaded');
     }else if(lscreen instanceof HTMLElement){lscreen.classList.add('loaded');}

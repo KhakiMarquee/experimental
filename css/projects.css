@@ -3,10 +3,9 @@
 
 .projects-container {
   margin: 0 auto;
-  padding: 5rem 2rem;
+  padding: 10rem 2rem;
   color: #212529;
 }
-
 
 
 .project-background{
@@ -137,7 +136,7 @@
 .projects-container.row-view .project-row {
   display: flex;
   flex-direction: column;
-  border: 0px solid #212529;
+  border-bottom: 0px solid #212529;
   transition: border 0.3s ease-in;
   padding-top: 0.2rem;
 }
@@ -178,11 +177,11 @@
 
 @keyframes borderMe {
   from {
-    border: 0px solid #212529;
+    border-bottom: 0px solid #212529;
     background-color: none;
   }
   to {
-    border: 2px solid #212529;
+    border-bottom: 2px solid #212529;
     background-color: #f8f9fa;
   }
 }
