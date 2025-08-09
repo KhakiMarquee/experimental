@@ -65,17 +65,22 @@ updateCenterText();
 
 const showLoading = () => {
   const screen = document.getElementById('loading-screen');
-  if (screen) {
-    screen.style.display = 'flex';
-  }
+  const lscreen = document.getElementById('ls-small');
+  const sheader = document.querySelector('.site-header');
+    if (screen) {screen.style.display = 'flex';}
+    if (lscreen) {lscreen.classList.remove('loaded')};
+    if (sheader) sheader.classList.remove('loaded');
 };
 
 const hideLoading = () => {
   const screen = document.getElementById('ls-small');
   const lscreen = document.getElementById('loading-screen');
   const background = document.querySelector('.background-text');
-  if (screen) screen.style.display = 'none';
-  if (lscreen) {lscreen.classList.add('loaded'), background.classList.add('loaded')};
+  const sheader = document.querySelector('.site-header');
+    if (screen) screen.style.display = 'none';
+    if (lscreen) {lscreen.classList.add('loaded')};
+    if(background){background.classList.add('loaded')};
+    if (sheader) sheader.classList.add('loaded');
   
 };
 

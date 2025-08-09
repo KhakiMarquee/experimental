@@ -35,15 +35,16 @@ body {
 
 
 a{
-  text-decoration:none;
+  text-decoration:underline;
+  text-decoration-color:transparent;
   color:inherit;
-  transition: transform 0.3s ease, color 0.3s ease, text-decoration 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease, text-decoration-color 0.3s ease;
 
 }
 
 a:hover, #location-toggle:hover{
   color: #495057;
-  text-decoration:underline
+  text-decoration-color:#495057;
 }
 
 #location-toggle{
@@ -60,7 +61,7 @@ a:hover, #location-toggle:hover{
   padding: 0; /* Vertical spacing */  
   border-bottom: 1px solid #dee2e6; /* Thin top border */
   position:fixed;
-  z-index: 1000; /* Ensures header is above other content */
+  z-index: -1; /* Ensures header is above other content */
   background-color: #f8f9fa;
   color: #6C757D
 }
@@ -208,6 +209,10 @@ footer li:last-of-type{
   transform: scale(1.05);
   color: #495057;
   transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.secondary-text ul li:hover .tap-button {
+  color: #CED4DA
 }
 
 .secondary-text ul {

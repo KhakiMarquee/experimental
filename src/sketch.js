@@ -2,11 +2,11 @@ import{ Mold } from '/src/mold.js';
 
 export function initSketch(p) {
     let molds = [];
-    let num = 7500;
+    let num = 5000;
     let d;
 
     p.setup = function() {
-        p.createCanvas(1500, 1500);
+        p.createCanvas(p.windowWidth, p.windowHeight).parent('canvas-container');
         p.angleMode(p.DEGREES);
         d = p.pixelDensity();
         
@@ -31,5 +31,8 @@ export function initSketch(p) {
         if (p.frameCount % 60 === 0) {
             console.log(`FPS: ${p.frameRate().toFixed(1)}`);
         }
+    };
+    p.windowResized = () => {
+        p.resizeCanvas(p.windowWidth, p.windowHeight);
     };
 }

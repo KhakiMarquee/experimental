@@ -6,7 +6,6 @@ export default {
       css: resolve(__dirname, 'css'), // your css alias
     },
   },
-  base: '/experimental/',
   optimizeDeps: {
     exclude: ['p5.sound'], // exclude p5.sound from pre-bundling
   },

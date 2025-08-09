@@ -5,7 +5,7 @@ export class Mold {
         
         this.x = this.p.random(this.p.width);
         this.y = this.p.random(this.p.height);
-        this.r = 0.5;
+        this.r = 0.7;
         
         this.heading = this.p.random(360);
         this.vx = this.p.cos(this.heading);

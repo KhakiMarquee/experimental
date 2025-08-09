@@ -32,10 +32,11 @@ button{
   font-style: italic;
   font-size: 0.8rem;
   cursor: pointer;
-  color: #ced4da;
+  color: #000000;
   position: relative;
   text-transform: lowercase;
   font-weight:bold;
+  transition: color 0.3s ease;
 }
 
 .tap-button.small {
@@ -45,7 +46,7 @@ button{
 button:hover{
   transform: scale(1.05);
   color: #495057;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease
 }
 
 .trigger-text-container {
@@ -72,10 +73,11 @@ button:hover{
 }
 
 .main-text {
-  transition: opacity 0.6s ease-in-out, max-height 0.6s ease-in-out, margin 0.6s ease-in-out;
+  transition: opacity 0.6s ease-in-out, max-height 0.6s ease-in-out, margin 0.6s ease-in-out, colour 0.3s ease-in;
   overflow: hidden; /* Prevent content overflow when collapsing */
   padding:20% 0;
   cursor: pointer;
+  color: #495057
 }
 
 .main-text.hide {
@@ -83,6 +85,23 @@ button:hover{
   max-height: 0;     /* Collapse the space */
   margin: 0;         /* Remove vertical margin */
   padding: 0;
+}
+
+.main-text:hover .tap-button{
+  color:#CED4DA;
+}
+
+.main-text .headline u{
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.3s ease;
+}
+
+.main-text:hover .headline u{
+  text-decoration-color: inherit;
+}
+
+.main-text:hover{
+  color:#212529;
 }
 
 .container.collapse {
@@ -146,6 +165,7 @@ button:hover{
 
 .overlay .close-overlay:hover, #close-three-container:hover {
   opacity: 0.5;
+  
 }
 
 /* Hide main content when overlay is active */
