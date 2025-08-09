@@ -67,6 +67,7 @@ const showLoading = () => {
   const screen = document.getElementById('loading-screen');
   const lscreen = document.getElementById('ls-small');
   const sheader = document.querySelector('.site-header');
+
     if (screen) {screen.style.display = 'flex';}
     if (lscreen) {lscreen.classList.remove('loaded')};
     if (sheader) sheader.classList.remove('loaded');
@@ -75,14 +76,9 @@ const showLoading = () => {
 const hideLoading = () => {
   const screen = document.getElementById('ls-small');
   const lscreen = document.getElementById('loading-screen');
-  const background = document.querySelector('.background-text');
   const sheader = document.querySelector('.site-header');
     if (screen) screen.style.display = 'none';
-    if (lscreen instanceof HTMLElement && lscreen.dataset.overlay === 'main') {
-      lscreen.classList.add('loaded');
-      background.classList.add('loaded');
-    }else if(lscreen instanceof HTMLElement){lscreen.classList.add('loaded');}
-
+    if (lscreen) lscreen.classList.add('loaded');
     if (sheader) sheader.classList.add('loaded');
 };
 

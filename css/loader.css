@@ -73,10 +73,6 @@
 
 }
 
-.background-text.loaded{
-  /*scale:3;*/
-}
-
 @media (max-width: 768px) {
   #loading-screen {
     font-size: 1rem;

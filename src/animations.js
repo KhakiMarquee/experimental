@@ -26,7 +26,7 @@ export function initAnimations() {
     });
 
     // Animate navigation on load
-    gsap.from('.site-header .container > div', {
+    gsap.from('.site-header .container div', {
       duration: 1,
       y: -20,
       opacity: 0,
