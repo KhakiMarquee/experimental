@@ -1,26 +1,20 @@
 @import './style.css';
 
 .projects-container {
-  max-width: 1200px;
   margin: 0 auto;
   padding: 5rem 2rem;
   color: #212529;
-  font-weight: lighter;
 }
 
 .canvas-screen{
   position: fixed;
   inset: 0;
-  color: #f8f9fa;
+  /*color: #f8f9fa;*/
   display: flex;
   justify-content: flex-end; /* align content to right */
   align-items: center;
-  font-size: 3rem;
-  cursor:progress;
-  font-size: 2rem;
-  line-height: 1.4;
   padding-right: 5vw;
-  background-color: #F8F9FA
+
 }
 
 .project-background{
@@ -32,8 +26,8 @@
   word-break: break-word;
   white-space: pre-wrap;
   transform-origin: center;
-  cursor: progress;
   scale: 5;
+  background-color: #CED4DA;
   opacity:0.2;
 }
 
@@ -52,17 +46,22 @@
   margin-bottom: 2rem;
 }
 
-.project-theme, .project-details h2, #page-title{
+.project-theme, #page-title, .project-details {
   font-weight: lighter;
+}
+
+.project-details{
+  font-weight: 200;
+  letter-spacing: 10px;
+  text-transform: uppercase;
 }
 
 
 #page-title{
   text-transform: uppercase;
   letter-spacing: 5px;
-  font-size: 3rem;
-  letter-spacing: 5px;
-}
+  font-size: 6rem;
+  }
 
 /* New toggle button styles */
 .view-toggle {
@@ -84,7 +83,7 @@
 }
 
 .view-toggle button:hover {
-  background: #CED4DA;
+  background: #DEE2E6;
 }
 
 /* Meta info line inside project details */
@@ -116,7 +115,7 @@
   gap: 1rem; /* Add some gap for spacing */
 }
 /* Ensure the title takes up available space and stays on the left */
-.project-details h2 {
+.project-title {
   margin: 0;
   font-size: 1rem;
   flex: 1; /* Allow title to grow and take available space */
@@ -142,7 +141,7 @@
 .projects-container.row-view .project-row {
   display: flex;
   flex-direction: column;
-  border: 0px solid #ADB5BD;
+  border: 0px solid #212529;
   transition: border 0.3s ease-in;
   padding-top: 0.2rem;
 }
@@ -152,6 +151,12 @@
 }
 .projects-container.row-view .project-row:hover {
   animation: borderMe 0.3s ease-in forwards;
+}
+
+.projects-container.row-view .project-row:hover .project-details{
+  transition: all 0.3s ease-in;
+  letter-spacing: 3px;
+  font-weight:500;
 }
 
 .projects-container.row-view .project-details {
@@ -178,10 +183,12 @@
 
 @keyframes borderMe {
   from {
-    border: 0px solid #ADB5BD;
+    border: 0px solid #212529;
+    background-color: none;
   }
   to {
-    border: 1px solid #ADB5BD
+    border: 2px solid #212529;
+    background-color: #DEE2E6;
   }
 }
 

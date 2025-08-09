@@ -26,7 +26,7 @@ function renderContent(category, jsonPath) {
               <img src="${entry.image}" alt="${entry.title}">
             </div>
             <div class="project-details">
-              <h2>${entry.title}</h2>
+              <p>${entry.title}</p>
               <span class="project-client">${entry.client}</span>
               <div class="project-meta">
                 <p class="project-theme">${entry.theme}</p>
