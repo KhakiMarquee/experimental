@@ -1,4 +1,4 @@
-import{p as N_}from"./loader-qT_ffD2n.js";/**
+import{p as N_}from"./app-Br4We5ft.js";/**
  * @license
  * Copyright 2010-2025 Three.js Authors
  * SPDX-License-Identifier: MIT

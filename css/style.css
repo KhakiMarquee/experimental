@@ -292,9 +292,6 @@ footer.hide{
 /* Left black box */
 .third-box {
   width: 100%;
-  aspect-ratio: 16 / 9; /* 16:9 aspect ratio */
-  background-color: #dee2e6;
-  border-radius: 6px;
 }
 
 /* Center text */
@@ -423,6 +420,10 @@ footer.hide{
   .third-box {
     max-width: 200px;
     margin: 0 auto 1.5rem auto;
+    display: flex;
+    justify-content: center; /* horizontal centering */
+    align-items: center;     /* vertical centering */
+    height: 100%;            /* make sure it fills its parent height */   
   }
 
   .third-text p {

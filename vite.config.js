@@ -16,6 +16,7 @@ export default {
       input: {
         main: resolve(__dirname, 'index.html'),
         projects: resolve(__dirname, 'pages/projects.html'),
+        stoness: resolve(__dirname, 'pages/stones.html'),
       },
       external: ['p5.sound'], // mark p5.sound external so it’s not bundled
       output: {
