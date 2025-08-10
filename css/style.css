@@ -26,6 +26,16 @@ body {
   letter-spacing: 0em; /* Default letter spacing */
 }
 
+#cursor {
+  position: fixed; /* or fixed if you want it over the whole viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  pointer-events: none; /* let clicks go through */
+  z-index: 9999; /* keep it on top */
+}
 
 /*BOLD TEXT*/
 
@@ -156,6 +166,11 @@ footer li:last-of-type{
     text-align: right;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+footer.hide{
+  transition: opacity 0.4s ease;
+  opacity: 0
 }
 
 /*MAIN */

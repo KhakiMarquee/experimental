@@ -5,10 +5,10 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export function initAnimations() {
-  // ===== PAGE LOAD ANIMATIONS =====
-  // These animate once when the page loads
-  // Animate main text on load
+  // Check if elements exist before animating them
 
+  const headline = document.querySelector('.headline');
+  if (headline) {
     gsap.from('.headline', {
       duration: 1.5,
       y: 50,
@@ -16,7 +16,10 @@ export function initAnimations() {
       ease: 'power3.out',
       delay: 0.3
     });
+  }
 
+  const subhead = document.querySelector('.subhead');
+  if (subhead) {
     gsap.from('.subhead', {
       duration: 1.2,
       y: 30,
@@ -24,8 +27,10 @@ export function initAnimations() {
       ease: 'power3.out',
       delay: 0.6
     });
+  }
 
-    // Animate navigation on load
+  const navContainerDivs = document.querySelectorAll('.site-header .container div');
+  if (navContainerDivs.length) {
     gsap.from('.site-header .container div', {
       duration: 1,
       y: -20,
@@ -33,24 +38,23 @@ export function initAnimations() {
       stagger: 0.1,
       ease: 'power3.out'
     });
+  }
 
-    // Set initial state for transition space (no animation on load)
+  if (document.querySelector('.transition-space')) {
     gsap.set('.transition-space', {
       scale: 0.9,
       opacity: 0
     });
+  }
 
-    // Set initial states for overlays (important for animations)
+  if (document.querySelector('.overlay')) {
     gsap.set('.overlay', {
       scale: 0.9,
       opacity: 0
     });
+  }
 
-
-    // ===== SCROLL-TRIGGERED ANIMATIONS =====
-    // These animate when elements come into view
-    
-    // Animate secondary text list items on scroll
+  if (document.querySelector('.secondary-text li')) {
     gsap.fromTo('.secondary-text li', 
       {
         y: 30,
@@ -70,8 +74,9 @@ export function initAnimations() {
         ease: 'power3.out'
       }
     );
+  }
 
-    // Animate third section boxes on scroll
+  if (document.querySelector('.third-section .third-box')) {
     gsap.fromTo('.third-section .third-box',
       {
         scale: 0.8,
@@ -91,30 +96,11 @@ export function initAnimations() {
         ease: 'back.out(1.7)'
       }
     );
+  }
 
-      // Animate footerboxes on scroll
-    gsap.fromTo('footer',
-      {
-        opacity: 0,
-        y: 30
-      },
-      {
-        scrollTrigger: {
-          trigger: 'footer',
-          start: 'top 90%',
-          toggleActions: 'play none none reverse'
-        },
-        duration: 1.2,
-        y:0,
-        opacity: 1,
-        ease: 'back.out(1.7)'
-      }
-    );
-
-    // Animate chromatic text on scroll
-    // Note: Set initial state in CSS or here
+  if (document.querySelector('.chromatic-text')) {
     gsap.set('.chromatic-text', {
-      x: -50, // or whatever initial offset you want
+      x: -50,
       opacity: 0
     });
 
@@ -130,7 +116,7 @@ export function initAnimations() {
       stagger: 0.1,
       ease: 'power3.out'
     });
-
+  }
 }
 // Enhanced 3D scene transition
 export function animateThreeSceneOpen() {

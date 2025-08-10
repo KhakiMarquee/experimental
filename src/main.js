@@ -1,7 +1,8 @@
 import { initUI } from '/src/ui.js';
 import { initStrudelPlayer } from '/src/strudel_player.js';
 import { initThreeScene } from '/src/three_scene.js';
-import { drawCustomCursor } from '/src/mouse.js'
+import { drawCustomCursor } from '/src/mouse.js';
+import p5 from 'p5';
 
 export function initApp() {
     // Assume DOM is ready when this is called by loader.js
@@ -9,13 +10,10 @@ export function initApp() {
     initUI();
     initStrudelPlayer();
 
-    console.log('Main file loaded successfully');
-
-    const items = document.querySelectorAll('.third-list p');
-    console.log('DOMContentLoaded loaded');
-    console.log(document.querySelectorAll('.third-list p'));
-
-    // Determine base URL dynamically
+    if (document.querySelector('.third-list')) {
+      const items = document.querySelectorAll('.third-list p');
+      // your code here
+          // Determine base URL dynamically
     const currentPath = window.location.pathname;
     const basePath = currentPath.substring(0, currentPath.lastIndexOf('/'));
 
@@ -27,18 +25,36 @@ export function initApp() {
         console.log(category);
       });
     });
+    }
+
+
   };
 
-    // p5.js needs setup() and draw() as global functions:
-    window.setup = function() {
-      createCanvas(windowWidth, windowHeight);
-    };
+  //MOUSE
 
-    window.draw = function() {
-      background(255);
-      drawCustomCursor();
-    };
+  const overlaySketch = (p) => {
+    let overlayDiv;
 
+      p.setup = () => {
+        overlayDiv = document.getElementById('cursor');
+        if (!overlayDiv) {
+          console.error('#overlay div not found');
+          return;
+        }
+        let cnv = p.createCanvas(overlayDiv.offsetWidth, overlayDiv.offsetHeight);
+        cnv.parent(overlayDiv);
+        p.clear();
+      };
+
+    p.draw = () => {
+      p.clear();
+      drawCustomCursor(p); // pass the p5 instance
+    };
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    new p5(overlaySketch);
+  });
 
 
 

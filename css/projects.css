@@ -200,6 +200,10 @@
   padding-top: 0.5rem;
 }
 
+.projects-container.list-view .project-details .project-theme {
+  display: none;
+}
+
 .projects-container.list-view img{
   display: none;
 }

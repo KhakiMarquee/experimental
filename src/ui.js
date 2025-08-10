@@ -124,6 +124,7 @@ function initOverlays() {
     trigger.addEventListener('click', e => {
       console.log('Trigger clicked (stopPropagation):', trigger.dataset.overlay);
       e.stopPropagation();
+      
     });
   });
 
@@ -239,15 +240,15 @@ export function initUI() {
   const transitionSpace = document.querySelector('.transition-space');
   const container = document.querySelector('.site-body .container');
   const closeContainer = document.querySelector('#close-three-container');
+  const footer = document.querySelector('footer');
 
   // Tap button for 3D scene
   if (transitionButton && transitionSpace && mainText && container && closeContainer) {
-    transitionButton.addEventListener('click', () => {
-      const isActive = transitionSpace.classList.contains('active');
-
-      if (!isActive) {
+    const openThreeScene = () => {
+      if (!transitionSpace.classList.contains('active')) {
         transitionSpace.classList.add('active');
         animateThreeSceneOpen();
+        footer.classList.add('hide');
 
         if (!threeSceneInitialized) {
           threeSceneData = initThreeScene();
@@ -265,70 +266,52 @@ export function initUI() {
           }, 800);
         }
       }
-    });
+    };
 
-      mainText.addEventListener('click', () => {
-      const isActive = transitionSpace.classList.contains('active');
-
-      if (!isActive) {
-        transitionSpace.classList.add('active');
-        animateThreeSceneOpen();
-
-        if (!threeSceneInitialized) {
-          threeSceneData = initThreeScene();
-          threeSceneInitialized = true;
-
-          setTimeout(() => {
-            const threeContainer = document.getElementById('three-container');
-            if (threeContainer && threeSceneData) {
-              const width = threeContainer.clientWidth;
-              const height = window.innerHeight;
-              threeSceneData.renderer.setSize(width, height);
-              threeSceneData.camera.aspect = width / height;
-              threeSceneData.camera.updateProjectionMatrix();
-            }
-          }, 800);
-        }
-      }
-    });
+  transitionButton.addEventListener('click', openThreeScene);
+  mainText.addEventListener('click', openThreeScene);
+}
 
 
 
-    closeContainer.addEventListener('click', () => {
-      transitionSpace.classList.remove('active');
-      animateThreeSceneClose();
-    });
-  }
+if (closeContainer && transitionSpace && footer) {
+  closeContainer.addEventListener('click', () => {
+    transitionSpace.classList.remove('active');
+    animateThreeSceneClose();
+    footer.classList.remove('hide');
+  });
+}
+
 
   // Chromatic text animation
+if (document.getElementById('chromatic-text') && !window.location.pathname.includes('/projects.html')) {
   const textEl = document.getElementById('chromatic-text');
-  if (textEl) {
-    const textContent = textEl.textContent.toUpperCase();
-    textEl.innerHTML = `
-      <span class="red">${textContent}</span>
-      <span class="cyan">${textContent}</span>
-      <span class="main">${textContent}</span>
-    `;
-    const red = textEl.querySelector('.red');
-    const cyan = textEl.querySelector('.cyan');
+  const textContent = textEl.textContent.toUpperCase();
+  textEl.innerHTML = `
+    <span class="red">${textContent}</span>
+    <span class="cyan">${textContent}</span>
+    <span class="main">${textContent}</span>
+  `;
+  const red = textEl.querySelector('.red');
+  const cyan = textEl.querySelector('.cyan');
 
-    let time = 0;
-    function animateText() {
-      time += 0.05;
-      const x = Math.sin(time) * 10;
-      const rX = Math.sin(time * 2) * 3;
-      const rY = Math.cos(time * 2) * 3;
-      const cX = Math.cos(time * 2) * -3;
-      const cY = Math.sin(time * 2) * -3;
+  let time = 0;
+  function animateText() {
+    time += 0.05;
+    const x = Math.sin(time) * 10;
+    const rX = Math.sin(time * 2) * 3;
+    const rY = Math.cos(time * 2) * 3;
+    const cX = Math.cos(time * 2) * -3;
+    const cY = Math.sin(time * 2) * -3;
 
-      textEl.style.transform = `translateX(${x}px)`;
-      red.style.transform = `translate(${rX}px, ${rY}px)`;
-      cyan.style.transform = `translate(${cX}px, ${cY}px)`;
+    textEl.style.transform = `translateX(${x}px)`;
+    red.style.transform = `translate(${rX}px, ${rY}px)`;
+    cyan.style.transform = `translate(${cX}px, ${cY}px)`;
 
-      requestAnimationFrame(animateText);
-    }
-    animateText();
+    requestAnimationFrame(animateText);
   }
+  animateText();
+}
 
   console.log('UI initialization complete'); // Debug log
 }
