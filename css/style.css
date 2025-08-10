@@ -399,7 +399,7 @@ footer.hide{
     gap: 1rem;
   }
 
-  .transition-space.active ~ .secondary-text {
+  .transition-space.active .secondary-text {
   opacity: 0;
   height:0;
   pointer-events: none;
