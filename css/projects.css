@@ -1,10 +1,10 @@
 @import './style.css';
-@import './loader.css';
 
 .projects-container {
   margin: 0 auto;
   padding: 10rem 2rem;
-  color: #212529;
+  color: var(--grey-800);
+  font-family:'Geist';
 }
 
 
@@ -55,6 +55,7 @@
   text-transform: uppercase;
   letter-spacing: 10px;
   font-size: 6rem;
+  font-family: 'Geist';
   }
 
 /* New toggle button styles */
@@ -72,13 +73,8 @@
 }
 
 .view-toggle button.active {
-  background-color: #212529;
-  color: #F8F9FA;
-}
-
-.view-toggle button:hover {
-  background: #f8f9fa;
-  color: #212529;
+  background-color: var(--grey-100);
+  color: var(--grey-800);
 }
 
 /* Meta info line inside project details */
@@ -86,7 +82,7 @@
   gap: 2rem;
   font-size: 0.9rem;
   margin-top: 0.5rem;
-  color: #495057;
+  color: var(--grey-600);
 }
 
 .project-row {
@@ -121,7 +117,7 @@
 }
 
 .project-description {
-  color: #343A40;
+  color: var(--grey-700);
   line-height: 1.5;
   display: none; /* Hide descriptions by default */
 }
@@ -136,7 +132,7 @@
 .projects-container.row-view .project-row {
   display: flex;
   flex-direction: column;
-  border-bottom: 0px solid #212529;
+  border-bottom: 0px solid var(--grey-800);
   transition: border 0.3s ease-in;
   padding-top: 0.2rem;
 }
@@ -177,12 +173,12 @@
 
 @keyframes borderMe {
   from {
-    border-bottom: 0px solid #212529;
+    border-bottom: 0px solid var(--grey-800);
     background-color: none;
   }
   to {
-    border-bottom: 2px solid #212529;
-    background-color: #f8f9fa;
+    border-bottom: 2px solid var(--grey-800);
+    background-color: var(--grey-100);
   }
 }
 

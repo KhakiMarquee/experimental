@@ -1,4 +1,7 @@
 /* ICONS */
+
+
+
 .icon{
   align-items: center;
   display: flex;
@@ -8,12 +11,12 @@
 
 button{
   border: 0px;
-  background: transparent;
+  background-color: transparent;
   width: auto;
   margin: 0 auto;
   transition: background-color, color 0.2s ease;
   cursor: pointer;
-  color: #495057;
+  color: var(--grey-600);
 }
 
 /*FADE*/
@@ -45,7 +48,7 @@ button{
 
 button:hover{
   transform: scale(1.05);
-  color: #495057;
+  background-color: var(--grey-100);
   transition: all 0.3s ease
 }
 
@@ -77,7 +80,7 @@ button:hover{
   overflow: hidden; /* Prevent content overflow when collapsing */
   padding:20% 0;
   cursor: pointer;
-  color: #495057
+  color: var(--grey-600);
 }
 
 .main-text.hide {
@@ -101,7 +104,7 @@ button:hover{
 }
 
 .main-text:hover{
-  color:#212529;
+  color:var(--grey-800);
 }
 
 .container.collapse {
@@ -117,7 +120,7 @@ button:hover{
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: #dee2e6 1px solid; /* Optional border for visual separation */
+  border-bottom: var(--grey-200) 1px solid; /* Optional border for visual separation */
 }
 
 /*OVERLAY*/
@@ -128,8 +131,8 @@ button:hover{
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #212529; /* Match your existing dark background */
-  color: #f8f9fa; /* Match your existing light text */
+  background: var(--grey-800); /* Match your existing dark background */
+  color: var(--grey-100); /* Match your existing light text */
   z-index: 1000; /* Higher than your existing z-index: 999 */
   display: none;
   opacity: 0;
@@ -155,7 +158,7 @@ button:hover{
   right: 20px; /* Match your existing positioning */
   background: none;
   border: none;
-  color: #f8f9fa; /* Match your existing color */
+  color: var(--grey-100); /* Match your existing color */
   font-size: 1.2rem; /* Match your existing font size */
   cursor: pointer;
   z-index: 1001;

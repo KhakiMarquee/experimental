@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Vercetti';
+  src: url('css/fonts/Vercetti Regular/OpenType WOFFs/._Vercetti-Regular.woff2') format('woff2'),
+       url('css/fonts/Vercetti Regular/OpenType WOFFs/._Vercetti-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+};
+
+@font-face {
+  font-family: 'Geist';
+  src: url('css/fonts/geist-font-1.5.0/fonts/GeistMono/webfonts/GeistMono-Regular.woff2') format('woff2'),
+       url('css/fonts/geist-font-1.5.0/fonts/GeistMono/webfonts/GeistMono-Medium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
