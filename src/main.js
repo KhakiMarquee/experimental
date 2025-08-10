@@ -1,9 +1,10 @@
 import { initUI } from '/src/ui.js';
 import { initStrudelPlayer } from '/src/strudel_player.js';
 import { initThreeScene } from '/src/three_scene.js';
-import { drawCustomCursor } from '/src/mouse.js';
-import p5 from 'p5';
 
+ // Header
+
+//Init Main Application
 export function initApp() {
     // Assume DOM is ready when this is called by loader.js
     // Three.js is lazy-loaded by UI interactions
@@ -26,36 +27,10 @@ export function initApp() {
       });
     });
     }
-
-
   };
 
-  //MOUSE
 
-  const overlaySketch = (p) => {
-    let overlayDiv;
-
-      p.setup = () => {
-        overlayDiv = document.getElementById('cursor');
-        if (!overlayDiv) {
-          console.error('#overlay div not found');
-          return;
-        }
-        let cnv = p.createCanvas(overlayDiv.offsetWidth, overlayDiv.offsetHeight);
-        cnv.parent(overlayDiv);
-        p.clear();
-      };
-
-    p.draw = () => {
-      p.clear();
-      drawCustomCursor(p); // pass the p5 instance
-    };
-  };
-
-  document.addEventListener('DOMContentLoaded', () => {
-    new p5(overlaySketch);
-  });
-
+ 
 
 
 

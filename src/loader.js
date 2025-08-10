@@ -1,5 +1,6 @@
 import p5 from 'p5';
 import { initSketch } from '/src/sketch.js';
+import { drawCustomCursor } from '/src/mouse.js';
 
 function randInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -41,7 +42,7 @@ const updateCenterText = () => {
   }
 };
 
-const fillBackgroundText = () => {
+/*const fillBackgroundText = () => {
   const background = document.querySelector('.background-text');
   if (!background) return;
 
@@ -55,7 +56,7 @@ const fillBackgroundText = () => {
   }
 
   background.textContent = randomText;
-};
+};*/
 
 
 
@@ -96,7 +97,7 @@ const intervalDelay = 150;
 const bootstrap = async () => {
   showLoading();
 
-  // p5 sketch
+  // p5 background
   const targetDiv = document.getElementById('canvas-container');
   new p5(initSketch, targetDiv);
   
@@ -118,5 +119,31 @@ const bootstrap = async () => {
     initApp();
   });
 };
+
+  //MOUSE
+
+  const overlaySketch = (p) => {
+    let overlayDiv;
+
+      p.setup = () => {
+        overlayDiv = document.getElementById('cursor');
+        if (!overlayDiv) {
+          console.error('#overlay div not found');
+          return;
+        }
+        let cnv = p.createCanvas(overlayDiv.offsetWidth, overlayDiv.offsetHeight);
+        cnv.parent(overlayDiv);
+        p.clear();
+      };
+
+    p.draw = () => {
+      p.clear();
+      drawCustomCursor(p); // pass the p5 instance
+    };
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    new p5(overlaySketch);
+  });
 
 bootstrap();

@@ -1,5 +1,5 @@
 import { initThreeScene } from '/src/three_scene.js';
-import { initAnimations, animateThreeSceneOpen, animateThreeSceneClose, animateOverlayOpen, animateOverlayClose } from '/src/animations.js';
+import { initAnimations, animateThreeSceneOpen, animateThreeSceneClose, animateOverlayOpen, animateOverlayClose} from '/src/animations.js';
 
 let threeSceneInitialized = false;
 let threeSceneData = null;
@@ -230,7 +230,10 @@ export function initUI() {
   // Initialize GSAP animations
   
   if (window.innerWidth >= 769) {initAnimations();}
-  
+
+
+ console.log('Script loaded');
+
 
   // Initialize overlays - THIS WAS MISSING!
   initOverlays();
