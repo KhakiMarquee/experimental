@@ -462,6 +462,7 @@ footer.hide{
     transform: translateZ(0); /* Force GPU acceleration */
     will-change: text-shadow, transform;
     transform-origin: center;
+    margin-bottom:0.2rem
   }
 
 

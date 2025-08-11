@@ -48,6 +48,11 @@
   /*scale:3;*/
   cursor: default;
 }
+
+.site-header.loaded{
+  background-color: rgba(var(--grey-100),1);
+}
+
 #app {
   padding: 0px;
 }
