@@ -91,7 +91,7 @@ button:hover{
 }
 
 .main-text:hover .tap-button{
-  color:#CED4DA;
+  color:var(--grey-300);
 }
 
 .main-text .headline u{

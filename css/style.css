@@ -319,7 +319,9 @@ footer.hide{
   font-family:'Geist';
 }
 
-.tooltip:hover:after { content: attr(title); } 
+.tooltip:hover:after { content: attr(title); opacity:1; color:var(--grey-300); } 
+
+.tooltip:after { content: attr(title); color:var(--grey-800);transition: all 0.3s ease-in; font-size: 0.8rem } 
 
 /* Responsive Styles */
 @media (max-width: 768px) {
@@ -411,7 +413,7 @@ footer.hide{
   }
 
   .secondary-text ul li{
-      font-size: 4.5em;
+      font-size: 4rem; /*mobile phone second text*/
       color:  var(--grey-400);
       transition: all ease-in;
 

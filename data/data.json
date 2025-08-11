@@ -19,7 +19,7 @@
       "image": "https://freight.cargo.site/t/original/i/G2274511396381639602790189060065/Catalina-min.png",
       "preview-image" : "",
       "video": "",
-      "type": ""
+      "type": "Audio"
 
     },
         {     
@@ -30,7 +30,29 @@
       "image": "https://freight.cargo.site/t/original/i/G2274511396381639602790189060065/Catalina-min.png",
       "preview-image" : "",
       "video": "",
-      "type": ""
+      "type": "Film"
+
+    },
+        {     
+      "title": "Project title",
+      "client": "Four Place",
+      "theme": "Audiovisuals",
+      "description": "A large-scale installation along the Thames.",
+      "image": "https://freight.cargo.site/t/original/i/G2274511396381639602790189060065/Catalina-min.png",
+      "preview-image" : "",
+      "video": "",
+      "type": "Film"
+
+    },
+        {     
+      "title": "Project title",
+      "client": "Five Place",
+      "theme": "Audiovisuals",
+      "description": "A large-scale installation along the Thames.",
+      "image": "https://freight.cargo.site/t/original/i/G2274511396381639602790189060065/Catalina-min.png",
+      "preview-image" : "",
+      "video": "",
+      "type": "Film"
 
     }
   ],

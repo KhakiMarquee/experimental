@@ -13,6 +13,7 @@ export function initFooterScrollEffect(){
   ScrollTrigger.create({
   trigger: '.site-body',
   start: "bottom bottom",
+  markers: true,
   toggleClass: { targets: footer, className: "at-bottom" },
   onToggle(self) {
     console.log("ScrollTrigger toggle:", self.isActive);

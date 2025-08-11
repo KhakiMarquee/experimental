@@ -46,7 +46,6 @@
 
 .project-details{
   font-weight: 200;
-  letter-spacing: 3px;
   text-transform: uppercase;
 }
 
@@ -132,9 +131,7 @@
 .projects-container.row-view .project-row {
   display: flex;
   flex-direction: column;
-  border-bottom: 0px solid var(--grey-800);
-  transition: border 0.3s ease-in;
-  padding-top: 0.2rem;
+  border-bottom: 1px solid transparent;
 }
 
 .projects-container.row-view .project-row:hover .project-image {
@@ -173,11 +170,11 @@
 
 @keyframes borderMe {
   from {
-    border-bottom: 0px solid var(--grey-800);
+    border-bottom: 1px solid transprent;
     background-color: none;
   }
   to {
-    border-bottom: 2px solid var(--grey-800);
+    border-bottom: 1px solid var(--grey-800);
     background-color: var(--grey-100);
   }
 }
@@ -208,10 +205,28 @@
   display:flex;
 }
 
+.projects-container.list-view .project-row{
+  border-bottom: 1px solid transparent;
+  transition: border 0.3s ease-in;
+  padding: 0em 1rem;
+}
+
+.projects-container.list-view .project-row:hover {
+  animation: borderMe 0.3s ease-in forwards;
+}
+
 /* Responsive - Mobile breakpoint */
 @media (max-width: 768px) {
   .projects-container {
     padding: 5rem 1rem; /* Reduce padding on mobile */
+  }
+
+  .project-details{
+    font-size: 0.8rem;
+  }
+
+ .projects-container.row-view .project-details{
+    display: inline-block;
   }
   
   .projects-header {
@@ -225,7 +240,7 @@
   }
   
   .projects-container.row-view #content {
-    grid-template-columns: 1fr; /* Single column on mobile */
+    grid-template-columns: 1fr 1fr 1fr; /* Single column on mobile */
   }
   
   .project-meta {

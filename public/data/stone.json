@@ -1,0 +1,14 @@
+{
+  "audiovisuals": [
+        {     
+        "title": "Project title",
+        "theme": "Audiovisuals",
+        "description": "A large-scale installation along the Thames.",
+        "image": "https://freight.cargo.site/t/original/i/G2274511396381639602790189060065/Catalina-min.png",
+        "preview-image" : "",
+        "video": "",
+        "type": "Film"
+
+        }
+    ]
+}    
