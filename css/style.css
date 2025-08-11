@@ -73,7 +73,7 @@ a:hover, #location-toggle:hover{
   position:fixed;
   z-index: -1; /* Ensures header is above other content */
   border-bottom: 1px solid var(--grey-200);
-  background-color: var(--grey-100);
+  background-color: rgba(var(--grey-100),1);
   color: var(--grey-500);
 }
 

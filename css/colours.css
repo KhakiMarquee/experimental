@@ -1,5 +1,5 @@
 :root {
-  --grey-100: #f8f9fa; /* very light */
+  --grey-100: 248, 249, 250; /* very light */
   --grey-150: #e9ecef; /* light */
   --grey-200: #dee2e6;
   --grey-300: #ced4da;

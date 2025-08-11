@@ -22,7 +22,9 @@
   position: fixed;
 }
 
-
+.stones{
+    background-color: rgba(var(--grey-100),0);
+}
 /*.main-content {
     height: calc(100vh - 60px);
     background: linear-gradient(45deg, #e8e8e8 25%, transparent 25%), 
@@ -206,7 +208,8 @@
     will-change: transform;
     backface-visibility: hidden;
     overflow: hidden;
-    scale:0.9
+    scale:0.9;
+    font-weight: 500
 }
 
 .slide img {
