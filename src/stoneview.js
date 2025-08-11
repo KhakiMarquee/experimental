@@ -1,203 +1,233 @@
 import p5 from 'p5';
 
+// Footer trigger function (separate from carousel logic)
+function footer() {
+  const footerElement = document.querySelector('footer');
+  if (footerElement) {
+    footerElement.classList.add('at-bottom');
+
+  }
+}
+
+// [NOTE:] This handles the footer trigger with a delay
+  setTimeout(() => {
+    footer();
+  }, 3000); // 1.5s delay — tweak to your needs
+
+
+
 export default function stoneViewSketch(p) {
-  let images = [];
-  let angle = 0;
-  let targetAngle = 0;
-  let autoRotate = true;
-  let autoSpeed = 0.005;
-  let radius = 200;
-  let centerX, centerY;
+
+  let carousel;
+  let slides = [];
+  let scrollOffset = 0;
+  let speed = 0;
+  const baseSpacing = 900;
   let isDragging = false;
-  let lastMouseX = 0;
 
-  // Sample image data
-  const imageData = [
-    { title: "Modern Villa", description: "A contemporary architectural masterpiece featuring clean lines and sustainable materials.", color: "#e74c3c" },
-    { title: "Urban Loft", description: "Industrial design meets modern comfort in this converted warehouse space.", color: "#3498db" },
-    { title: "Garden House", description: "Seamless integration of indoor and outdoor living spaces with natural materials.", color: "#2ecc71" },
-    { title: "Minimalist Retreat", description: "Pure geometric forms create a serene and contemplative living environment.", color: "#f39c12" },
-    { title: "Coastal Residence", description: "Ocean-inspired design with panoramic views and sustainable features.", color: "#9b59b6" },
-    { title: "Forest Cabin", description: "A harmonious blend of traditional craftsmanship and modern amenities.", color: "#1abc9c" },
-    { title: "City Penthouse", description: "Luxury living at its finest with cutting-edge smart home technology.", color: "#e67e22" },
-    { title: "Desert Oasis", description: "Climate-responsive design creating cool, comfortable spaces in harsh environments.", color: "#34495e" }
-  ];
+  // Speed control
+  const maxSpeed = 100; // Maximum allowed speed
 
-  p.setup = function() {
-    let container = document.getElementById('carouselContainer');
-    let canvas = p.createCanvas(p.windowWidth, 300);
-    canvas.parent(container);
+  // [NOTE:] Added variable to prevent multiple footer triggers
+  let footerTriggered = false;
 
-    centerX = p.windowWidth / 2;
-    centerY = p.height + 50; // Position the center below the visible area
-    radius = Math.min(p.windowWidth * 0.4, 300);
-
-    for (let i = 0; i < imageData.length; i++) {
-      images.push({
-        angle: (p.TWO_PI / imageData.length) * i,
-        data: imageData[i],
-        id: i
-      });
-    }
-  };
-
-  p.draw = function() {
-    p.clear();
-
-    angle = p.lerp(angle, targetAngle, 0.05);
-
-    if (autoRotate) {
-      targetAngle += autoSpeed;
-    }
-
-    let ctx = p.drawingContext;
-    ctx.save();
-
-    ctx.beginPath();
-    ctx.arc(centerX, centerY, radius + 50, p.PI, p.TWO_PI);
-    ctx.clip();
-
-    ctx.fillStyle = createBackgroundPattern();
-    ctx.fillRect(0, 0, p.width, p.height);
-
-    for (let i = 0; i < images.length; i++) {
-      let img = images[i];
-      let currentAngle = img.angle + angle;
-
-      if ((currentAngle % p.TWO_PI > p.PI) || (currentAngle % p.TWO_PI < 0)) {
-        drawImage(centerX + p.cos(currentAngle) * radius, centerY + p.sin(currentAngle) * radius, img.data, img.id, currentAngle);
-      }
-    }
-
-    ctx.restore();
-  };
-
-  function createBackgroundPattern() {
-    let canvas = document.createElement('canvas');
-    canvas.width = 20;
-    canvas.height = 20;
-    let ctx = canvas.getContext('2d');
-
-    ctx.fillStyle = '#f5f5f5';
-    ctx.fillRect(0, 0, 20, 20);
-
-    ctx.fillStyle = '#e8e8e8';
-    ctx.fillRect(0, 0, 10, 10);
-    ctx.fillRect(10, 10, 10, 10);
-
-    return ctx.createPattern(canvas, 'repeat');
+  p.setup = function setup() {
+    p.noCanvas();
+    carousel = document.getElementById("carousel");
+    slides = Array.from(document.querySelectorAll(".slide"));
+    
+    const container = document.getElementById("carousel-container");
+    container.style.perspective = "2000px";
+    carousel.style.transformStyle = "preserve-3d";
+    
+    // Prevent default mouse events on non-carousel elements
+    setupMouseConstraints();
+    
+    p.loop();  // start p5.js draw loop
   }
 
-  function drawImage(x, y, data, id, currentAngle) {
-    p.push();
-    p.translate(x, y);
+p.draw = function draw() {
+  const tiltX = -15;
+  const tiltY = -30;
+  carousel.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+  
+  const totalLength = slides.length * baseSpacing;
+  
+  // Smooth scroll offset to prevent jumps
+  scrollOffset += speed;
+  
+  // Keep scrollOffset within bounds for true infinite loop
+  scrollOffset = scrollOffset % totalLength;
+  if (scrollOffset < 0) scrollOffset += totalLength;
+  
+  // true infinite positioning for each slide
+  slides.forEach((slide, i) => {
+    let pos1 = (i * baseSpacing - scrollOffset) % totalLength;
+    if (pos1 < -baseSpacing * 2) pos1 += totalLength;
+    let pos2 = pos1 - totalLength;
+    let pos3 = pos1 + totalLength;
+    
+    let bestPos = pos1;
+    const screenCenter = window.innerWidth / 2;
+    
+    if (Math.abs(pos2 - screenCenter) < Math.abs(bestPos - screenCenter)) bestPos = pos2;
+    if (Math.abs(pos3 - screenCenter) < Math.abs(bestPos - screenCenter)) bestPos = pos3;
+    
+    const posX = bestPos;
+    const posY = bestPos * -0.5;
+    const posZ = -Math.abs(bestPos) * 0.2;
+    
+    const roundedX = Math.round(posX * 100) / 100;
+    const roundedY = Math.round(posY * 100) / 100;
+    const roundedZ = Math.round(posZ * 100) / 100;
+    
+    slide.style.transform = `
+      translateX(${roundedX}px)
+      translateY(${roundedY}px)
+      translateZ(${roundedZ}px)
+    `;
+    
+    const existingVirtual = carousel.querySelectorAll(`[data-original-index="${i}"]`);
+    existingVirtual.forEach(virtual => virtual.remove());
+  });
+  
+  const absSpeed = Math.abs(speed);
+  let friction;
+  
+  if (absSpeed > 25) friction = 0.88;
+  else if (absSpeed > 10) {
+    const t = (absSpeed - 10) / 15;
+    const easedT = t * t * (3 - 2 * t);
+    friction = 0.92 + (0.88 - 0.92) * easedT;
+  } else if (absSpeed > 2) friction = 0.92;
+  else if (absSpeed > 0.5) {
+    const t = (absSpeed - 0.5) / 1.5;
+    friction = 0.94 + (0.92 - 0.94) * t;
+  } else friction = 0.94;
+  
+  speed *= friction;
+  
+  if (Math.abs(speed) < 0.005) speed = 0;
+};
 
-    let scale = p.map(p.cos(currentAngle), -1, 1, 0.6, 1.2);
-    scale = p.constrain(scale, 0.6, 1.2);
 
-    let opacity = p.map(p.cos(currentAngle), -1, 1, 0.3, 1.0);
-    opacity = p.constrain(opacity, 0.3, 1.0);
+  function cleanupVirtualSlides() {
+    // This function is no longer needed since we eliminated virtual slides
+    // Keeping it empty in case it's called elsewhere
+  }
 
-    scale *= 0.8;
-    p.rotate(currentAngle + p.PI / 2);
+  function setupMouseConstraints() {
+    // Get footer and header elements to exclude from mouse interactions
+    const footerElement = document.querySelector('footer, .footer');
+    const header = document.querySelector('header, .header, .site-header');
+    const carouselContainer = document.getElementById("carousel-container");
+    
+    if (carouselContainer) {
+      carouselContainer.addEventListener('mouseenter', () => {
+        isDragging = false;
+      });
+      
+      carouselContainer.addEventListener('mouseleave', () => {
+        isDragging = false;
+        speed *= 0.7; // gentler speed reduction when leaving carousel area
+      });
+      
+      // Add dedicated event handlers to prevent conflicts
+      carouselContainer.addEventListener('wheel', handleCarouselWheel, { passive: false });
+      carouselContainer.addEventListener('mousedown', handleCarouselMouseDown);
+      carouselContainer.addEventListener('mouseup', handleCarouselMouseUp);
+      carouselContainer.addEventListener('mousemove', handleCarouselMouseMove);
+    }
+    
+    // Block events on sticky elements
+    [footerElement, header].forEach(element => {
+      if (element) {
+        element.addEventListener('wheel', (e) => {
+          e.stopPropagation();
+          e.preventDefault();
+        }, { passive: false });
+        
+        element.addEventListener('mousedown', (e) => {
+          e.stopPropagation();
+        });
+        
+        element.addEventListener('mousemove', (e) => {
+          e.stopPropagation();
+        });
+      }
+    });
+  }
 
-    p.fill(p.red(p.color(data.color)), p.green(p.color(data.color)), p.blue(p.color(data.color)), opacity * 255);
-    p.stroke(255, opacity * 255);
-    p.strokeWeight(2);
-    p.rectMode(p.CENTER);
-    p.rect(0, 0, 100 * scale, 80 * scale, 5);
+  // Dedicated event handlers for smoother interaction
+  let lastMouseX = 0;
 
-    p.fill(255, opacity * 255);
-    p.noStroke();
-    p.textAlign(p.CENTER);
-    p.textSize(10 * scale);
-    p.text(data.title, 0, 0);
+  function handleCarouselWheel(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    
+    // Much gentler wheel input
+    let wheelInput = -event.deltaY / 8; // Increased divisor for smoother input
+    const maxWheelInput = 8; // Further reduced max input
+    wheelInput = Math.max(-maxWheelInput, Math.min(maxWheelInput, wheelInput));
+    
+    // Smoother speed accumulation with easing
+    const targetSpeed = speed + wheelInput;
+    speed = speed + (targetSpeed - speed) * 0.6; // Ease towards target speed
+    
+    speed = Math.max(-maxSpeed * 0.8, Math.min(maxSpeed * 0.8, speed));
+  }
 
-    images[id].bounds = {
-      x: x,
-      y: y,
-      w: 100 * scale,
-      h: 80 * scale,
-      scale: scale,
-      opacity: opacity
-    };
+  function handleCarouselMouseDown(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    isDragging = true;
+    lastMouseX = event.clientX;
+  }
 
-    p.pop();
+  function handleCarouselMouseUp(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    isDragging = false;
+  }
+
+  function handleCarouselMouseMove(event) {
+    if (isDragging) {
+      event.preventDefault();
+      event.stopPropagation();
+      
+      const deltaX = event.clientX - lastMouseX;
+      let dragSpeed = deltaX * -1.2; // Further reduced drag sensitivity
+      
+      const maxDragSpeed = 15; // Further reduced max drag speed
+      dragSpeed = Math.max(-maxDragSpeed, Math.min(maxDragSpeed, dragSpeed));
+      
+      // Smoother drag speed application with easing
+      const targetSpeed = dragSpeed;
+      speed = speed + (targetSpeed - speed) * 0.7; // Ease towards drag speed
+      
+      speed = Math.max(-maxSpeed * 0.8, Math.min(maxSpeed * 0.8, speed));
+      
+      lastMouseX = event.clientX;
+    }
+  }
+
+  // Disable p5.js mouse events to prevent conflicts
+  p.mouseWheel = function(event) {
+    return false;
   }
 
   p.mousePressed = function() {
-    for (let i = 0; i < images.length; i++) {
-      if (images[i].bounds && images[i].bounds.opacity > 0.5) {
-        let b = images[i].bounds;
-        if (p.dist(p.mouseX, p.mouseY, b.x, b.y) < Math.max(b.w, b.h) / 2) {
-          openFullscreen(images[i].data);
-          return;
-        }
-      }
-    }
-    isDragging = true;
-    lastMouseX = p.mouseX;
-    autoRotate = false;
-  };
-
-  p.mouseDragged = function() {
-    if (isDragging) {
-      let deltaX = p.mouseX - lastMouseX;
-      targetAngle += deltaX * 0.01;
-      lastMouseX = p.mouseX;
-    }
-  };
+    return false;
+  }
 
   p.mouseReleased = function() {
-    isDragging = false;
-  };
-
-  p.windowResized = function() {
-    p.resizeCanvas(p.windowWidth, 300);
-    centerX = p.windowWidth / 2;
-    radius = Math.min(p.windowWidth * 0.4, 300);
-  };
-
-  function moveCarousel(direction) {
-    autoRotate = false;
-    targetAngle += (p.TWO_PI / images.length) * direction;
+    return false;
   }
 
-  function toggleAutoRotate() {
-    autoRotate = !autoRotate;
+  p.mouseDragged = function() {
+    return false;
   }
-
-  function openFullscreen(data) {
-    document.getElementById('fullscreenTitle').textContent = data.title;
-    document.getElementById('fullscreenDescription').textContent = data.description;
-    document.getElementById('fullscreenImage').style.backgroundColor = data.color;
-    document.getElementById('fullscreenOverlay').classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeFullscreen() {
-    document.getElementById('fullscreenOverlay').classList.remove('active');
-    document.body.style.overflow = 'auto';
-  }
-
-  // Keyboard controls
-  document.addEventListener('keydown', function(e) {
-    switch(e.key) {
-      case 'ArrowLeft':
-        moveCarousel(-1);
-        break;
-      case 'ArrowRight':
-        moveCarousel(1);
-        break;
-      case ' ':
-        e.preventDefault();
-        toggleAutoRotate();
-        break;
-      case 'Escape':
-        closeFullscreen();
-        break;
-    }
-  });
 }
 
+// [NOTE:] p5 instance mode export
 new p5(stoneViewSketch);

@@ -29,9 +29,10 @@ let wordIndex = 0;
 let shuffleCount = 0;
 const totalShuffles = randInt(20, 50);
 
+
 const updateCenterText = () => {
   const shuffleSpan = document.getElementById('shuffling-word');
-  if (!shuffleSpan) return;
+  if (!shuffleSpan){return;}
 
   if (shuffleCount >= totalShuffles) {
     shuffleSpan.textContent = finalWord;
@@ -62,7 +63,14 @@ const updateCenterText = () => {
 
 
 //fillBackgroundText();
-updateCenterText();
+document.addEventListener("DOMContentLoaded", () => {
+  const interval = setInterval(() => {
+    updateCenterText();
+    if (shuffleCount >= totalShuffles) {
+      clearInterval(interval);
+    }
+  }, 100); // change every 100ms
+});
 
 const showLoading = () => {
   const screen = document.getElementById('loading-screen');

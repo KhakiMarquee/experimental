@@ -16,7 +16,7 @@ button{
   margin: 0 auto;
   transition: background-color, color 0.2s ease;
   cursor: pointer;
-  color: var(--grey-600);
+  color: rgb(var(--grey-600));
 }
 
 /*FADE*/
@@ -80,7 +80,7 @@ button:hover{
   overflow: hidden; /* Prevent content overflow when collapsing */
   padding:20% 0;
   cursor: pointer;
-  color: var(--grey-600);
+  color: rgb(var(--grey-600));
 }
 
 .main-text.hide {

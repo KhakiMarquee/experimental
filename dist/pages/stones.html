@@ -31,51 +31,66 @@
       }
     }
   </script>
-  <script type="module" crossorigin src="/assets/stones-DdevtJYE.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/app-Br4We5ft.js">
-  <link rel="stylesheet" crossorigin href="/assets/stones-q_n887rl.css">
+  <script type="module" crossorigin src="/assets/stones-pSzgJWdc.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/loader-DTJk8aOJ.js">
+  <link rel="stylesheet" crossorigin href="/assets/stones-BSEjvqj1.css">
 </head>
   <body>
     
   <div id="cursor"></div>  
+
+    <div id="loading-screen">
+      <div class="stones-background">
+        <div id="canvas-container"></div>
+      </div>
+      <div class="shuffling-wrapper" id="ls-small">
+        <span id="shuffling-word">studio</span> 
+        <span>.G O K E</span> 
+        <span>.studio</span>
+      </div>
+    </div>
+
   <!-- Header-->
   <header class="site-header fade-in stones">
     <div class="container">
-      <div class="nav-left"><a href="pages/stones.html">stone</a></div>
-      <div class="logo"><a href="index.html">studio G O K E studio</a></div>
+      <div class="nav-left"><a href="/stones.html">stone</a></div>
+      <div class="logo"><a href="/">studio G O K E studio</a></div>
       <div class="nav-right"><a href="https://www.goke.studio">stories</a></div>
     </div>
   </header>
-
-
-
+    <div id="app" style="display: none;"></div>
     <main class="site-body">
-        <div class="main-content">
-                <div class="controls">
-                    <button class="control-btn" onclick="moveCarousel(-1)">← Prev</button>
-                    <button class="control-btn" onclick="toggleAutoRotate()">⏯ Auto</button>
-                    <button class="control-btn" onclick="moveCarousel(1)">Next →</button>
-                </div>
-                
-                <div class="carousel-container" id="carouselContainer"></div>
+      <div id="carousel-container">
+        <div id="carousel">
+          <div class="slide">
+            <div class="slide-inner">
+            <img src="/assets/ball_finial_small_image-B6TU-nfG.png" alt="Placeholder">
+            <p>Slide 1</p>
+              </div>
+          </div>
+          <div class="slide">
+            <div class="slide-inner">
+            <img src="/assets/trefoil_small_image-CElJgtCA.png" alt="Placeholder">
+            <p>Slide 2</p>
+              </div>
+          </div>
+          <div class="slide">
+            <div class="slide-inner">
+            <img src="/assets/trefoil_small_image-CElJgtCA.png" alt="Placeholder">
+            <p>Slide 3</p>
+              </div>
+          </div>
+          <div class="slide">
+            <div class="slide-inner">
+            <img src="/assets/trefoil_small_image-CElJgtCA.png" alt="Placeholder">
+            <p>Slide 4</p>
             </div>
-
-            <div class="fullscreen-overlay" id="fullscreenOverlay">
-                <button class="close-btn" onclick="closeFullscreen()">×</button>
-                <div class="fullscreen-content">
-                    <div class="fullscreen-image" id="fullscreenImage">
-                        Image Placeholder
-                    </div>
-                    <div class="fullscreen-info">
-                        <h2 id="fullscreenTitle">Project Title</h2>
-                        <p id="fullscreenDescription">This is where the detailed description of the image/project would go. You can include multiple paragraphs of information about the architecture, design process, materials used, and any other relevant details.</p>
-                        <p>Additional information can be added here to provide context and background about the project or image being displayed.</p>
-                    </div>
-                </div>
-            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
-<footer class="'footer fade-in">
+<footer class="footer fade-in">
   <ul>
     <li>
       <p id="contact-toggle" class="fade-text"><a>work with us</a></p>
@@ -87,6 +102,5 @@
     </li>
   </ul> 
 </footer>
-
 </body>
 </html>

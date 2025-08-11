@@ -54,8 +54,8 @@ a{
 }
 
 a:hover, #location-toggle:hover{
-  color: var(--grey-600);
-  text-decoration-color: var(--grey-600);
+  color: rgb(var(--grey-600));
+  text-decoration-color: rgb(var(--grey-600));
 }
 
 #location-toggle{
@@ -137,6 +137,10 @@ footer.at-bottom {
   background-color: rgba(var(--grey-600), 1);
 }
 
+footer.at-bottom a {
+  color: var(--grey-200);
+}
+
 footer li p::first-letter{
   text-transform: capitalize;
 }
@@ -183,6 +187,7 @@ footer.hide{
   position: relative; /* For absolute positioning of the new div */
   min-height: calc(100vh - var(--header-height, 60px)); /* Adjust header height */
   width: 100%;
+  overflow:hidden;
 }
 
 .site-body .container {
@@ -231,7 +236,7 @@ footer.hide{
 
 .secondary-text ul li:hover {
   transform: scale(1.05);
-  color: var(--grey-600);
+  color: rgb(var(--grey-600));
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -451,7 +456,7 @@ footer.hide{
   
   .third-list p {
     font-size: 1rem;
-    color: var(--grey-600);
+    color: rgb(var(--grey-600));
     line-height: 60%;
     position: relative;
     /*animation: chromatic-glitch 1.5s infinite linear, move-horizontal 6s infinite ease-in-out; */

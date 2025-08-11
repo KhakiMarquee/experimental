@@ -3,7 +3,8 @@ import { resolve } from 'path';
 export default {
   resolve: {
     alias: {
-      css: resolve(__dirname, 'css'), // your css alias
+      '@css': resolve(__dirname, 'css'), // your css alias
+      '@media': resolve(__dirname, 'media')
     },
   },
   optimizeDeps: {
