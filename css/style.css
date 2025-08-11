@@ -258,7 +258,7 @@ footer.hide{
 
 .secondary-text ul li{
   cursor: pointer; /* Pointer cursor for interactivity */
-  font-size:12em;
+  font-size:8rem;
   color: var(--grey-400);
   transition: all ease-in;
   
@@ -418,7 +418,7 @@ footer.hide{
   }
 
   .secondary-text ul li{
-      font-size: 4rem; /*mobile phone second text*/
+      font-size: 3rem; /*mobile phone second text*/
       color:  var(--grey-400);
       transition: all ease-in;
 
@@ -563,4 +563,33 @@ footer.hide{
   .fade-in.staggered:nth-child(3) {
     animation-delay: 0.7s;
   }
+}
+
+@media (min-width: 1000px) and (min-height: 1000px) {
+    .secondary-text ul li{
+      font-size: 12rem; /*mobile phone second text*/
+
+    }
+
+}
+
+
+@media (min-width: 2000px) and (min-height: 1000px) {
+    .secondary-text ul li{
+      font-size: 18rem; /*mobile phone second text*/
+
+    }
+
+  }
+@media (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* Styles for landscape iPad */
+  footer{
+    min-height: 50px;
+    
+  }
+
+    .third-section {
+
+    font-size: 1em;
+    }
 }
