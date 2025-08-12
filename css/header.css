@@ -1,11 +1,11 @@
 /* HEADER */
 .site-header {
-  padding: 0;
-  position: sticky; /* stays visible at top */
-  top: 0;
-  border-bottom: 1px solid var(--grey-600);
-  color: var(--grey-500);
-z-index: 9999; /* ensure on top */
+    padding: 0;
+    position: sticky; /* stays visible at top */
+    top: 0;
+    border-bottom: 1px solid var(--grey-600);
+    color: var(--grey-500);
+    z-index: 9999; /* ensure on top */
 }
 
 .header-container {
