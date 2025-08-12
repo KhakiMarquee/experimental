@@ -4,6 +4,9 @@ import { initAnimations, animateThreeSceneOpen, animateThreeSceneClose, animateO
 let threeSceneInitialized = false;
 let threeSceneData = null;
 
+const footer = document.querySelector('footer');
+const header = document.querySelector('header');
+
 // Unified overlay management system
 class OverlayManager {
   constructor() {
@@ -37,6 +40,10 @@ class OverlayManager {
       this.mainText?.classList.add('main-content-hidden');
 
 
+      //Hide footer and header
+      footer.classList.add('hide');
+      header.classList.add('hide');
+
       
       this.activeOverlay = overlayEl;
     } catch (error) {
@@ -64,6 +71,10 @@ class OverlayManager {
       // Show main content
       if (updateMainContent) {
         this.mainText?.classList.remove('main-content-hidden');
+
+      //Remove Header and Footer
+        footer.classList.remove('hide');
+        header.classList.remove('hide');
 
       }
 
@@ -192,29 +203,80 @@ function initOverlays() {
 }
 
 // Working Globally
-const locationText = document.getElementById('location-toggle');
-if (locationText) {
-  locationText.addEventListener('click', () => {
+document.addEventListener('DOMContentLoaded', () => {
+  waitForFooterAndInitToggles();
+});
+
+function waitForFooterAndInitToggles() {
+  const footer = document.querySelector('footer, .footer');
+  if (footer) {
+    console.log('Footer found immediately.');
+    initToggles();
+  } else {
+    console.log('Footer not found, setting up observer...');
+    const observer = new MutationObserver((mutations, obs) => {
+      const footerNow = document.querySelector('footer, .footer');
+      if (footerNow) {
+        console.log('Footer detected by observer.');
+        obs.disconnect();
+        initToggles();
+      }
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
+}
+
+function initToggles() {
+  initLocationToggle();
+  initContactToggle();
+}
+
+function initLocationToggle() {
+  const locationText = document.getElementById('location-toggle');
+  if (!locationText) {
+    console.log('location-toggle element NOT found, retrying in 200ms...');
+    setTimeout(initLocationToggle, 200);
+    return;
+  }
+
+  console.log('Initializing location-toggle listener.');
+  locationText.addEventListener('click', (e) => {
+    e.preventDefault();
     locationText.classList.add('fade-out');
+
+    const link = locationText.querySelector('a');
     setTimeout(() => {
-      const isLondon = locationText.textContent.trim().toLowerCase() === 'based in london';
-      locationText.textContent = isLondon ? 'working globally' : 'based in london';
+      const currentText = link.textContent.trim().toLowerCase();
+      const isLondon = currentText === 'based in london';
+      link.textContent = isLondon ? 'working globally' : 'based in london';
       locationText.classList.remove('fade-out');
     }, 400);
   });
 }
 
-const contactText = document.getElementById('contact-toggle');
-if (contactText) {
-  contactText.addEventListener('click', () => {
+function initContactToggle() {
+  const contactText = document.getElementById('contact-toggle');
+  if (!contactText) {
+    console.log('contact-toggle element NOT found, retrying in 200ms...');
+    setTimeout(initContactToggle, 200);
+    return;
+  }
+
+  console.log('Initializing contact-toggle listener.');
+  contactText.addEventListener('click', (e) => {
+    e.preventDefault();
     contactText.classList.add('fade-out');
+
+    const link = contactText.querySelector('a');
     setTimeout(() => {
-      const isLondon = contactText.textContent.trim().toLowerCase() === 'goke.studio@gmail.com';
-      contactText.textContent = isLondon ? 'work with us' : 'goke.studio@gmail.com';
+      const currentText = link.textContent.trim().toLowerCase();
+      const isEmail = currentText === 'goke.studio@gmail.com';
+      link.textContent = isEmail ? 'work with us' : 'goke.studio@gmail.com';
       contactText.classList.remove('fade-out');
     }, 400);
   });
 }
+
 
 
 export function initUI() {
@@ -238,9 +300,7 @@ export function initUI() {
   const transitionSpace = document.querySelector('.transition-space');
   const container = document.querySelector('.site-body .container');
   const closeContainer = document.querySelector('#close-three-container');
-  const footer = document.querySelector('footer');
 
-  const header = document.querySelector('.site-header');
 
 console.log('Footer element:', footer);
 console.log('Header element:', header);
@@ -252,6 +312,7 @@ console.log('Header element:', header);
         transitionSpace.classList.add('active');
         animateThreeSceneOpen();
         footer.classList.add('hide');
+        header.classList.add('hide');
 
         if (!threeSceneInitialized) {
           threeSceneData = initThreeScene();
@@ -282,6 +343,7 @@ if (closeContainer && transitionSpace && footer) {
     transitionSpace.classList.remove('active');
     animateThreeSceneClose();
     footer.classList.remove('hide');
+    header.classList.remove('hide');
   });
 }
 
