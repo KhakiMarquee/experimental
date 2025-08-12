@@ -48,7 +48,34 @@
     </div>
 
   <!-- Header-->
-  <header class="site-header fade-in"></header>
+  <header class="site-header fade-in">
+    <div class="header-container">
+      <!-- Desktop Left Navigation -->
+      <div class="nav-left">
+        <a href="/pages/stones.html">stone</a>
+      </div>
+
+      <!-- Logo / Mobile Menu Toggle -->
+      <div class="logo" id="home-link">
+        <a href="index.html" id="mobile-menu-toggle">studio G O K E studio</a>
+      </div>
+
+      <!-- Desktop Right Navigation -->
+      <div class="nav-right">
+        <a href="https://www.goke.studio">stories</a>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <nav id="mobile-menu" class="mobile-nav">
+        <ul>
+          <li><a href="index.html">home</a></li>
+          <li><a href="pages/stones.html">stone</a></li>
+          <li><a href="https://www.goke.studio">stories</a></li>
+          <!-- Dynamic links will be injected here by JS -->
+        </ul>
+      </nav>
+    </div>
+  </header>
     <div id="app" style="display: none;"></div>
     <main class="site-body">
       <div id="carousel-container">
@@ -66,11 +93,21 @@
       -->
     </main>
 
-<footer class="footer fade-in"></footer>
-<script type="module" src="/src/loader.js"></script>
-<script type="module" src="/src/stoneviewInteraction.js"></script>
-<script type="module" src="/src/stoneview.js"></script>
-
+  <footer class="footer fade-in">
+    <ul>
+      <li>
+        <p id="contact-toggle" class="fade-text"><a href="#">work with us</a></p>
+        <p id="location-toggle" class="fade-text"><a href="#">based in london</a></p>
+      </li>
+      <li>
+        <p><a href="https://archivesdie.goke.studio" target="_blank" rel="noopener noreferrer">magazine</a></p>
+        <p><a href="https://gokestudio.substack.com/embed" target="_blank" rel="noopener noreferrer">subscribe</a></p>
+      </li>
+    </ul>
+  </footer>
+<script type="module" src="../src/loader.js"></script>
+<script type="module" src="../src/stoneviewInteraction.js"></script>
+<script type="module" src="../src/stoneview.js"></script>
 </body>
 
 </html>

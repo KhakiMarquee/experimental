@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Fetching:", `/data/stone.json`);
-  fetch(`data/stone.json`) 
+    console.log("Fetching:", `data/stone.json`);
+  fetch(`/data/stone.json`) 
     .then(res => res.json())
     .then(data => {
       const carousel = document.querySelector("#carousel");

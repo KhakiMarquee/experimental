@@ -1,11 +1,12 @@
 import { resolve } from 'path';
 
 export default {
-  base: './',
+  base: '/',
   resolve: {
     alias: {
       '@css': resolve(__dirname, 'css'), // your css alias
-      '@media': resolve(__dirname, 'media')
+      '@media': resolve(__dirname, 'media'),
+      '@data': resolve(__dirname, 'data')
     },
   },
   optimizeDeps: {

@@ -2,7 +2,7 @@
 export function getHomePath() {
   // Split current path into segments and remove empty ones
   const pathParts = window.location.pathname.split('/').filter(Boolean);
-
+    
   // If hosted on GitHub Pages, the first part of the path is usually the repo name
   if (pathParts.length > 0) {
     return '/' + pathParts[0] + '/'; // Repo root
@@ -22,7 +22,7 @@ export function loadHeader() {
 
     const homePath = getHomePath();
     const url = `${homePath}header.html`;
-
+    console.log(homePath);
     fetch(url)
         .then(response => {
             if (!response.ok) throw new Error(`Failed to load header: ${response.status}`);

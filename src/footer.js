@@ -12,10 +12,10 @@ export function loadFooter() {
     console.warn("No <footer> element found.");
     return Promise.resolve();  // resolve immediately if no footer
   }
-
+    
     const homePath = getHomePath();
     const url = `${homePath}footer.html`;
-
+    
   return fetch(url)
     .then(response => {
       if (!response.ok) throw new Error(`Failed to load footer: ${response.status}`);
