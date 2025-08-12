@@ -12,7 +12,7 @@ export function loadFooter() {
     return Promise.resolve();  // resolve immediately if no footer
   }
 
-  const url = `/footer.html`
+  const url = `footer.html`
 
   return fetch(url)
     .then(response => {

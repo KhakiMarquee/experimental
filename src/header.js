@@ -8,7 +8,7 @@ export function loadHeader() {
         return;
     }
 
-    const url = `/header.html`;
+    const url = `header.html`;
 
     fetch(url)
         .then(response => {
