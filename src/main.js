@@ -1,6 +1,7 @@
 import { initUI } from '/src/ui.js';
 import { initStrudelPlayer } from '/src/strudel_player.js';
 import { initThreeScene } from '/src/three_scene.js';
+import { loadHeader } from '/src/header.js';
 
  // Header
 
@@ -9,8 +10,15 @@ export function initApp() {
     // Assume DOM is ready when this is called by loader.js
     // Three.js is lazy-loaded by UI interactions
     initUI();
+
+    // Load Strudel
     initStrudelPlayer();
 
+    //Load Header
+    loadHeader();
+
+
+    //Load dynamic buttons for page
     if (document.querySelector('.third-list')) {
       const items = document.querySelectorAll('.third-list p');
       // your code here
@@ -28,6 +36,9 @@ export function initApp() {
     });
     }
   };
+
+
+
 
 
  

@@ -75,20 +75,15 @@ document.addEventListener("DOMContentLoaded", () => {
 const showLoading = () => {
   const screen = document.getElementById('loading-screen');
   const lscreen = document.getElementById('ls-small');
-  const sheader = document.querySelector('.site-header');
-
     if (screen) {screen.style.display = 'flex';}
     if (lscreen) {lscreen.classList.remove('loaded')};
-    if (sheader) sheader.classList.remove('loaded');
 };
 
 const hideLoading = () => {
   const screen = document.getElementById('ls-small');
   const lscreen = document.getElementById('loading-screen');
-  const sheader = document.querySelector('.site-header');
     if (screen) screen.style.display = 'none';
     if (lscreen) lscreen.classList.add('loaded');
-    if (sheader) sheader.classList.add('loaded');
 };
 
 const moveSiteBodyToApp = () => {
