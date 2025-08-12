@@ -1,7 +1,7 @@
 import { resolve } from 'path';
 
 export default {
-  base: '/experimental/',
+  base: './',
   resolve: {
     alias: {
       '@css': resolve(__dirname, 'css'), // your css alias

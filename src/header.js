@@ -8,7 +8,7 @@ export function loadHeader() {
         return;
     }
 
-    const url = `${import.meta.env.BASE_URL}header.html`;
+    const url = `/header.html`;
 
     fetch(url)
         .then(response => {
