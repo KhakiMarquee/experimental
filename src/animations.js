@@ -4,7 +4,7 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
-// Footer
+// Footer scroll effect
 export function initFooterScrollEffect(){
   const footer = document.querySelector('.footer');
   console.log('Footer found:', footer);
