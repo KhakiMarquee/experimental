@@ -3,7 +3,6 @@
   padding: 0;
   position: sticky; /* stays visible at top */
   top: 0;
-  z-index: 999; /* above other content */
   border-bottom: 1px solid var(--grey-200);
   color: var(--grey-500);
 }
