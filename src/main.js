@@ -2,8 +2,7 @@ import { initUI } from '/src/ui.js';
 import { initStrudelPlayer } from '/src/strudel_player.js';
 import { initThreeScene } from '/src/three_scene.js';
 import { loadHeader } from '/src/header.js';
-
- // Header
+import { loadFooter } from '/src/footer.js';
 
 //Init Main Application
 export function initApp() {
@@ -16,6 +15,9 @@ export function initApp() {
 
     //Load Header
     loadHeader();
+    
+    //Load Footer
+    loadFooter();
 
 
     //Load dynamic buttons for page

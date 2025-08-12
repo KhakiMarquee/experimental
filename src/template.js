@@ -1,8 +1,3 @@
-function footer(){
-  const footer = document.querySelector('footer');
-  footer.classList.add('at-bottom');
-}
-
 function getCategoryFromURL() {
   const params = new URLSearchParams(window.location.search);
   return params.get('category');
@@ -59,9 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
     //const jsonPath = `${basePath}/data/data.json`;
     const jsonPath = `/data/data.json`;
     renderContent(category, jsonPath);
-    setTimeout(() => {
-      footer();
-    }, 7500);
   } else {
     document.getElementById('content').innerHTML = `<p>Invalid category.</p>`;
   }

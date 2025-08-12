@@ -98,6 +98,8 @@ const moveSiteBodyToApp = () => {
 const intervalDelay = 150;
 
 const bootstrap = async () => {
+
+  // Loading screen
   showLoading();
 
   // p5 background
@@ -115,16 +117,18 @@ const bootstrap = async () => {
       }
     }, intervalDelay);
   }).then(async () => {
+    //Hide Loading Screen
     moveSiteBodyToApp();
     hideLoading();
 
     const { initApp } = await import('/src/main.js');
+
+    //Initialise Application
     initApp();
   });
 };
 
   //MOUSE
-
   const overlaySketch = (p) => {
     let overlayDiv;
 

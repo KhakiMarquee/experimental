@@ -124,7 +124,6 @@ function initOverlays() {
     trigger.addEventListener('click', e => {
       console.log('Trigger clicked (stopPropagation):', trigger.dataset.overlay);
       e.stopPropagation();
-      
     });
   });
 
@@ -191,38 +190,32 @@ function initOverlays() {
     }
   });
 }
-  // Working Globally
-  const locationText = document.getElementById('location-toggle');
 
+// Working Globally
+const locationText = document.getElementById('location-toggle');
+if (locationText) {
   locationText.addEventListener('click', () => {
-    // Start fade out
     locationText.classList.add('fade-out');
-
-    // After fade out is done, switch text and fade back in
     setTimeout(() => {
       const isLondon = locationText.textContent.trim().toLowerCase() === 'based in london';
       locationText.textContent = isLondon ? 'working globally' : 'based in london';
-
-      // Fade back in
       locationText.classList.remove('fade-out');
-    }, 400); // Matches CSS transition duration
+    }, 400);
   });
+}
 
-    const contactText = document.getElementById('contact-toggle');
-
+const contactText = document.getElementById('contact-toggle');
+if (contactText) {
   contactText.addEventListener('click', () => {
-    // Start fade out
     contactText.classList.add('fade-out');
-
-    // After fade out is done, switch text and fade back in
     setTimeout(() => {
       const isLondon = contactText.textContent.trim().toLowerCase() === 'goke.studio@gmail.com';
       contactText.textContent = isLondon ? 'work with us' : 'goke.studio@gmail.com';
-
-      // Fade back in
       contactText.classList.remove('fade-out');
-    }, 400); // Matches CSS transition duration
+    }, 400);
   });
+}
+
 
 export function initUI() {
   console.log('Initializing UI...'); // Debug log
@@ -238,12 +231,19 @@ export function initUI() {
   // Initialize overlays - THIS WAS MISSING!
   initOverlays();
 
+
+
   const mainText = document.querySelector('.main-text');
   const transitionButton = document.querySelector('.main-text .tap-button:not([data-overlay])');
   const transitionSpace = document.querySelector('.transition-space');
   const container = document.querySelector('.site-body .container');
   const closeContainer = document.querySelector('#close-three-container');
   const footer = document.querySelector('footer');
+
+  const header = document.querySelector('.site-header');
+
+console.log('Footer element:', footer);
+console.log('Header element:', header);
 
   // Tap button for 3D scene
   if (transitionButton && transitionSpace && mainText && container && closeContainer) {

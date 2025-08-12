@@ -4,27 +4,6 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
-// Footer scroll effect
-export function initFooterScrollEffect(){
-  const footer = document.querySelector('.footer');
-  console.log('Footer found:', footer);
-  if (!footer) return;
-
-  ScrollTrigger.create({
-  trigger: '.site-body',
-  start: "bottom bottom",
-  toggleClass: { targets: footer, className: "at-bottom" },
-  onToggle(self) {
-    console.log("ScrollTrigger toggle:", self.isActive);
-  }
-  });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('DOMContentLoaded fired');
-  initFooterScrollEffect();
-});
-
 export function initAnimations() {
   // Check if elements exist before animating them
 

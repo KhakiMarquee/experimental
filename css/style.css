@@ -3,6 +3,7 @@
 @import './colours.css';
 @import './font.css';
 @import './header.css';
+@import './footer.css';
 
 /* Reset & Base */
 *, *::before, *::after {
@@ -68,72 +69,6 @@ a:hover, #location-toggle:hover{
   -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
 }
 
-/*FOOTER*/
-footer {
-  transition: opacity 0.6s ease-in-out, margin 0.6s ease-in-out, background-color 0.6s ease-in-out;
-  position: sticky;
-  padding: 2.5rem 2rem;
-  align-items: center;
-  width: 100vw;
-  font-size: .9rem;
-  justify-content: flex-end;
-  min-height: 100px;
-  color: white;
-  bottom:0;
-  z-index: 1000;
-  background-color: rgba(var(--grey-600), 0.3);
-  color: white;
-  border-top: 1px solid var(--grey-200);
-}
-
-footer.at-bottom {
-  background-color: rgba(var(--grey-600), 1);
-}
-
-footer.at-bottom a {
-  color: var(--grey-200);
-}
-
-footer li p::first-letter{
-  text-transform: capitalize;
-}
-
-footer ul{
-  list-style: none;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr); /* Matches main grid */
-}
-
-footer li:first-of-type{
-    grid-column: 1 / span 3; /* Left-aligned section */
-    text-align: left;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-
-
-footer li p:last-of-type{
-  font-weight:lighter;
-  text-decoration: underline;
-  text-underline-offset: 0.15em;
-  font-style: italics;
-  line-height:2em;
-}
-
-footer li:last-of-type{
-    grid-column: 10 / span 3; /* Left-aligned section */
-    overflow: hidden;
-    text-align: right;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-footer.hide{
-  transition: opacity 0.4s ease;
-  opacity: 0
-}
 
 /*MAIN */
 .site-body {
@@ -515,10 +450,6 @@ footer.hide{
   }
 @media (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
   /* Styles for landscape iPad */
-  footer{
-    min-height: 50px;
-    
-  }
 
     .third-section {
 

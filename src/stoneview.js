@@ -1,21 +1,5 @@
 import p5 from 'p5';
 
-// Footer trigger function (separate from carousel logic)
-function footer() {
-  const footerElement = document.querySelector('footer');
-  if (footerElement) {
-    footerElement.classList.add('at-bottom');
-
-  }
-}
-
-// [NOTE:] This handles the footer trigger with a delay
-  setTimeout(() => {
-    footer();
-  }, 3000); // 1.5s delay — tweak to your needs
-
-
-
 export default function stoneViewSketch(p) {
 
   let carousel;
