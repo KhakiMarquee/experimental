@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Fetching:", `${import.meta.env.BASE_URL}data/stone.json`);
+    console.log("Fetching:", `data/stone.json`);
   fetch(`/data/stone.json`)
     .then(res => res.json())
     .then(data => {
