@@ -2,7 +2,7 @@
 footer {
   transition: opacity 0.6s ease-in-out, margin 0.6s ease-in-out, background-color 0.6s ease-in-out;
   position: sticky;
-  padding: 2.5rem 2rem;
+  padding: 1rem 2rem;
   align-items: center;
   width: 100vw;
   font-size: .9rem;
