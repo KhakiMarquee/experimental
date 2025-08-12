@@ -7,6 +7,8 @@ let threeSceneData = null;
 const footer = document.querySelector('footer');
 const header = document.querySelector('header');
 
+//HOMEPAGE INTERACTIONS
+
 // Unified overlay management system
 class OverlayManager {
   constructor() {
@@ -202,7 +204,7 @@ function initOverlays() {
   });
 }
 
-// Working Globally
+//GLOBAL INTERACTIONS - HEADER + FOOTER
 document.addEventListener('DOMContentLoaded', () => {
   waitForFooterAndInitToggles();
 });
@@ -277,7 +279,7 @@ function initContactToggle() {
   });
 }
 
-
+//EXPORTED INITIALISE UI FUNCTION
 
 export function initUI() {
   console.log('Initializing UI...'); // Debug log
@@ -380,6 +382,9 @@ if (document.getElementById('chromatic-text') && !window.location.pathname.inclu
 
   console.log('UI initialization complete'); // Debug log
 }
+
+
+//DEBUG FUNCTIONS
 
 // Debug function to test overlays manually
 window.debugOverlays = () => {

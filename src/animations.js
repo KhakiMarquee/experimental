@@ -4,6 +4,8 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
+
+//HOMEPAGE ANIMATIONS
 export function initAnimations() {
   // Check if elements exist before animating them
 

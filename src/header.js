@@ -5,7 +5,7 @@ export function loadHeader() {
         console.warn("No <header class='site-header'> found to load into.");
         return;
     }
-     const url = new URL(`${import.meta.env.BASE_URL}header.html`, window.location.origin).href;
+     const url = `${import.meta.env.BASE_URL}header.html`;
 
     fetch(url)
         .then(response => {
@@ -18,8 +18,6 @@ export function loadHeader() {
         })
         .catch(err => console.error(err));
 }
-
-
 
 function initHeader() {
     const menuToggle = document.getElementById("mobile-menu-toggle");
