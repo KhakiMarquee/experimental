@@ -57,11 +57,13 @@
   .nav-left,
   .nav-right {
     display: none; /* hide desktop nav */
+    font-size: 0.8rem;
   }
 
   .logo {
     grid-column: 1 / span 12;
     text-align: left;
+    font-size: 0.8rem;
   }
 
   .logo a {
