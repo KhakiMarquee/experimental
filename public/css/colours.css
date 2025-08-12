@@ -1,0 +1,11 @@
+:root {
+  --grey-100: 248, 249, 250; /* very light */
+  --grey-150: #e9ecef; /* light */
+  --grey-200: #dee2e6;
+  --grey-300: #ced4da;
+  --grey-400: #adb5bd;
+  --grey-500: #6c757d;
+  --grey-600: 73, 80, 87;
+  --grey-700: #343a40;
+  --grey-800: #212529; /* very dark */
+}

@@ -1,6 +1,7 @@
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 export function loadFooter() {
@@ -11,7 +12,7 @@ export function loadFooter() {
     return Promise.resolve();  // resolve immediately if no footer
   }
 
-  const url = `footer.html`;
+  const url = `${import.meta.env.BASE_URL}footer.html`
 
   return fetch(url)
     .then(response => {

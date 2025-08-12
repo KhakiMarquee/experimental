@@ -1,3 +1,5 @@
+
+
 export function loadHeader() {
     const headerElement = document.querySelector('header.site-header');
 
@@ -5,7 +7,8 @@ export function loadHeader() {
         console.warn("No <header class='site-header'> found to load into.");
         return;
     }
-     const url = `/header.html`;
+
+    const url = `${import.meta.env.BASE_URL}header.html`;
 
     fetch(url)
         .then(response => {
@@ -14,7 +17,15 @@ export function loadHeader() {
         })
         .then(html => {
             headerElement.innerHTML = html;
-            initHeader(); // Now that the HTML exists, we can init
+
+            initHeader(); // run any JS that needs header elements
+
+            // Set home link dynamically
+            const homeLink = document.querySelector('#home-link a');
+            if (homeLink) {
+                console.log(homeLink)
+                homeLink.href = getHomePath(); // just set link target
+            }
         })
         .catch(err => console.error(err));
 }
@@ -41,4 +52,17 @@ function initHeader() {
         e.preventDefault();
         mobileMenu.classList.toggle("active");
     });
+}
+
+export function getHomePath() {
+  // Split current path into segments and remove empty ones
+  const pathParts = window.location.pathname.split('/').filter(Boolean);
+
+  // If hosted on GitHub Pages, the first part of the path is usually the repo name
+  if (pathParts.length > 0) {
+    return '/' + pathParts[0] + '/'; // Repo root
+  }
+
+  // If local or at domain root, just return "/"
+  return '/';
 }
