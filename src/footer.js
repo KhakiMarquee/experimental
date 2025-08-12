@@ -11,7 +11,7 @@ export function loadFooter() {
     return Promise.resolve();  // resolve immediately if no footer
   }
 
-  const url = `${import.meta.env.BASE_URL}footer.html`;
+  const url = `/footer.html`;
 
   return fetch(url)
     .then(response => {

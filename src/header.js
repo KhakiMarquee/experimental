@@ -5,7 +5,7 @@ export function loadHeader() {
         console.warn("No <header class='site-header'> found to load into.");
         return;
     }
-     const url = `${import.meta.env.BASE_URL}header.html`;
+     const url = `/header.html`;
 
     fetch(url)
         .then(response => {

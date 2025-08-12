@@ -260,4 +260,15 @@ export default function stoneViewSketch(p) {
     return false;
   }
 }
-new p5(stoneViewSketch);
+function waitForSlides() {
+  const slides = document.querySelectorAll('#carousel .slide');
+  if (slides.length > 0) {
+    // Start p5 only after slides exist
+    new p5(stoneViewSketch);
+  } else {
+    // Check again in a short while
+    setTimeout(waitForSlides, 50);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', waitForSlides);
