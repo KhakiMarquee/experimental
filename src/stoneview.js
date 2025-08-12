@@ -69,6 +69,7 @@ export default function stoneViewSketch(p) {
       const roundedY = Math.round(posY * 100) / 100;
       const roundedZ = Math.round(posZ * 100) / 100;
 
+      //The Key transform
       slide.style.transform = `
         translateX(${roundedX}px)
         translateY(${roundedY}px)
@@ -259,5 +260,4 @@ export default function stoneViewSketch(p) {
     return false;
   }
 }
-
 new p5(stoneViewSketch);
