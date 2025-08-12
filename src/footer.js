@@ -1,4 +1,5 @@
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { getHomePath } from '/src/header.js'
 import gsap from 'gsap';
 
 
@@ -12,7 +13,8 @@ export function loadFooter() {
     return Promise.resolve();  // resolve immediately if no footer
   }
 
-  const url = `footer.html`
+    const homePath = getHomePath();
+    const url = `${homePath}footer.html`;
 
   return fetch(url)
     .then(response => {

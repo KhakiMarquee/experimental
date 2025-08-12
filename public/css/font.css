@@ -1,8 +1,0 @@
-@font-face {
-  font-family: 'Geist';
-  src: local('Geist Mono Regular'),
-       url('css/fonts/geist-font-1.5.0/fonts/GeistMono/webfonts/GeistMono-Regular.woff2') format('woff2'),
-       url('https://freight.cargo.site/m/E2495587642789183695143670468577/GeistMono-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-}

@@ -4,6 +4,7 @@ import { initThreeScene } from '/src/three_scene.js';
 import { loadHeader } from '/src/header.js';
 import { loadFooter } from '/src/footer.js';
 
+
 //Init Main Application
 export function initApp() {
     // Assume DOM is ready when this is called by loader.js
