@@ -39,7 +39,12 @@
   top: 100%; /* below header */
   left: 0;
   right: 0;
-  border-top: 1px solid var(--grey-200);
+  font-size: 0.8rem;
+  background-color: rgba(var(--grey-100), .2);
+  width: fit-content;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  
 }
 
 .mobile-nav ul {

@@ -6,7 +6,7 @@
         "image": "/public/media/IMG/ball_finial_small_image.png",
         "preview-image" : "",
         "video": "",
-        "type": "Sculpture",
+        "type": "Material",
         "dimensions": "150 by 150"
 
         },
@@ -17,7 +17,7 @@
         "image": "/public/media/IMG/trefoil_small_image.png",
         "preview-image" : "",
         "video": "",
-        "type": "Sculpture",
+        "type": "Material",
         "dimensions": "150 by 150"
 
         },
@@ -28,7 +28,7 @@
         "image": "/public/media/IMG/ball_finial_small_image.png",
         "preview-image" : "",
         "video": "",
-        "type": "Sculpture",
+        "type": "Render",
         "dimensions": "150 by 150"
 
         },
@@ -39,7 +39,7 @@
         "image": "/public/media/IMG/ball_finial_small_image.png",
         "preview-image" : "",
         "video": "",
-        "type": "Sculpture",
+        "type": "Render",
         "dimensions": "150 by 150"
 
         }        

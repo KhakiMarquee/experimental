@@ -34,10 +34,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const p = document.createElement("p");
         p.textContent = item.title || "";
 
+        //Create tooltip
+        const span = document.createElement("span");
+        span.classList.add("tooltip");
+        span.title = "[tap]";
+
         // Build structure
         slideInner.appendChild(img);
         slideInner.appendChild(p);
         slide.appendChild(slideInner);
+        slide.appendChild(span);
         carousel.appendChild(slide);
 
         // Click animation trigger

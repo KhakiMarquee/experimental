@@ -68,12 +68,19 @@
   padding: 0.4rem 0.8rem;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background-color 0.3s ease-in;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+}
+
+.view-toggle button:hover {
+  text-decoration-color: rgb(var(--grey-600));
 }
 
 .view-toggle button.active {
-  background-color: rgba(var(--grey-100),1);
+  background-color: rgba(var(--grey-100),0.2);
   color: var(--grey-800);
+  text-decoration-color: rgb(var(--grey-600));
 }
 
 /* Meta info line inside project details */
@@ -175,7 +182,7 @@
   }
   to {
     border-bottom: 1px solid var(--grey-800);
-    background-color: rgba(var(--grey-100),1);
+    background-color: rgba(var(--grey-100),0.2);
   }
 }
 
