@@ -42,7 +42,7 @@ body {
 
 /*BOLD TEXT*/
 
-.logo, footer li p:first-of-type, .site-header, .third-list p{
+.logo, footer li p:first-of-type .third-list p{
   font-weight:bold;
 }
 

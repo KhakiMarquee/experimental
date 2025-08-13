@@ -1,17 +1,3 @@
-
-export function getHomePath() {
-  // Split current path into segments and remove empty ones
-  const pathParts = window.location.pathname.split('/').filter(Boolean);
-    
-  // If hosted on GitHub Pages, the first part of the path is usually the repo name
-  if (pathParts.length > 0) {
-    return '/' + pathParts[0] + '/'; // Repo root
-  }
-
-  // If local or at domain root, just return "/"
-  return '/';
-}
-
 export function loadHeader() {
     const headerElement = document.querySelector('header.site-header');
 
@@ -21,6 +7,7 @@ export function loadHeader() {
     }
 
     const url = `header.html`;
+    
     fetch(url)
         .then(response => {
             if (!response.ok) throw new Error(`Failed to load header: ${response.status}`);
@@ -28,15 +15,7 @@ export function loadHeader() {
         })
         .then(html => {
             headerElement.innerHTML = html;
-
             initHeader(); // run any JS that needs header elements
-
-            // Set home link dynamically
-            const homeLink = document.querySelector('#home-link a');
-            if (homeLink) {
-                console.log(homeLink)
-                homeLink.href = getHomePath(); // just set link target
-            }
         })
         .catch(err => console.error(err));
 }
@@ -44,21 +23,45 @@ export function loadHeader() {
 function initHeader() {
     const menuToggle = document.getElementById("mobile-menu-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
-    const menuList = mobileMenu.querySelector("ul");
+    const menuList = mobileMenu?.querySelector("ul");
+
+    // Early return if required elements don't exist
+    if (!menuToggle || !mobileMenu || !menuList) {
+        console.warn("Mobile menu elements not found");
+        return;
+    }
 
     const currentPath = window.location.pathname.toLowerCase();
     const dynamicLinks = [
-        { keyword: "projects", url: "/projects.html", text: "projects" },
         { keyword: "about", url: "/about.html", text: "about" },
-        { keyword: "contact", url: "/contact.html", text: "contact" }
+        { keyword: "pages", url: "/stone.html", text: "pages" } // Fixed missing slash
     ];
 
+    // Generate dynamic links based on current path
     dynamicLinks.forEach(link => {
-        if (currentPath.includes(link.keyword) && !menuList.innerHTML.includes(link.url)) {
-            menuList.innerHTML += `<li><a href="${link.url}">${link.text}</a></li>`;
+        if (currentPath.includes(link.keyword)) {
+            // Check if link already exists (better method than innerHTML.includes)
+            const existingLinks = Array.from(menuList.querySelectorAll('a'));
+            const linkExists = existingLinks.some(existingLink => 
+                existingLink.href.includes(link.url)
+            );
+
+            if (!linkExists) {
+                // Create elements properly instead of using innerHTML +=
+                const newListItem = document.createElement('li');
+                const newLink = document.createElement('a');
+                newLink.href = link.url;
+                newLink.textContent = link.text;
+                
+                newListItem.appendChild(newLink);
+                menuList.appendChild(newListItem);
+                
+                console.log(`Added dynamic link: ${link.text} -> ${link.url}`);
+            }
         }
     });
 
+    // Mobile menu toggle functionality
     menuToggle.addEventListener("click", e => {
         e.preventDefault();
         mobileMenu.classList.toggle("active");
