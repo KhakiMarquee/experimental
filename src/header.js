@@ -34,7 +34,8 @@ function initHeader() {
     const currentPath = window.location.pathname.toLowerCase();
     const dynamicLinks = [
         { keyword: "about", url: "/about.html", text: "about" },
-        { keyword: "pages", url: "/stone.html", text: "pages" } // Fixed missing slash
+        { keyword: "pages", url: "/stone.html", text: "pages" },
+        { keyword: "index", url: "studio.goke.studio", text: "homepage" } // Fixed missing slash
     ];
 
     // Generate dynamic links based on current path
