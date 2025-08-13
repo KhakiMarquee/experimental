@@ -21,8 +21,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   perspective: 2000px;
-  width: 700px;
-  height: 700px;
+  width: 500px;
+  height: 500px;
   backface-visibility: hidden;
 }
 
@@ -54,7 +54,8 @@
 
 .slide {
   position: absolute;
-  width: 700px;
+  width: 500px;
+  height:500px;
   cursor: pointer;
   transform-origin: center;
   transform: rotateY(-40deg);
@@ -115,15 +116,31 @@
 @media (max-width: 768px) {
   #carousel-container {
     top: 50%;
-    width: 420px;  /* 60% of 700 */
-    height: 420px; /* 60% of 300 */
+    width: 300px;  /* 60% of 700 */
+    height: 300px; /* 60% of 300 */
   }
   .slide {
-    width: 420px;
+    width: 300px;
   }
   .slide-inner {
     padding: 2.4rem 1.2rem; /* 60% of 4rem 2rem */
   }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  /* Styles for landscape iPad */
+    #carousel-container {
+    top: 50%;
+    width: 150px;
+    height: 200px;
+  }
+  .slide {
+    width: 150px;
+  }
+  .slide-inner {
+    padding: .8rem 0.8rem;
+  }
+
 }
 
 @media (max-width: 460px) {
@@ -136,12 +153,13 @@
     width: 280px;
   }
   .slide-inner {
-    padding: 1.6rem 0.8rem; /* 40% of 4rem 2rem */
+    padding: .8rem 0.8rem; /* 40% of 4rem 2rem */
   }
 }
 
-@media (max-width: 460px) and (max-height: 900px) {
-  #carousel-container {
+@media (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* Styles for landscape iPad */
+    #carousel-container {
     top: 50%;
     width: 280px;
     height: 280px;
@@ -150,6 +168,23 @@
     width: 280px;
   }
   .slide-inner {
-    padding: 1.6rem 0.8rem;
+    padding: .8rem 0.8rem;
   }
+
+}
+
+@media (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* Styles for landscape iPad */
+    #carousel-container {
+    top: 50%;
+    width: 280px;
+    height: 280px;
+  }
+  .slide {
+    width: 280px;
+  }
+  .slide-inner {
+    padding: .8rem 0.8rem;
+  }
+
 }

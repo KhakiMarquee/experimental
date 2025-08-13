@@ -176,7 +176,7 @@ export default function stoneViewSketch(p) {
     // Swipe speed, tuned for mobile
     let dragSpeed = deltaX * -1.5; // increase sensitivity slightly
     
-    const maxDragSpeed = 15;
+    const maxDragSpeed = 50;
     dragSpeed = Math.max(-maxDragSpeed, Math.min(maxDragSpeed, dragSpeed));
 
     // Smooth easing toward new speed

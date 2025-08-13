@@ -1,3 +1,5 @@
+//RENDER STONEVIEW
+
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Fetching:", `data/stone.json`);
   fetch(`/data/stone.json`) 

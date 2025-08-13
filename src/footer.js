@@ -29,7 +29,7 @@ export function loadFooter() {
         initFooterScrollEffect();
       } else {
         // On other pages: add 'at-bottom' class after delay
-        triggerFooter(3000);
+        triggerFooter(0);
       }
     })
     .catch(err => console.error(err));
