@@ -55,7 +55,6 @@
 .slide {
   position: absolute;
   width: 500px;
-  height:500px;
   cursor: pointer;
   transform-origin: center;
   transform: rotateY(-40deg);
@@ -95,6 +94,22 @@
 .carousel-item {
   display: inline-block;
   transform-origin: center;
+}
+
+/*CLICK APP*/
+
+.slide.flattening {
+  transform: perspective(800px) rotateY(0deg);
+}
+
+.slide.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100vw !important;
+  height: 100vh !important;
+  transform: none !important;
 }
 
 /* Responsive adjustments WITHOUT scale or transform-scale */

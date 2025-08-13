@@ -50,6 +50,7 @@ export default function stoneViewSketch(p) {
 
     // true infinite positioning for each slide
     slides.forEach((slide, i) => {
+      
       let pos1 = (i * baseSpacing - scrollOffset) % totalLength;
       if (pos1 < -baseSpacing * 2) pos1 += totalLength;
       let pos2 = pos1 - totalLength;
@@ -69,6 +70,10 @@ export default function stoneViewSketch(p) {
       const roundedY = Math.round(posY * 100) / 100;
       const roundedZ = Math.round(posZ * 100) / 100;
 
+      // ⬇ Skip transforms if this slide is expanding/fullscreen
+      if (slide.classList.contains("expanding") || slide.classList.contains("fullscreen")) {
+        return;
+      }
       //The Key transform
       slide.style.transform = `
         translateX(${roundedX}px)
@@ -264,7 +269,7 @@ function waitForSlides() {
   const slides = document.querySelectorAll('#carousel .slide');
   if (slides.length > 0) {
     // Start p5 only after slides exist
-    new p5(stoneViewSketch);
+    window.p5Instance = new p5(stoneViewSketch);
   } else {
     // Check again in a short while
     setTimeout(waitForSlides, 50);

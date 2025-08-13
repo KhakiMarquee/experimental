@@ -1,3 +1,5 @@
+import { openDetail } from '/src/openDetail.js';
+
 //RENDER STONEVIEW
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -37,9 +39,17 @@ document.addEventListener("DOMContentLoaded", () => {
         slideInner.appendChild(p);
         slide.appendChild(slideInner);
         carousel.appendChild(slide);
+
+        // Click animation trigger
+        slide.addEventListener("click", () => {
+          openDetail(slide, item);
+        });
       });
     })
     .catch(err => {
       console.error("Error loading stone data:", err);
     });
 });
+
+
+
