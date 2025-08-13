@@ -34,7 +34,7 @@
     bottom:0;
 }
 
-#category-buttons button:first-of-type {
+#category-buttons button{
   align-self: flex-end; /* stop stretching */
   width: auto;            /* shrink to content */
   margin-left: auto;      /* push to the right */
