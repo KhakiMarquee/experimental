@@ -31,15 +31,15 @@ function initHeader() {
         return;
     }
 
-    const currentPath = window.location.pathname.toLowerCase();
+     /* const currentPath = window.location.pathname.toLowerCase();
     const dynamicLinks = [
-        { keyword: "about", url: "/about.html", text: "about" },
-        { keyword: "pages", url: "/stone.html", text: "pages" },
+        { keyword: "stone", url: "/pages/audiovisuals.html", text: "about" },
+        { keyword: "", url: "/stone.html", text: "pages" },
         { keyword: "index", url: "studio.goke.studio", text: "homepage" } // Fixed missing slash
     ];
 
     // Generate dynamic links based on current path
-    dynamicLinks.forEach(link => {
+  dynamicLinks.forEach(link => {
         if (currentPath.includes(link.keyword)) {
             // Check if link already exists (better method than innerHTML.includes)
             const existingLinks = Array.from(menuList.querySelectorAll('a'));
@@ -60,7 +60,7 @@ function initHeader() {
                 console.log(`Added dynamic link: ${link.text} -> ${link.url}`);
             }
         }
-    });
+    });*/
 
     // Mobile menu toggle functionality
     menuToggle.addEventListener("click", e => {
