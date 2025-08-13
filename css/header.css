@@ -8,6 +8,23 @@
     z-index: 9999; /* ensure on top */
 }
 
+.nav-left .tooltip:after {
+  opacity:0;
+  font-size: inherit;
+  color:var(--grey-300);
+}
+
+.nav-right .tooltip:before {
+  opacity:0;
+  font-size: inherit;
+  color:var(--grey-300);
+  content: attr(title);
+}
+
+.nav-right .tooltip:hover:before { content: attr(title); opacity:1; color:var(--grey-300); } 
+.nav-left .tooltip:hover:after { content: attr(title); opacity:1; color:var(--grey-300); } 
+
+
 .header-container {
   margin: 0 auto;
   display: grid;

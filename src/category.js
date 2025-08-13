@@ -27,7 +27,7 @@ function renderCarousel(data) {
 
     const span = document.createElement("span");
     span.classList.add("tooltip");
-    span.title = "[more]";
+    span.title = "[tap]";
     slide.appendChild(slideInner);
     slide.appendChild(span);
     carousel.appendChild(slide);
