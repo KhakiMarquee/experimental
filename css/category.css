@@ -1,13 +1,8 @@
 #category-buttons {
-    position: fixed;
-    bottom: 71px;
-    right: 0%;
+    position: relative;
     display: flex;
     flex-direction: column;
     z-index: 99999;
-    background-color: rgba(var(--grey-100), .2);
-    border-bottom-left-radius: 15px;
-    border-top-left-radius: 15px;
     overflow: hidden;
 }
 
@@ -17,18 +12,49 @@
   font-size: 0.8rem;
   cursor: pointer;
   transition: background-color 0.3s,;
-  width:100%;
   text-decoration: underline;
   text-decoration-color: transparent;
   color: var(--grey-500);
   background-color: rgba(var(--grey-100), .2);
+  width:100%;
 }
 
-#category-buttons button:hover {
+#filter button:hover {
   text-decoration-color: rgb(var(--grey-600));
   background-color: rgba(var(--grey-100), .3);
 }
 
-#category-buttons button:active {
+#filter button:active {
   transform: translateY(0);
 }
+
+#filter{
+    position:sticky;
+    bottom:0;
+}
+
+#category-buttons button:first-of-type {
+  align-self: flex-end; /* stop stretching */
+  width: auto;            /* shrink to content */
+  margin-left: auto;      /* push to the right */
+  padding: 1rem 2rem;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border: transparent;
+  background-color: rgba(var(--grey-100), .2);
+  margin: 0!important;
+}
+
+.flex{
+ flex-direction: column!important;
+}
+
+#category-buttons.show-buttons button:not([data-category="filter"]) {
+  display: inherit; /* or flex */
+}
+
+/* Hide all non-filter buttons by default */
+#category-buttons button:not([data-category="filter"]) {
+  display: none;
+}
+

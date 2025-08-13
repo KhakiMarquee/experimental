@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(err => console.error("Error loading stone data:", err));
 
   // Category buttons
-  const buttons = document.querySelectorAll("#category-buttons button");
+  const buttons = document.querySelectorAll('#category-buttons button:not([data-category="filter"])');
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
       const category = btn.dataset.category;
@@ -60,5 +60,16 @@ document.addEventListener("DOMContentLoaded", () => {
         renderCarousel(filtered);
       }
     });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const filterButton = document.querySelector('#category-buttons button[data-category="filter"]');
+  const categoryButtons = document.querySelector('#category-buttons');
+
+  if (!filterButton || !categoryButtons) return;
+
+  filterButton.addEventListener('click', () => {
+    categoryButtons.classList.toggle('show-buttons');
   });
 });

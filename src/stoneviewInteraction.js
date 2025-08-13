@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         //Create tooltip
         const span = document.createElement("span");
         span.classList.add("tooltip");
-        span.title = "[tap]";
+        span.title = "[TAP]";
 
         // Build structure
         slideInner.appendChild(img);

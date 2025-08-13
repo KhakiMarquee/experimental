@@ -1,0 +1,56 @@
+1. Cache-busting in development
+Automatically make your browser load the newest JS/CSS by changing the URL each build.
+
+Example: add a version or timestamp query string:
+
+html
+Copy
+Edit
+<script src="/src/main.js?v=1.0.3"></script>
+<link rel="stylesheet" href="/src/styles.css?v=1.0.3">
+During development, you can dynamically append a timestamp:
+
+html
+Copy
+Edit
+<script src="/src/main.js?v=<?= Date.now() ?>"></script>
+Many bundlers (Vite, Webpack, Parcel) do this automatically in dev mode.
+
+2. Use a proper bundler / dev server
+Tools like Vite, Webpack, or Parcel have hot module replacement (HMR):
+
+JS/CSS changes are injected automatically.
+
+No stale cache issues.
+
+Dev experience is faster and more reliable.
+
+Example with Vite:
+
+bash
+Copy
+Edit
+npm create vite@latest my-project
+cd my-project
+npm install
+npm run dev
+Any change in your JS/CSS automatically refreshes the browser with the latest code.
+
+3. Set proper cache headers in production
+When deploying, set HTTP headers to control caching:
+
+Short cache for HTML: Cache-Control: no-cache or must-revalidate
+
+Long cache for assets with versioned URLs: Cache-Control: max-age=31536000
+
+This way, your production assets are cached efficiently, but you still control when updates appear.
+
+4. Separate dynamic content from static content
+For your loading animation (shuffling-word), wrap it in a dedicated container, like #loading-screen.
+
+Scripts only manipulate elements inside this container. This prevents accidental “overwriting” other page content even if cache issues occur.
+
+5. Optional: Service Worker or dev proxy
+Using a dev server with live reload or a service worker can intercept requests and ensure the latest version of JS/CSS is served.
+
+This is more advanced, but can eliminate cache issues entirely in development.

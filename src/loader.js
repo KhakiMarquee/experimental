@@ -31,7 +31,7 @@ const totalShuffles = randInt(20, 50);
 
 
 const updateCenterText = () => {
-  const shuffleSpan = document.getElementById('shuffling-word');
+  const shuffleSpan = document.querySelector('#loading-screen #shuffling-word');
   if (!shuffleSpan){return;}
 
   if (shuffleCount >= totalShuffles) {

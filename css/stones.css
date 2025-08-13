@@ -78,7 +78,6 @@
 .slide:hover .tooltip:after { 
   content: attr(title);
   opacity:1;
-  transform: translateX(75px);
   } 
 
 .slide img {
@@ -92,7 +91,6 @@
   border-radius: 15px;
   color: var(--grey-400);
   transition: all 0.3s ease-in-out;
-  transform: translateX(75px);
 }
 
 .slide-inner {
@@ -117,6 +115,27 @@
 .carousel-item {
   display: inline-block;
   transform-origin: center;
+}
+
+/*PROGRESS DOTS*/
+#carousel-progress {
+  position: fixed;
+  right: 1rem;
+  bottom: 50%;
+  transform: translateY(50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 999;
+}
+
+.progress-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: rgba(var(--grey-100), 0.4); /* matches your mobile-nav translucent style */
+  border: 2px solid rgba(var(--grey-100), 0.8);
+  transition: background-color 0.3s ease;
 }
 
 /*CLICK APP*/
