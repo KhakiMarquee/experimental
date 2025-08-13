@@ -5,8 +5,7 @@ export default {
   resolve: {
     alias: {
       '@css': resolve(__dirname, 'css'), // your css alias
-      '@media': resolve(__dirname, 'media'),
-      '@data': resolve(__dirname, 'data')
+      '@media': resolve(__dirname, 'media')
     },
   },
   optimizeDeps: {
