@@ -212,9 +212,10 @@ a:hover, #location-toggle:hover{
   font-family:'Geist';
 }
 
-.tooltip:not(.nav-right) .tooltip:hover:after { content: attr(title); opacity:1; color:var(--grey-300); } 
+.tooltip:not(.nav-right) .tooltip:hover:after, .third-list .tooltip:hover:after { content: attr(title); opacity:1; color:var(--grey-300); } 
 
-.tooltip:not(.nav-right) .tooltip:after { content: attr(title); color:var(--grey-800);transition: all 0.3s ease-in; font-size: 0.8rem } 
+
+.tooltip:not(.nav-right) .tooltip:after, .third-list .tooltip:after { content: attr(title); color:var(--grey-800);transition: all 0.3s ease-in; font-size: 0.8rem } 
 
 /* Responsive Styles */
 @media (max-width: 768px) {

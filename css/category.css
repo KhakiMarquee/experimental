@@ -17,6 +17,7 @@
   color: var(--grey-500);
   background-color: rgba(var(--grey-100), .2);
   width:100%;
+  flex-direction:column;
 }
 
 #filter button:hover {
@@ -43,6 +44,7 @@
   border: transparent;
   background-color: rgba(var(--grey-100), .2);
   margin: 0!important;
+  flex-direction: row!important;
 }
 
 .flex{
