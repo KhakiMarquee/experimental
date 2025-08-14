@@ -186,7 +186,8 @@ a:hover, #location-toggle:hover{
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  height: 100vh
+  min-height: 100dvh;
+  height:auto
 }
 
 /* Left black box */
@@ -218,37 +219,27 @@ a:hover, #location-toggle:hover{
 .tooltip:not(.nav-right) .tooltip:after, .third-list .tooltip:after { content: attr(title); color:var(--grey-800);transition: all 0.3s ease-in; font-size: 0.8rem } 
 
 /* Responsive Styles */
-@media (max-width: 768px) {
 
+/* Base headline scaling across breakpoints (largest → smallest) */
+@media (max-width: 1000px) {
+  /* Layout */
   .container {
-    grid-template-columns: repeat(6, 1fr); /* Simpler grid for mobile */
+    grid-template-columns: repeat(6, 1fr); /* your mobile grid */
   }
-  /* Initial hidden state */
+
+  /* Animations (define once here to avoid duplicates) */
   .fade-in {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 1.2s ease-out forwards;
   }
-  .fade-in.delayed {
-    animation-delay: 1s;
-  }
+  .fade-in.delayed { animation-delay: 1s; }
+  .fade-in.staggered:nth-child(1) { animation-delay: 0.3s; }
+  .fade-in.staggered:nth-child(2) { animation-delay: 0.5s; }
+  .fade-in.staggered:nth-child(3) { animation-delay: 0.7s; }
 
-  .fade-in.staggered:nth-child(1) {
-    animation-delay: 0.3s;
-  }
-  .fade-in.staggered:nth-child(2) {
-    animation-delay: 0.5s;
-  }
-  .fade-in.staggered:nth-child(3) {
-    animation-delay: 0.7s;
-  }
-
-  /* Keyframes */
   @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .site-body .container {
@@ -256,8 +247,9 @@ a:hover, #location-toggle:hover{
     justify-content: center;
   }
 
+  /* Headline at <=1000px (step down from desktop) */
   .headline {
-    font-size: 1.5rem; /* Scaled down for mobile */
+    font-size: 2.5rem;
     margin-bottom: 1rem;
   }
 
@@ -275,40 +267,36 @@ a:hover, #location-toggle:hover{
   }
 
   .transition-space.active .secondary-text {
-  opacity: 0;
-  height:0;
-  pointer-events: none;
-  transition: opacity 0.6s ease, height 0.6s ease;
-}
-
-  .container.collapse {
-    padding: 0;
+    opacity: 0;
+    height: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease, height 0.6s ease;
   }
 
-  .secondary-text ul li{
-      font-size: 3rem; /*mobile phone second text*/
-      color:  var(--grey-400);
-      transition: all 0.3s ease-in;
+  .container.collapse { padding: 0; }
 
-    }
-  
-
-  .third-section {
-    padding: 10% 2%;
+  .secondary-text ul li {
+    font-size: 3rem; /* mobile phone second text */
+    color: var(--grey-400);
+    transition: all 0.3s ease-in;
   }
+
+  .third-section { padding: 10% 2%; }
 
   .third-grid {
     grid-template-columns: 1fr;
     text-align: center;
-    height: 60vh
+    /* Fix: avoid iPad landscape vh issues */
+    min-height: 60dvh;
+    height: auto;
   }
 
   .third-box {
     max-width: 200px;
     margin: 0 auto 1.5rem auto;
     display: flex;
-    justify-content: center; /* horizontal centering */
-    height: 100%;            /* make sure it fills its parent height */   
+    justify-content: center;   /* horizontal centering */
+    height: 100%;
   }
 
   .third-text p {
@@ -316,144 +304,87 @@ a:hover, #location-toggle:hover{
     font-size: 1.5rem;
   }
 
-    .third-list {
-      height:auto;
-      overflow: hidden;
-      min-height: 150px;
-    }
-  
+  .third-list {
+    height: auto;
+    overflow: hidden;
+    min-height: 150px;
+  }
+
   .third-list p {
     font-size: .9rem;
     color: rgb(var(--grey-600));
     position: relative;
-    /*animation: chromatic-glitch 1.5s infinite linear, move-horizontal 6s infinite ease-in-out; */
-    transform: translateZ(0); /* Force GPU acceleration */
+    /* animation: chromatic-glitch 1.5s infinite linear, move-horizontal 6s infinite ease-in-out; */
+    transform: translateZ(0);  /* Force GPU acceleration */
     will-change: text-shadow, transform;
     transform-origin: center;
-    margin-bottom:1rem;
+    margin-bottom: 1rem;
   }
 
-
-  /* Chromatic Aberration Animation */
+  /* Chromatic text (visible space reserved for GSAP) */
+  #chromatic-text {
+    display: block;
+    min-height: 1em;   /* line-height space */
+    visibility: hidden; /* remain in layout */
+  }
+  #chromatic-text.is-visible { visibility: visible; }
 
   #chromatic-text div {
     position: absolute;
     top: 0;
     left: 0;
     pointer-events: none;
-    
   }
 
-  #chromatic-text .red {
-    color: var(--grey-400);;
-    z-index: 1;
-  }
-
-  #chromatic-text .cyan {
-    color: var(--grey-700);
-    z-index: 2;
-  }
-
-  #chromatic-text .main {
-    color: var(--grey-800);
-    z-index: 3; /* Main text stays on top */
-    position: relative;
-  }
+  #chromatic-text .red  { color: var(--grey-400); z-index: 1; }
+  #chromatic-text .cyan { color: var(--grey-700); z-index: 2; }
+  #chromatic-text .main { color: var(--grey-800); z-index: 3; position: relative; }
 
   /* Chromatic Aberration Animation */
   @keyframes chromatic-glitch {
-    0% {
-      text-shadow:
-        2px 2px 0 #e9ecef,
-        -2px -2px 0 var(--grey-400),
-        4px 4px 0 rgba(0, 0, 0, 0);
-    }
-    50% {
-      text-shadow:
-        -2px 2px 0 #e9ecef,
-        2px -2px 0 var(--grey-400),
-        -4px 4px 0 rgba(0, 0, 0, 0);
-    }
-    100% {
-      text-shadow:
-        2px 2px 0 #e9ecef,
-        -2px -2px 0 var(--grey-400),
-        4px 4px 0 rgba(0, 0, 0, 0)
-    }
+    0% {   text-shadow:  2px  2px 0 #e9ecef, -2px -2px 0 var(--grey-400),  4px  4px 0 rgba(0,0,0,0); }
+    50% {  text-shadow: -2px  2px 0 #e9ecef,  2px -2px 0 var(--grey-400), -4px  4px 0 rgba(0,0,0,0); }
+    100% { text-shadow:  2px  2px 0 #e9ecef, -2px -2px 0 var(--grey-400),  4px  4px 0 rgba(0,0,0,0); }
   }
 
   /* Horizontal Movement */
   @keyframes move-horizontal {
-    0%, 100% {
-      transform: translateX(0);
-    }
-    50% {
-      transform: translateX(30px); /* Adjust distance */
-    }
-    
+    0%, 100% { transform: translateX(0); }
+    50%      { transform: translateX(30px); }
   }
-    .third-list p:first-of-type {
-      text-align: left;
-      width:100%;
-    }
-    .third-list p:nth-of-type(2) {
-      text-align: center;
-    }
 
+  .third-list p:first-of-type { text-align: left;  width: 100%; }
+  .third-list p:nth-of-type(2){ text-align: center; }
 }
 
-/* Responsive design */
+/* Step down at <=900px */
+@media (max-width: 900px) {
+  .headline { font-size: 2rem; }
+}
 
+/* Phones / narrow tablets <=768px */
+@media (max-width: 768px) {
+  .headline { font-size: 1.5rem; }
+}
+
+/* Small phones <=480px */
 @media (max-width: 480px) {
-  .overlay-content h2 {
-    font-size: 2rem;
-  }
-  
-  .overlay-content p {
-    font-size: 0.9rem;
-  }
-
-   .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1.2s ease-out forwards;
-  }
-  .fade-in.delayed {
-    animation-delay: 1s;
-  }
-
-  .fade-in.staggered:nth-child(1) {
-    animation-delay: 0.3s;
-  }
-  .fade-in.staggered:nth-child(2) {
-    animation-delay: 0.5s;
-  }
-  .fade-in.staggered:nth-child(3) {
-    animation-delay: 0.7s;
-  }
+  .overlay-content h2 { font-size: 2rem; }
+  .overlay-content p  { font-size: 0.9rem; }
+  /* No duplicate fade-in/keyframes here to avoid overrides */
 }
 
+/* Very large screens (you had these) */
 @media (min-width: 1000px) and (min-height: 1000px) {
-    .secondary-text ul li{
-      font-size: 12rem; /*mobile phone second text*/
-
-    }
-
+  .secondary-text ul li { font-size: 12rem; }
+}
+@media (min-width: 2000px) and (min-height: 1000px) {
+  .secondary-text ul li { font-size: 18rem; }
 }
 
-
-@media (min-width: 2000px) and (min-height: 1000px) {
-    .secondary-text ul li{
-      font-size: 18rem; /*mobile phone second text*/
-
-    }
-
-  }
-@media (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  /* Styles for landscape iPad */
-
-    .third-section {
-
-    font-size: 1em;
-    }
+/* iPad landscape (more reliable than device-width) */
+@media (orientation: landscape) and (max-width: 1024px) {
+  .third-section { font-size: 1em; }
+  /* Ensure GSAP has scroll space on iPad landscape */
+  .third-grid { min-height: 100dvh; height: auto; }
 }

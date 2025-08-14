@@ -2,7 +2,7 @@ import{ Mold } from '/src/mold.js';
 
 export function initSketch(p) {
     let molds = [];
-    let num = window.innerWidth <= 768 ? 1000 : 7500; 
+    let num = window.innerWidth <= 768 ? 500 : 7500; 
     let d;
 
     p.setup = function() {

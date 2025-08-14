@@ -1,7 +1,7 @@
 [
         {     
         "title": "Ball Finial",
-        "material": "Limestone",
+        "material": "Bath",
         "description": "A large-scale installation along the Thames.",
         "image": "/public/media/IMG/ball_finial_small_image.png",
         "preview-image" : "",
@@ -33,14 +33,15 @@
 
         },
         {     
-        "title": "Ball Finial",
-        "material": "Limestone",
+        "title": "Volute",
+        "material": "Moleanis",
         "description": "A large-scale installation along the Thames.",
-        "image": "/public/media/IMG/ball_finial_small_image.png",
+        "image": "/public/media/IMG/volute_small_image.png",
         "preview-image" : "",
         "video": "",
         "type": "Render",
         "dimensions": "150 by 150"
-
-        }        
+        }  
+        
+        
 ]   

@@ -8,7 +8,6 @@
         "video": "",
         "type": "Sculpture",
         "dimensions": "150 by 150"
-
         },
         {     
         "title": "Trefoil",
@@ -19,7 +18,6 @@
         "video": "",
         "type": "Sculpture",
         "dimensions": "150 by 150"
-
         },
         {     
         "title": "Ball Finial",
@@ -30,17 +28,15 @@
         "video": "",
         "type": "Sculpture",
         "dimensions": "150 by 150"
-
         },
         {     
-        "title": "Ball Finial",
-        "material": "Limestone",
+        "title": "Volute",
+        "material": "Moleanis",
         "description": "A large-scale installation along the Thames.",
-        "image": "/media/IMG/ball_finial_small_image.png",
+        "image": "/media/IMG/volute_small_image.png",
         "preview-image" : "",
         "video": "",
-        "type": "Sculpture",
+        "type": "Render",
         "dimensions": "150 by 150"
-
         }        
 ]   
