@@ -50,17 +50,17 @@ export default function stoneViewSketch(p) {
 
     //PROGRESS TRACKERS
      // --- Progress tracking ---
-    const progress = scrollOffset / totalLength; // 0 → 1
-    const dot = document.querySelector('.progress-dot');
-    if (dot) {
-      // As you get closer to the end, shift to a highlight color
-      const highlightThreshold = 0.8; // 80% of the way through
-      if (progress >= highlightThreshold) {
-        dot.style.backgroundColor = 'rgba(255, 100, 100, 0.8)'; // reddish highlight
-      } else {
-        dot.style.backgroundColor = 'rgba(var(--grey-100), 0.4)';
-      }
+  const progress = scrollOffset / totalLength; // 0 → 1
+  const dot = document.querySelector('.progress-dot');
+  if (dot) {
+    // As you get closer to the end, shift to a highlight color
+    const highlightThreshold = 0.8; // 80% of the way through
+    if (progress >= highlightThreshold) {
+      dot.style.backgroundColor = 'var(--grey-800)'; // reddish highlight
+    } else {
+      dot.style.backgroundColor = 'rgba(var(--grey-100), 0.4)';
     }
+  }
 
     // true infinite positioning for each slide
     slides.forEach((slide, i) => {

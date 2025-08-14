@@ -7,7 +7,6 @@ footer {
   width: 100vw;
   font-size: .9rem;
   justify-content: flex-end;
-  min-height: 50px;
   color: white;
   bottom:0;
   z-index: 1000;
@@ -68,7 +67,6 @@ footer.hide{
 @media (min-device-width: 768px) {
   /* Styles for landscape iPad */
   footer{
-    min-height: 50px;
     font-size: 0.8rem;
   }
 
