@@ -1,4 +1,4 @@
-function openTemplateDetail(section, entry) {
+export function openTemplateDetail(section, entry) {
   section.classList.add("expanding");
 
   const rect = section.getBoundingClientRect();

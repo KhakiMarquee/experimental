@@ -1,3 +1,5 @@
+import { openTemplateDetail } from '/src/openTemplateDetail.js';
+
 function getCategoryFromURL() {
   const params = new URLSearchParams(window.location.search);
   return params.get('category');
