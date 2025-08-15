@@ -165,13 +165,13 @@ export default function stoneViewSketch(p) {
   let moved = false;
   let justTouched = false; // prevent double-triggering with click
 
-  function handleTouchStart(event) {
-    // Ignore touches on header/footer
-    if (event.target.closest('header, .header, .site-header, footer, .footer')) return;
+
+function handleTouchStart(event) {
+  // Ignore touches on header/footer
+  if (event.target.closest('header, .header, .site-header, footer, .footer')) return;
 
     const carouselContainer = document.getElementById("carousel-container");
-    if (!event.target.closest('#carousel-container')) return; // ignore outside carousel
-
+  if (carouselContainer && event.target.closest('#carousel-container')) {
     isDragging = true;
     touchActive = true;
     dragDistance = 0;
@@ -184,7 +184,25 @@ export default function stoneViewSketch(p) {
     justTouched = true;
     setTimeout(() => justTouched = false, 400);
   }
+  // Otherwise, let the tap pass through
 
+  }
+
+const outsideCloseHandler = (e) => {
+  // Ignore taps on header/footer
+  if (e.target.closest('header, .header, .site-header, footer, .footer')) return;
+
+  const openSlide = document.querySelector(".slide.fullscreen");
+  if (openSlide && !e.target.closest(".slide.fullscreen")) {
+    openSlide.classList.remove("fullscreen");
+  }
+};
+
+document.addEventListener("touchstart", outsideCloseHandler, { passive: true });
+document.addEventListener("click", (e) => {
+  if (justTouched) return;
+  outsideCloseHandler(e);
+}, { passive: true });
 
   function handleTouchMove(event) {
     if (!touchActive || event.touches.length !== 1) return;
