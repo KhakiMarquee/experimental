@@ -61,7 +61,7 @@
           }
       ],
       "description": "A large-scale installation along the Thames.",
-      "image": "public/media/IMG/passing_the_flame/memorabilia.jpg",
+      "image": "/public/media/IMG/passing_the_flame/memorabilia.jpg",
       "preview-image" : "",
       "video": "",
       "type": "3D"

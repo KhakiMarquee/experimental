@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
           slide.addEventListener("click", () => openDetail(slide, item));
         } else {
           // 📱 Mobile uses double-tap to open (single tap does nothing)
-          setupSingleeTap(slide, item);
+          setupSingleTap(slide, item);
         }
       });
     })
