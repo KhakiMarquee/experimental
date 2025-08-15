@@ -311,6 +311,7 @@ a:hover, #location-toggle:hover{
     height: auto;
     overflow: hidden;
     min-height: 150px;
+    padding: 0 2%
   }
 
   .third-list p {
