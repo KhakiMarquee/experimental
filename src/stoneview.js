@@ -194,22 +194,26 @@ export default function stoneViewSketch(p) {
     event.preventDefault();
   }
 
-  function handleTouchEnd(event) {
-    if (!touchActive) return;
-    if (!moved) {
-      const slide = event.target.closest(".slide");
-      if (slide) {
-        if (slide.classList.contains("fullscreen")) slide.classList.remove("fullscreen");
-        else {
-          const index = [...slides].indexOf(slide);
-          const item = window.stoneData?.[index];
-          if (item) import("/src/openDetail.js").then(({ openDetail }) => openDetail(slide, item));
-        }
+function handleTouchEnd(event) {
+  if (!touchActive) return;
+  if (!moved) {
+    const slide = event.target.closest(".slide");
+    if (slide) {
+      // Add focus trigger
+      slide.focus({ preventScroll: true });
+      
+      if (slide.classList.contains("fullscreen")) {
+        slide.classList.remove("fullscreen");
+      } else {
+        const index = [...slides].indexOf(slide);
+        const item = window.stoneData?.[index];
+        if (item) import("/src/openDetail.js").then(({ openDetail }) => openDetail(slide, item));
       }
     }
-    isDragging = false;
-    touchActive = false;
   }
+  isDragging = false;
+  touchActive = false;
+}
 
   // Outside tap closes fullscreen slides
   const outsideCloseHandler = (e) => {

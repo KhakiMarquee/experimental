@@ -71,12 +71,16 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// Small helper just for mobile
+// Small helper for mobile + focus-based activation
 function setupSingleTap(slide, item) {
   const TAP_MOVE_TOL = 8; // px movement allowed to still count as a tap
   let startX = 0, startY = 0;
   let moved = false;
 
+  // Make it focusable for screen readers / accessibility tools
+  slide.setAttribute("tabindex", "0");
+
+  // --- Touch events ---
   slide.addEventListener("touchstart", (e) => {
     const t = e.changedTouches[0];
     startX = t.clientX;
@@ -90,12 +94,19 @@ function setupSingleTap(slide, item) {
     if (Math.hypot(t.clientX - startX, t.clientY - startY) > TAP_MOVE_TOL) {
       moved = true;
     }
-    // passive: true so scrolling isn't blocked unless your carousel stops it
   }, { passive: true });
 
   slide.addEventListener("touchend", () => {
     if (!moved) {
       openDetail(slide, item);
     }
+  });
+
+  // --- Focus activation (mobile assistive tech) ---
+  slide.addEventListener("focus", () => {
+    // Delay slightly to avoid accidental triggers during swipe navigation
+    setTimeout(() => {
+      openDetail(slide, item);
+    }, 150);
   });
 }
