@@ -1,4 +1,4 @@
-import"./ui-C20Qu-rV.js";function r(){return new URLSearchParams(window.location.search).get("category")}function d(e,t){const o=document.getElementById("content"),a=document.getElementById("page-title");fetch(t).then(c=>{if(!c.ok)throw new Error("Failed to fetch data.");return c.json()}).then(c=>{const i=c[e];a.textContent=e.charAt(0).toUpperCase()+e.slice(1),o.innerHTML="",i&&i.length?i.forEach(n=>{const s=document.createElement("div");s.classList.add("project-row"),s.innerHTML=`
+import"./ui-CTue3Ljv.js";function r(){return new URLSearchParams(window.location.search).get("category")}function d(e,t){const o=document.getElementById("content"),a=document.getElementById("page-title");fetch(t).then(c=>{if(!c.ok)throw new Error("Failed to fetch data.");return c.json()}).then(c=>{const i=c[e];a.textContent=e.charAt(0).toUpperCase()+e.slice(1),o.innerHTML="",i&&i.length?i.forEach(n=>{const s=document.createElement("div");s.classList.add("project-row"),s.innerHTML=`
             <div class="project-image">
               <img src="${n.image}" alt="${n.title}">
             </div>

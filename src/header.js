@@ -67,5 +67,17 @@ function initHeader() {
         e.preventDefault();
         mobileMenu.classList.toggle("active");
     });
+
+        // Close when clicking away
+    document.addEventListener("click", e => {
+        // If menu is open and click is outside both the toggle and menu
+        if (
+            mobileMenu.classList.contains("active") &&
+            !mobileMenu.contains(e.target) &&
+            !menuToggle.contains(e.target)
+        ) {
+            mobileMenu.classList.remove("active");
+        }
+    });
 }
 
