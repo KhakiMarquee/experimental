@@ -99,6 +99,16 @@
   font-weight: 500;
 }
 
+.slide::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  z-index: 1;
+}
+
 .slide .tooltip:after { 
   content: attr(title);
   opacity:0;
