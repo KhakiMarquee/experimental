@@ -16,7 +16,7 @@
   text-decoration: underline;
   text-decoration-color: transparent;
   color: var(--grey-500);
-  background-color: rgba(var(--grey-100), .2);
+  background-color: rgba(var(--grey-100), .4);
   width:100%;
   flex-direction:column;
   text-transform: capitalize
@@ -24,7 +24,7 @@
 
 #filter button:hover {
   text-decoration-color: rgb(var(--grey-600));
-  background-color: rgba(var(--grey-100), .3);
+  background-color: rgba(var(--grey-100), .5);
 }
 
 #filter button:active {
@@ -44,7 +44,7 @@
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
   border: transparent;
-  background-color: rgba(var(--grey-100), .2);
+  background-color: rgba(var(--grey-100), .4);
   margin: 0!important;
   flex-direction: row!important;
 }

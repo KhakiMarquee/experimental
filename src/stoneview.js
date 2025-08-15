@@ -166,9 +166,10 @@ export default function stoneViewSketch(p) {
   let justTouched = false; // prevent double-triggering with click
 
   function handleTouchStart(event) {
-    // Ignore touches outside slides
-    if (!event.target.closest('.slide-container')) return;
+    // Ignore touches on header/footer only
+    if (event.target.closest('header, .header, .site-header, footer, .footer')) return;
 
+    // Carousel touch logic
     isDragging = true;
     touchActive = true;
     dragDistance = 0;

@@ -71,7 +71,7 @@
 .mobile-nav li {
   margin: 0.2rem 0;
   padding: 1rem 2rem;
-  background-color: rgba(var(--grey-100), .2);
+  background-color: rgba(var(--grey-100), .4);
   transition: all 0.3s ease-in;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -80,7 +80,7 @@
 
 
 .mobile-nav li:hover {
-  background-color: rgba(var(--grey-100), .3);
+  background-color: rgba(var(--grey-100), .5);
 }
 
 .mobile-nav li:hover a{
