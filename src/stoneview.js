@@ -188,10 +188,7 @@ export default function stoneViewSketch(p) {
     if (!touchActive) return;
     if (event.touches.length !== 1) return;
 
-      // Only preventDefault if we’re actually swiping
-      if (Math.abs(dragDistance) > 5) {
-        event.preventDefault();
-      }
+    event.preventDefault();
     const currentX = event.touches[0].clientX;
     const deltaX = currentX - lastPointerX;
     
@@ -282,7 +279,6 @@ export default function stoneViewSketch(p) {
     return false;
   }
 }
-
 function waitForSlides() {
   const slides = document.querySelectorAll('#carousel .slide');
   if (slides.length > 0) {
