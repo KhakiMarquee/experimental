@@ -1,8 +1,8 @@
 {
   "audiovisuals": [
     {     
-      "title": "Project title",
-      "client": "One Place",
+      "title": "Stained Glass Restoration",
+      "client": "St Annes",
       "theme": "Audiovisuals",
       "description": "A large-scale installation along the Thames.",
       "image": "https://freight.cargo.site/t/original/i/G2274511396381639602790189060065/Catalina-min.png",
@@ -12,19 +12,30 @@
 
     },
         {     
-      "title": "Project title",
-      "client": "Two Place",
+      "title": "Aberfeldy Estate",
+      "client": "Tower Hamlets Council",
       "theme": "Audiovisuals",
       "description": "A large-scale installation along the Thames.",
       "image": "https://freight.cargo.site/t/original/i/G2274511396381639602790189060065/Catalina-min.png",
       "preview-image" : "",
       "video": "",
-      "type": "Audio"
+      "type": "3D"
 
     },
         {     
-      "title": "Project title",
-      "client": "Three Place",
+      "title": "Passing the Flame",
+      "client": "Newham Council",
+      "theme": "Audiovisuals",
+      "description": "A large-scale installation along the Thames.",
+      "image": "https://freight.cargo.site/t/original/i/G2274511396381639602790189060065/Catalina-min.png",
+      "preview-image" : "",
+      "video": "",
+      "type": "3D"
+
+    },
+        {     
+      "title": "Archives Also Die",
+      "client": "Rosal Stones",
       "theme": "Audiovisuals",
       "description": "A large-scale installation along the Thames.",
       "image": "https://freight.cargo.site/t/original/i/G2274511396381639602790189060065/Catalina-min.png",
@@ -34,8 +45,30 @@
 
     },
         {     
-      "title": "Project title",
-      "client": "Four Place",
+      "title": "Natural Architecture",
+      "client": "Rosal Stones",
+      "theme": "Audiovisuals",
+      "description": "A large-scale installation along the Thames.",
+      "image": "https://freight.cargo.site/t/original/i/G2274511396381639602790189060065/Catalina-min.png",
+      "preview-image" : "",
+      "video": "",
+      "type": "Film"
+
+    },
+        {     
+      "title": "The Stone They Lay",
+      "client": "UCL",
+      "theme": "Audiovisuals",
+      "description": "A large-scale installation along the Thames.",
+      "image": "https://freight.cargo.site/t/original/i/G2274511396381639602790189060065/Catalina-min.png",
+      "preview-image" : "",
+      "video": "",
+      "type": "Film"
+
+    },
+        {     
+      "title": "NOA",
+      "client": "East London Dance Studio",
       "theme": "Audiovisuals",
       "description": "A large-scale installation along the Thames.",
       "image": "https://freight.cargo.site/t/original/i/G2274511396381639602790189060065/Catalina-min.png",
@@ -58,26 +91,57 @@
   ],
   "sculptures": [
      {     
-      "title": "project title",
-      "client": "",
+      "title": "Sculpture Park",
+      "client": "Frieze",
       "theme": "Sculptures",
       "description": "A large-scale installation along the Thames.",
       "image": "https://freight.cargo.site/t/original/i/N962490950896853831746080644787/AI8A0343-1s.jpeg",
       "preview-image" : "",
       "video": "",
-      "type": ""
+      "type": "Film"
+    },
+     {     
+      "title": "stone they lay",
+      "client": "UCL",
+      "theme": "Sculptures",
+      "description": "A large-scale installation along the Thames.",
+      "image": "https://freight.cargo.site/t/original/i/N962490950896853831746080644787/AI8A0343-1s.jpeg",
+      "preview-image" : "",
+      "video": "",
+      "type": "Film"
     }
   ],
   "people": [
     {     
-      "title": "River Sculpture",
-      "client": "",
+      "title": "Echoes of the Empire",
+      "client": "Asif Shakoor",
       "theme": "People",
       "description": "A large-scale installation along the Thames.",
       "image": "https://freight.cargo.site/t/original/i/B2365688730285498448876967120865/Dance-Build-v1_00_02_03_04-min.png",
       "preview-image" : "",
       "video": "",
-      "type": "" 
+      "type": "Workshop" 
+    },
+    {     
+      "title": "Hostile Housing",
+      "client": "London Renters Union",
+      "theme": "People",
+      "description": "A large-scale installation along the Thames.",
+      "image": "https://freight.cargo.site/t/original/i/B2365688730285498448876967120865/Dance-Build-v1_00_02_03_04-min.png",
+      "preview-image" : "",
+      "video": "",
+      "type": "Workshop" 
+    },
+    {     
+      "title": "Candlemaking",
+      "client": "Rich Mix",
+      "theme": "People",
+      "description": "A large-scale installation along the Thames.",
+      "image": "https://freight.cargo.site/t/original/i/B2365688730285498448876967120865/Dance-Build-v1_00_02_03_04-min.png",
+      "preview-image" : "",
+      "video": "",
+      "type": "Workshop" 
     }
+
   ]
 }

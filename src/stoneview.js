@@ -204,13 +204,11 @@ export default function stoneViewSketch(p) {
     lastPointerX = currentX;
   }
 
-  function handleTouchEnd(event) {
-    if (touchActive) {
-      event.preventDefault();
-      isDragging = false;
-      touchActive = false;
-    }
-  }
+function handleTouchEnd(event) {
+  isDragging = false;
+  touchActive = false;
+  // ❌ don't preventDefault here
+}
 
   // --- Existing mouse handlers ---
   let lastMouseX = 0;
