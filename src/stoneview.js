@@ -173,16 +173,16 @@ export default function stoneViewSketch(p) {
   }
 
 
+// inside stoneViewSketch(p)
 let touchActive = false;
-let dragDistance = 0; // 👈 define it
+let dragDistance = 0;
 
 function handleTouchStart(event) {
   if (event.touches.length === 1) {
-    // don't preventDefault here
     isDragging = true;
     touchActive = true;
+    dragDistance = 0;
     lastPointerX = event.touches[0].clientX;
-    dragDistance = 0; // 👈 reset
     speed = 0;
   }
 }
@@ -194,22 +194,22 @@ function handleTouchMove(event) {
   const deltaX = currentX - lastPointerX;
   dragDistance += Math.abs(deltaX);
 
-  // Only suppress native behavior once it's clearly a swipe
+  // ✅ Only block scrolling if it's really a swipe
   if (dragDistance > 5) {
-    event.preventDefault(); // keep scrolling disabled while swiping carousel
+    event.preventDefault();
   }
 
   let dragSpeed = deltaX * -1.5;
   const maxDragSpeed = 50;
   dragSpeed = Math.max(-maxDragSpeed, Math.min(maxDragSpeed, dragSpeed));
+  speed += (dragSpeed - speed) * 0.7;
 
-  speed = speed + (dragSpeed - speed) * 0.7;
   lastPointerX = currentX;
 }
 
 function handleTouchEnd(event) {
   if (touchActive) {
-    // ❌ don't preventDefault here (allows taps to be recognized by our double-tap logic)
+    // ❌ Do NOT preventDefault here — allow double-tap to register
     isDragging = false;
     touchActive = false;
   }
