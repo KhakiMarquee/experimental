@@ -20,6 +20,12 @@ function renderContent(category, jsonPath) {
       if (entries && entries.length) {
         entries.forEach(entry => {
           const section = document.createElement('div');
+          //OpenDetail Capabilities
+          section.addEventListener("click", () => {
+            openTemplateDetail(section, entry);
+          });
+
+          //Print items
           section.classList.add('project-row');
           section.innerHTML = `
             <div class="project-image">
