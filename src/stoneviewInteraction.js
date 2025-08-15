@@ -1,5 +1,9 @@
 import { openDetail } from '/src/openDetail.js';
 
+const isMobile = () =>
+  (('ontouchstart' in window) || navigator.maxTouchPoints > 0) &&
+  window.innerWidth <= 768;
+
 //RENDER STONEVIEW
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -47,9 +51,13 @@ document.addEventListener("DOMContentLoaded", () => {
         carousel.appendChild(slide);
 
         // Click animation trigger
-        slide.addEventListener("click", () => {
-          openDetail(slide, item);
-        });
+        // 🔒 Desktop keeps click-to-open exactly as before
+        if (!isMobile()) {
+          slide.addEventListener("click", () => openDetail(slide, item));
+        } else {
+          // 📱 Mobile uses double-tap to open (single tap does nothing)
+          setupDoubleTap(slide, item);
+        }
       });
     })
     .catch(err => {
@@ -58,4 +66,44 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// Small helper just for mobile
+function setupDoubleTap(slide, item) {
+  const DOUBLE_TAP_DELAY = 300;    // ms
+  const TAP_MOVE_TOL = 8;          // px movement allowed to still count as a tap
+  let lastTapTime = 0;
+  let startX = 0, startY = 0;
+  let moved = false;
 
+  slide.addEventListener("touchstart", (e) => {
+    const t = e.changedTouches[0];
+    startX = t.clientX;
+    startY = t.clientY;
+    moved = false;
+  }, { passive: true });
+
+  slide.addEventListener("touchmove", (e) => {
+    const t = e.touches[0];
+    if (!t) return;
+    if (Math.hypot(t.clientX - startX, t.clientY - startY) > TAP_MOVE_TOL) {
+      moved = true;
+    }
+    // NOTE: keep this passive; your carousel’s own touch handlers handle swipe
+  }, { passive: true });
+
+  slide.addEventListener("touchend", () => {
+    const now = Date.now();
+    const within = now - lastTapTime < DOUBLE_TAP_DELAY;
+
+    if (!moved && within) {
+      // ✅ double-tap detected
+      openDetail(slide, item);
+      lastTapTime = 0; // reset
+    } else if (!moved) {
+      // first tap
+      lastTapTime = now;
+    } else {
+      // it was a swipe/drag: do nothing
+      lastTapTime = 0;
+    }
+  });
+}
