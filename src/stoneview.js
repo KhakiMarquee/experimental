@@ -48,23 +48,20 @@ export default function stoneViewSketch(p) {
     scrollOffset = scrollOffset % totalLength;
     if (scrollOffset < 0) scrollOffset += totalLength;
 
-    //PROGRESS TRACKERS
-     // --- Progress tracking ---
-  const progress = scrollOffset / totalLength; // 0 → 1
-  const dot = document.querySelector('.progress-dot');
-  if (dot) {
-    // As you get closer to the end, shift to a highlight color
-    const highlightThreshold = 0.8; // 80% of the way through
-    if (progress >= highlightThreshold) {
-      dot.style.backgroundColor = 'var(--grey-800)'; // reddish highlight
-    } else {
-      dot.style.backgroundColor = 'rgba(var(--grey-100), 0.4)';
+    // --- Progress tracking ---
+    const progress = scrollOffset / totalLength; // 0 → 1
+    const dot = document.querySelector('.progress-dot');
+    if (dot) {
+      const highlightThreshold = 0.8; // 80% of the way through
+      if (progress >= highlightThreshold) {
+        dot.style.backgroundColor = 'var(--grey-800)'; // reddish highlight
+      } else {
+        dot.style.backgroundColor = 'rgba(var(--grey-100), 0.4)';
+      }
     }
-  }
 
-    // true infinite positioning for each slide
+    // True infinite positioning for each slide
     slides.forEach((slide, i) => {
-      
       let pos1 = (i * baseSpacing - scrollOffset) % totalLength;
       if (pos1 < -baseSpacing * 2) pos1 += totalLength;
       let pos2 = pos1 - totalLength;
@@ -88,7 +85,8 @@ export default function stoneViewSketch(p) {
       if (slide.classList.contains("expanding") || slide.classList.contains("fullscreen")) {
         return;
       }
-      //The Key transform
+
+      // The key transform
       slide.style.transform = `
         translateX(${roundedX}px)
         translateY(${roundedY}px)
@@ -160,59 +158,104 @@ export default function stoneViewSketch(p) {
     });
   }
 
-  // --- Setup touch event handlers for mobile ---
+  let touchActive = false;
+  let dragDistance = 0;
+  const TAP_MOVE_TOL = 8; // px movement allowed to still count as a tap
+  let startX = 0, startY = 0;
+  let moved = false;
+  let justTouched = false; // prevent double-triggering with click
+
+  function handleTouchStart(event) {
+    if (event.touches.length === 1) {
+      isDragging = true;
+      touchActive = true;
+      dragDistance = 0;
+      lastPointerX = event.touches[0].clientX;
+      speed = 0;
+      startX = event.touches[0].clientX;
+      startY = event.touches[0].clientY;
+      moved = false;
+
+      // Flag for hybrid devices
+      justTouched = true;
+      setTimeout(() => justTouched = false, 400);
+    }
+  }
+
+  function handleTouchMove(event) {
+    if (!touchActive || event.touches.length !== 1) return;
+
+    const currentX = event.touches[0].clientX;
+    const deltaX = currentX - lastPointerX;
+    dragDistance += Math.abs(deltaX);
+
+    // Track if we've moved more than TAP_MOVE_TOL
+    if (Math.hypot(event.touches[0].clientX - startX, event.touches[0].clientY - startY) > TAP_MOVE_TOL) {
+      moved = true;
+    }
+
+    // Block scrolling only if it's a swipe
+    if (dragDistance > 5) {
+      event.preventDefault();
+    }
+
+    let dragSpeed = deltaX * -1.5;
+    const maxDragSpeed = 50;
+    dragSpeed = Math.max(-maxDragSpeed, Math.min(maxDragSpeed, dragSpeed));
+    speed += (dragSpeed - speed) * 0.7;
+
+    lastPointerX = currentX;
+  }
+
+  function handleTouchEnd(event) {
+    if (touchActive) {
+      // ✅ Single-tap detection (only if minimal movement)
+      if (!moved) {
+        setTimeout(() => {
+          const slide = event.target.closest(".slide");
+          if (slide) {
+            if (slide.classList.contains("fullscreen")) {
+              slide.classList.remove("fullscreen");
+            } else {
+              const index = [...slides].indexOf(slide);
+              const item = window.stoneData?.[index];
+              if (item) {
+                import("/src/openDetail.js").then(({ openDetail }) => {
+                  openDetail(slide, item);
+                });
+              }
+            }
+          }
+        }, 20); // Slight delay for scroll settling
+      }
+
+      isDragging = false;
+      touchActive = false;
+    }
+  }
+
   function setupTouchConstraints() {
     const carouselContainer = document.getElementById("carousel-container");
 
     if (carouselContainer) {
-      carouselContainer.addEventListener('touchstart', handleTouchStart, { passive: false });
-      carouselContainer.addEventListener('touchmove', handleTouchMove, { passive: false });
-      carouselContainer.addEventListener('touchend', handleTouchEnd);
-      carouselContainer.addEventListener('touchcancel', handleTouchEnd);
+      carouselContainer.addEventListener("touchstart", handleTouchStart, { passive: false });
+      carouselContainer.addEventListener("touchmove", handleTouchMove, { passive: false });
+      carouselContainer.addEventListener("touchend", handleTouchEnd, { passive: true });
     }
+
+    // 📌 Tap-away-to-close handler (mobile + desktop)
+    const outsideCloseHandler = (e) => {
+      const openSlide = document.querySelector(".slide.fullscreen");
+      if (openSlide && !e.target.closest(".slide.fullscreen")) {
+        openSlide.classList.remove("fullscreen");
+      }
+    };
+    document.addEventListener("touchstart", outsideCloseHandler, { passive: true });
+    document.addEventListener("click", (e) => {
+      if (justTouched) return;
+      outsideCloseHandler(e);
+    }, { passive: true });
   }
-
-// inside stoneViewSketch(p)
-let touchActive = false;
-let dragDistance = 0;
-
-function handleTouchStart(event) {
-  if (event.touches.length === 1) {
-    isDragging = true;
-    touchActive = true;
-    dragDistance = 0;
-    lastPointerX = event.touches[0].clientX;
-    speed = 0;
-  }
-}
-
-function handleTouchMove(event) {
-  if (!touchActive || event.touches.length !== 1) return;
-
-  const currentX = event.touches[0].clientX;
-  const deltaX = currentX - lastPointerX;
-  dragDistance += Math.abs(deltaX);
-
-  // ✅ Only block scrolling if it's really a swipe
-  if (dragDistance > 5) {
-    event.preventDefault();
-  }
-
-  let dragSpeed = deltaX * -1.5;
-  const maxDragSpeed = 50;
-  dragSpeed = Math.max(-maxDragSpeed, Math.min(maxDragSpeed, dragSpeed));
-  speed += (dragSpeed - speed) * 0.7;
-
-  lastPointerX = currentX;
-}
-
-function handleTouchEnd(event) {
-  if (touchActive) {
-    // ❌ Do NOT preventDefault here — allow double-tap to register
-    isDragging = false;
-    touchActive = false;
-  }
-}
 
   // --- Existing mouse handlers ---
   let lastMouseX = 0;
@@ -281,6 +324,7 @@ function handleTouchEnd(event) {
     return false;
   }
 }
+
 function waitForSlides() {
   const slides = document.querySelectorAll('#carousel .slide');
   if (slides.length > 0) {
