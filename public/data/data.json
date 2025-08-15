@@ -4,10 +4,10 @@
       "title": "Stained Glass Restoration",
       "client": "St Annes",
       "theme": "Audiovisuals",
-      "description": "A large-scale installation along the Thames.",
+      "description": "The great east window at St Anne’s depicts the Crucifixion in a huge size. It is over 150 years old and badly in need of repair. Our sponsor a pane appeal is making great progress, and you can still contribute to the conservation of the window by sponsoring an area of the picture.",
       "image": "https://freight.cargo.site/t/original/i/G2274511396381639602790189060065/Catalina-min.png",
       "preview-image" : "",
-      "video": "",
+      "video": "https://www.youtube.com/watch?v=9ztq7C1YYsg&embeds_referring_euri=https%3A%2F%2Fgoke.studio%2F&embeds_referring_origin=https%3A%2F%2Fgoke.studio&source_ve_path=MjM4NTE",
       "type": "Film"
 
     },
@@ -37,7 +37,14 @@
       "title": "Archives Also Die",
       "client": "Rosal Stones",
       "theme": "Audiovisuals",
-      "description": "A large-scale installation along the Thames.",
+      "director": "G O K E",
+      "sound": "G O K E",
+      "production": "In association with UCL",
+      "format": "Digital media",
+      "duration": "16 mins 41 seconds",
+      "year": 2025,
+      "description": "Caught in a maze of bureaucratic absurdity and colonial remnants, a British-Nigerian filmmaker reassembles their fractured identity through archival images, brutalist architecture, and experimental cinema—interrogating the power and politics of memory.",
+      "director_statement": "Growing up as “Peter” in the UK, I came of age at the intersection of administrative fiction and diasporic truth. The moment I received a citizenship letter in someone else’s name, I began an odyssey through bureaucracy—a journey that blurred the line between identity and absurdity. The archive became a mirror and a maze. This film is not only a retelling of that journey, but a confrontation with the very structures that mediate belonging, memory, and meaning. Archives Also Die is my attempt to reclaim voice through form—to juxtapose the rationalist facade of empire with the chaotic, affective, lived realities of postcolonial subjects. I did not want to merely critique the archive from afar, but to live within it—to screen record it, mispronounce its metadata, pixelate its hierarchies, and project it onto the walls of the present. My body and voice carry the friction between my ancestral name—Oluwatosin Oluwakayode Ominiyi Temi Tope Peter Adegoke—and the imposed simplicity of “Peter.” This film insists that representation is not enough. Transformation is necessary. Through tunnels, towers, and terminals, I offer a new passage through history—not to retrieve what was lost, but to reshape what remains.",
       "image": "https://freight.cargo.site/t/original/i/G2274511396381639602790189060065/Catalina-min.png",
       "preview-image" : "",
       "video": "",
@@ -70,22 +77,48 @@
       "title": "NOA",
       "client": "East London Dance Studio",
       "theme": "Audiovisuals",
-      "description": "A large-scale installation along the Thames.",
-      "image": "https://freight.cargo.site/t/original/i/G2274511396381639602790189060065/Catalina-min.png",
-      "preview-image" : "",
-      "video": "",
-      "type": "Film"
-
-    },
-        {     
-      "title": "Project title",
-      "client": "Five Place",
-      "theme": "Audiovisuals",
-      "description": "A large-scale installation along the Thames.",
-      "image": "https://freight.cargo.site/t/original/i/G2274511396381639602790189060065/Catalina-min.png",
-      "preview-image" : "",
-      "video": "",
-      "type": "Film"
+      "story": "The genesis of this film lies in a serendipitous meeting at a mental well-being workshop for Black men in East London. There, amidst painting paper hats and shared stories, I met Noa, a dancer whose movements spoke volumes about resilience and expression. Our collaboration became an exploration of play—a concept often stripped from Black male experiences due to historical and societal pressures.",
+      "collaboration": {
+          "participants": [
+              "Noa",
+              "the author"
+          ],
+          "focus": "Play and its absence in Black male experiences",
+          "medium": "dance",
+          "techniques": [
+              "movement",
+              "emotions",
+              "camera work"
+          ]
+      },
+      "inspiration": {
+          "sources": [
+              "Maya Deren's cinematic philosophies"
+          ],
+          "goal": "Traverse space and time through dance"
+      },
+      "challenges": {
+          "institutional": "Noa's entrance into the academic space was met with subtle resistance, a reminder of systemic barriers",
+          "negotiation": "Balancing the desire to authentically represent Noa's artistry with the author's own creative instincts"
+      },
+      "evolution": {
+          "initial vision": "Silent, black-and-white piece",
+          "changes": [
+              "Incorporation of music that fuels Noa's performances",
+              "Acknowledgement of the inseparability of sound and movement in his expression"
+          ]
+      },
+    "sanctuary": "The Black Box studio at UCL, where roles blurred and genuine connection was fostered",
+    "tension": "Constant negotiation between authentic representation and creative instincts",
+    "genre": "Documentary",
+    "format": "Color film",
+    "location": "East London",
+    "time period": "Present day",
+    "description": "A large-scale installation along the Thames.",
+    "image": "https://freight.cargo.site/t/original/i/G2274511396381639602790189060065/Catalina-min.png",
+    "preview-image" : "",
+    "video": "",
+    "type": "Film"
 
     }
   ],
@@ -104,7 +137,14 @@
       "title": "stone they lay",
       "client": "UCL",
       "theme": "Sculptures",
-      "description": "A large-scale installation along the Thames.",
+      "Director": "G O K E",
+      "Sound": "Thomas Crowley",
+      "Production": "in association with UCL",
+      "Format": "digital media",
+      "Duration": "6 mins",
+      "Year": "2024",
+      "Director's Statement": "This project began as a modest exploration of historical street furniture: a set of stone benches dotted across the St Paul’s area, their presence anonymous and unremarked. Yet, these stones were extracted from the Thames Embankment wall, a site underpinned—literally—by Victorian engineering, sanitation systems, and layers of forgotten city planning. I found myself drawn to them, not just for what they were, but for what they contained—earth and water, stillness and memory. As I began filming, I worked through a double-diamond process—an approach borrowed from the tech world, where I once worked—which allowed me to ideate expansively before defining, and later to develop freely before distilling. This journey was not linear, but iterative and often uncertain. The core question was always this: how can the inanimate speak? Through image, sound design, and poetic structure, the film seeks to animate what cannot move, and to hold space for what no longer speaks. We follow the benches as portals between past and present, accompanied by soundscapes built from church bells, hydrophones submerged in the Thames, and EQ’d traffic noise woven into the whip pans between locations.",
+      "description": "Hidden in plain sight, a set of stone benches in London becomes the vessel for a poetic excavation—where earth meets water, and the static tells a story in motion. Through image, sound, and elemental metaphor, this documentary explores the life of city remnants and their forgotten histories.",
       "image": "https://freight.cargo.site/t/original/i/N962490950896853831746080644787/AI8A0343-1s.jpeg",
       "preview-image" : "",
       "video": "",
@@ -126,13 +166,42 @@
       "title": "Hostile Housing",
       "client": "London Renters Union",
       "theme": "People",
-      "description": "A large-scale installation along the Thames.",
+      "director": "G O K E",
+      "production": "in association with London Renter's Union",
+      "format": "digital media",
+      "duration": "7 mins 45 seconds",
+      "year": 2020,
+      "issues": [
+          "gentrification",
+          "unregulated landlordism",
+          "social housing disintegration",
+          "profit"
+      ],
+      "themes": [
+          "housing",
+          "community",
+          "human rights"
+      ],
+      "tags": [
+          "renting",
+          "homelessness",
+          "housing crisis"
+      ],
+      "keywords": [
+          "struggle",
+          "safety",
+          "security",
+          "demand",
+          "achievement"
+      ],
+      "length": "7 mins 45 seconds",
+      "description": "Rents are spiralling, housing conditions are worsening and property speculation is rampant. How can we challenge these assaults on the basic human right of a home? How have previous generations struggled for a safe and secure roof over their heads? Can we envision, demand and achieve housing for all?",
       "image": "https://freight.cargo.site/t/original/i/B2365688730285498448876967120865/Dance-Build-v1_00_02_03_04-min.png",
       "preview-image" : "",
       "video": "",
       "type": "Workshop" 
     },
-    {     
+    {    
       "title": "Candlemaking",
       "client": "Rich Mix",
       "theme": "People",

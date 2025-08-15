@@ -166,10 +166,12 @@ export default function stoneViewSketch(p) {
   let justTouched = false; // prevent double-triggering with click
 
   function handleTouchStart(event) {
-    // Ignore touches on header/footer only
+    // Ignore touches on header/footer
     if (event.target.closest('header, .header, .site-header, footer, .footer')) return;
 
-    // Carousel touch logic
+    const carouselContainer = document.getElementById("carousel-container");
+    if (!event.target.closest('#carousel-container')) return; // ignore outside carousel
+
     isDragging = true;
     touchActive = true;
     dragDistance = 0;
@@ -182,6 +184,7 @@ export default function stoneViewSketch(p) {
     justTouched = true;
     setTimeout(() => justTouched = false, 400);
   }
+
 
   function handleTouchMove(event) {
     if (!touchActive || event.touches.length !== 1) return;
