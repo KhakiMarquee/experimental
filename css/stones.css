@@ -90,13 +90,15 @@
 
 .slide {
   position: absolute;
-  width: 500px;
+  min-width: 500px;
+  min-height: 500px;
   cursor: pointer;
   transform-origin: center;
   transform: rotateY(-40deg);
   will-change: transform;
   backface-visibility: hidden;
   font-weight: 500;
+  background-color: rgba(var(--grey-100), .2);
 }
 
 .slide::before {
@@ -131,7 +133,7 @@
   opacity: 1;
 }
 
-.slide:hover .slide-inner {
+.slide:hover {
   background-color: rgba(var(--grey-100), 0.3);
   border-color: var(--grey-400);
 }
@@ -156,14 +158,13 @@
   display: block;
   transition: all 0.3s ease-in-out;
   box-sizing: border-box;
-  background-color: rgba(var(--grey-100), .2);
+  pointer-events: auto;  
   border: 1px solid rgba(var(--grey-100), .2);
   border-radius: 15px;
   text-align:center;
   box-sizing: border-box;
 }
 
-.slide-inner,
 .slide img,
 .slide p {
   pointer-events: none; /* ignore clicks, let them pass to parent .slide */
@@ -225,8 +226,8 @@
     height: 560px; /* 80% of 300 */
   }
   .slide {
-    width: 560px;
-    height:560px
+    min-width: 560px;
+    min-height:560px
   }
   .slide-inner {
     padding: 3.2rem 1.6rem; /* 80% of 4rem 2rem */
@@ -240,8 +241,8 @@
     height: 300px; /* 60% of 300 */
   }
   .slide {
-    width: 300px;
-    height:300px
+    min-width: 300px;
+    min-height:300px
   }
   .slide-inner {
     padding: 2.4rem 1.2rem; /* 60% of 4rem 2rem */
@@ -256,8 +257,8 @@
     height: 150px;
   }
   .slide {
-    width: 150px;
-    height:150px
+    min-width: 150px;
+    min-height:150px
   }
   .slide-inner {
     padding: .8rem 0.8rem;
@@ -272,8 +273,8 @@
     height: 280px; /* 40% of 300 */
   }
   .slide {
-    width: 280px;
-    height:280px
+    min-width: 280px;
+    min-height:280px
   }
   .slide-inner {
     padding: .8rem 0.8rem; /* 40% of 4rem 2rem */
@@ -288,8 +289,8 @@
     height: 280px;
   }
   .slide {
-    width: 280px;
-    height:280px
+    min-width: 280px;
+    min-height:280px
   }
   .slide-inner {
     padding: .8rem 0.8rem;
@@ -305,8 +306,8 @@
     height: 280px;
   }
   .slide {
-    width: 280px;
-    height:280px
+    min-width: 280px;
+    min-height:280px
   }
   .slide-inner {
     padding: .8rem 0.8rem;
