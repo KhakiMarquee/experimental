@@ -166,20 +166,20 @@ export default function stoneViewSketch(p) {
   let justTouched = false; // prevent double-triggering with click
 
   function handleTouchStart(event) {
-    if (event.touches.length === 1) {
-      isDragging = true;
-      touchActive = true;
-      dragDistance = 0;
-      lastPointerX = event.touches[0].clientX;
-      speed = 0;
-      startX = event.touches[0].clientX;
-      startY = event.touches[0].clientY;
-      moved = false;
+    // Ignore touches outside slides
+    if (!event.target.closest('.slide')) return;
 
-      // Flag for hybrid devices
-      justTouched = true;
-      setTimeout(() => justTouched = false, 400);
-    }
+    isDragging = true;
+    touchActive = true;
+    dragDistance = 0;
+    lastPointerX = event.touches[0].clientX;
+    speed = 0;
+    startX = event.touches[0].clientX;
+    startY = event.touches[0].clientY;
+    moved = false;
+
+    justTouched = true;
+    setTimeout(() => justTouched = false, 400);
   }
 
   function handleTouchMove(event) {
