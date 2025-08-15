@@ -40,7 +40,7 @@
 
 .stone-header .tooltip:after { 
   content: attr(title);
-  color:var(--grey-300);
+  color:var(--grey-800);
   display: block;           /* force new line */
   margin-top: 10px;
   font-size: 0.5em;         

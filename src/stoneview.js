@@ -161,93 +161,59 @@ export default function stoneViewSketch(p) {
   }
 
   // --- Setup touch event handlers for mobile ---
-// --- Setup touch event handlers for mobile ---
-function setupTouchConstraints() {
-  const carouselContainer = document.getElementById("carousel-container");
+  function setupTouchConstraints() {
+    const carouselContainer = document.getElementById("carousel-container");
 
-  if (carouselContainer) {
-    carouselContainer.addEventListener('touchstart', handleTouchStart, { passive: false });
-    carouselContainer.addEventListener('touchmove', handleTouchMove, { passive: false });
-    carouselContainer.addEventListener('touchend', handleTouchEnd);
-    carouselContainer.addEventListener('touchcancel', handleTouchEnd);
+    if (carouselContainer) {
+      carouselContainer.addEventListener('touchstart', handleTouchStart, { passive: false });
+      carouselContainer.addEventListener('touchmove', handleTouchMove, { passive: false });
+      carouselContainer.addEventListener('touchend', handleTouchEnd);
+      carouselContainer.addEventListener('touchcancel', handleTouchEnd);
+    }
   }
 
-  // Double-tap detection for opening details
-  let lastTapTime = 0;
-  const doubleTapDelay = 300; // ms
-  let dragDistance = 0;
+  let touchActive = false;
 
-  slides.forEach((slide, index) => {
-    slide.addEventListener("touchstart", (e) => {
-      dragDistance = 0;
-    }, { passive: true });
+  function handleTouchStart(event) {
+    if (event.touches.length === 1) {
+     //event.preventDefault();
+      isDragging = true;
+      touchActive = true;
+      lastPointerX = event.touches[0].clientX;
+      speed = 0;  // reset speed on new touch
+    }
+  }
 
-    slide.addEventListener("touchmove", (e) => {
-      const touch = e.touches[0];
-      // Track distance to differentiate swipe vs tap
-      dragDistance += Math.abs(touch.clientX - lastPointerX);
-    }, { passive: true });
+  function handleTouchMove(event) {
+    if (!touchActive) return;
+    if (event.touches.length !== 1) return;
 
-    slide.addEventListener("touchend", (e) => {
-      const currentTime = Date.now();
-      const tapGap = currentTime - lastTapTime;
-
-      if (dragDistance < 5 && tapGap < doubleTapDelay) {
-        // Detected double-tap → open detail
-        import("/src/openDetail.js").then(({ openDetail }) => {
-          openDetail(slide, getItemForSlide(index)); // you'll need to map slide index to your data item
-        });
+      // Only preventDefault if we’re actually swiping
+      if (Math.abs(dragDistance) > 5) {
+        event.preventDefault();
       }
+    const currentX = event.touches[0].clientX;
+    const deltaX = currentX - lastPointerX;
+    
+    // Swipe speed, tuned for mobile
+    let dragSpeed = deltaX * -1.5; // increase sensitivity slightly
+    
+    const maxDragSpeed = 50;
+    dragSpeed = Math.max(-maxDragSpeed, Math.min(maxDragSpeed, dragSpeed));
 
-      if (dragDistance < 5) {
-        lastTapTime = currentTime;
-      }
-    });
-  });
+    // Smooth easing toward new speed
+    speed = speed + (dragSpeed - speed) * 0.7;
 
-  // Helper to match slide index to original data item
-  function getItemForSlide(idx) {
-    // This assumes you still have your JSON data in memory
-    return window.stoneData ? window.stoneData[idx] : null;
+    lastPointerX = currentX;
   }
-}
 
-let touchActive = false;
-let dragDistance = 0;
-
-function handleTouchStart(event) {
-  if (event.touches.length === 1) {
-    isDragging = true;
-    touchActive = true;
-    lastPointerX = event.touches[0].clientX;
-    dragDistance = 0;
-    speed = 0;  // reset speed on new touch
+  function handleTouchEnd(event) {
+    if (touchActive) {
+      event.preventDefault();
+      isDragging = false;
+      touchActive = false;
+    }
   }
-}
-
-function handleTouchMove(event) {
-  if (!touchActive) return;
-  if (event.touches.length !== 1) return;
-
-  const currentX = event.touches[0].clientX;
-  const deltaX = currentX - lastPointerX;
-  dragDistance += Math.abs(deltaX);
-
-  // Swipe speed, tuned for mobile
-  let dragSpeed = deltaX * -1.5;
-  const maxDragSpeed = 50;
-  dragSpeed = Math.max(-maxDragSpeed, Math.min(maxDragSpeed, dragSpeed));
-
-  speed += (dragSpeed - speed) * 0.7;
-  lastPointerX = currentX;
-}
-
-function handleTouchEnd(event) {
-  if (touchActive) {
-    isDragging = false;
-    touchActive = false;
-  }
-}
 
   // --- Existing mouse handlers ---
   let lastMouseX = 0;

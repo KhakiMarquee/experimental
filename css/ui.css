@@ -35,7 +35,7 @@ button{
   font-style: italic;
   font-size: 0.8rem;
   cursor: pointer;
-  color: #000000;
+  color: var(--grey-800);
   position: relative;
   text-transform: lowercase;
   font-weight:bold;
