@@ -172,45 +172,49 @@ export default function stoneViewSketch(p) {
     }
   }
 
-  let touchActive = false;
 
-  function handleTouchStart(event) {
-    if (event.touches.length === 1) {
-     //event.preventDefault();
-      isDragging = true;
-      touchActive = true;
-      lastPointerX = event.touches[0].clientX;
-      speed = 0;  // reset speed on new touch
-    }
+let touchActive = false;
+let dragDistance = 0; // 👈 define it
+
+function handleTouchStart(event) {
+  if (event.touches.length === 1) {
+    // don't preventDefault here
+    isDragging = true;
+    touchActive = true;
+    lastPointerX = event.touches[0].clientX;
+    dragDistance = 0; // 👈 reset
+    speed = 0;
+  }
+}
+
+function handleTouchMove(event) {
+  if (!touchActive || event.touches.length !== 1) return;
+
+  const currentX = event.touches[0].clientX;
+  const deltaX = currentX - lastPointerX;
+  dragDistance += Math.abs(deltaX);
+
+  // Only suppress native behavior once it's clearly a swipe
+  if (dragDistance > 5) {
+    event.preventDefault(); // keep scrolling disabled while swiping carousel
   }
 
-  function handleTouchMove(event) {
-    if (!touchActive) return;
-    if (event.touches.length !== 1) return;
+  let dragSpeed = deltaX * -1.5;
+  const maxDragSpeed = 50;
+  dragSpeed = Math.max(-maxDragSpeed, Math.min(maxDragSpeed, dragSpeed));
 
-    event.preventDefault();
-    const currentX = event.touches[0].clientX;
-    const deltaX = currentX - lastPointerX;
-    
-    // Swipe speed, tuned for mobile
-    let dragSpeed = deltaX * -1.5; // increase sensitivity slightly
-    
-    const maxDragSpeed = 50;
-    dragSpeed = Math.max(-maxDragSpeed, Math.min(maxDragSpeed, dragSpeed));
+  speed = speed + (dragSpeed - speed) * 0.7;
+  lastPointerX = currentX;
+}
 
-    // Smooth easing toward new speed
-    speed = speed + (dragSpeed - speed) * 0.7;
-
-    lastPointerX = currentX;
+function handleTouchEnd(event) {
+  if (touchActive) {
+    // ❌ don't preventDefault here (allows taps to be recognized by our double-tap logic)
+    isDragging = false;
+    touchActive = false;
   }
+}
 
-  function handleTouchEnd(event) {
-    if (touchActive) {
-      event.preventDefault();
-      isDragging = false;
-      touchActive = false;
-    }
-  }
 
   // --- Existing mouse handlers ---
   let lastMouseX = 0;

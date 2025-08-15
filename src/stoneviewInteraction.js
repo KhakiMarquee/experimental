@@ -11,6 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch(`/data/stone.json`) 
     .then(res => res.json())
     .then(data => {
+
+     // ✅ store globally so you can inspect it in DevTools
+      window.stoneData = data;
+      console.log("[stoneData] loaded", Array.isArray(window.stoneData), window.stoneData?.length);
+
       const carousel = document.querySelector("#carousel");
       if (!carousel) {
         console.error("Carousel element not found");
