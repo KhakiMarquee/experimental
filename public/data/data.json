@@ -26,8 +26,42 @@
       "title": "Passing the Flame",
       "client": "Newham Council",
       "theme": "Audiovisuals",
+      "athlete": "Anita",
+      "nationality": "Britain",
+      "ethnicity": "Black",
+      "gender": "Female",
+      "events": [
+          {
+              "year": 1968,
+              "olympics": "Mexico City",
+              "event": "100m"
+          },
+          {
+              "year": 1968,
+              "olympics": "Mexico City",
+              "event": "4x100m relay"
+          },
+          {
+              "year": 1972,
+              "olympics": "Munich",
+              "event": "100m"
+          },
+          {
+              "year": 1972,
+              "olympics": "Munich",
+              "event": "4x100m relay"
+          }
+      ],
+      "objects": [
+          {
+              "type": "prized",
+              "association": "athletes",
+              "sport": "British Athletics",
+              "project": "Passing the Flame"
+          }
+      ],
       "description": "A large-scale installation along the Thames.",
-      "image": "https://freight.cargo.site/t/original/i/G2274511396381639602790189060065/Catalina-min.png",
+      "image": "/media/IMG/passing_the_flame/memorabilia.jpg",
       "preview-image" : "",
       "video": "",
       "type": "3D"
