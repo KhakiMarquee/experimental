@@ -283,7 +283,6 @@ export default function stoneViewSketch(p) {
   }
 }
 
-
 function waitForSlides() {
   const slides = document.querySelectorAll('#carousel .slide');
   if (slides.length > 0) {
