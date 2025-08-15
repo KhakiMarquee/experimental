@@ -176,7 +176,7 @@ export default function stoneViewSketch(p) {
 
   function handleTouchStart(event) {
     if (event.touches.length === 1) {
-      event.preventDefault();
+     //event.preventDefault();
       isDragging = true;
       touchActive = true;
       lastPointerX = event.touches[0].clientX;
