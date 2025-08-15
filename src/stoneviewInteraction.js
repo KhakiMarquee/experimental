@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
           slide.addEventListener("click", () => openDetail(slide, item));
         } else {
           // 📱 Mobile uses double-tap to open (single tap does nothing)
-          setupDoubleTap(slide, item);
+          setupSingleeTap(slide, item);
         }
       });
     })
@@ -72,10 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // Small helper just for mobile
-function setupDoubleTap(slide, item) {
-  const DOUBLE_TAP_DELAY = 300;    // ms
-  const TAP_MOVE_TOL = 8;          // px movement allowed to still count as a tap
-  let lastTapTime = 0;
+function setupSingleTap(slide, item) {
+  const TAP_MOVE_TOL = 8; // px movement allowed to still count as a tap
   let startX = 0, startY = 0;
   let moved = false;
 
@@ -92,23 +90,12 @@ function setupDoubleTap(slide, item) {
     if (Math.hypot(t.clientX - startX, t.clientY - startY) > TAP_MOVE_TOL) {
       moved = true;
     }
-    // NOTE: keep this passive; your carousel’s own touch handlers handle swipe
+    // passive: true so scrolling isn't blocked unless your carousel stops it
   }, { passive: true });
 
   slide.addEventListener("touchend", () => {
-    const now = Date.now();
-    const within = now - lastTapTime < DOUBLE_TAP_DELAY;
-
-    if (!moved && within) {
-      // ✅ double-tap detected
+    if (!moved) {
       openDetail(slide, item);
-      lastTapTime = 0; // reset
-    } else if (!moved) {
-      // first tap
-      lastTapTime = now;
-    } else {
-      // it was a swipe/drag: do nothing
-      lastTapTime = 0;
     }
   });
 }
