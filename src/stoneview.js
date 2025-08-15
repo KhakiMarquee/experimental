@@ -172,10 +172,11 @@ export default function stoneViewSketch(p) {
     }
   }
 
-
-// inside stoneViewSketch(p)
 let touchActive = false;
 let dragDistance = 0;
+let lastTapTime = 0;
+const DOUBLE_TAP_DELAY = 300; // ms
+const TAP_MOVE_TOL = 8;       // px
 
 function handleTouchStart(event) {
   if (event.touches.length === 1) {
@@ -184,6 +185,9 @@ function handleTouchStart(event) {
     dragDistance = 0;
     lastPointerX = event.touches[0].clientX;
     speed = 0;
+    startX = event.touches[0].clientX;
+    startY = event.touches[0].clientY;
+    moved = false;
   }
 }
 
@@ -194,7 +198,12 @@ function handleTouchMove(event) {
   const deltaX = currentX - lastPointerX;
   dragDistance += Math.abs(deltaX);
 
-  // ✅ Only block scrolling if it's really a swipe
+  // Track if we've moved more than TAP_MOVE_TOL
+  if (Math.hypot(event.touches[0].clientX - startX, event.touches[0].clientY - startY) > TAP_MOVE_TOL) {
+    moved = true;
+  }
+
+  // Block scrolling only if it's a swipe
   if (dragDistance > 5) {
     event.preventDefault();
   }
@@ -209,12 +218,32 @@ function handleTouchMove(event) {
 
 function handleTouchEnd(event) {
   if (touchActive) {
-    // ❌ Do NOT preventDefault here — allow double-tap to register
+    const now = Date.now();
+    const withinDoubleTap = now - lastTapTime < DOUBLE_TAP_DELAY;
+
+    // ✅ Double-tap detection (only if minimal movement)
+    if (!moved && withinDoubleTap) {
+      const slide = event.target.closest(".slide");
+      if (slide) {
+        const index = [...document.querySelectorAll(".slide")].indexOf(slide);
+        const item = window.stoneData?.[index];
+        if (item) {
+          import("/src/openDetail.js").then(({ openDetail }) => {
+            openDetail(slide, item);
+          });
+        }
+      }
+      lastTapTime = 0; // reset
+    } else if (!moved) {
+      lastTapTime = now; // first tap
+    } else {
+      lastTapTime = 0; // swipe, not a tap
+    }
+
     isDragging = false;
     touchActive = false;
   }
 }
-
 
   // --- Existing mouse handlers ---
   let lastMouseX = 0;
