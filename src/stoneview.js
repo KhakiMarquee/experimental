@@ -174,25 +174,21 @@ export default function stoneViewSketch(p) {
 
   let touchActive = false;
 
-    function handleTouchStart(event) {
-      if (event.touches.length === 1) {
-        isDragging = true;
-        touchActive = true;
-        dragDistance = 0;
-        lastPointerX = event.touches[0].clientX;
-        speed = 0;
-        // ❌ don't preventDefault here unless needed
-      }
+  function handleTouchStart(event) {
+    if (event.touches.length === 1) {
+      event.preventDefault();
+      isDragging = true;
+      touchActive = true;
+      lastPointerX = event.touches[0].clientX;
+      speed = 0;  // reset speed on new touch
     }
+  }
 
   function handleTouchMove(event) {
     if (!touchActive) return;
     if (event.touches.length !== 1) return;
 
-      // Only preventDefault if we’re actually swiping
-    if (Math.abs(dragDistance) > 5) {
-      event.preventDefault();
-    }
+    event.preventDefault();
     const currentX = event.touches[0].clientX;
     const deltaX = currentX - lastPointerX;
     
@@ -209,9 +205,11 @@ export default function stoneViewSketch(p) {
   }
 
   function handleTouchEnd(event) {
-    isDragging = false;
-    touchActive = false;
-    // ❌ don't preventDefault here
+    if (touchActive) {
+      event.preventDefault();
+      isDragging = false;
+      touchActive = false;
+    }
   }
 
   // --- Existing mouse handlers ---
