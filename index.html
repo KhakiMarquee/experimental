@@ -55,7 +55,7 @@
   <header class="site-header fade-in"></header>
 
   <!-- Main Content -->
-  <div id="app" style="display: none;"> </div>
+  <div id="app" style="display: none; transform: translateY(50px);"> </div>
   <main class="site-body">
     <div class="container">
       <!-- New Animated Div -->
@@ -151,7 +151,7 @@
             <p>objects <span>and</span></p>
             <p>cultural placemaking</p>
           </div>
-          <div class="third-list">
+          <div class="third-list" id="projectsHref">
             <p class="chromatic-text" data-category="audiovisuals"><a><span title="[tap]" class="tooltip">audiovisuals</span></a></p>
             <p class="chromatic-text" data-category="sculptures"><a><span title="[tap]" class="tooltip">sculptures</span></a></p>
             <p class="chromatic-text" data-category="people"><a><span title="[tap]" class="tooltip">people</span></a></p>
@@ -160,6 +160,15 @@
       </div> 
   </main>
 
-  <footer class="footer"></footer>
+  <div id="filter">
+    <div id="category-buttons">
+      
+      <button data-category="filter" ><a href="#projectsHref">projects</a></button>
+      <button data-category="all">audiovisuals</button>
+      <button data-category="material">material</button>
+      <button data-category="render">render</button>
+  </div>
+  <footer class="footer fade-in"></footer>
+  </div>
 </body>
 </html>

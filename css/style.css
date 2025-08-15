@@ -4,6 +4,7 @@
 @import './font.css';
 @import './header.css';
 @import './footer.css';
+@import './category.css';
 
 /* Reset & Base */
 *, *::before, *::after {
@@ -77,6 +78,8 @@ a:hover, #location-toggle:hover{
   width: 100%;
   overflow:hidden;
 }
+
+
 
 .site-body .container {
   display: flex; /* Switch to flex for vertical alignment */

@@ -40,7 +40,7 @@
 
 .stone-header .tooltip:after { 
   content: attr(title);
-  color:var(--grey-400);
+  color:var(--grey-300);
   display: block;           /* force new line */
   margin-top: 10px;
   font-size: 0.5em;         
@@ -106,7 +106,7 @@
   top:50%;
   left:50%;
   transition: all 0.3s ease-in-out;
-  color:var(--grey-400);
+  color:rgba(var(--grey-600), 1);
   transform: translate(-50%);
 } 
 
@@ -118,14 +118,24 @@
 .slide img {
   max-width: 100%;
   display: block;
+  opacity: 1;
 }
 
 .slide:hover .slide-inner {
   background-color: rgba(var(--grey-100), 0.3);
   border-color: var(--grey-400);
-  border-radius: 15px;
-  color: var(--grey-400);
-  transition: all 0.3s ease-in-out;
+}
+
+.slide:hover p{
+    color: var(--grey-400);
+}
+
+.slide:hover img{
+  opacity: 0.5;
+}
+
+.slide p {  
+  color: rgb(var(--grey-600));
 }
 
 .slide-inner {
@@ -140,7 +150,6 @@
   border: 1px solid rgba(var(--grey-100), .2);
   border-radius: 15px;
   text-align:center;
-  color: rgb(var(--grey-600))
 }
 
 #carousel-wrapper {
