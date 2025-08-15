@@ -167,7 +167,7 @@ export default function stoneViewSketch(p) {
 
   function handleTouchStart(event) {
     // Ignore touches outside slides
-    if (!event.target.closest('.slide')) return;
+    if (!event.target.closest('.slide-container')) return;
 
     isDragging = true;
     touchActive = true;
