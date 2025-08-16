@@ -1,0 +1,23 @@
+{
+  "title": "",
+  "client": "",
+  "theme": "",
+  "description": "",
+  "image": "",
+  "preview_image": "",
+  "video": "",
+  "type": [], 
+  "links": "",
+  "metadata": {},  
+  "collaborator": {}
+}
+
+"metadata": {
+  "year": 2025,
+  "director": "G O K E",
+  "sound": "Thomas Crowley",
+  "production": "In association with UCL",
+  "format": "digital media",
+  "duration": "16:41",
+  "director_statement": "..."
+} 

@@ -98,9 +98,9 @@
       "client": "East London Dance Studio",
       "theme": "Culture",
       "description": "An experimental film exploring identity and motion. This film challenges",
-      "image": "https://freight.cargo.site/t/original/i/G2274511396381639602790189060065/Catalina-min.png",
+      "image": "/media/IMG/noa/noa_cover_imge.png",
       "preview-image": null,
-      "video": null,
+      "video": "https://vimeo.com/1078629828?fl=pl&fe=ti&pgroup=plv",
       "type": ["film"],
       "links": null,
       "story": "The genesis of this film lies in a serendipitous meeting at a mental well-being workshop for Black men in East London. There, amidst painting paper hats and shared stories, I met Noa, a dancer whose movements spoke volumes about resilience and expression. Our collaboration became an exploration of play—a concept often stripped from Black male experiences due to historical and societal pressures.",
@@ -179,7 +179,18 @@
         "year": 2022,
         "director_statement": null
       }
-    }
+    },
+      {
+    "title": "Jewellery Design",
+    "client": "VS Jewellery School",
+    "theme": "Culture",
+    "description": "Vannetta Seecharran School of Jewellery '23 | New Designers Business Design Centre",
+    "image": "/media/IMG/vs_jewellery/design_centre_show.jpg",
+    "preview-image": null,
+    "video": "https://vimeo.com/850257026?fl=pl&fe=sh",
+    "type": ["film"],
+    "links": null
+  }
   ],
   "people": [
     {     
@@ -260,7 +271,7 @@
       "client": "Contemporary Art Society",
       "theme": "Culture",
       "description": "Learn about the Conservator role as we explore an exhibition at the Norwich Castle Museum and Art Gallery.",
-      "image": "/media/IMG/inside_museums/the_conservator_cover.jpg",
+      "image": "public/media/IMG/inside_museums/the_conservator_cover_two.jpg",
       "preview-image": null,
       "video": "https://vimeo.com/845516401?fl=pl&fe=sh",
       "type": ["film"],
