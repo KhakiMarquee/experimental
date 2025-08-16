@@ -4,8 +4,9 @@ import { initAnimations, animateThreeSceneOpen, animateThreeSceneClose, animateO
 let threeSceneInitialized = false;
 let threeSceneData = null;
 
-const footer = document.querySelector('footer');
+const footer = document.querySelector('#filter');
 const header = document.querySelector('header');
+const app = document.querySelector('#app');
 
 //HOMEPAGE INTERACTIONS
 
@@ -313,6 +314,7 @@ console.log('Header element:', header);
       if (!transitionSpace.classList.contains('active')) {
         transitionSpace.classList.add('active');
         animateThreeSceneOpen();
+        app.style.setProperty("transform", "translateY(0)");
         footer.classList.add('hide');
         header.classList.add('hide');
 
@@ -344,6 +346,7 @@ if (closeContainer && transitionSpace && footer) {
   closeContainer.addEventListener('click', () => {
     transitionSpace.classList.remove('active');
     animateThreeSceneClose();
+    app.style.setProperty("transform", "translateY(-50px)");
     footer.classList.remove('hide');
     header.classList.remove('hide');
   });
