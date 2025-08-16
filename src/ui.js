@@ -346,7 +346,7 @@ if (closeContainer && transitionSpace && footer) {
   closeContainer.addEventListener('click', () => {
     transitionSpace.classList.remove('active');
     animateThreeSceneClose();
-    app.style.setProperty("transform", "translateY(-50px)");
+    app.style.setProperty("transform", "translateY(50px)");
     footer.classList.remove('hide');
     header.classList.remove('hide');
   });
