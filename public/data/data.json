@@ -170,7 +170,7 @@
       "client": "The BCC",
       "theme": "Architecture",
       "description": null,
-      "image": null,
+      "image": "/media/IMG/building_crafts_college/the_bcc_thumbnail.jpg",
       "preview-image": null,
       "video": "https://www.youtube.com/watch?v=kbW6LvBk5FE",
       "type": ["film"],
@@ -234,8 +234,8 @@
       ]
     },
     {    
-      "title": "Candlemaking",
-      "client": "Rich Mix",
+      "title": "Eco Soy Wax Candles",
+      "client": "Bean and Gone",
       "theme": "Culture",
       "description": "Brand Strategy and Content Creation for an eco-friendly candle-making business.",
       "image": "/media/IMG/bean_gone_soy_candles/candles_cover.jpg",
