@@ -22,12 +22,21 @@ export default function stoneViewSketch(p) {
 
   p.setup = function () {
     p.noCanvas();
+    
     carousel = document.getElementById("carousel");
     slides = Array.from(document.querySelectorAll(".slide"));
 
     const container = document.getElementById("carousel-container");
     container.style.perspective = "2000px";
     carousel.style.transformStyle = "preserve-3d";
+
+        // expose isMobile so renderCarousel can use it safely
+      window.isMobile = () => (('ontouchstart' in window || navigator.maxTouchPoints) && window.innerWidth <= 768);
+
+      // auto-resync when slides are replaced
+      const observer = new MutationObserver(() => p.refreshSlides && p.refreshSlides());
+      observer.observe(carousel, { childList: true });
+
 
     if (isMobile()) {
       setupTouchConstraints();
@@ -37,6 +46,11 @@ export default function stoneViewSketch(p) {
 
     p.loop();
   };
+
+ p.refreshSlides = function () {
+    slides = Array.from(document.querySelectorAll(".slide"));
+  };
+
 
   p.draw = function () {
     const tiltX = -15;

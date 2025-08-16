@@ -201,7 +201,7 @@
       "image": "/media/IMG/echoes of empire/asif_shakoor.png",
       "preview-image": null,
       "video": null,
-      "type": ["Workshop"],
+      "type": ["workshop"],
       "links": null
     },
     {     
@@ -271,12 +271,12 @@
       "client": "Contemporary Art Society",
       "theme": "Culture",
       "description": "Learn about the Conservator role as we explore an exhibition at the Norwich Castle Museum and Art Gallery.",
-      "image": "public/media/IMG/inside_museums/the_conservator_cover_two.jpg",
+      "image": "/media/IMG/inside_museums/the_conservator_cover_two.jpg",
       "preview-image": null,
       "video": "https://vimeo.com/845516401?fl=pl&fe=sh",
       "type": ["film"],
       "links": null
-    },
+    },  
     {
       "title": "The Lighting Designer",
       "client": "Contemporary Art Society",

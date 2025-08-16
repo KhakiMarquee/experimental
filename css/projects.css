@@ -255,7 +255,8 @@
   }
 
   .projects-container.list-view .project-details p{
-  width: auto
+  width: auto;
+  min-width:200px
 
 }
 
