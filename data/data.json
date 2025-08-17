@@ -37,10 +37,10 @@
       "preview-image": null,
       "imageStack" :
       [
-        "public/media/IMG/passing_the_flame/memorabilia.13-5.jpg",
-        "public/media/IMG/passing_the_flame/memorabilia.13-6.jpg",
-        "public/media/IMG/passing_the_flame/PTF_anita-04.jpg",
-        "public/media/IMG/passing_the_flame/PTF_anita-05.jpg"
+        "/public/media/IMG/passing_the_flame/memorabilia.13-5.jpg",
+        "/public/media/IMG/passing_the_flame/memorabilia.13-6.jpg",
+        "/public/media/IMG/passing_the_flame/PTF_anita-04.jpg",
+        "/public/media/IMG/passing_the_flame/PTF_anita-05.jpg"
       ],
       "video": null,
       "type": ["photography"],
