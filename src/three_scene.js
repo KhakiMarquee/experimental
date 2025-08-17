@@ -2,7 +2,6 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 
 export function initThreeScene() {
   const container = document.getElementById('three-container');
@@ -23,30 +22,28 @@ export function initThreeScene() {
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true;
 
-  // ✅ Renderer config for realistic GLTF / PBR materials
-  renderer.outputEncoding = THREE.sRGBEncoding;
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.0;
-  renderer.physicallyCorrectLights = true;
-
-  // ✅ Fallback environment for realistic reflections/ambient
-  const pmremGenerator = new THREE.PMREMGenerator(renderer);
-  scene.environment = pmremGenerator.fromScene(new RoomEnvironment(), 0.04).texture;
-
-  // (Optional) keep these if you want guaranteed minimum lighting
-  scene.add(new THREE.HemisphereLight(0xffffff, 0x444444, 0.3));
-  const dirLight = new THREE.DirectionalLight(0xffffff, 0.3);
+  // Lighting
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x444444, 1));
+  const dirLight = new THREE.DirectionalLight(0xffffff, 1);
   dirLight.position.set(5, 10, 7.5);
   scene.add(dirLight);
 
-  // DRACO + GLTF loader
+  
+
+  // ✅ Declare and set up DRACO and GLTF loaders
   const dracoLoader = new DRACOLoader();
   dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
 
   const loader = new GLTFLoader();
   loader.setDRACOLoader(dracoLoader);
 
-  loader.load(
+// Configure renderer for realistic GLTF materials
+renderer.outputEncoding = THREE.sRGBEncoding;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.0;
+
+// Load the GLB
+loader.load(
   "https://freight.cargo.site/m/S2506763425080988685314661109729/room3.glb",
   (gltf) => {
     const model = gltf.scene;
@@ -58,43 +55,32 @@ export function initThreeScene() {
     model.traverse(o => { if (o.isLight) gltfLights.push(o); });
     console.log("Lights in GLTF:", gltfLights.map(l => `${l.type} ${l.name || ''} i=${l.intensity}`));
 
-    // Traverse all meshes to ensure PBR materials are using the environment map
-    model.traverse((child) => {
-      if (child.isMesh) {
-        const mat = child.material;
-        if (mat && mat.isMeshStandardMaterial) {
-          mat.envMap = scene.environment;
-          mat.envMapIntensity = 1.0;
-          mat.needsUpdate = true;
-        }
-      }
-    });
-
-    // --- Camera setup ---
+    // --- Camera setup: COPY into existing camera (do NOT reassign the const) ---
     const namedCamera = model.getObjectByName("mainView");
     if (namedCamera && namedCamera.isCamera) {
       console.log("Using GLTF camera:", namedCamera);
 
-      // Copy projection
+      // 1) Copy projection if it's a PerspectiveCamera (common in glTF)
       if (namedCamera.isPerspectiveCamera && camera.isPerspectiveCamera) {
         camera.fov = namedCamera.fov;
         camera.near = namedCamera.near;
         camera.far  = namedCamera.far;
       }
+      // (Optional) handle orthographic → perspective mismatch here if needed
 
-      // Copy world transform
+      // 2) Copy world transform (position + rotation) from the GLTF camera
       namedCamera.updateWorldMatrix(true, true);
       camera.matrix.copy(namedCamera.matrixWorld);
       camera.matrix.decompose(camera.position, camera.quaternion, camera.scale);
 
-      // Keep aspect ratio
-      camera.aspect = container.clientWidth / window.innerHeight;
+      // 3) Keep your app's aspect ratio
+      camera.aspect = (container.clientWidth) / (window.innerHeight);
       camera.updateProjectionMatrix();
 
-      // OrbitControls target
+      // 4) Update OrbitControls to use (the same) camera, with a target in front
       controls.object = camera;
       const forward = new THREE.Vector3(0, 0, -1).applyQuaternion(camera.quaternion).normalize();
-      const camTarget = camera.position.clone().add(forward.multiplyScalar(10));
+      const camTarget = camera.position.clone().add(forward.multiplyScalar(10)); // adjust distance if needed
       controls.target.copy(camTarget);
       controls.update();
     } else {
@@ -123,3 +109,5 @@ export function initThreeScene() {
 
   animate();
 }
+
+
