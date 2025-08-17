@@ -5,105 +5,6 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 
 export function initThreeScene() {
-  // Procedural texture generation functions
-  function createProceduralNormalMap(objectName) {
-    const size = 512;
-    const canvas = document.createElement('canvas');
-    canvas.width = canvas.height = size;
-    const ctx = canvas.getContext('2d');
-    const imageData = ctx.createImageData(size, size);
-    
-    for (let i = 0; i < imageData.data.length; i += 4) {
-      let intensity;
-      
-      if (objectName.includes('floor')) {
-        // Stone/concrete texture
-        intensity = Math.random() * 0.3 + 0.35;
-      } else if (objectName.includes('boulder')) {
-        // Rock texture - more variation
-        intensity = Math.random() * 0.4 + 0.3;
-      } else if (objectName.includes('doors') || objectName.includes('doorPanel')) {
-        // Wood grain texture
-        intensity = Math.sin(i * 0.01) * 0.1 + 0.45 + Math.random() * 0.1;
-      } else {
-        // Default subtle texture
-        intensity = Math.random() * 0.2 + 0.4;
-      }
-      
-      imageData.data[i] = intensity * 255;     // R
-      imageData.data[i + 1] = intensity * 255; // G  
-      imageData.data[i + 2] = 128;             // B (neutral normal)
-      imageData.data[i + 3] = 255;             // A
-    }
-    
-    ctx.putImageData(imageData, 0, 0);
-    const texture = new THREE.CanvasTexture(canvas);
-    texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-    return texture;
-  }
-  
-  function createProceduralRoughnessMap(objectName) {
-    const size = 256;
-    const canvas = document.createElement('canvas');
-    canvas.width = canvas.height = size;
-    const ctx = canvas.getContext('2d');
-    const imageData = ctx.createImageData(size, size);
-    
-    for (let i = 0; i < imageData.data.length; i += 4) {
-      let roughness;
-      
-      if (objectName.includes('floor')) {
-        roughness = Math.random() * 0.3 + 0.6; // Varied roughness for floor
-      } else if (objectName.includes('railing')) {
-        roughness = Math.random() * 0.1 + 0.1; // Smooth metal
-      } else if (objectName.includes('doors')) {
-        roughness = Math.random() * 0.2 + 0.3; // Wood variation
-      } else {
-        roughness = Math.random() * 0.2 + 0.4;
-      }
-      
-      const value = roughness * 255;
-      imageData.data[i] = value;     // R
-      imageData.data[i + 1] = value; // G  
-      imageData.data[i + 2] = value; // B
-      imageData.data[i + 3] = 255;   // A
-    }
-    
-    ctx.putImageData(imageData, 0, 0);
-    const texture = new THREE.CanvasTexture(canvas);
-    texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-    return texture;
-  }
-  
-  function createProceduralAOMap(objectName) {
-    const size = 256;
-    const canvas = document.createElement('canvas');
-    canvas.width = canvas.height = size;
-    const ctx = canvas.getContext('2d');
-    
-    // Create subtle AO pattern
-    const gradient = ctx.createRadialGradient(size/2, size/2, 0, size/2, size/2, size/2);
-    gradient.addColorStop(0, 'rgb(255,255,255)');
-    gradient.addColorStop(1, 'rgb(180,180,180)');
-    
-    ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, size, size);
-    
-    // Add some noise
-    const imageData = ctx.getImageData(0, 0, size, size);
-    for (let i = 0; i < imageData.data.length; i += 4) {
-      const noise = Math.random() * 30 - 15;
-      imageData.data[i] = Math.max(0, Math.min(255, imageData.data[i] + noise));
-      imageData.data[i + 1] = Math.max(0, Math.min(255, imageData.data[i + 1] + noise));
-      imageData.data[i + 2] = Math.max(0, Math.min(255, imageData.data[i + 2] + noise));
-    }
-    ctx.putImageData(imageData, 0, 0);
-    
-    const texture = new THREE.CanvasTexture(canvas);
-    texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-    return texture;
-  }
-
   const container = document.getElementById('three-container');
   if (!container) return;
 
@@ -122,10 +23,10 @@ export function initThreeScene() {
   renderer.setSize(width, height);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit for performance
 
-  // ✅ Updated renderer settings for Three.js r150+ with better tone mapping
+  // ✅ Updated renderer settings for Three.js r150+
   renderer.outputColorSpace = THREE.SRGBColorSpace; // Updated from outputEncoding
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.8; // Increased from 1.0 for brighter interior
+  renderer.toneMappingExposure = 1.0;
   
   // Enable shadows for more realism
   renderer.shadowMap.enabled = true;
