@@ -7,7 +7,7 @@
       "description": "The great east window at St Anne’s depicts the Crucifixion in a huge size. It is over 150 years old and badly in need of repair. Our sponsor a pane appeal is making great progress, and you can still contribute to the conservation of the window by sponsoring an area of the picture.",
       "image": "/public/media/IMG/st_annes/stained_glass_still.png",
       "preview-image": null,
-      "video": "https://www.youtube.com/watch?v=9ztq7C1YYsg",
+      "video": "https://www.youtube.com/embed/9ztq7C1YYsg?si=x6PVVJAtLtk3BMRc",
       "type": ["film"],
       "links": null,
       "metadata": {
@@ -21,7 +21,7 @@
       "description": "An exploration of regeneration through point clouds scattering.",
       "image": "/public/media/IMG/aberfeldy/balfron_tower.jpg",
       "preview-image": null,
-      "video": "https://vimeo.com/1082806843?fl=pl&fe=ti&pgroup=plv",
+      "video": "https://player.vimeo.com/video/1082806843?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
       "type": ["3d"],
       "links": null,
       "metadata": {
@@ -35,6 +35,13 @@
       "description": "A series of images to document the first black woman to represent Britain in the Olympics. These photos facilitated the digitisation of her memorabillia.",
       "image": "/public/media/IMG/passing_the_flame/memorabilia.jpg",
       "preview-image": null,
+      "imageStack" :
+      [
+        "public/media/IMG/passing_the_flame/memorabilia.13-5.jpg",
+        "public/media/IMG/passing_the_flame/memorabilia.13-6.jpg",
+        "public/media/IMG/passing_the_flame/PTF_anita-04.jpg",
+        "public/media/IMG/passing_the_flame/PTF_anita-05.jpg"
+      ],
       "video": null,
       "type": ["photography"],
       "links": null,
@@ -69,7 +76,11 @@
       "description": "Caught in a maze of bureaucratic absurdity and colonial remnants, a British-Nigerian filmmaker reassembles their fractured identity through archival images, brutalist architecture, and experimental cinema—interrogating the power and politics of memory.",
       "image": "/public/media/IMG/archives_also_die/archives_die_cover.jpg",
       "preview-image": null,
-      "video": "https://vimeo.com/1097896324",
+      "video": "https://player.vimeo.com/video/1097896324?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+      "imageStack": [
+        "/public/media/IMG/archives_also_die/archives_also_die.jpg",
+        "/public/media/IMG/archives_also_die/archives_die_cover.jpg"
+      ],
       "type": ["film"],
       "links": null,
       "metadata": {
@@ -88,8 +99,15 @@
       "theme": "Architecture",
       "description": "Set within the storied landscape of Spain, this cinematic journey follows a community of apprentices, architects, and master engineers as they gather to reimagine architecture through stone. Exploring classical techniques and forward-thinking strategies—stereotomy, post-tensioned masonry, and sculptural load-bearing forms—Mass Piedra becomes more than a conference: it is a ritual of rediscovery. Tradition and innovation collide in this tactile celebration of material. Stone, with its foreign strength and latent ecstasy, becomes a character in itself. Echoing Bernini’s Ecstasy of Teresa, the film invites us to lose ourselves in the sensual, sustainable poetry of form—raising enduring questions about architecture’s future, and our own place within it.",
       "image": "/public/media/IMG/rosal_stones/pepa_diaz_architect.png",
+      "imageStack": [
+        "/public/media/IMG/rosal_stones/mountain_view.jpg",
+        "/public/media/IMG/rosal_stones/tractor_view.jpg",
+        "/public/media/IMG/rosal_stones/pepa_diaz_architect.png",
+        "/public/media/IMG/rosal_stones/workshop_closeup.jpg",
+        "/public/media/IMG/rosal_stones/workshop_view.jpg"
+      ],
       "preview-image": null,
-      "video": "https://vimeo.com/1069047556",
+      "video": "https://player.vimeo.com/video/1069047556?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
       "type": ["film"],
       "links": null
     },
@@ -100,7 +118,7 @@
       "description": "An experimental film exploring identity and motion. This film challenges",
       "image": "/public/media/IMG/noa/noa_cover_imge.png",
       "preview-image": null,
-      "video": "https://vimeo.com/1078629828?fl=pl&fe=ti&pgroup=plv",
+      "video": "https://player.vimeo.com/video/1078629828?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
       "type": ["film"],
       "links": null,
       "story": "The genesis of this film lies in a serendipitous meeting at a mental well-being workshop for Black men in East London. There, amidst painting paper hats and shared stories, I met Noa, a dancer whose movements spoke volumes about resilience and expression. Our collaboration became an exploration of play—a concept often stripped from Black male experiences due to historical and societal pressures.",
@@ -136,23 +154,37 @@
       "title": "The Hop",
       "full title": "The Hop, Sculpture Park",
       "client": "Frieze",
-      "Production": null,
+      "Production": "Collaborating with Hatch Films CIC Productions",
       "theme": "Culture",
       "description": "The Hop is a large interactive sculpture by artist Jyll Bradley, originally commissioned by the Hayward Gallery, London, and presented by Pi Artworks.",
       "image": "/public/media/IMG/frieze/the_hop_frieze_sculpture.jpg",
       "preview-image": null,
-      "video": "https://vimeo.com/875154322?fl=pl&fe=sh",
+      "video": "https://player.vimeo.com/video/875154322?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
       "type": ["film", "public artwork"],
       "links": null
     },
     {     
-      "title": "stone they lay",
+      "title": "Frieze Masters",
+      "full title": "The Hop, Sculpture Park",
+      "client": "Frieze",
+      "Production": "Collaborating with Hatch Films CIC Productions",
+      "theme": "Culture",
+      "description": "Frieze Masters is an annual event showcasing world-renowned sculptural work and paintings from giants in the art industry.",
+      "image": "/public/media/IMG/frieze/frieze_masters.jpg",
+      "preview-image": null,
+      "video": "https://www.youtube.com/embed/UGoEMnM5TYs?si=JXmMXA69vtviYOWU",
+      "type": ["film", "public artwork"],
+      "links": null
+    },
+    
+    {     
+      "title": "the stone they lay",
       "client": "UCL",
       "theme": "Architecture",
       "description": "Hidden in plain sight, a set of stone benches in London becomes the vessel for a poetic excavation—where earth meets water, and the static tells a story in motion. Through image, sound, and elemental metaphor, this documentary explores the life of city remnants and their forgotten histories.",
       "image": "/public/media/IMG/stone_they_lay/stone_they_lay_cover.jpg",
       "preview-image": null,
-      "video": "https://vimeo.com/1057418229?fl=pl&fe=sh",
+      "video": "https://player.vimeo.com/video/1057418229?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
       "type": ["film", "public artwork"],
       "links": null,
       "metadata": {
@@ -172,7 +204,7 @@
       "description": null,
       "image": "/public/media/IMG/building_crafts_college/the_bcc_thumbnail.jpg",
       "preview-image": null,
-      "video": "https://www.youtube.com/watch?v=kbW6LvBk5FE",
+      "video": "https://player.vimeo.com/video/1110489292?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
       "type": ["film"],
       "links": null,
       "metadata": {
@@ -187,7 +219,7 @@
     "description": "Vannetta Seecharran School of Jewellery '23 | New Designers Business Design Centre",
     "image": "/public/media/IMG/vs_jewellery/design_centre_show.jpg",
     "preview-image": null,
-    "video": "https://vimeo.com/850257026?fl=pl&fe=sh",
+    "video": "https://player.vimeo.com/video/845515505?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
     "type": ["film"],
     "links": null
   }
@@ -200,7 +232,7 @@
       "description": "A large-scale installation along the Thames.",
       "image": "/public/media/IMG/echoes of empire/asif_shakoor.png",
       "preview-image": null,
-      "video": null,
+      "video": "https://player.vimeo.com/video/1110662984?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
       "type": ["workshop"],
       "links": null
     },
@@ -211,7 +243,7 @@
       "description": "Rents are spiralling, housing conditions are worsening and property speculation is rampant. How can we challenge these assaults on the basic human right of a home? How have previous generations struggled for a safe and secure roof over their heads? Can we envision, demand and achieve housing for all?",
       "image": "/public/media/IMG/hostile_housing/gillett_square_lru.jpg",
       "preview-image": null,
-      "video": null,
+      "video": "https://player.vimeo.com/video/1057422541?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
       "type": ["film", "workshop"],
       "links": null,
       "metadata": {
@@ -262,7 +294,7 @@
       "description": "Presented at the Visual Arts Center of Richmond from November 13, 2015 to January 8, 2016, Stacy Lynn Waddell’s Epitaph for a Darling Lady marks a pivotal shift in her practice, where she turns to mixed-media processes incorporating fire, branding irons, alchemical techniques, and gilding to explore American cultural history and personal narrative.",
       "image": "/public/media/IMG/stacy_lynn_waddell/epitaph_film_cover.jpg",
       "preview-image": null,
-      "video": "https://vimeo.com/1089232001",
+      "video": "https://player.vimeo.com/video/1089232001?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
       "type": ["film"],
       "links": null
     },
@@ -273,7 +305,7 @@
       "description": "Learn about the Conservator role as we explore an exhibition at the Norwich Castle Museum and Art Gallery.",
       "image": "/public/media/IMG/inside_museums/the_conservator_cover_two.jpg",
       "preview-image": null,
-      "video": "https://vimeo.com/845516401?fl=pl&fe=sh",
+      "video": "https://player.vimeo.com/video/845516401?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
       "type": ["film"],
       "links": null
     },
@@ -284,7 +316,7 @@
       "description": "Learn about the Lighting technicians role as we explore an exhibition at the Box in Plymouth.",
       "image": "/public/media/IMG/inside_museums/the_lighting_designer_cover.jpg",
       "preview-image": null,
-      "video": "https://vimeo.com/850257026?fl=pl&fe=sh",
+      "video": "https://player.vimeo.com/video/850257026?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
       "type": ["film"],
       "links": null
     }

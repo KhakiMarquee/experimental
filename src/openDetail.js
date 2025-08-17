@@ -76,7 +76,7 @@ export function openDetail(slide, item) {
 function loadNewApp(item) {
   // Replace entire body with new content
   document.body.innerHTML = `
-    <div id="detail-app" style="min-height:100vh; display:flex; flex-direction:column; padding:24px; box-sizing:border-box;">
+    <div id="detail-app">
       <button id="close-detail" aria-label="Close" style="align-self:flex-end; font-size:1.25rem; background:none; border:none; cursor:pointer;">✕</button>
       <main style="max-width:960px; width:100%; margin:0 auto;">
         <h1 style="margin:0 0 12px 0;">${item.title}</h1>

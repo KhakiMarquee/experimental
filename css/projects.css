@@ -1,5 +1,6 @@
 @import './style.css';
 @import './category.css';
+@import './detail.css';
 
 .projects-container {
   margin: 0 auto;
@@ -82,6 +83,8 @@
   color: var(--grey-800);
   text-decoration-color: rgb(var(--grey-600));
 }
+
+
 
 /* Meta info line inside project details */
 .project-meta {
