@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Projects setup
-// Projects setup
+/*
 document.addEventListener('DOMContentLoaded', () => {
   const themeButtonsContainer = document.getElementById('theme-buttons');
   const contentContainer = document.getElementById('content');
@@ -188,4 +188,4 @@ document.addEventListener('DOMContentLoaded', () => {
       contentContainer.appendChild(section);
     });
   }
-});
+});*/

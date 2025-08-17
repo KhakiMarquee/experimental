@@ -133,6 +133,23 @@ function handleOverlayTrigger(e, triggerElement) {
 function initOverlays() {
   console.log('Initializing overlays...');
 
+  const header = document.querySelector('header');
+  const footer = document.querySelector('footer');
+
+  // Utility: hide header/footer
+  function hideHeaderFooter() {
+    header?.classList.add('hide');
+    footer?.classList.add('hide');
+    app.style.setProperty("transform", "translateY(0px)");
+  }
+
+  // Utility: show header/footer
+  function showHeaderFooter() {
+    header?.classList.remove('hide');
+    footer?.classList.remove('hide');
+    app.style.setProperty("transform", "translateY(50px)");
+  }
+
   // Stop propagation on all triggers (assuming triggers have [data-overlay])
   document.querySelectorAll('[data-overlay]').forEach(trigger => {
     trigger.addEventListener('click', e => {
@@ -164,6 +181,7 @@ function initOverlays() {
     if (overlayManager.activeOverlay) {
       console.log('Closing overlay via outside click');
       overlayManager.closeOverlay();
+      showHeaderFooter();
     }
   });
 
@@ -181,6 +199,7 @@ function initOverlays() {
     newTrigger.addEventListener('click', (e) => {
       console.log('Trigger clicked (toggleOverlay):', newTrigger.dataset.overlay);
       handleOverlayTrigger(e, newTrigger);
+      hideHeaderFooter(); // Hides header/footer when overlay is opened
     });
   });
 
@@ -192,6 +211,7 @@ function initOverlays() {
       if (overlay) {
         console.log('Closing overlay via close button');
         overlayManager.closeOverlay(overlay);
+        showHeaderFooter();
       }
     });
   });
@@ -201,9 +221,11 @@ function initOverlays() {
     if (e.key === 'Escape' && overlayManager.activeOverlay) {
       console.log('Closing overlay via Escape key');
       overlayManager.closeOverlay();
+      showHeaderFooter();
     }
   });
 }
+
 
 //GLOBAL INTERACTIONS - HEADER + FOOTER
 document.addEventListener('DOMContentLoaded', () => {
