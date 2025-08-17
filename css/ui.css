@@ -144,6 +144,7 @@ button:hover{
   box-sizing: border-box;
   max-width: none;
   max-height: none;
+  font-family: 'Geist';
 }
 
 .overlay.show {
@@ -168,9 +169,21 @@ button:hover{
   transition: opacity 0.3s ease;
 }
 
+
 .overlay .close-overlay:hover, #close-three-container:hover {
   opacity: 0.5;
   
+}
+
+.overlay p{
+    max-width: 500px;
+    min-width: 100px;
+    font-size: 1.5rem;
+    padding: 2rem;
+}
+
+.overlay h1{
+  letter-spacing: 5px
 }
 
 /* Hide main content when overlay is active */
@@ -213,3 +226,12 @@ button:hover{
 }
 
 /*OVERLAY ENDS*/
+
+@media (max-width:786px) {
+
+  .overlay p{
+
+    font-size: 1rem;
+}
+  
+}
