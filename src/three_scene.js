@@ -22,13 +22,26 @@ export function initThreeScene() {
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true;
 
-  // Lighting
-  scene.add(new THREE.HemisphereLight(0xffffff, 0x444444, 1));
-  const dirLight = new THREE.DirectionalLight(0xffffff, 1);
-  dirLight.position.set(5, 10, 7.5);
-  scene.add(dirLight);
-
   
+
+    // Create sunlight
+  const sun = new THREE.DirectionalLight(0xffffff, 1); // white light, intensity 1
+  sun.position.set(10, 20, 10); // position in world space
+  sun.castShadow = true;        // enable shadows if needed
+
+    // Optional: tweak shadow properties for better quality
+    sun.shadow.mapSize.width = 2048;
+    sun.shadow.mapSize.height = 2048;
+    sun.shadow.camera.near = 0.5;
+    sun.shadow.camera.far = 50;
+    sun.shadow.camera.left = -10;
+    sun.shadow.camera.right = 10;
+    sun.shadow.camera.top = 10;
+    sun.shadow.camera.bottom = -10;
+
+    // Add to scene
+    scene.add(sun);
+      
 
   // ✅ Declare and set up DRACO and GLTF loaders
   const dracoLoader = new DRACOLoader();
@@ -40,7 +53,8 @@ export function initThreeScene() {
 // Configure renderer for realistic GLTF materials
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1.0;
+renderer.toneMappingExposure = 0.1;
+scene.background = new THREE.Color(0x111111);
 
 // Load the GLB
 loader.load(
@@ -54,6 +68,15 @@ loader.load(
     const gltfLights = [];
     model.traverse(o => { if (o.isLight) gltfLights.push(o); });
     console.log("Lights in GLTF:", gltfLights.map(l => `${l.type} ${l.name || ''} i=${l.intensity}`));
+
+    // Dim all lights in the GLTF
+    model.traverse((obj) => {
+      if (obj.isLight) {
+        console.log(`Dim light: ${obj.type} ${obj.name} from ${obj.intensity}`);
+        obj.intensity *= 0.05; // reduce intensity to 5%
+        console.log(`New intensity: ${obj.intensity}`);
+      }
+    });
 
     // --- Camera setup: COPY into existing camera (do NOT reassign the const) ---
     const namedCamera = model.getObjectByName("mainView");
