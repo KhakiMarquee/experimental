@@ -85,3 +85,12 @@
   display: none;
 }
 
+.catNum:after{
+    font-size: .5rem;
+    content: attr(title);
+    color: var(--grey-500);
+    font-size: .5em;
+    position: absolute;
+    padding: 0.2rem;
+}
+

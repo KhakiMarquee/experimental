@@ -38,7 +38,7 @@ export function initThreeScene() {
   loader.setDRACOLoader(dracoLoader);
 
 // Configure renderer for realistic GLTF materials
-renderer.outputEncoding = THREE.sRGBEncoding;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
 renderer.toneMappingExposure = 1.0;
 

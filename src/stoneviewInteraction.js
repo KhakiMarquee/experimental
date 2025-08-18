@@ -16,6 +16,24 @@ document.addEventListener("DOMContentLoaded", () => {
       window.stoneData = data;
       console.log("[stoneData] loaded", Array.isArray(window.stoneData), window.stoneData?.length);
 
+      // Populate title attributes for .catNum spans
+      const catSpans = document.querySelectorAll(".catNum"); // handle both classes
+      catSpans.forEach(span => {
+        const categoryText = span.innerText.trim().toLowerCase();
+
+        if(categoryText === "all") {
+          // 'all' gets total length
+          span.title = data.length;
+        } else {
+          // Count items matching the 'type' field
+          const count = data.filter(item => item.type?.toLowerCase() === categoryText).length;
+          span.title = count;
+          console.log(categoryText, "->", span.title); // debug
+        }
+      });
+
+      
+
       const carousel = document.querySelector("#carousel");
       if (!carousel) {
         console.error("Carousel element not found");
