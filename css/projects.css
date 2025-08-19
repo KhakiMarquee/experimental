@@ -21,6 +21,10 @@
   position: fixed;
 }
 
+#project-section-description{
+      padding-bottom: 2rem;
+}
+
 #canvas-container, canvas {
   display: block;
   width: 100%;

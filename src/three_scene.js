@@ -22,8 +22,6 @@ export function initThreeScene() {
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true;
 
-  
-
     // Create sunlight
   const sun = new THREE.DirectionalLight(0xffffff, 1); // white light, intensity 1
   sun.position.set(10, 20, 10); // position in world space
@@ -58,7 +56,7 @@ scene.background = new THREE.Color(0x111111);
 
 // Load the GLB
 loader.load(
-  "https://freight.cargo.site/m/S2506763425080988685314661109729/room3.glb",
+  "https://freight.cargo.site/m/Q2507915910855053767197342388193/triple_base_seats_cyan.glb",
   (gltf) => {
     const model = gltf.scene;
     scene.add(model);
@@ -79,7 +77,7 @@ loader.load(
     });
 
     // --- Camera setup: COPY into existing camera (do NOT reassign the const) ---
-    const namedCamera = model.getObjectByName("mainView");
+    const namedCamera = model.getObjectByName("Radial_cam"); //camera name
     if (namedCamera && namedCamera.isCamera) {
       console.log("Using GLTF camera:", namedCamera);
 

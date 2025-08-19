@@ -1,324 +1,246 @@
 {
-  "audiovisuals": [
-    {     
-      "title": "Stained Glass Restoration",
-      "client": "St Anne's",
-      "theme": "Heritage",
-      "description": "The great east window at St Anne’s depicts the Crucifixion in a huge size. It is over 150 years old and badly in need of repair. Our sponsor a pane appeal is making great progress, and you can still contribute to the conservation of the window by sponsoring an area of the picture.",
-      "image": "/public/media/IMG/st_annes/stained_glass_still.png",
-      "preview-image": null,
-      "video": "https://www.youtube.com/embed/9ztq7C1YYsg?si=x6PVVJAtLtk3BMRc",
-      "type": ["film"],
-      "links": null,
-      "metadata": {
-        "year": 2023
-      }
-    },
-    {     
-      "title": "Aberfeldy Estate",
-      "client": "Tower Hamlets Council",
-      "theme": "Architecture",
-      "description": "An exploration of regeneration through point clouds scattering.",
-      "image": "/public/media/IMG/aberfeldy/balfron_tower.jpg",
-      "preview-image": null,
-      "video": "https://player.vimeo.com/video/1082806843?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-      "type": ["3d"],
-      "links": null,
-      "metadata": {
-        "year": 2025
-      }
-    },
-    {     
-      "title": "Passing the Flame",
-      "client": "Newham Council",
-      "theme": "Heritage",
-      "description": "A series of images to document the first black woman to represent Britain in the Olympics. These photos facilitated the digitisation of her memorabillia.",
-      "image": "/public/media/IMG/passing_the_flame/memorabilia.jpg",
-      "preview-image": null,
-      "imageStack" :
-      [
-        "/public/media/IMG/passing_the_flame/memorabilia.13-5.jpg",
-        "/public/media/IMG/passing_the_flame/memorabilia.13-6.jpg",
-        "/public/media/IMG/passing_the_flame/PTF_anita-04.jpg",
-        "/public/media/IMG/passing_the_flame/PTF_anita-05.jpg"
-      ],
-      "video": null,
-      "type": ["photography"],
-      "links": null,
-      "metadata": {
-        "year": 2020
+  "audiovisuals": {
+    "description": "Audiovisual works spanning film, photography, and digital media. These projects explore heritage, culture, architecture, and identity through moving image and sound.",
+    "button": false,
+    "buttonContent" : null,
+    "items": [
+      {     
+        "title": "Stained Glass Restoration",
+        "client": "St Anne's",
+        "theme": "Heritage",
+        "description": "The great east window at St Anne’s depicts the Crucifixion in a huge size. It is over 150 years old and badly in need of repair. Our sponsor a pane appeal is making great progress, and you can still contribute to the conservation of the window by sponsoring an area of the picture.",
+        "image": "/public/media/IMG/st_annes/stained_glass_still.png",
+        "preview-image": null,
+        "video": "https://www.youtube.com/embed/9ztq7C1YYsg?si=x6PVVJAtLtk3BMRc",
+        "type": ["film"],
+        "links": null,
+        "metadata": {
+          "year": 2023
+        }
       },
-      "collaborator": {
-        "athlete": "Anita",
-        "nationality": "Britain",
-        "ethnicity": "Black",
-        "gender": "Female",
-        "events": [
-          { "year": 1968, "olympics": "Mexico City", "event": "100m" },
-          { "year": 1968, "olympics": "Mexico City", "event": "4x100m relay" },
-          { "year": 1972, "olympics": "Munich", "event": "100m" },
-          { "year": 1972, "olympics": "Munich", "event": "4x100m relay" }
+      {     
+        "title": "Aberfeldy Estate",
+        "client": "Tower Hamlets Council",
+        "theme": "Architecture",
+        "description": "An exploration of regeneration through point clouds scattering.",
+        "image": "/public/media/IMG/aberfeldy/balfron_tower.jpg",
+        "preview-image": null,
+        "video": "https://player.vimeo.com/video/1082806843?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "type": ["3d"],
+        "links": null,
+        "metadata": {
+          "year": 2025
+        }
+      },
+      {     
+        "title": "Passing the Flame",
+        "client": "Newham Council",
+        "theme": "Heritage",
+        "description": "A series of images to document the first black woman to represent Britain in the Olympics. These photos facilitated the digitisation of her memorabillia.",
+        "image": "/public/media/IMG/passing_the_flame/memorabilia.jpg",
+        "preview-image": null,
+        "imageStack" : [
+          "/public/media/IMG/passing_the_flame/memorabilia.13-5.jpg",
+          "/public/media/IMG/passing_the_flame/memorabilia.13-6.jpg",
+          "/public/media/IMG/passing_the_flame/PTF_anita-04.jpg",
+          "/public/media/IMG/passing_the_flame/PTF_anita-05.jpg"
         ],
-        "objects": [
-          {
-            "type": "prized",
-            "association": "athletes",
-            "sport": "British Athletics",
-            "project": "Passing the Flame"
-          }
-        ]
-      }
-    },
-    {     
-      "title": "Archives Also Die",
-      "client": "UCL",
-      "theme": "Heritage",
-      "description": "Caught in a maze of bureaucratic absurdity and colonial remnants, a British-Nigerian filmmaker reassembles their fractured identity through archival images, brutalist architecture, and experimental cinema—interrogating the power and politics of memory.",
-      "image": "/public/media/IMG/archives_also_die/archives_die_cover.jpg",
-      "preview-image": null,
-      "video": "https://player.vimeo.com/video/1097896324?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-      "imageStack": [
-        "/public/media/IMG/archives_also_die/archives_also_die.jpg",
-        "/public/media/IMG/archives_also_die/archives_die_cover.jpg"
-      ],
-      "type": ["film"],
-      "links": null,
-      "metadata": {
-        "year": 2025,
-        "director": "G O K E",
-        "sound": "G O K E",
-        "production": "In association with UCL",
-        "format": "Digital media",
-        "duration": "16 mins 41 seconds",
-        "director_statement": "Growing up as “Peter” in the UK, I came of age at the intersection of administrative fiction and diasporic truth. The moment I received a citizenship letter in someone else’s name, I began an odyssey through bureaucracy—a journey that blurred the line between identity and absurdity. The archive became a mirror and a maze. This film is not only a retelling of that journey, but a confrontation with the very structures that mediate belonging, memory, and meaning. Archives Also Die is my attempt to reclaim voice through form—to juxtapose the rationalist facade of empire with the chaotic, affective, lived realities of postcolonial subjects. I did not want to merely critique the archive from afar, but to live within it—to screen record it, mispronounce its metadata, pixelate its hierarchies, and project it onto the walls of the present. My body and voice carry the friction between my ancestral name—Oluwatosin Oluwakayode Ominiyi Temi Tope Peter Adegoke—and the imposed simplicity of “Peter.” This film insists that representation is not enough. Transformation is necessary. Through tunnels, towers, and terminals, I offer a new passage through history—not to retrieve what was lost, but to reshape what remains."
-      }
-    },
-    {     
-      "title": "Natural Architecture",
-      "client": "Rosal Stones",
-      "theme": "Architecture",
-      "description": "Set within the storied landscape of Spain, this cinematic journey follows a community of apprentices, architects, and master engineers as they gather to reimagine architecture through stone. Exploring classical techniques and forward-thinking strategies—stereotomy, post-tensioned masonry, and sculptural load-bearing forms—Mass Piedra becomes more than a conference: it is a ritual of rediscovery. Tradition and innovation collide in this tactile celebration of material. Stone, with its foreign strength and latent ecstasy, becomes a character in itself. Echoing Bernini’s Ecstasy of Teresa, the film invites us to lose ourselves in the sensual, sustainable poetry of form—raising enduring questions about architecture’s future, and our own place within it.",
-      "image": "/public/media/IMG/rosal_stones/pepa_diaz_architect.png",
-      "imageStack": [
-        "/public/media/IMG/rosal_stones/mountain_view.jpg",
-        "/public/media/IMG/rosal_stones/tractor_view.jpg",
-        "/public/media/IMG/rosal_stones/pepa_diaz_architect.png",
-        "/public/media/IMG/rosal_stones/workshop_closeup.jpg",
-        "/public/media/IMG/rosal_stones/workshop_view.jpg"
-      ],
-      "preview-image": null,
-      "video": "https://player.vimeo.com/video/1069047556?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-      "type": ["film"],
-      "links": null
-    },
-    {     
-      "title": "NOA",
-      "client": "East London Dance Studio",
-      "theme": "Culture",
-      "description": "An experimental film exploring identity and motion. This film challenges",
-      "image": "/public/media/IMG/noa/noa_cover_imge.png",
-      "preview-image": null,
-      "video": "https://player.vimeo.com/video/1078629828?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-      "type": ["film"],
-      "links": null,
-      "story": "The genesis of this film lies in a serendipitous meeting at a mental well-being workshop for Black men in East London. There, amidst painting paper hats and shared stories, I met Noa, a dancer whose movements spoke volumes about resilience and expression. Our collaboration became an exploration of play—a concept often stripped from Black male experiences due to historical and societal pressures.",
-      "collaboration": {
-        "participants": ["Noa", "the author"],
-        "focus": "Play and its absence in Black male experiences",
-        "medium": "dance",
-        "techniques": ["movement", "emotions", "camera work"]
+        "video": null,
+        "type": ["photography"],
+        "links": null,
+        "metadata": {
+          "year": 2020
+        },
+        "collaborator": {
+          "athlete": "Anita",
+          "nationality": "Britain",
+          "ethnicity": "Black",
+          "gender": "Female",
+          "events": [
+            { "year": 1968, "olympics": "Mexico City", "event": "100m" },
+            { "year": 1968, "olympics": "Mexico City", "event": "4x100m relay" },
+            { "year": 1972, "olympics": "Munich", "event": "100m" },
+            { "year": 1972, "olympics": "Munich", "event": "4x100m relay" }
+          ],
+          "objects": [
+            {
+              "type": "prized",
+              "association": "athletes",
+              "sport": "British Athletics",
+              "project": "Passing the Flame"
+            }
+          ]
+        }
       },
-      "inspiration": {
-        "sources": ["Maya Deren's cinematic philosophies"],
-        "goal": "Traverse space and time through dance"
+      {     
+        "title": "Archives Also Die",
+        "client": "UCL",
+        "theme": "Heritage",
+        "description": "Caught in a maze of bureaucratic absurdity and colonial remnants, a British-Nigerian filmmaker reassembles their fractured identity through archival images, brutalist architecture, and experimental cinema—interrogating the power and politics of memory.",
+        "image": "/public/media/IMG/archives_also_die/archives_die_cover.jpg",
+        "preview-image": null,
+        "video": "https://player.vimeo.com/video/1097896324?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "imageStack": [
+          "/public/media/IMG/archives_also_die/archives_also_die.jpg",
+          "/public/media/IMG/archives_also_die/archives_die_cover.jpg"
+        ],
+        "type": ["film"],
+        "links": null,
+        "metadata": {
+          "year": 2025,
+          "director": "G O K E",
+          "sound": "G O K E",
+          "production": "In association with UCL",
+          "format": "Digital media",
+          "duration": "16 mins 41 seconds",
+          "director_statement": "Growing up as “Peter” in the UK, I came of age at the intersection of administrative fiction and diasporic truth..."
+        }
       },
-      "challenges": {
-        "institutional": "Noa's entrance into the academic space was met with subtle resistance, a reminder of systemic barriers",
-        "negotiation": "Balancing the desire to authentically represent Noa's artistry with the author's own creative instincts"
+      {     
+        "title": "Natural Architecture",
+        "client": "Rosal Stones",
+        "theme": "Architecture",
+        "description": "Set within the storied landscape of Spain, this cinematic journey follows a community of apprentices, architects, and master engineers as they gather to reimagine architecture through stone...",
+        "image": "/public/media/IMG/rosal_stones/pepa_diaz_architect.png",
+        "imageStack": [
+          "/public/media/IMG/rosal_stones/mountain_view.jpg",
+          "/public/media/IMG/rosal_stones/tractor_view.jpg",
+          "/public/media/IMG/rosal_stones/pepa_diaz_architect.png",
+          "/public/media/IMG/rosal_stones/workshop_closeup.jpg",
+          "/public/media/IMG/rosal_stones/workshop_view.jpg"
+        ],
+        "preview-image": null,
+        "video": "https://player.vimeo.com/video/1069047556?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "type": ["film"],
+        "links": null
       },
-      "evolution": {
-        "initial vision": "Silent, black-and-white piece",
-        "changes": [
-          "Incorporation of music that fuels Noa's performances",
-          "Acknowledgement of the inseparability of sound and movement in his expression"
-        ]
-      },
-      "sanctuary": "The Black Box studio at UCL, where roles blurred and genuine connection was fostered",
-      "tension": "Constant negotiation between authentic representation and creative instincts",
-      "genre": "Documentary",
-      "location": "East London"
-    }
-  ],
-  "sculptures": [
-    {     
-      "title": "The Hop",
-      "full title": "The Hop, Sculpture Park",
-      "client": "Frieze",
-      "Production": "Collaborating with Hatch Films CIC Productions",
-      "theme": "Culture",
-      "description": "The Hop is a large interactive sculpture by artist Jyll Bradley, originally commissioned by the Hayward Gallery, London, and presented by Pi Artworks.",
-      "image": "/public/media/IMG/frieze/the_hop_frieze_sculpture.jpg",
-      "preview-image": null,
-      "video": "https://player.vimeo.com/video/875154322?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-      "type": ["film", "public artwork"],
-      "links": null
-    },
-    {     
-      "title": "Frieze Masters",
-      "full title": "The Hop, Sculpture Park",
-      "client": "Frieze",
-      "Production": "Collaborating with Hatch Films CIC Productions",
-      "theme": "Culture",
-      "description": "Frieze Masters is an annual event showcasing world-renowned sculptural work and paintings from giants in the art industry.",
-      "image": "/public/media/IMG/frieze/frieze_masters.jpg",
-      "preview-image": null,
-      "video": "https://www.youtube.com/embed/UGoEMnM5TYs?si=JXmMXA69vtviYOWU",
-      "type": ["film", "public artwork"],
-      "links": null
-    },
-    
-    {     
-      "title": "the stone they lay",
-      "client": "UCL",
-      "theme": "Architecture",
-      "description": "Hidden in plain sight, a set of stone benches in London becomes the vessel for a poetic excavation—where earth meets water, and the static tells a story in motion. Through image, sound, and elemental metaphor, this documentary explores the life of city remnants and their forgotten histories.",
-      "image": "/public/media/IMG/stone_they_lay/stone_they_lay_cover.jpg",
-      "preview-image": null,
-      "video": "https://player.vimeo.com/video/1057418229?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-      "type": ["film", "public artwork"],
-      "links": null,
-      "metadata": {
-        "year": 2024,
-        "director": "G O K E",
-        "sound": "Thomas Crowley",
-        "production": "in association with UCL",
-        "format": "Digital media",
-        "duration": "6 mins",
-        "director_statement": "This project began as a modest exploration of historical street furniture: a set of stone benches dotted across the St Paul’s area, their presence anonymous and unremarked. Yet, these stones were extracted from the Thames Embankment wall, a site underpinned—literally—by Victorian engineering, sanitation systems, and layers of forgotten city planning. I found myself drawn to them, not just for what they were, but for what they contained—earth and water, stillness and memory. As I began filming, I worked through a double-diamond process—an approach borrowed from the tech world, where I once worked—which allowed me to ideate expansively before defining, and later to develop freely before distilling. This journey was not linear, but iterative and often uncertain. The core question was always this: how can the inanimate speak? Through image, sound design, and poetic structure, the film seeks to animate what cannot move, and to hold space for what no longer speaks. We follow the benches as portals between past and present, accompanied by soundscapes built from church bells, hydrophones submerged in the Thames, and EQ’d traffic noise woven into the whip pans between locations."
+      {     
+        "title": "NOA",
+        "client": "East London Dance Studio",
+        "theme": "Culture",
+        "description": "An experimental film exploring identity and motion...",
+        "image": "/public/media/IMG/noa/noa_cover_imge.png",
+        "preview-image": null,
+        "video": "https://player.vimeo.com/video/1078629828?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "type": ["film"],
+        "links": null,
+        "story": "The genesis of this film lies in a serendipitous meeting...",
+        "collaboration": { "participants": ["Noa", "the author"], "focus": "Play and its absence in Black male experiences", "medium": "dance" }
       }
-    },
-    {
-      "title": "The Building Crafts College",
-      "client": "The BCC",
-      "theme": "Architecture",
-      "description": null,
-      "image": "/public/media/IMG/building_crafts_college/the_bcc_thumbnail.jpg",
-      "preview-image": null,
-      "video": "https://player.vimeo.com/video/1110489292?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-      "type": ["film"],
-      "links": null,
-      "metadata": {
-        "year": 2022,
-        "director_statement": null
-      }
-    },
+    ]
+  },
+  "sculptures": {
+    "description": "Sculptural and public art projects documented through film and photography. These works examine material, architecture, and cultural memory in physical space.",
+    "button": true,
+    "buttonContent" : "/stones.html",
+    "items": [
+      {     
+        "title": "The Hop",
+        "full title": "The Hop, Sculpture Park",
+        "client": "Frieze",
+        "theme": "Culture",
+        "description": "The Hop is a large interactive sculpture by artist Jyll Bradley...",
+        "image": "/public/media/IMG/frieze/the_hop_frieze_sculpture.jpg",
+        "video": "https://player.vimeo.com/video/875154322?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "type": ["film", "public artwork"]
+      },
+      {     
+        "title": "the stone they lay",
+        "client": "UCL",
+        "theme": "Architecture",
+        "description": "Hidden in plain sight, a set of stone benches in London becomes the vessel for a poetic excavation...",
+        "image": "/public/media/IMG/stone_they_lay/stone_they_lay_cover.jpg",
+        "video": "https://player.vimeo.com/video/1057418229?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "type": ["film", "public artwork"]
+      },
       {
-    "title": "Jewellery Design",
-    "client": "VS Jewellery School",
-    "theme": "Culture",
-    "description": "Vannetta Seecharran School of Jewellery '23 | New Designers Business Design Centre",
-    "image": "/public/media/IMG/vs_jewellery/design_centre_show.jpg",
-    "preview-image": null,
-    "video": "https://player.vimeo.com/video/845515505?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-    "type": ["film"],
-    "links": null
-  }
-  ],
-  "people": [
-    {     
-      "title": "Echoes of the Empire",
-      "client": "Asif Shakoor",
-      "theme": "Heritage",
-      "description": "A large-scale installation along the Thames.",
-      "image": "/public/media/IMG/echoes of empire/asif_shakoor.png",
-      "preview-image": null,
-      "video": "https://player.vimeo.com/video/1110662984?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-      "type": ["workshop"],
-      "links": null
-    },
-    {     
-      "title": "Hostile Housing",
-      "client": "London Renters Union",
-      "theme": "Architecture",
-      "description": "Rents are spiralling, housing conditions are worsening and property speculation is rampant. How can we challenge these assaults on the basic human right of a home? How have previous generations struggled for a safe and secure roof over their heads? Can we envision, demand and achieve housing for all?",
-      "image": "/public/media/IMG/hostile_housing/gillett_square_lru.jpg",
-      "preview-image": null,
-      "video": "https://player.vimeo.com/video/1057422541?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-      "type": ["film", "workshop"],
-      "links": null,
-      "metadata": {
-        "year": 2020,
-        "director": "G O K E",
-        "production": "in association with London Renter's Union",
-        "duration": "7 mins 45 seconds"
+        "title": "The Building Crafts College",
+        "client": "The BCC",
+        "theme": "Architecture",
+        "description": null,
+        "image": "/public/media/IMG/building_crafts_college/the_bcc_thumbnail.jpg",
+        "video": "https://player.vimeo.com/video/1110489292?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "type": ["film"]
       },
-      "issues": [
-        "gentrification",
-        "unregulated landlordism",
-        "social housing disintegration",
-        "profit"
-      ],
-      "subthemes": [
-        "housing",
-        "community",
-        "human rights"
-      ],
-      "tags": [
-        "renting",
-        "homelessness",
-        "housing crisis"
-      ],
-      "keywords": [
-        "struggle",
-        "safety",
-        "security",
-        "demand",
-        "achievement"
-      ]
-    },
-    {    
-      "title": "Eco Soy Wax Candles",
-      "client": "Bean and Gone",
-      "theme": "Culture",
-      "description": "Brand Strategy and Content Creation for an eco-friendly candle-making business.",
-      "image": "/public/media/IMG/bean_gone_soy_candles/candles_cover.jpg",
-      "preview-image": null,
-      "video": null,
-      "type": ["workshop"],
-      "links": null 
-    },
-    {
-      "title": "Stacy Lynn Waddell Epitaph",
-      "client": "Visual Arts Richmond",
-      "theme": "Culture",
-      "description": "Presented at the Visual Arts Center of Richmond from November 13, 2015 to January 8, 2016, Stacy Lynn Waddell’s Epitaph for a Darling Lady marks a pivotal shift in her practice, where she turns to mixed-media processes incorporating fire, branding irons, alchemical techniques, and gilding to explore American cultural history and personal narrative.",
-      "image": "/public/media/IMG/stacy_lynn_waddell/epitaph_film_cover.jpg",
-      "preview-image": null,
-      "video": "https://player.vimeo.com/video/1089232001?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-      "type": ["film"],
-      "links": null
-    },
-    {
-      "title": "The Conservator",
-      "client": "Contemporary Art Society",
-      "theme": "Culture",
-      "description": "Learn about the Conservator role as we explore an exhibition at the Norwich Castle Museum and Art Gallery.",
-      "image": "/public/media/IMG/inside_museums/the_conservator_cover_two.jpg",
-      "preview-image": null,
-      "video": "https://player.vimeo.com/video/845516401?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-      "type": ["film"],
-      "links": null
-    },
-    {
-      "title": "The Lighting Designer",
-      "client": "Contemporary Art Society",
-      "theme": "Culture",
-      "description": "Learn about the Lighting technicians role as we explore an exhibition at the Box in Plymouth.",
-      "image": "/public/media/IMG/inside_museums/the_lighting_designer_cover.jpg",
-      "preview-image": null,
-      "video": "https://player.vimeo.com/video/850257026?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-      "type": ["film"],
-      "links": null
-    }
-  ]
+      {
+        "title": "Jewellery Design",
+        "client": "VS Jewellery School",
+        "theme": "Culture",
+        "description": "Vannetta Seecharran School of Jewellery '23 | New Designers Business Design Centre",
+        "image": "/public/media/IMG/vs_jewellery/design_centre_show.jpg",
+        "video": "https://player.vimeo.com/video/845515505?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "type": ["film"]
+      }
+    ]
+  },
+  "people": {
+    "description": "Portraits, workshops, and films centred on individuals, communities, and cultural practitioners. These stories highlight lived experience, creativity, and collective struggles.",
+    "button": false,
+    "buttonContent" : null,   
+    "items": [
+      {     
+        "title": "Echoes of the Empire",
+        "client": "Asif Shakoor",
+        "theme": "Heritage",
+        "description": "In our latest event, we screened The Strangers Home, 2024 by James King, a film commissioned by Thames Festival Trust. It deserves the big screen and surround sound—an eerie mood swept viewers into a world shaped by identity, censorship, and fake news.",
+        "image": "/public/media/IMG/echoes of empire/asif_shakoor.png",
+        "video": "https://player.vimeo.com/video/1110662984?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "type": ["workshop"],
+        "links": "https://archivesdie.goke.studio/p/sea-wallahs" 
+      },
+      {     
+        "title": "Hostile Housing",
+        "client": "London Renters Union",
+        "theme": "Architecture",
+        "description": "Rents are spiralling, housing conditions are worsening and property speculation is rampant...",
+        "image": "/public/media/IMG/hostile_housing/gillett_square_lru.jpg",
+        "video": "https://player.vimeo.com/video/1057422541?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "type": ["film", "workshop"]
+      },
+      {    
+        "title": "Eco Soy Wax Candles",
+        "client": "Bean and Gone",
+        "theme": "Culture",
+        "description": "Brand Strategy and Content Creation for an eco-friendly candle-making business.",
+        "image": "/public/media/IMG/bean_gone_soy_candles/candles_cover.jpg",
+        "type": ["workshop"]
+      },
+      {
+        "title": "Stacy Lynn Waddell Epitaph",
+        "client": "Visual Arts Richmond",
+        "theme": "Culture",
+        "description": "Presented at the Visual Arts Center of Richmond from November 13, 2015 to January 8, 2016...",
+        "image": "/public/media/IMG/stacy_lynn_waddell/epitaph_film_cover.jpg",
+        "video": "https://player.vimeo.com/video/1089232001?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "type": ["film"]
+      },
+      {
+        "title": "The Conservator",
+        "client": "Contemporary Art Society & Norwich Castle Museum",
+        "theme": "Culture",
+        "description": "Learn about the Conservator role as we explore an exhibition at the Norwich Castle Museum and Art Gallery.",
+        "image": "/public/media/IMG/inside_museums/the_conservator_three.jpg",
+        "video": "https://player.vimeo.com/video/845516401?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "type": ["film"]
+      },  
+      {
+        "title": "The Lighting Designer",
+        "client": "Contemporary Art Society & The Box, Plymouth",
+        "theme": "Culture",
+        "description": "Learn about the Lighting technicians role as we explore an exhibition at the Box in Plymouth.",
+        "image": "/public/media/IMG/inside_museums/the_ldr_cover.jpg",
+        "video": "https://player.vimeo.com/video/850257026?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "type": ["film"]
+      },
+      {
+        "title": "Frieze Masters",
+        "client": "Frieze",
+        "theme": "Culture",
+        "description": "Frieze Masters offers a unique contemporary perspective on thousands of years of art history, from collectible objects to significant masterpieces from the ancient era and Old Masters to the late 20th century. The 2025 edition of the fair will showcase over 130 of the most significant galleries from around the world.",
+        "image": "/public/media/IMG/frieze/frieze_masters.jpg",
+        "video": "https://player.vimeo.com/video/850257026?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "type": ["film"]
+      }
+    ]
+  }
 }

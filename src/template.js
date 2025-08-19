@@ -8,6 +8,7 @@ function getCategoryFromURL() {
 function renderContent(category, jsonPath) {
   const container = document.getElementById('content');
   const title = document.getElementById('page-title'); 
+  const sectionDescription = document.getElementById('project-section-description');
 
   fetch(jsonPath)
     .then(response => {
@@ -15,19 +16,31 @@ function renderContent(category, jsonPath) {
       return response.json();
     })
     .then(data => {
-      const entries = data[category];
+      const group = data[category];
+      if (!group) throw new Error(`Category "${category}" not found in data.`);
+
+      // Update section title
       title.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+
+      // Update section description
+      if (sectionDescription) {
+        sectionDescription.textContent = group.description || '';
+      }
+
+      // Clear and repopulate container
       container.innerHTML = '';
+      const entries = group.items;
 
       if (entries && entries.length) {
         entries.forEach(entry => {
           const section = document.createElement('div');
-          //OpenDetail Capabilities
+
+          // OpenDetail Capabilities
           section.addEventListener("click", () => {
             openTemplateDetail(section, entry);
           });
 
-          //Print items
+          // Print items
           section.classList.add('project-row');
           section.innerHTML = `
             <div class="project-image">
@@ -35,11 +48,11 @@ function renderContent(category, jsonPath) {
             </div>
             <div class="project-details">
               <p>${entry.title}</p>
-              <span class="project-client">${entry.client}</span>
+              <span class="project-client">${entry.client || ''}</span>
               <div class="project-meta">
-                <p class="project-theme">${entry.theme}</p>
-                <p class="project-description">${entry.description}</p>   
-                  <span class="project-type">${entry.type}</span>
+                <p class="project-theme">${entry.theme || ''}</p>
+                <p class="project-description">${entry.description || ''}</p>   
+                <span class="project-type">${entry.type ? entry.type.join(', ') : ''}</span>
               </div>
             </div>
           `;
