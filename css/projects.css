@@ -272,6 +272,9 @@
 
 }
   
+#project-section-description{
+  font-size:0.8rem
+}
   .projects-header {
     flex-direction: column;
     gap: 1rem;
