@@ -39,9 +39,18 @@
         "image": "/public/media/IMG/volute_small_image.png",
         "preview-image" : "",
         "video": "",
-        "type": "render",
+        "type": "material",
         "dimensions": "150 by 150"
-        }  
-        
+        },  
+        {     
+        "title": "Shared Space",
+        "material": "blisworth limestone",
+        "description": "An artwork proposal for Wellingborugh Development project.",
+        "image": "/public/media/S_IMG/renders/cyan_limestone_chair/prototype.png",
+        "preview-image" : "",
+        "video": "",
+        "type": "render",
+        "dimensions": "250 by 250"
+        }           
         
 ]   
