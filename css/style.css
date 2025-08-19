@@ -52,8 +52,6 @@ a{
   text-decoration:underline;
   text-decoration-color:transparent;
   color:inherit;
-  transition: transform 0.3s ease, color 0.3s ease, text-decoration-color 0.3s ease;
-
 }
 
 a:hover, #location-toggle:hover{

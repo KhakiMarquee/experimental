@@ -47,9 +47,9 @@ button{
 }
 
 button:hover{
-  transform: scale(1.05);
+  /*transform: scale(1.05);*/
   background-color: rgba(var(--grey-100),1);
-  transition: all 0.3s ease
+  transition: all 0.3s ease-in-out
 }
 
 .trigger-text-container {

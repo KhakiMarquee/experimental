@@ -41,8 +41,6 @@ footer li:first-of-type{
     text-overflow: ellipsis;
 }
 
-
-
 footer li p:last-of-type{
   font-weight:lighter;
   text-decoration: underline;
