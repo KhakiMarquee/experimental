@@ -1,6 +1,6 @@
 {
   "audiovisuals": {
-    "description": "Audiovisual works spanning film, photography, and digital media. These projects explore heritage, culture, architecture, and identity through moving image and sound.",
+    "description": "Audiovisual works spanning film, photography, and digital media. These projects explore heritage, culture, architecture through moving image and sound.",
     "button": false,
     "buttonContent" : null,
     "items": [
@@ -113,19 +113,6 @@
         "video": "https://player.vimeo.com/video/1069047556?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "type": ["film"],
         "links": null
-      },
-      {     
-        "title": "NOA",
-        "client": "East London Dance Studio",
-        "theme": "Culture",
-        "description": "An experimental film exploring identity and motion...",
-        "image": "/media/IMG/noa/noa_cover_imge.png",
-        "preview-image": null,
-        "video": "https://player.vimeo.com/video/1078629828?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "type": ["film"],
-        "links": null,
-        "story": "The genesis of this film lies in a serendipitous meeting...",
-        "collaboration": { "participants": ["Noa", "the author"], "focus": "Play and its absence in Black male experiences", "medium": "dance" }
       }
     ]
   },
@@ -198,7 +185,7 @@
         "type": ["film", "workshop"]
       },
       {    
-        "title": "Eco Soy Wax Candles",
+        "title": "Light for Justice",
         "client": "Bean and Gone",
         "theme": "Culture",
         "description": "Brand Strategy and Content Creation for an eco-friendly candle-making business.",
@@ -206,7 +193,7 @@
         "type": ["workshop"]
       },
       {
-        "title": "Stacy Lynn Waddell Epitaph",
+        "title": "Stacy Lynn Waddell's Epitaph",
         "client": "Visual Arts Richmond",
         "theme": "Culture",
         "description": "Presented at the Visual Arts Center of Richmond from November 13, 2015 to January 8, 2016...",
@@ -240,6 +227,19 @@
         "image": "/media/IMG/frieze/frieze_masters.jpg",
         "video": "https://player.vimeo.com/video/850257026?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "type": ["film"]
+      },
+      {     
+        "title": "NOA",
+        "client": "East London Dance Studio",
+        "theme": "Culture",
+        "description": "An experimental film exploring identity and motion...",
+        "image": "/media/IMG/noa/noa_cover_imge.png",
+        "preview-image": null,
+        "video": "https://player.vimeo.com/video/1078629828?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "type": ["film"],
+        "links": null,
+        "story": "The genesis of this film lies in a serendipitous meeting...",
+        "collaboration": { "participants": ["Noa", "the author"], "focus": "Play and its absence in Black male experiences", "medium": "dance" }
       }
     ]
   }

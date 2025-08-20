@@ -129,7 +129,7 @@ button:hover{
 /* Full-screen overlay styles - Updated to work with existing CSS */
 .overlay {
   position: fixed;
-  top: 0;
+  top: 25%;
   left: 0;
   width: 100vw;
   height: 100vh;
@@ -145,6 +145,7 @@ button:hover{
   max-width: none;
   max-height: none;
   font-family: 'Geist';
+  font-weight: lighter; /* Match your headline style */  
 }
 
 .overlay.show {
@@ -158,7 +159,6 @@ button:hover{
 .overlay .close-overlay, #close-three-container {
   position: absolute;
   top: 4em; /* Match your existing #close-three-container positioning */
-  right: 20px; /* Match your existing positioning */
   background: none;
   border: none;
   color: rgba(var(--grey-100),1); /* Match your existing color */
@@ -178,12 +178,21 @@ button:hover{
 .overlay p{
     max-width: 500px;
     min-width: 100px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: 2rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: system-ui;
+    letter-spacing: 2px;
 }
 
 .overlay h1{
-  letter-spacing: 5px
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 /* Hide main content when overlay is active */
@@ -193,45 +202,13 @@ button:hover{
   transition: opacity 0.4s ease;
 }
 
-/* Overlay content styling */
-.overlay-content {
-  max-width: 800px;
-  width: 100%;
-  text-align: center;
-  padding: 5% 2rem 2rem 2rem;
-  box-sizing: border-box;
-}
-
-.overlay-content h2 {
-  font-size: 4rem;
-  margin-bottom: 3rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: lighter; /* Match your headline style */
-  font-style: italic; /* Match your design aesthetic */
-}
-
-.overlay-content p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  margin-bottom: 2rem;
-  font-weight: 300;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.overlay-content p:last-child {
-  margin-bottom: 0;
-}
 
 /*OVERLAY ENDS*/
 
 @media (max-width:786px) {
 
-  .overlay p{
-
-    font-size: 1rem;
-}
+    .overlay p{
+    font-size: 1.2rem;
+  }
   
 }

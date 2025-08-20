@@ -369,12 +369,7 @@ a:hover, #location-toggle:hover{
   .headline { font-size: 1.5rem; }
 }
 
-/* Small phones <=480px */
-@media (max-width: 480px) {
-  .overlay-content h2 { font-size: 2rem; }
-  .overlay-content p  { font-size: 0.9rem; }
-  /* No duplicate fade-in/keyframes here to avoid overrides */
-}
+
 
 /* Very large screens (you had these) */
 @media (min-width: 1000px) and (min-height: 1000px) {
