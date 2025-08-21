@@ -113,19 +113,6 @@
         "video": "https://player.vimeo.com/video/1069047556?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "type": ["film"],
         "links": null
-      },
-      {     
-        "title": "NOA",
-        "client": "East London Dance Studio",
-        "theme": "Culture",
-        "description": "An experimental film exploring identity and motion...",
-        "image": "/public/media/IMG/noa/noa_cover_imge.png",
-        "preview-image": null,
-        "video": "https://player.vimeo.com/video/1078629828?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "type": ["film"],
-        "links": null,
-        "story": "The genesis of this film lies in a serendipitous meeting...",
-        "collaboration": { "participants": ["Noa", "the author"], "focus": "Play and its absence in Black male experiences", "medium": "dance" }
       }
     ]
   },
@@ -240,6 +227,19 @@
         "image": "/public/media/IMG/frieze/frieze_masters.jpg",
         "video": "https://player.vimeo.com/video/850257026?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "type": ["film"]
+      },
+      {     
+        "title": "NOA",
+        "client": "East London Dance Studio",
+        "theme": "Culture",
+        "description": "An experimental film exploring identity and motion...",
+        "image": "/public/media/IMG/noa/noa_cover_imge.png",
+        "preview-image": null,
+        "video": "https://player.vimeo.com/video/1078629828?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "type": ["film"],
+        "links": null,
+        "story": "The genesis of this film lies in a serendipitous meeting...",
+        "collaboration": { "participants": ["Noa", "the author"], "focus": "Play and its absence in Black male experiences", "medium": "dance" }
       }
     ]
   }
