@@ -71,7 +71,7 @@
 .mobile-nav li {
   margin: 0.2rem 0;
   padding: 1rem 2rem;
-  background-color: rgba(var(--grey-100), .6);
+  background-color: rgba(var(--grey-100), .8);
   transition: all 0.3s ease-in;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;

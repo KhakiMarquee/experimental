@@ -255,6 +255,7 @@
 
   .project-details{
     font-size: 0.8rem;
+    justify-content:unset; /* This pushes items to opposite ends */
   }
 
  .projects-container.row-view .project-details{
