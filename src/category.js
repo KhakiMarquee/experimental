@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Projects setup
+/*/ Projects setup
 
 document.addEventListener('DOMContentLoaded', () => {
   // ✅ match your HTML
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
       contentContainer.appendChild(section);
     });
   }
-});
+});*/
 
 
 // Close when clicking away

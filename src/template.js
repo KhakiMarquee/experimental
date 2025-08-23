@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
   });
 
-  // Quicklinks in footer
+  // Quicklinks in header
   const quicklinks = document.querySelectorAll('#category-buttons button[data-category]');
   quicklinks.forEach(btn => {
     btn.addEventListener("click", () => {
