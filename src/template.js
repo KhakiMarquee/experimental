@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
   });
 
-  // Quicklinks in header
+  /*/ Quicklinks in header
   const quicklinks = document.querySelectorAll('#category-buttons button[data-category]');
   quicklinks.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       window.location.href = targetUrl;
     }
-  }
+  }*/
 
 });
 
