@@ -20,12 +20,11 @@ export function initApp() {
     //Load Footer
     loadFooter();
 
-
     //Load dynamic buttons for page
     if (document.querySelector('.third-list')) {
       const items = document.querySelectorAll('.third-list p');
-      // your code here
-          // Determine base URL dynamically
+    // your code here
+    // Determine base URL dynamically
     const currentPath = window.location.pathname;
     const basePath = currentPath.substring(0, currentPath.lastIndexOf('/'));
 
@@ -38,9 +37,7 @@ export function initApp() {
       });
     });
     }
-  };
-
-
+}
 
 
 

@@ -27,7 +27,7 @@ const finalWord = "studio";
 
 let wordIndex = 0;
 let shuffleCount = 0;
-const totalShuffles = randInt(20, 50);
+const totalShuffles = randInt(20, 30);
 
 
 const updateCenterText = () => {
@@ -43,7 +43,9 @@ const updateCenterText = () => {
   }
 };
 
-/*const fillBackgroundText = () => {
+/*
+OLD FILL BACKGROUND ANIMATION THAT MIGHT GET REINSTATED
+const fillBackgroundText = () => {
   const background = document.querySelector('.background-text');
   if (!background) return;
 
@@ -57,12 +59,12 @@ const updateCenterText = () => {
   }
 
   background.textContent = randomText;
-};*/
+};
 
 
 
 
-//fillBackgroundText();
+/fillBackgroundText();
 document.addEventListener("DOMContentLoaded", () => {
   const interval = setInterval(() => {
     updateCenterText();
@@ -70,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
       clearInterval(interval);
     }
   }, 100); // change every 100ms
-});
+}); */
 
 const showLoading = () => {
   const screen = document.getElementById('loading-screen');
@@ -117,14 +119,14 @@ const bootstrap = async () => {
       }
     }, intervalDelay);
   }).then(async () => {
+    const { initApp } = await import('/src/main.js');
+    //Initialise Application
+    initApp();
+
     //Hide Loading Screen
     moveSiteBodyToApp();
     hideLoading();
 
-    const { initApp } = await import('/src/main.js');
-
-    //Initialise Application
-    initApp();
   });
 };
 

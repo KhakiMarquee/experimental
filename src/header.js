@@ -30,7 +30,7 @@ function initHeader() {
         console.warn("Mobile menu elements not found");
         return;
     }
-
+    /*DYNAMIC LINKS*/
      /* const currentPath = window.location.pathname.toLowerCase();
     const dynamicLinks = [
         { keyword: "stone", url: "/pages/audiovisuals.html", text: "about" },

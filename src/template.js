@@ -1,4 +1,5 @@
 import { openTemplateDetail } from '/src/openTemplateDetail.js';
+import { ImageCompressor } from 'js-image-compressor';
 
 function getCategoryFromURL() {
   const params = new URLSearchParams(window.location.search);
@@ -7,7 +8,7 @@ function getCategoryFromURL() {
 
 function renderContent(category, jsonPath) {
   const container = document.getElementById('content');
-  const title = document.getElementById('page-title'); 
+  const title = document.getElementById('page-title');
   const sectionDescription = document.getElementById('project-section-description');
 
   fetch(jsonPath)
@@ -32,15 +33,10 @@ function renderContent(category, jsonPath) {
       const entries = group.items;
 
       if (entries && entries.length) {
-        entries.forEach(entry => {
+        entries.forEach((entry, entryIdx) => {
           const section = document.createElement('div');
 
-          // OpenDetail Capabilities
-          section.addEventListener("click", () => {
-            openTemplateDetail(section, entry);
-          });
-
-          // Print items
+          // Set up section content
           section.classList.add('project-row');
           section.innerHTML = `
             <div class="project-image">
@@ -56,7 +52,62 @@ function renderContent(category, jsonPath) {
               </div>
             </div>
           `;
+
+          // Append the section to container first
           container.appendChild(section);
+
+          // Now apply compression for this image immediately
+          console.log(`Rendering entry #${entryIdx}, applying compression.`);
+
+          const imgEl = section.querySelector('.project-image img');
+          imgEl.crossOrigin = 'anonymous'; // Enable CORS for this image
+          if (!imgEl) {
+            console.warn('No image element found in section:', section);
+            return;
+          }
+
+          console.log('Processing image:', imgEl.src);
+
+          fetch(imgEl.src, { mode: 'cors' })
+            .then(res => {
+              console.log('Fetched image blob');
+              return res.blob();
+            })
+            .then(blob => {
+              console.log('Blob ready, size:', blob.size);
+              const file = new File([blob], 'image.jpg', { type: blob.type });
+
+              // Compression logic using js-image-compressor
+              const options = {
+                file: file,
+                quality: 0.6,
+                convertSize: Infinity,
+                redressOrientation: true,
+                beforeCompress(result) {
+                  console.log('BeforeCompress:', result.size, result.type);
+                },
+                success(result) {
+                  console.log('Compression success:', result.size, result.type);
+                  imgEl.src = URL.createObjectURL(result);
+
+                      // Calculating compression ratio
+                      const compressionRatio = ((originalSize - compressedSize) / originalSize) * 100;
+                      console.log('Original size:', originalSize, 'bytes');
+                      console.log('Compressed size:', compressedSize, 'bytes');
+                      console.log('Compression reduced size by:', compressionRatio.toFixed(2) + '%');
+                },
+                error(err) {
+                  console.error('Compression error:', err);
+                }
+              };
+              new ImageCompressor(options);
+            })
+            .catch(err => console.error('Fetch error during compression:', err));
+          
+          // OpenDetail Capabilities
+          section.addEventListener("click", () => {
+            openTemplateDetail(section, entry);
+          });
         });
       } else {
         container.innerHTML = `<p>No content found for "${category}".</p>`;
@@ -96,6 +147,27 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('grid-view').classList.remove('active');
     
   });
+
+
+  const quicklinks = document.querySelectorAll('#category-buttons button[data-category]');
+  quicklinks.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const category = btn.dataset.category;
+      if (!category || category === "filter") return;
+      navigateToCategory(category);
+    });
+  });
+  
+  function navigateToCategory(category) {
+    const targetUrl = `/pages/projects.html?category=${encodeURIComponent(category)}`;
+
+    // If using asyncLoader:
+    if (typeof window.loadPage === "function") {
+      window.loadPage(targetUrl);
+    } else {
+      window.location.href = targetUrl;
+    }
+  }
 
 });
 

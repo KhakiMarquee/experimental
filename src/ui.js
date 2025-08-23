@@ -21,6 +21,9 @@ class OverlayManager {
 
   async openOverlay(overlayEl) {
     if (this.isAnimating || this.activeOverlay === overlayEl) return;
+
+    // ✅ Force scroll to top
+    window.scrollTo({ top: 0, behavior: "smooth" });
     
     this.isAnimating = true;
     console.log('Opening overlay:', overlayEl.id); // Debug log
@@ -311,10 +314,6 @@ export function initUI() {
   
   if (window.innerWidth >= 769) {initAnimations();}
 
-
- console.log('Script loaded');
-
-
   // Initialize overlays - THIS WAS MISSING!
   initOverlays();
 
@@ -325,10 +324,6 @@ export function initUI() {
   const transitionSpace = document.querySelector('.transition-space');
   const container = document.querySelector('.site-body .container');
   const closeContainer = document.querySelector('#close-three-container');
-
-
-console.log('Footer element:', footer);
-console.log('Header element:', header);
 
   // Tap button for 3D scene
   if (transitionButton && transitionSpace && mainText && container && closeContainer) {

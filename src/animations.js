@@ -16,8 +16,10 @@ export function initAnimations() {
       y: 50,
       opacity: 0,
       ease: 'power3.out',
-      delay: 0.3
+      delay: 0.3,
+      immediateRender: true,
     });
+    
   }
 
   const subhead = document.querySelector('.subhead');

@@ -116,26 +116,29 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Projects setup
-/*
+
 document.addEventListener('DOMContentLoaded', () => {
   const themeButtonsContainer = document.getElementById('theme-buttons');
   const contentContainer = document.getElementById('content');
 
-  const category = getCategoryFromURL();;
+  const category = getCategoryFromURL();
+
+  console.log("[projects.html] page loaded with category:", category);
 
   fetch('/data/data.json')
     .then(res => res.json())
     .then(data => {
       if (category && data[category]) {
-        allProjects = data[category]; // Only load the URL category
+        allProjects = data[category];
       } else if (category) {
-        allProjects = []; // Category not found
+        allProjects = [];
       } else {
-        allProjects = Object.values(data).flat(); // No category: load everything
+        allProjects = Object.values(data).flat();
       }
 
       renderProjects(allProjects);
 
+      // build theme filter buttons
       if (themeButtonsContainer && allProjects.length) {
         const themes = Array.from(new Set(allProjects.map(p => p.theme).filter(Boolean)));
         themes.unshift('All');
@@ -158,6 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(err => console.error('Error loading projects JSON:', err));
 
+  // unchanged
   function renderProjects(projects) {
     contentContainer.innerHTML = '';
 
@@ -188,4 +192,27 @@ document.addEventListener('DOMContentLoaded', () => {
       contentContainer.appendChild(section);
     });
   }
-});*/
+});
+
+
+// Close when clicking away
+const categoryButtons = document.querySelector("#category-buttons");
+const filterToggle = categoryButtons.querySelector('button[data-category="filter"]');
+
+// Close when clicking away
+document.addEventListener("click", e => {
+  if (
+    categoryButtons.classList.contains("show-buttons") &&
+    !categoryButtons.contains(e.target) &&
+    !filterToggle.contains(e.target)
+  ) {
+    categoryButtons.classList.remove("show-buttons");
+  }
+});
+
+// Close when scrolling
+window.addEventListener("scroll", () => {
+  if (categoryButtons.classList.contains("show-buttons")) {
+    categoryButtons.classList.remove("show-buttons");
+  }
+});
