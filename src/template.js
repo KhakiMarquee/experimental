@@ -1,5 +1,5 @@
 import { openTemplateDetail } from '/src/openTemplateDetail.js';
-import { ImageCompressor } from 'js-image-compressor';
+//import { ImageCompressor } from 'js-image-compressor';
 
 function getCategoryFromURL() {
   const params = new URLSearchParams(window.location.search);
@@ -56,7 +56,7 @@ function renderContent(category, jsonPath) {
           // Append the section to container first
           container.appendChild(section);
 
-          // Now apply compression for this image immediately
+          /*/ Now apply compression for this image immediately
           console.log(`Rendering entry #${entryIdx}, applying compression.`);
 
           const imgEl = section.querySelector('.project-image img');
@@ -77,7 +77,7 @@ function renderContent(category, jsonPath) {
               console.log('Blob ready, size:', blob.size);
               const file = new File([blob], 'image.jpg', { type: blob.type });
 
-              // Compression logic using js-image-compressor
+              / Compression logic using js-image-compressor
               const options = {
                 file: file,
                 quality: 0.6,
@@ -102,7 +102,7 @@ function renderContent(category, jsonPath) {
               };
               new ImageCompressor(options);
             })
-            .catch(err => console.error('Fetch error during compression:', err));
+            .catch(err => console.error('Fetch error during compression:', err));*/
           
           // OpenDetail Capabilities
           section.addEventListener("click", () => {
