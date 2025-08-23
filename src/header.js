@@ -62,11 +62,14 @@ function initHeader() {
         }
     });*/
 
-    // Mobile menu toggle functionality
-    menuToggle.addEventListener("click", e => {
-        e.preventDefault();
-        mobileMenu.classList.toggle("active");
-    });
+      
+      if (window.innerWidth <= 768) {    
+        // Mobile menu toggle functionality
+        menuToggle.addEventListener("click", e => {
+            e.preventDefault();
+            mobileMenu.classList.toggle("active");
+        });
+    }
 
     // Close when clicking away
     document.addEventListener("click", e => {
