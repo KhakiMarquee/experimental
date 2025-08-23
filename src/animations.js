@@ -25,7 +25,7 @@ export function initAnimations() {
   const subhead = document.querySelector('.subhead');
   if (subhead) {
     gsap.from('.subhead', {
-      duration: 1.2,
+      duration: 1.3,
       y: 30,
       opacity: 0,
       ease: 'power3.out',

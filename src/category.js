@@ -118,8 +118,9 @@ document.addEventListener("DOMContentLoaded", () => {
 // Projects setup
 
 document.addEventListener('DOMContentLoaded', () => {
-  const themeButtonsContainer = document.getElementById('theme-buttons');
-  const contentContainer = document.getElementById('content');
+  // ✅ match your HTML
+  const themeButtonsContainer = document.getElementById('category-buttons'); 
+  const contentContainer = document.getElementById('carousel'); 
 
   const category = getCategoryFromURL();
 
@@ -151,10 +152,13 @@ document.addEventListener('DOMContentLoaded', () => {
           themeButtonsContainer.appendChild(btn);
 
           btn.addEventListener('click', () => {
-            const filtered = btn.dataset.theme === 'all'
-              ? allProjects
-              : allProjects.filter(p => p.theme && p.theme.trim().toLowerCase() === btn.dataset.theme);
+        const filtered = btn.dataset.theme === 'all'
+          ? allProjects
+          : allProjects.filter(p => 
+              p.theme && p.theme.trim().toLowerCase() === btn.dataset.theme);
             renderProjects(filtered);
+
+            
           });
         });
       }
