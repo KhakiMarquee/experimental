@@ -24,13 +24,40 @@ export function initAsyncLoader() {
         history.pushState({ url }, "", url);
       }
 
+      // rebind category and filter links/buttons
+      bindCategoryLinks();
+
       console.log("Page loaded:", url);
     } catch (err) {
       console.error("AsyncLoader error:", err);
     }
   }
 
-  // Intercept nav <a> clicks (desktop + mobile)
+  function bindCategoryLinks() {
+    // For .third-list links
+    document.querySelectorAll('.third-list [data-category] a').forEach(el => {
+      el.addEventListener("click", e => {
+        const category = el.parentElement.getAttribute("data-category");
+        if (!category) return;
+        e.preventDefault();
+        const url = `/pages/projects.html?category=${encodeURIComponent(category)}`;
+        loadPage(url);
+      });
+    });
+
+    // For #filter buttons
+    document.querySelectorAll('#category-buttons [data-category]').forEach(el => {
+      el.addEventListener("click", e => {
+        const category = el.getAttribute("data-category");
+        if (!category || category === "filter") return;
+        e.preventDefault();
+        const url = `/pages/projects.html?category=${encodeURIComponent(category)}`;
+        loadPage(url);
+      });
+    });
+  }
+
+  // Intercept normal nav <a> clicks
   document.body.addEventListener("click", (e) => {
     const link = e.target.closest("a");
     if (!link) return;
@@ -50,17 +77,10 @@ export function initAsyncLoader() {
     loadPage(href);
   });
 
-  // Intercept clicks in #projectsHref
-  document.querySelectorAll("#projectsHref [data-category]").forEach((el) => {
-    el.addEventListener("click", (e) => {
-      e.preventDefault();
-      const category = el.getAttribute("data-category");
-      const url = `/pages/projects.html?category=${encodeURIComponent(category)}`;
-      loadPage(url);
-    });
-  });
+  // Initial binding
+  bindCategoryLinks();
 
-  // Handle browser back/forward
+  // Browser back/forward
   window.addEventListener("popstate", (e) => {
     const url = e.state?.url || window.location.pathname;
     loadPage(url, false);

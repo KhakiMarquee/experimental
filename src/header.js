@@ -1,3 +1,9 @@
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import gsap from 'gsap';
+
+
+gsap.registerPlugin(ScrollTrigger);
+
 export function loadHeader() {
     const headerElement = document.querySelector('header.site-header');
 
@@ -21,15 +27,44 @@ export function loadHeader() {
 }
 
 function initHeader() {
-    const menuToggle = document.getElementById("mobile-menu-toggle");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const menuList = mobileMenu?.querySelector("ul");
+  const menuToggle = document.getElementById("mobile-menu-toggle");
+  const mobileNav = document.getElementById("mobile-menu");
+  const navItems = mobileNav?.querySelectorAll("li");
 
-    // Early return if required elements don't exist
-    if (!menuToggle || !mobileMenu || !menuList) {
-        console.warn("Mobile menu elements not found");
-        return;
+  if (!menuToggle || !mobileNav || !navItems.length) {
+    console.warn("Mobile menu elements not found");
+    return;
+  }
+
+  // Set initial state hidden
+  gsap.set(navItems, { x: -100, opacity: 0, display: "none" });
+
+  menuToggle.addEventListener("click", e => {
+    e.preventDefault();
+
+    if (mobileNav.classList.contains("nav-open")) {
+      // Closing → animate out
+      gsap.to(navItems, {
+        duration: 0.4,
+        x: -100,
+        opacity: 0,
+        stagger: 0.05,
+        onComplete: () => gsap.set(navItems, { display: "none" })
+      });
+      mobileNav.classList.remove("nav-open");
+    } else {
+      // Opening → animate in
+      gsap.set(navItems, { display: "block" });
+      gsap.to(navItems, {
+        duration: 0.6,
+        x: 0,
+        opacity: 1,
+        ease: "power3.out",
+        stagger: 0.1,
+      });
+      mobileNav.classList.add("nav-open");
     }
+  });
     /*DYNAMIC LINKS*/
      /* const currentPath = window.location.pathname.toLowerCase();
     const dynamicLinks = [
@@ -67,26 +102,26 @@ function initHeader() {
         // Mobile menu toggle functionality
         menuToggle.addEventListener("click", e => {
             e.preventDefault();
-            mobileMenu.classList.toggle("active");
+            mobileNav.classList.toggle("active");
         });
     }
 
     // Close when clicking away
     document.addEventListener("click", e => {
         if (
-            mobileMenu.classList.contains("active") &&
-            !mobileMenu.contains(e.target) &&
+            mobileNav.classList.contains("active") &&
+            !mobileNav.contains(e.target) &&
             !menuToggle.contains(e.target)
         ) {
-            mobileMenu.classList.remove("active");
+            mobileNav.classList.remove("active");
         }
     });
 
     // Close when scrolling
     window.addEventListener("scroll", () => {
-        if (mobileMenu.classList.contains("active")) {
-            mobileMenu.classList.remove("active");
+        if (mobileNav.classList.contains("active")) {
+            mobileNav.classList.remove("active");
         }
     });
+    
 }
-

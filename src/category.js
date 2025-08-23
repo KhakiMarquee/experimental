@@ -1,4 +1,9 @@
 import { openDetail } from '/src/openDetail.js';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import gsap from 'gsap';
+
+
+gsap.registerPlugin(ScrollTrigger);
 
 let allData = [];     // for carousel (stone.json)
 let allProjects = []; // for projects (data.json)
@@ -107,12 +112,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-
-  const filterButton = document.querySelector('#category-buttons button[data-category="filter"]');
-  const categoryButtons = document.querySelector('#category-buttons');
-  if (filterButton && categoryButtons) {
-    filterButton.addEventListener('click', () => categoryButtons.classList.toggle('show-buttons'));
-  }
 });
 
 /*/ Projects setup
@@ -199,9 +198,43 @@ document.addEventListener('DOMContentLoaded', () => {
 });*/
 
 
-// Close when clicking away
-const categoryButtons = document.querySelector("#category-buttons");
-const filterToggle = categoryButtons.querySelector('button[data-category="filter"]');
+  // Close when clicking away
+  const categoryButtons = document.querySelector("#category-buttons");
+  const filterToggle = categoryButtons.querySelector('button[data-category="filter"]');
+
+  // Animate filter buttons
+  const filterButton = document.querySelector('#category-buttons button[data-category="filter"]');
+  const filterButtons = categoryButtons.querySelectorAll('button[data-category]:not([data-category="filter"])');
+
+  // Set hidden position initially
+  gsap.set(filterButtons, { x: 100, opacity: 0, display: "none" });
+
+  if (filterButton && categoryButtons) {
+    filterButton.addEventListener('click', () => {
+      if (categoryButtons.classList.contains('show-buttons')) {
+        // closing → animate out
+        gsap.to(filterButtons, {
+          duration: 0.4,
+          x: 100,
+          opacity: 0,
+          stagger: 0.05,
+          onComplete: () => gsap.set(filterButtons, { display: "none" })
+        });
+        categoryButtons.classList.remove('show-buttons');
+      } else {
+        // opening → animate in
+        gsap.set(filterButtons, { display: "block" });
+        gsap.to(filterButtons, {
+          duration: 0.6,
+          x: 0,
+          opacity: 1,
+          ease: "power3.out",
+          stagger: 0.1
+        });
+        categoryButtons.classList.add('show-buttons');
+      }
+    });
+}
 
 document.addEventListener("click", e => {
   if (
