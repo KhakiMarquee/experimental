@@ -250,7 +250,7 @@
 /* Responsive - Mobile breakpoint */
 @media (max-width: 768px) {
   .projects-container {
-    padding: 5rem 2rem; /* Reduce padding on mobile */
+    padding: 5rem 1rem; /* Reduce padding on mobile */
   }
 
   .project-details{
