@@ -175,6 +175,15 @@
         "type": ["workshop"],
         "links": "https://archivesdie.goke.studio/p/sea-wallahs" 
       },
+      {
+        "title": "The Lighting Designer",
+        "client": "Contemporary Art Society & The Box, Plymouth",
+        "theme": "Culture",
+        "description": "Learn about the Lighting technicians role as we explore an exhibition at the Box in Plymouth.",
+        "image": "/public/media/IMG/inside_museums/the_ldr_cover.jpg",
+        "video": "https://player.vimeo.com/video/850257026?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "type": ["film"]
+      },
       {     
         "title": "Hostile Housing",
         "client": "London Renters Union",
@@ -210,15 +219,6 @@
         "video": "https://player.vimeo.com/video/845516401?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "type": ["film"]
       },  
-      {
-        "title": "The Lighting Designer",
-        "client": "Contemporary Art Society & The Box, Plymouth",
-        "theme": "Culture",
-        "description": "Learn about the Lighting technicians role as we explore an exhibition at the Box in Plymouth.",
-        "image": "/public/media/IMG/inside_museums/the_ldr_cover.jpg",
-        "video": "https://player.vimeo.com/video/850257026?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "type": ["film"]
-      },
       {
         "title": "Frieze Masters",
         "client": "Frieze",

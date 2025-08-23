@@ -121,6 +121,7 @@ export function initAnimations() {
     });
   }
 
+  //Animate filter buttons
   const filterButtons = document.querySelectorAll('#category-buttons button[data-category]');
   if (filterButtons.length) {
     // First set them off-screen to the right
@@ -135,6 +136,43 @@ export function initAnimations() {
       stagger: 0.1,   // each button 0.1s after previous
       delay: 0.2      // slight delay after load
     });
+  }
+  
+  // ANIMATE PROJECTS PAGE
+  const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 0.8 } });
+
+  // Fade and slide in the header
+  if (document.querySelector('.projects-header')) {
+    tl.from(".projects-header", { y: -30, opacity: 0 });
+  }
+
+  // Description appears after header
+  if (document.querySelector('#project-section-description')) {
+    tl.from("#project-section-description", { y: 20, opacity: 0 }, "-=0.3");
+  }
+
+  // Animate content area (projects list), not the full container
+  if (document.querySelector('#content')) {
+    tl.from("#content", { y: 20, opacity: 0 }, "-=0.2");
+  }
+
+  //ANIMATE STONES PAGE
+  // Animate Stone Projects Page
+  const stoneTl = gsap.timeline({ defaults: { ease: "power3.out", duration: 0.8 } });
+
+  // Header fades in first
+  if (document.querySelector('.stone-header')) {
+    stoneTl.from(".stone-header", { y: -30, opacity: 0 });
+  }
+
+  // Progress bar next
+  if (document.querySelector('#carousel-progress')) {
+    stoneTl.from("#carousel-progress", { y: 15, opacity: 0 }, "-=0.3");
+  }
+
+  // Carousel content last
+  if (document.querySelector('#carousel-container')) {
+    stoneTl.from("#carousel-container", { y: 20, opacity: 0 }, "-=0.2");
   }
 }
 // Enhanced 3D scene transition
