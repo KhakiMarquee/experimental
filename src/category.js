@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(err => console.error("Error loading stone data:", err));
 
-  const buttons = document.querySelectorAll('#category-buttons button:not([data-category="filter"])');
+  const buttons = document.querySelectorAll(' #category-buttons button:not([data-category="filter"])');
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
       const category = btn.dataset.category;
@@ -203,7 +203,6 @@ document.addEventListener('DOMContentLoaded', () => {
 const categoryButtons = document.querySelector("#category-buttons");
 const filterToggle = categoryButtons.querySelector('button[data-category="filter"]');
 
-// Close when clicking away
 document.addEventListener("click", e => {
   if (
     categoryButtons.classList.contains("show-buttons") &&
@@ -220,3 +219,26 @@ window.addEventListener("scroll", () => {
     categoryButtons.classList.remove("show-buttons");
   }
 });
+
+  // Quicklinks atop Footer
+if (!window.location.pathname.endsWith("stones.html")) {
+  const quicklinks = document.querySelectorAll("#category-buttons button[data-category]");
+  quicklinks.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const category = btn.dataset.category;
+      if (!category || category === "filter") return;
+      navigateToCategory(category);
+    });
+  });
+}
+  
+  function navigateToCategory(category) {
+    const targetUrl = `/pages/projects.html?category=${encodeURIComponent(category)}`;
+
+    // If using asyncLoader:
+    if (typeof window.loadPage === "function") {
+      window.loadPage(targetUrl);
+    } else {
+      window.location.href = targetUrl;
+    }
+  }

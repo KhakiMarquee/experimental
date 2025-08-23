@@ -19,7 +19,6 @@ export function initAnimations() {
       delay: 0.3,
       immediateRender: true,
     });
-    
   }
 
   const subhead = document.querySelector('.subhead');
@@ -119,6 +118,22 @@ export function initAnimations() {
       opacity: 1,
       stagger: 0.1,
       ease: 'power3.out'
+    });
+  }
+
+  const filterButtons = document.querySelectorAll('#category-buttons button[data-category]');
+  if (filterButtons.length) {
+    // First set them off-screen to the right
+    gsap.set(filterButtons, { x: 100, opacity: 0 });
+
+    // Then animate them in with stagger
+    gsap.to(filterButtons, {
+      duration: 0.6,
+      x: 0,
+      opacity: 1,
+      ease: 'power3.out',
+      stagger: 0.1,   // each button 0.1s after previous
+      delay: 0.2      // slight delay after load
     });
   }
 }
