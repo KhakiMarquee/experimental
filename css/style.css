@@ -77,8 +77,6 @@ a:hover, #location-toggle:hover{
   overflow:hidden;
 }
 
-
-
 .site-body .container {
   display: flex; /* Switch to flex for vertical alignment */
   flex-direction: column;
@@ -119,7 +117,7 @@ a:hover, #location-toggle:hover{
   /*background-color:var(--grey-100);*/
   width: 100vw;
   height: auto;
-  padding: 10% 0%;
+  padding: 20% 0%;
 
 }
 
@@ -165,7 +163,7 @@ a:hover, #location-toggle:hover{
 
 /*THIRD*/
 .third-section {
-  padding: 0% 5%;
+  padding: 20% 5%;
   width: 100%;
   white-space: nowrap;
   text-overflow: ellipsis;
