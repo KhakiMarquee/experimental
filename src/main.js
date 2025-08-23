@@ -38,27 +38,6 @@ export function initApp() {
     });
     }
 
-  const quicklinks = document.querySelectorAll('#category-buttons button[data-category]');
-  quicklinks.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const category = btn.dataset.category;
-      if (!category || category === "filter") return;
-      navigateToCategory(category);
-    });
-  });
-  
-  function navigateToCategory(category) {
-    const currentPath = window.location.pathname;
-    const basePath = currentPath.substring(0, currentPath.lastIndexOf('/'));
-    const targetUrl = `${basePath}/pages/projects.html?category=${encodeURIComponent(category)}`;
-
-    // If using asyncLoader:
-    if (typeof window.loadPage === "function") {
-      window.loadPage(targetUrl);
-    } else {
-      window.location.href = targetUrl;
-    }
-  }
 }
 
 
