@@ -280,7 +280,7 @@ a:hover, #location-toggle:hover{
     transition: all 0.3s ease-in;
   }
 
-  .third-section { padding: 10% 2%; }
+  .third-section { padding: inherit 2%; }
 
   .third-grid {
     grid-template-columns: 1fr;

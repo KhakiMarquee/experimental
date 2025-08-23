@@ -44,6 +44,7 @@ export function triggerFooter(delay = 3000) {
   }, delay);
 }
 
+//Footer Scroll Effect
 export function initFooterScrollEffect() {
     const footer = document.querySelector('footer');
     if (!footer) return;
@@ -58,4 +59,16 @@ export function initFooterScrollEffect() {
       console.log("Footer ScrollTrigger active:", self.isActive);
     }
   });
+
+   /*/ Add a smooth grow effect on scroll
+  gsap.to(footer, {
+    scrollTrigger: {
+      trigger: siteBody,
+      start: "bottom bottom",
+      end: "+=150",   // adjust distance for how long the growth happens
+      scrub: true
+    },
+    height: "200px",   // or scale: 1.2, depending on preference
+    ease: "power1.out"
+  });*/
 }

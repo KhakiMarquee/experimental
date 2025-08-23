@@ -312,7 +312,7 @@ export function initUI() {
   
   // Initialize GSAP animations
   
-  if (window.innerWidth >= 769) {initAnimations();}
+  initAnimations();
 
   // Initialize overlays - THIS WAS MISSING!
   initOverlays();
