@@ -73,7 +73,6 @@ a:hover, #location-toggle:hover{
 .site-body {
   min-height: calc(100% - var(--header-height, 60px)); /* Adjust header height */
   width: 100%;
-  overflow:hidden;
 }
 
 .site-body .container {
