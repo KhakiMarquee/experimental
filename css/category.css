@@ -84,3 +84,10 @@
     padding: 0.2rem;
 }
 
+
+
+@media (max-width: 768px) {
+#category-buttons {
+    bottom: 5rem
+  }
+}
