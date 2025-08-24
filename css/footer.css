@@ -1,10 +1,9 @@
 /*FOOTER*/
 footer {
   transition: opacity 0.6s ease-in-out, margin 0.6s ease-in-out, background-color 0.6s ease-in-out;
-  position: sticky;
   padding: 1rem 2rem;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   font-size: .9rem;
   justify-content: flex-end;
   color: white;
@@ -13,6 +12,7 @@ footer {
   background-color: rgba(var(--grey-600), 0.3);
   color: white;
   border-top: 1px solid var(--grey-200);
+  position: fixed
 }
 
 footer.at-bottom {

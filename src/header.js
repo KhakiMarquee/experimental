@@ -40,6 +40,7 @@ function initHeader() {
   gsap.set(navItems, { x: -100, opacity: 0, display: "none" });
 
   menuToggle.addEventListener("click", e => {
+    
     e.preventDefault();
 
     if (mobileNav.classList.contains("nav-open")) {

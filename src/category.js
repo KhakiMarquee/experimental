@@ -211,6 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (filterButton && categoryButtons) {
     filterButton.addEventListener('click', () => {
+      
       if (categoryButtons.classList.contains('show-buttons')) {
         // closing → animate out
         gsap.to(filterButtons, {

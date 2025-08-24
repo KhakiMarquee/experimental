@@ -18,8 +18,8 @@ html {
 }
 
 html, body {
-  height: 100vh; /* Ensures full height for body */
-  width: 100vw; /* Ensures full width for body */
+  height: 100%; /* Ensures full height for body */
+  width: 100%; /* Ensures full width for body */
 }
 
 body {
@@ -72,7 +72,7 @@ a:hover, #location-toggle:hover{
 /*MAIN */
 .site-body {
   position: relative; /* For absolute positioning of the new div */
-  min-height: calc(100vh - var(--header-height, 60px)); /* Adjust header height */
+  min-height: calc(100% - var(--header-height, 60px)); /* Adjust header height */
   width: 100%;
   overflow:hidden;
 }
@@ -82,7 +82,7 @@ a:hover, #location-toggle:hover{
   flex-direction: column;
   justify-content: center; /* Vertically center */
   align-items: center; /* Horizontally center */
-  height: calc(100vh - 10%);
+  height: calc(100% - 10%);
   text-align: center;
 }
 

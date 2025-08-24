@@ -1,9 +1,13 @@
 #category-buttons {
-    position: relative;
+    position: fixed;
     display: flex;
     flex-direction: column;
     z-index: 99999;
     overflow: hidden;
+    bottom:4.2rem;
+    position: fixed;
+    display: flex;
+    right: 0;
 }
 
 #filter button:hover {
@@ -46,7 +50,6 @@
 #category-buttons button{
   align-self: flex-end; /* stop stretching */
   width: auto;            /* shrink to content */
-  margin-left: auto;      /* push to the right */
   padding: 1rem 2rem;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
