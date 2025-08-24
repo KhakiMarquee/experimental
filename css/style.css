@@ -71,7 +71,6 @@ a:hover, #location-toggle:hover{
 
 /*MAIN */
 .site-body {
-  position: relative; /* For absolute positioning of the new div */
   min-height: calc(100% - var(--header-height, 60px)); /* Adjust header height */
   width: 100%;
   overflow:hidden;
