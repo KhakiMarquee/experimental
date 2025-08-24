@@ -160,11 +160,6 @@ export function initAnimations() {
   // Animate Stone Projects Page
   const stoneTl = gsap.timeline({ defaults: { ease: "power3.out", duration: 0.8 } });
 
-  // Header fades in first
-  if (document.querySelector('.stone-header')) {
-    stoneTl.from(".stone-header", { y: -30, opacity: 0 });
-  }
-
   // Progress bar next
   if (document.querySelector('#carousel-progress')) {
     stoneTl.from("#carousel-progress", { y: 15, opacity: 0 }, "-=0.3");
