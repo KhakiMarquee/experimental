@@ -62,7 +62,7 @@ footer.hide{
   opacity: 0
 }
 
-@media (min-device-width: 768px) {
+@media (max-device-width: 768px) {
   /* Styles for landscape iPad */
   footer{
     font-size: 0.7rem;
