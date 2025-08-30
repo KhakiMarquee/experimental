@@ -5,19 +5,25 @@
         "description": "A large-scale installation along the Thames.",
         "image": "/public/media/IMG/ball_finial_small_image.png",
         "preview-image" : "",
+        "imageStack" : [null
+        ],
         "video": "",
         "type": "material",
-        "dimensions": "150 by 150"
+        "dimensions": "150 by 150",
+        "tools": "Draughtsperson"
         },
         {     
         "title": "Trefoil",
         "material": "Limestone",
         "description": "A large-scale installation along the Thames.",
         "image": "/public/media/IMG/trefoil_small_image.png",
+        "imageStack" : [null
+        ],
         "preview-image" : "",
         "video": "",
         "type": "material",
-        "dimensions": "150 by 150"
+        "dimensions": "150 by 150",
+        "tools": "Draughtsperson"
         },
         {     
         "title": "Volute",
@@ -25,9 +31,12 @@
         "description": "A large-scale installation along the Thames.",
         "image": "/public/media/IMG/volute_small_image.png",
         "preview-image" : "",
+        "imageStack" : [null
+        ],
         "video": "",
         "type": "material",
-        "dimensions": "150 by 150"
+        "dimensions": "150 by 150",
+        "tools": "Draughtsperson"
         },  
         {     
         "title": "Stonewater",
@@ -37,17 +46,19 @@
         "preview-image" : "",
         "video": "https://www.youtube.com/embed/-HwvDkQVyeU?si=q6KuGp6B0L_Mcp-7",
         "type": "render",
-        "dimensions": "750 by 750 by 750"
+        "dimensions": "750 by 750 by 750",
+           "tools": "Rhino; Blender"
         },
         {     
         "title": "Rose",
-        "material": "blisworth limestone",
+        "material": "genus Rosa",
         "description": "A short study on the rose, its petals that tesselate to form a crown",
         "image": "/public/media/S_IMG/renders/items/rose.png",
         "preview-image" : "",
         "video": "",
         "type": "render",
-        "dimensions": null
+        "dimensions": null,
+        "tools": "Blender"
         },
         {     
         "title": "Whey Protein",
@@ -57,7 +68,8 @@
         "preview-image" : "",
         "video": "",
         "type": "render",
-        "dimensions": null
+        "dimensions": null,
+        "tools": "Blender"
         },
         {     
         "title": "Perfume",
@@ -71,6 +83,7 @@
         ],
         "video": "https://www.youtube.com/embed/vZxGfa-umOw?si=82VOLgJCgzWI5T6-",
         "type": "render",
-        "dimensions": null
+        "dimensions": null,
+        "tools": "Blender"
         }                
 ]   

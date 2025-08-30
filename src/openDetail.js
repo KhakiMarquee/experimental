@@ -74,7 +74,6 @@ export function openDetail(slide, item) {
 }
 
 function loadNewApp(item) {
-  // Replace entire body with new content
   document.body.innerHTML = `
     <div id="detail-app">
       <button id="close-detail" aria-label="Close" style="align-self:flex-end; font-size:1.25rem; background:none; border:none; cursor:pointer;">✕</button>
@@ -82,7 +81,31 @@ function loadNewApp(item) {
         <h1 style="margin:0 0 12px 0;">${item.title}</h1>
         <p style="margin:0 0 8px 0;"><strong>Material:</strong> ${item.material ?? ""}</p>
         <p style="margin:0 0 16px 0;">${item.description ?? ""}</p>
-        ${item.image ? `<img src="${item.image}" alt="${item.title}" style="max-width:100%; height:auto; display:block;">` : ""}
+
+        <!-- Prefer video embed, fallback to main image -->
+        ${item.video 
+          ? `<div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; margin-bottom:16px;">
+              <iframe src="${item.video.replace("youtu.be/", "www.youtube.com/embed/").replace("watch?v=", "embed/")}" 
+                      frameborder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen 
+                      style="position:absolute; top:0; left:0; width:100%; height:100%;">
+              </iframe>
+            </div>`
+          : item.image 
+            ? `<img src="${item.image}" alt="${item.title}" style="max-width:100%; height:auto; display:block; margin-bottom:16px;">`
+            : ""
+        }
+
+        <!-- Grid of extra images -->
+        ${item.imageStack && item.imageStack.length 
+          ? `<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin-top:16px;">
+               ${item.imageStack.map(img => `
+                 <img src="${img}" alt="${item.title}" style="width:100%; height:auto; border-radius:8px; object-fit:cover;">
+               `).join('')}
+             </div>`
+          : ""
+        }
       </main>
     </div>
   `;
