@@ -1,41 +1,43 @@
 [
         {     
         "title": "Ball Finial",
-        "material": "Bath",
-        "description": "A large-scale installation along the Thames.",
+        "material": "Bath stone",
+        "description": "A study of a classical ornament in english architecture.",
         "image": "/public/media/IMG/ball_finial_small_image.png",
         "preview-image" : "",
         "imageStack" : [null
         ],
         "video": "",
         "type": "material",
-        "dimensions": "150 by 150",
+        "dimensions": "250 by 250 by 500mm",
         "tools": "Draughtsperson"
         },
         {     
         "title": "Trefoil",
         "material": "Limestone",
-        "description": "A large-scale installation along the Thames.",
+        "description": "A study of a classical ornament in french architecture.",
         "image": "/public/media/IMG/trefoil_small_image.png",
-        "imageStack" : [null
+        "imageStack" : [
+                "/public/media/IMG/trefoil_sketch.jpg"
         ],
         "preview-image" : "",
         "video": "",
         "type": "material",
-        "dimensions": "150 by 150",
+        "dimensions": "500 by 500 by 250mm",
         "tools": "Draughtsperson"
         },
         {     
         "title": "Volute",
         "material": "Moleanis",
-        "description": "A large-scale installation along the Thames.",
+        "description": "A study of a classical ornament in cathedral architecture.",
         "image": "/public/media/IMG/volute_small_image.png",
         "preview-image" : "",
-        "imageStack" : [null
+        "imageStack" : [
+                "/public/media/IMG/volute_small_image.png"
         ],
         "video": "",
         "type": "material",
-        "dimensions": "150 by 150",
+        "dimensions": "150 by 150 by 250mm",
         "tools": "Draughtsperson"
         },  
         {     
@@ -46,8 +48,8 @@
         "preview-image" : "",
         "video": "https://www.youtube.com/embed/-HwvDkQVyeU?si=q6KuGp6B0L_Mcp-7",
         "type": "render",
-        "dimensions": "750 by 750 by 750",
-           "tools": "Rhino; Blender"
+        "dimensions": "750 by 750 by 750mm",
+        "tools": "Rhino; Blender"
         },
         {     
         "title": "Rose",
@@ -55,10 +57,10 @@
         "description": "A short study on the rose, its petals that tesselate to form a crown",
         "image": "/public/media/S_IMG/renders/items/rose.png",
         "preview-image" : "",
-        "video": "",
+        "video": "https://www.youtube.com/embed/vZxGfa-umOw?si=82VOLgJCgzWI5T6-",
         "type": "render",
         "dimensions": null,
-        "tools": "Blender"
+        "tools": "Blender; Geometry Nodes"
         },
         {     
         "title": "Whey Protein",
@@ -81,9 +83,9 @@
           "/public/media/IMG/items/perfume.png",
           "/public/media/IMG/items/perfume_2.png"
         ],
-        "video": "https://www.youtube.com/embed/vZxGfa-umOw?si=82VOLgJCgzWI5T6-",
+        "video": "https://www.youtube.com/embed/otKWW6U2NXk?si=cJF4-mh-fEcHm5kb",
         "type": "render",
         "dimensions": null,
-        "tools": "Blender"
+        "tools": "Blender; Photography"
         }                
 ]   

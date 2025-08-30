@@ -81,6 +81,8 @@ function loadNewApp(item) {
         <h1 style="margin:0 0 12px 0;">${item.title}</h1>
         <p style="margin:0 0 8px 0;"><strong>Material:</strong> ${item.material ?? ""}</p>
         <p style="margin:0 0 16px 0;">${item.description ?? ""}</p>
+        <p style="margin:0 0 8px 0;"><strong>Dimensions:</strong> ${item.dimensions ?? ""}</p>
+        <p style="margin:0 0 8px 0;"><strong>Tools:</strong> ${item.tools ?? ""}</p>
 
         <!-- Prefer video embed, fallback to main image -->
         ${item.video 
