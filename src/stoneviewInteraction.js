@@ -7,14 +7,19 @@ const isMobile = () =>
 //RENDER STONEVIEW
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Fetching:", `data/stone.json`);
-  fetch(`/data/stone.json`) 
+    console.log("Fetching:", `data/stone_with_ids.json`);
+  fetch(`/data/stone_with_ids.json`) 
     .then(res => res.json())
     .then(data => {
 
-     // ✅ store globally so you can inspect it in DevTools
+      // ✅ store globally so you can inspect it in DevTools
       window.stoneData = data;
       console.log("[stoneData] loaded", Array.isArray(window.stoneData), window.stoneData?.length);
+
+      // 🔀 Randomize order based on the 'id' column
+      //window.stoneData.sort(() => Math.random() - 0.5);
+      // OR deterministic shuffle using hash of id:
+      window.stoneData.sort((a, b) => a.id.localeCompare(b.id));
 
       // Populate title attributes for .catNum spans
       const catSpans = document.querySelectorAll(".catNum"); // handle both classes
@@ -22,17 +27,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const categoryText = span.innerText.trim().toLowerCase();
 
         if(categoryText === "all") {
-          // 'all' gets total length
           span.title = data.length;
         } else {
-          // Count items matching the 'type' field
           const count = data.filter(item => item.type?.toLowerCase() === categoryText).length;
           span.title = count;
           console.log(categoryText, "->", span.title); // debug
         }
       });
-
-      
 
       const carousel = document.querySelector("#carousel");
       if (!carousel) {

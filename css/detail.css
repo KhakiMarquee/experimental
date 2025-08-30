@@ -1,3 +1,15 @@
 /* DETAIL APP */
 
-#detail-app{min-height:100vh; display:flex; flex-direction:column; padding:24px; box-sizing:border-box; font-family:'Geist'}
+#detail-app{
+    min-height:100vh; 
+    display:flex; 
+    flex-direction:column; 
+    padding:24px; 
+    box-sizing:border-box; 
+    font-family:'Geist';
+    background-color:rgba(var(--grey-150), 0.8);
+}
+
+#detail-app p{
+    font-family: system-ui;  
+}

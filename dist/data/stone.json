@@ -1,8 +1,8 @@
 [
         {     
         "title": "Ball Finial",
-        "material": "Bath",
-        "description": "A study of a classical ornament in english architecture.",
+        "material": "sath stone",
+        "description": "A study of a classical ornamentation in english architecture. Designed by hand, this was cut using traditional masonry techniques",
         "image": "/media/IMG/ball_finial_small_image.png",
         "preview-image" : "",
         "imageStack" : [null
@@ -14,8 +14,8 @@
         },
         {     
         "title": "Trefoil",
-        "material": "Limestone",
-        "description": "A study of a classical ornament in french architecture.",
+        "material": "limestone",
+        "description": "A study of a classical ornamentation in french architecture. Designed by hand, this was cut using traditional masonry techniques",
         "image": "/media/IMG/trefoil_small_image.png",
         "imageStack" : [
                 "/media/IMG/trefoil_sketch.jpg"
@@ -28,8 +28,8 @@
         },
         {     
         "title": "Volute",
-        "material": "Moleanis",
-        "description": "A study of a classical ornament in cathedral architecture.",
+        "material": "moleanis limestone",
+        "description": "A study of a classical ornamentation in cathedral architecture. Designed by hand, this was cut using traditional masonry techniques",
         "image": "/media/IMG/volute_small_image.png",
         "preview-image" : "",
         "imageStack" : [
@@ -87,5 +87,41 @@
         "type": "render",
         "dimensions": null,
         "tools": "Blender"
-        }                
+        },
+        {     
+        "title": "Jewellery",
+        "material": "metal",
+        "description": "A study in contemporary craft and design in collaboration iwht Joia Jewellery",
+        "image": "/media/IMG/renders/joia.png",
+        "preview-image" : "",
+        "imageStack" : [
+                "/media/IMG/renders/joia_2.png"
+        ],
+        "video": "https://player.vimeo.com/video/845515505?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "type": "render",
+        "dimensions": "50 by 25 by 50mm",
+        "tools": "Rhino; Blender"
+        },
+        {     
+        "title": "Timehri",
+        "material": "mixed material",
+        "description": "A study exploring mudlarking, a traditional activity of searching the riverbanks of the Thames for historical artifacts. Timehri, the Boat belongs to Remiiya Badru. This object was used to promote our event that explored south asian seafarers.",
+        "image": "/media/IMG/renders/timehri.png",
+        "preview-image" : "",
+        "imageStack" : [
+          "/media/IMG/timehri/7W8A0843.JPG",
+          "/media/IMG/timehri/7W8A0846.JPG",
+          "/media/IMG/timehri/7W8A0850.JPG",
+          "/media/IMG/timehri/7W8A0853.JPG",
+          "/media/IMG/timehri/7W8A0854.JPG",
+          "/media/IMG/timehri/7W8A0855.JPG",
+          "/media/IMG/timehri/7W8A0859.JPG",
+          "/media/IMG/timehri/7W8A0860.JPG",
+          "/media/IMG/timehri/7W8A0861.JPG"
+        ],
+        "video": "https://player.vimeo.com/video/1110662984?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "type": "render",
+        "dimensions": null,
+        "tools": "Blender; 3D Scanner"
+        }                     
 ]   
