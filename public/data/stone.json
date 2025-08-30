@@ -38,5 +38,39 @@
         "video": "",
         "type": "render",
         "dimensions": "750 by 750 by 750"
-        }          
+        },
+        {     
+        "title": "Rose",
+        "material": "blisworth limestone",
+        "description": "A short study on the rose, its petals that tesselate to form a crown",
+        "image": "/media/S_IMG/renders/items/rose.png",
+        "preview-image" : "",
+        "video": "",
+        "type": "render",
+        "dimensions": null
+        },
+        {     
+        "title": "Whey Protein",
+        "material": "plastic",
+        "description": "A short form study of commercial whey protein",
+        "image": "/media/S_IMG/renders/items/whey.png",
+        "preview-image" : "",
+        "video": "",
+        "type": "render",
+        "dimensions": null
+        },
+        {     
+        "title": "Perfume",
+        "material": "glass",
+        "description": "An artwork proposal for Wellingborugh Development project.",
+        "image": "/media/S_IMG/renders/items/perfume.png",
+        "preview-image" : "",
+        "imageStack" : [
+          "/media/IMG/items/perfume.png",
+          "/media/IMG/items/perfume_2.png"
+        ],
+        "video": "https://www.youtube.com/embed/vZxGfa-umOw?si=82VOLgJCgzWI5T6-",
+        "type": "render",
+        "dimensions": null
+        }           
 ]   
