@@ -1,7 +1,7 @@
 [
         {     
         "title": "Ball Finial",
-        "material": "sath stone",
+        "material": "bath stone",
         "description": "A study of a classical ornamentation in english architecture. Designed by hand, this was cut using traditional masonry techniques",
         "image": "/media/IMG/ball_finial_small_image.png",
         "preview-image" : "",
@@ -49,14 +49,17 @@
         "video": "https://www.youtube.com/embed/-HwvDkQVyeU?si=q6KuGp6B0L_Mcp-7",
         "type": "render",
         "dimensions": "750 by 750 by 750mm",
-           "tools": "Rhino; Blender"
+        "tools": "Rhino; Blender"
         },
         {     
         "title": "Rose",
-        "material": "genus Rosa",
+        "material": "genus rosa",
         "description": "A short study on the rose, its petals that tesselate to form a crown",
         "image": "/media/S_IMG/renders/items/rose.png",
         "preview-image" : "",
+        "imageStack" : [
+          "/media/S_IMG/renders/items/rose.png"
+        ],
         "video": "https://www.youtube.com/embed/vZxGfa-umOw?si=82VOLgJCgzWI5T6-",
         "type": "render",
         "dimensions": null,
@@ -80,21 +83,23 @@
         "image": "/media/S_IMG/renders/items/perfume.png",
         "preview-image" : "",
         "imageStack" : [
+          "/media/S_IMG/renders/items/perfume.png",
           "/media/IMG/items/perfume.png",
           "/media/IMG/items/perfume_2.png"
         ],
         "video": "https://www.youtube.com/embed/otKWW6U2NXk?si=cJF4-mh-fEcHm5kb",
         "type": "render",
         "dimensions": null,
-        "tools": "Blender"
+        "tools": "Blender; Photography"
         },
         {     
         "title": "Jewellery",
         "material": "metal",
-        "description": "A study in contemporary craft and design in collaboration iwht Joia Jewellery",
+        "description": "A study in contemporary craft and design in collaboration iwht Joia Jewellery.",
         "image": "/media/IMG/renders/joia.png",
         "preview-image" : "",
         "imageStack" : [
+                "/media/IMG/renders/joia.png",
                 "/media/IMG/renders/joia_2.png"
         ],
         "video": "https://player.vimeo.com/video/845515505?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
@@ -109,6 +114,7 @@
         "image": "/media/IMG/renders/timehri.png",
         "preview-image" : "",
         "imageStack" : [
+          "/media/IMG/renders/timehri.png",
           "/media/IMG/timehri/7W8A0843.JPG",
           "/media/IMG/timehri/7W8A0846.JPG",
           "/media/IMG/timehri/7W8A0850.JPG",
@@ -123,5 +129,5 @@
         "type": "render",
         "dimensions": null,
         "tools": "Blender; 3D Scanner"
-        }                     
+        }                    
 ]   

@@ -53,10 +53,13 @@
         },
         {     
         "title": "Rose",
-        "material": "genus Rosa",
+        "material": "genus rosa",
         "description": "A short study on the rose, its petals that tesselate to form a crown",
         "image": "/public/media/S_IMG/renders/items/rose.png",
         "preview-image" : "",
+        "imageStack" : [
+          "/public/media/S_IMG/renders/items/rose.png"
+        ],
         "video": "https://www.youtube.com/embed/vZxGfa-umOw?si=82VOLgJCgzWI5T6-",
         "type": "render",
         "dimensions": null,
@@ -80,6 +83,7 @@
         "image": "/public/media/S_IMG/renders/items/perfume.png",
         "preview-image" : "",
         "imageStack" : [
+          "/public/media/S_IMG/renders/items/perfume.png",
           "/public/media/IMG/items/perfume.png",
           "/public/media/IMG/items/perfume_2.png"
         ],
@@ -95,6 +99,7 @@
         "image": "/public/media/IMG/renders/joia.png",
         "preview-image" : "",
         "imageStack" : [
+                "/public/media/IMG/renders/joia.png",
                 "/public/media/IMG/renders/joia_2.png"
         ],
         "video": "https://player.vimeo.com/video/845515505?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
@@ -109,6 +114,7 @@
         "image": "/public/media/IMG/renders/timehri.png",
         "preview-image" : "",
         "imageStack" : [
+          "/public/media/IMG/renders/timehri.png",
           "/public/media/IMG/timehri/7W8A0843.JPG",
           "/public/media/IMG/timehri/7W8A0846.JPG",
           "/public/media/IMG/timehri/7W8A0850.JPG",
