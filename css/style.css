@@ -121,7 +121,6 @@ a:hover, #location-toggle:hover{
 
 .secondary-text ul li:hover {
   transform: scale(1.05);
-  color: rgb(var(--grey-600));
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -144,7 +143,7 @@ a:hover, #location-toggle:hover{
 .secondary-text ul li{
   cursor: pointer; /* Pointer cursor for interactivity */
   font-size:8rem;
-  color: var(--grey-400);
+  color: rgb(var(--grey-400));
   transition: all ease-in;
   
 }
@@ -166,8 +165,8 @@ a:hover, #location-toggle:hover{
   white-space: nowrap;
   text-overflow: ellipsis;
   font-size: 2em;
-  background-color: var(--grey-150);
-  border-top: 1px solid var(--grey-200);
+  background-color: rgb(var(--grey-150));
+  border-top: 1px solid rgb(var(--grey-200));
 
 }
 
@@ -200,6 +199,7 @@ a:hover, #location-toggle:hover{
   font-weight: lighter;
   font-style: italic;
   text-transform: uppercase;
+  color: rgb(var(--grey-800));
 
 }
 
@@ -208,12 +208,13 @@ a:hover, #location-toggle:hover{
   text-align: right;
   cursor: pointer;
   font-family:'Geist';
+  color: rgb(var(--grey-800));
 }
 
-.tooltip:not(.nav-right) .tooltip:hover:after, .third-list .tooltip:hover:after { content: attr(title); opacity:1; color:var(--grey-300); } 
+.tooltip:not(.nav-right) .tooltip:hover:after, .third-list .tooltip:hover:after { content: attr(title); opacity:1; color:rgb(var(--grey-300)); } 
 
 
-.tooltip:not(.nav-right) .tooltip:after, .third-list .tooltip:after { content: attr(title); color:var(--grey-800);transition: all 0.3s ease-in; font-size: 0.8rem } 
+.tooltip:not(.nav-right) .tooltip:after, .third-list .tooltip:after { content: attr(title); color:rgb(var(--grey-800));transition: all 0.3s ease-in; font-size: 0.8rem } 
 
 /* Responsive Styles */
 
@@ -274,11 +275,11 @@ a:hover, #location-toggle:hover{
 
   .secondary-text ul li {
     font-size: 3rem; /* mobile phone second text */
-    color: var(--grey-400);
+    color: rgb(var(--grey-400));
     transition: all 0.3s ease-in;
   }
 
-  .third-section { padding: inherit 2%; }
+  .third-section { padding: inherit 2%; opacity:0.9; }
 
   .third-grid {
     grid-template-columns: 1fr;
@@ -310,7 +311,7 @@ a:hover, #location-toggle:hover{
 
   .third-list p {
     font-size: .9rem;
-    color: rgb(var(--grey-600));
+    color: rgb(var(--grey-600))!important;
     position: relative;
     /* animation: chromatic-glitch 1.5s infinite linear, move-horizontal 6s infinite ease-in-out; */
     transform: translateZ(0);  /* Force GPU acceleration */
@@ -320,6 +321,7 @@ a:hover, #location-toggle:hover{
   }
 
   /* Chromatic text (visible space reserved for GSAP) */
+
   #chromatic-text {
     display: block;
     min-height: 1em;   /* line-height space */
@@ -334,15 +336,15 @@ a:hover, #location-toggle:hover{
     pointer-events: none;
   }
 
-  #chromatic-text .red  { color: var(--grey-400); z-index: 1; }
-  #chromatic-text .cyan { color: var(--grey-700); z-index: 2; }
-  #chromatic-text .main { color: var(--grey-800); z-index: 3; position: relative; }
+  #chromatic-text .red  { color: rgb(var(--grey-400)); z-index: 1; }
+  #chromatic-text .cyan { color: rgb(var(--grey-700)); z-index: 2; }
+  #chromatic-text .main { color: rgb(var(--grey-800)); z-index: 3; position: relative; }
 
   /* Chromatic Aberration Animation */
   @keyframes chromatic-glitch {
-    0% {   text-shadow:  2px  2px 0 #e9ecef, -2px -2px 0 var(--grey-400),  4px  4px 0 rgba(0,0,0,0); }
-    50% {  text-shadow: -2px  2px 0 #e9ecef,  2px -2px 0 var(--grey-400), -4px  4px 0 rgba(0,0,0,0); }
-    100% { text-shadow:  2px  2px 0 #e9ecef, -2px -2px 0 var(--grey-400),  4px  4px 0 rgba(0,0,0,0); }
+    0% {   text-shadow:  2px  2px 0 rgb(var(--grey-150)), -2px -2px 0 rgb(var(--grey-400)),  4px  4px 0 rgb(var(--grey-800)); }
+    50% {  text-shadow: -2px  2px 0 rgb(var(--grey-150)),  2px -2px 0 rgb(var(--grey-400)), -4px  4px 0 rgb(var(--grey-800)); }
+    100% { text-shadow:  2px  2px 0 rgb(var(--grey-150)), -2px -2px 0 rgb(var(--grey-400)),  4px  4px 0 rgb(var(--grey-800)); }
   }
 
   /* Horizontal Movement */

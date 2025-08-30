@@ -105,6 +105,13 @@ function initHeader() {
             e.preventDefault();
             mobileNav.classList.toggle("active");
         });
+    }else{
+        // Redirect to index.html as fallback
+
+          menuToggle.addEventListener("click", e => {
+            e.preventDefault();
+            window.location.href = '/index.html';
+        });
     }
 
     // Close when clicking away

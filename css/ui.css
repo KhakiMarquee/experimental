@@ -35,7 +35,7 @@ button{
   font-style: italic;
   font-size: 0.8rem;
   cursor: pointer;
-  color: var(--grey-800);
+  color: rgb(var(--grey-800));
   position: relative;
   text-transform: lowercase;
   font-weight:bold;
@@ -93,7 +93,7 @@ button:hover{
 }
 
 .main-text:hover .tap-button{
-  color:var(--grey-300);
+  color:rgb(var(--grey-300));
 }
 
 .main-text .headline u{
@@ -106,7 +106,7 @@ button:hover{
 }
 
 .main-text:hover{
-  color:var(--grey-800);
+  color:rgb(var(--grey-800));
 }
 
 .container.collapse {
@@ -122,7 +122,7 @@ button:hover{
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: var(--grey-200) 1px solid; /* Optional border for visual separation */
+  border-bottom: rgb(var(--grey-200)) 1px solid; /* Optional border for visual separation */
 }
 
 /*OVERLAY*/
@@ -134,7 +134,7 @@ button:hover{
   top: 0;
   width: 100vw;
   height: 100vh;
-  background: var(--grey-800); /* Match your existing dark background */
+  background: rgb(var(--grey-800)); /* Match your existing dark background */
   color: rgba(var(--grey-100),1); /* Match your existing light text */
   z-index: 1000; /* Higher than your existing z-index: 999 */
   display: none;
@@ -162,7 +162,7 @@ button:hover{
   top: 4em; /* Match your existing #close-three-container positioning */
   background: none;
   border: none;
-  color: rgba(var(--grey-100),1); /* Match your existing color */
+  color: rgba(var(--grey-500), 1);; /* Match your existing color */
   font-size: 1.2rem; /* Match your existing font size */
   cursor: pointer;
   z-index: 1001;

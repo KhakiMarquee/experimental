@@ -101,6 +101,9 @@ const intervalDelay = 150;
 
 const bootstrap = async () => {
 
+  //background opacity
+  const backgroundText = document.querySelector(".background-text");
+
   // Loading screen
   showLoading();
 
@@ -122,6 +125,9 @@ const bootstrap = async () => {
     const { initApp } = await import('/src/main.js');
     //Initialise Application
     initApp();
+
+    //Background
+    backgroundText.classList.add('loaded');
 
     //Hide Loading Screen
     moveSiteBodyToApp();

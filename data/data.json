@@ -3,6 +3,12 @@
     "description": "Audiovisual works spanning film, photography, and digital media. These projects explore heritage, culture, architecture, and identity through moving image and sound.",
     "button": false,
     "buttonContent" : null,
+    "team-member": [
+      {
+        "name": "Goke",
+        "id": "Creative Director"
+      }
+    ],
     "items": [
       {     
         "title": "Stained Glass Restoration",

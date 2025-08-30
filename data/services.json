@@ -1,0 +1,57 @@
+[
+        {     
+        "service": "audiovisuals",
+        "intro": "cultural placemaking",
+        "description": "A large-scale installation along the Thames.",
+        "image": "/public/media/IMG/ball_finial_small_image.png",
+        "preview-image" : "",
+        "video": "",
+        "contact-button": "material",
+        "price": [400,50000],
+        "type":["film", "exhibition", "photography"]
+        },
+        {     
+        "service": "crafts",
+        "intro": "object making",
+        "description": "A large-scale installation along the Thames.",
+        "image": "/public/media/IMG/ball_finial_small_image.png",
+        "preview-image" : "",
+        "video": "",
+        "contact-button": "material",
+        "price": [400,50000],
+        "type":["craft", "installation"]
+        },
+        {     
+        "service": "workshops",
+        "intro": "workshop facilitation",
+        "description": "A large-scale installation along the Thames.",
+        "image": "/public/media/IMG/ball_finial_small_image.png",
+        "preview-image" : "",
+        "video": "",
+        "contact-button": "material",
+        "price": [500,20000],
+        "type":["workshop"]
+        },
+        {     
+        "service": "digital",
+        "intro": "Digital Transformation",
+        "description": "A large-scale installation along the Thames.",
+        "image": "/public/media/IMG/ball_finial_small_image.png",
+        "preview-image" : "",
+        "video": "",
+        "contact-button": "material",
+        "price": ["enquire"],
+        "type":["3d", "strategy"]
+        },  
+        {     
+        "service": "placemaking",
+        "intro": "cultural placemaking",
+        "description": "A large-scale installation along the Thames.",
+        "image": "/public/media/IMG/ball_finial_small_image.png",
+        "preview-image" : "",
+        "video": "",
+        "contact-button": "material",
+        "price": ["enquire"],
+        "type":["public artwork", "strategy"]
+        }         
+]

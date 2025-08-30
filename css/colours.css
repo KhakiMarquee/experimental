@@ -1,11 +1,24 @@
 :root {
-  --grey-100: 248, 249, 250; /* very light */
-  --grey-150: #e9ecef; /* light */
-  --grey-200: #dee2e6;
-  --grey-300: #ced4da;
-  --grey-400: #adb5bd;
-  --grey-500: #6c757d;
+  --grey-100: 248, 249, 250;   /* very light */
+  --grey-150: 233, 236, 239;   /* light */
+  --grey-200: 222, 226, 230;
+  --grey-300: 206, 212, 218;
+  --grey-400: 173, 181, 189;
+  --grey-500: 108, 117, 125;
   --grey-600: 73, 80, 87;
-  --grey-700: #343a40;
-  --grey-800: #212529; /* very dark */
+  --grey-700: 52, 58, 64;
+  --grey-800: 33, 37, 41;       /* very dark */
+}
+
+/* 🌙 Dark mode overrides — flipped from light */
+:root[data-theme="dark"] {
+  --grey-100: 33, 37, 41;      /* very dark */
+  --grey-150: 52, 58, 64;
+  --grey-200: 73, 80, 87;
+  --grey-300: 108, 117, 125;
+  --grey-400: 173, 181, 189;
+  --grey-500: 206, 212, 218;
+  --grey-600: 222, 226, 230;
+  --grey-700: 233, 236, 239;
+  --grey-800: 248, 249, 250;   /* very light */
 }

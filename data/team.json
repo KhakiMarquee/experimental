@@ -1,0 +1,32 @@
+[
+        {     
+        "firstname": "Tosin",
+        "lastname": "Adegoke",
+        "name":"Goke",
+        "role": "Artist Researcher",
+        "images": ["/public/media/IMG/ball_finial_small_image.png"],
+        "preview-image" : "",
+        "email": "material@domain.com",
+        "statement":""
+        },
+        {     
+        "firstname": "Husam",
+        "lastname": "Ibrahim",
+        "name":"Husam",
+        "role": "Journalist",
+        "images": ["/public/media/IMG/ball_finial_small_image.png"],
+        "preview-image" : "",
+        "email": "material@domain.com",
+        "statement":""
+        },
+        {     
+        "firstname": "Fuyu",
+        "lastname": "Ibrahim",
+        "name":"Fuyu",
+        "role": "Cinematographer",
+        "images": ["/public/media/IMG/ball_finial_small_image.png"],
+        "preview-image" : "",
+        "email": "material@domain.com",
+        "statement":""
+        }         
+]

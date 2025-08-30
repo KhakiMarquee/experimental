@@ -5,7 +5,7 @@
 .projects-container {
   margin: 0 auto;
   padding: 10rem 2rem;
-  color: var(--grey-800);
+  color: rgb(var(--grey-800));
   font-family:'Geist';
 }
 
@@ -84,7 +84,7 @@
 
 .view-toggle button.active {
   background-color: rgba(var(--grey-100),0.2);
-  color: var(--grey-800);
+  color: rgb(var(--grey-800));
   text-decoration-color: rgb(var(--grey-600));
 }
 
@@ -133,7 +133,7 @@
 }
 
 .project-description {
-  color: var(--grey-700);
+  color: rgb(var(--grey-700));
   line-height: 1.5;
   display: none; /* Hide descriptions by default */
 }
@@ -192,7 +192,7 @@
     background-color: none;
   }
   to {
-    border-bottom: 1px solid var(--grey-800);
+    border-bottom: 1px solid rgb(var(--grey-800));
     background-color: rgba(var(--grey-100),0.2);
   }
 }

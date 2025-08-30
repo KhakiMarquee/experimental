@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Animate filter buttons
   const filterButton = document.querySelector('#category-buttons button[data-category="filter"]');
-  const filterButtons = categoryButtons.querySelectorAll('button[data-category]:not([data-category="filter"])');
+  const filterButtons = categoryButtons.querySelectorAll('a[data-category]:not([data-category="filter"])');
 
   // Set hidden position initially
   gsap.set(filterButtons, { x: 100, opacity: 0, display: "none" });
@@ -256,7 +256,7 @@ window.addEventListener("scroll", () => {
 
   // Quicklinks atop Footer
 if (!window.location.pathname.endsWith("stones.html")) {
-  const quicklinks = document.querySelectorAll("#category-buttons button[data-category]");
+  const quicklinks = document.querySelectorAll("#category-buttons a[data-category]");
   quicklinks.forEach(btn => {
     btn.addEventListener("click", () => {
       const category = btn.dataset.category;

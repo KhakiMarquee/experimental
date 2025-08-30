@@ -3,6 +3,7 @@ import { initStrudelPlayer } from '/src/strudel_player.js';
 import { initThreeScene } from '/src/three_scene.js';
 import { loadHeader } from '/src/header.js';
 import { loadFooter } from '/src/footer.js';
+import { initTheme, toggleTheme } from '/src/theme.js';
 
 
 //Init Main Application
@@ -18,7 +19,19 @@ export function initApp() {
     loadHeader();
     
     //Load Footer
-    loadFooter();
+    loadFooter().then(() => {
+    // Footer is now in the DOM
+
+      //load Theme
+      initTheme();
+      const toggleButton = document.getElementById("theme-toggle");
+      if (toggleButton) {
+        console.log("Theme toggle button found ✅");
+        toggleButton.addEventListener("click", toggleTheme);
+      } else {
+        console.warn("⚠️ No #theme-toggle button found in DOM");
+      }
+    });
 
 
     //Load dynamic buttons for page

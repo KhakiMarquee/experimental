@@ -3,26 +3,26 @@
     padding: 0;
     position: sticky; /* stays visible at top */
     top: 0;
-    border-bottom: 1px solid var(--grey-600);
-    color: var(--grey-500);
+    border-bottom: 1px solid rgb(var(--grey-200));
+    color: rgb(var(--grey-700));
     z-index: 9999; /* ensure on top */
 }
 
 .nav-left .tooltip:after {
   opacity:0;
   font-size: inherit;
-  color:var(--grey-300);
+  color:rgb(var(--grey-300));
 }
 
 .nav-right .tooltip:before {
   opacity:0;
   font-size: inherit;
-  color:var(--grey-300);
+  color:rgb(var(--grey-300));
   content: attr(title);
 }
 
-.nav-right .tooltip:hover:before { content: attr(title); opacity:1; color:var(--grey-300); } 
-.nav-left .tooltip:hover:after { content: attr(title); opacity:1; color:var(--grey-300); } 
+.nav-right .tooltip:hover:before { content: attr(title); opacity:1; color:rgb(var(--grey-300)); } 
+.nav-left .tooltip:hover:after { content: attr(title); opacity:1; color:rgb(var(--grey-300)); } 
 
 
 .header-container {

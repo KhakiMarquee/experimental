@@ -11,7 +11,7 @@ footer {
   z-index: 1000;
   background-color: rgba(var(--grey-600), 0.3);
   color: white;
-  border-top: 1px solid var(--grey-200);
+  border-top: 1px solid rgb(var(--grey-200));
   position: fixed
 }
 
@@ -20,7 +20,7 @@ footer.at-bottom {
 }
 
 footer.at-bottom a {
-  color: var(--grey-200);
+  color: rgb(var(--grey-200));
 }
 
 footer li p::first-letter{
@@ -34,6 +34,12 @@ footer ul{
   grid-template-columns: repeat(12, 1fr); /* Matches main grid */
 }
 
+footer ul li{
+    text-decoration-color:transparent;
+    font-weight:bold;
+    color: rgb(var(--grey-150));
+}
+
 footer li:first-of-type{
     grid-column: 1 / span 3; /* Left-aligned section */
     text-align: left;
@@ -42,11 +48,10 @@ footer li:first-of-type{
 }
 
 footer li p:last-of-type{
-  font-weight:lighter;
   text-decoration: underline;
   text-underline-offset: 0.15em;
-  font-style: italics;
   line-height:2em;
+  font-weight:lighter;
 }
 
 footer li:last-of-type{
@@ -62,10 +67,36 @@ footer.hide{
   opacity: 0
 }
 
+footer button{
+    position: fixed;
+    left: 50%;
+}
+
+#theme-toggle{
+  background-color: transparent!important;
+}
+
+#theme-toggle svg {
+  height: 30px
+}
+
+#theme-toggle:hover svg {
+  transform: scale(1.05);
+  fill: rgb(var(--grey-500));
+}
+
+footer.at-bottom #theme-toggle svg{
+  fill: rgb(var(--grey-150));
+}
+
 @media (max-device-width: 768px) {
   /* Styles for landscape iPad */
   footer{
     font-size: 0.7rem;
+  }
+
+  footer #theme-toggle svg {
+    height: 20px
   }
 
 }

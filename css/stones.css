@@ -6,7 +6,7 @@
 .stones-background {
   margin: 0 auto;
   padding: 0;
-  color: var(--grey-700);
+  color: rgb(var(--grey-700));
   font-family: 'Geist';
   opacity: 0.4;
   width: 100%;
@@ -26,7 +26,7 @@
 }
 .stone-header {
   position: relative; /* ensures the h1 is positioned relative to this container */
-  color: var( --grey-800);
+  color: rgb(var(--grey-800));
   text-align: center;
 }
 
@@ -41,7 +41,7 @@
 
 .stone-header .tooltip:after { 
   content: attr(title);
-  color:var(--grey-500);
+  color:rgb(var(--grey-500));
   display: block;           /* force new line */
   margin-top: 10px;
   font-size: 0.5em;         
@@ -136,11 +136,11 @@
 
 .slide:hover {
   background-color: rgba(var(--grey-100), 0.3);
-  border-color: var(--grey-400);
+  border-color: rgb(var(--grey-400));
 }
 
 .slide:hover p{
-    color: var(--grey-400);
+    color: rgb(var(--grey-400));
 }
 
 .slide:hover img{

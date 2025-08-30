@@ -1,4 +1,5 @@
 import{ Mold } from '/src/mold.js';
+import { initTheme } from '/src/theme.js';
 
 export function initSketch(p) {
     let molds = [];
@@ -17,6 +18,8 @@ export function initSketch(p) {
         
         console.log(`Created ${num} molds`); // Debug log
     };
+
+    initTheme(p);
 
     p.draw = function() {
         p.background(0, 5);

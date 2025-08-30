@@ -143,14 +143,12 @@ function initOverlays() {
   function hideHeaderFooter() {
     header?.classList.add('hide');
     footer?.classList.add('hide');
-    app.style.setProperty("transform", "translateY(0px)");
   }
 
   // Utility: show header/footer
   function showHeaderFooter() {
     header?.classList.remove('hide');
     footer?.classList.remove('hide');
-    app.style.setProperty("transform", "translateY(50px)");
   }
 
   // Stop propagation on all triggers (assuming triggers have [data-overlay])
@@ -256,7 +254,7 @@ function waitForFooterAndInitToggles() {
 
 function initToggles() {
   initLocationToggle();
-  initContactToggle();
+  //initContactToggle();
 }
 
 function initLocationToggle() {
@@ -331,7 +329,6 @@ export function initUI() {
       if (!transitionSpace.classList.contains('active')) {
         transitionSpace.classList.add('active');
         animateThreeSceneOpen();
-        app.style.setProperty("transform", "translateY(0)");
         footer.classList.add('hide');
         header.classList.add('hide');
 
@@ -363,7 +360,6 @@ if (closeContainer && transitionSpace && footer) {
   closeContainer.addEventListener('click', () => {
     transitionSpace.classList.remove('active');
     animateThreeSceneClose();
-    app.style.setProperty("transform", "translateY(50px)");
     footer.classList.remove('hide');
     header.classList.remove('hide');
   });
