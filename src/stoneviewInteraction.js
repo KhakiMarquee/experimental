@@ -7,8 +7,8 @@ const isMobile = () =>
 //RENDER STONEVIEW
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Fetching:", `data/stone_with_ids.json`);
-  fetch(`/data/stone_with_ids.json`) 
+    console.log("Fetching:", `data/stone.json`);
+  fetch(`/data/stone.json`) 
     .then(res => res.json())
     .then(data => {
 
@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("[stoneData] loaded", Array.isArray(window.stoneData), window.stoneData?.length);
 
       // 🔀 Randomize order based on the 'id' column
-      //window.stoneData.sort(() => Math.random() - 0.5);
+      window.stoneData.sort(() => Math.random() - 0.5);
       // OR deterministic shuffle using hash of id:
-      window.stoneData.sort((a, b) => a.id.localeCompare(b.id));
+      // window.stoneData.sort((a, b) => a.id.localeCompare(b.id));
 
       // Populate title attributes for .catNum spans
       const catSpans = document.querySelectorAll(".catNum"); // handle both classes
