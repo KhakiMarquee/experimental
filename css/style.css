@@ -125,7 +125,7 @@ a:hover, #location-toggle:hover{
 }
 
 .secondary-text ul li:hover .tap-button {
-  color: #CED4DA
+  color: rgba(var(--grey-300));
 }
 
 .secondary-text ul {

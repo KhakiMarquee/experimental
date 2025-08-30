@@ -6,7 +6,6 @@ import"./category-psoe4D5s.js";function m(e,t){e.classList.add("expanding");cons
     <p style="margin:0 0 8px 0;"><strong>Client:</strong> ${e.client??""}</p>
     <p style="margin:0 0 8px 0;"><strong>Theme:</strong> ${e.theme??""}</p>
     <p style="margin:0 0 8px 0;"><strong>Type:</strong> ${Array.isArray(e.type)?e.type.join(", "):e.type??""}</p>
-    <p style="margin:0 0 8px 0;"><strong>Material:</strong> ${e.dimension??""}</p>
     <p style="margin:0 0 16px 0;">${e.description??""}</p>
 
     <!-- Prefer video embed, fallback to main image -->

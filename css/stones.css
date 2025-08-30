@@ -24,6 +24,10 @@
   font-family:'Geist';
   margin: 5% 0;
 }
+
+.stone-container p{
+      font-family: system-ui;
+}
 .stone-header {
   position: relative; /* ensures the h1 is positioned relative to this container */
   color: rgb(var(--grey-800));

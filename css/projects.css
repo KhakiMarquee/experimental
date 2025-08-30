@@ -88,6 +88,10 @@
   text-decoration-color: rgb(var(--grey-600));
 }
 
+#detail-app p{
+    font-family: system-ui;  
+}
+
 
 
 /* Meta info line inside project details */
