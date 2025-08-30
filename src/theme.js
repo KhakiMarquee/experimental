@@ -1,5 +1,3 @@
-import p5, { init } from "p5";
-
 let pInstance; // will hold a p5 instance for storage
 
 
