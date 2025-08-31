@@ -62,6 +62,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const p = document.createElement("p");
         p.textContent = item.title || "";
 
+        // Create material paragraph
+        const material = document.createElement("p");
+        material.textContent = item.material || "";
+
         //Create tooltip
         const span = document.createElement("span");
         span.classList.add("tooltip");
@@ -70,6 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Build structure
         slideInner.appendChild(img);
         slideInner.appendChild(p);
+        slideInner.appendChild(material);
         slide.appendChild(slideInner);
         slide.appendChild(span);
         carousel.appendChild(slide);

@@ -68,12 +68,16 @@ function renderCarousel(data) {
     const p = document.createElement("p");
     p.textContent = item.title || "";
 
+    const material = document.createElement("p");
+    material.textContent = item.material || "";
+
     const span = document.createElement("span");
     span.classList.add("tooltip");
     span.title = "[TAP]";
 
     slideInner.appendChild(img);
     slideInner.appendChild(p);
+    slideInner.appendChild(material);
     slide.appendChild(slideInner);
     slide.appendChild(span);
     carousel.appendChild(slide);

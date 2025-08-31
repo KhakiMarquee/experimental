@@ -22,7 +22,8 @@
   min-height: 1.4em; /* Maintain consistent height */
   min-width:22ch;
   z-index: 1000;
-  color: rgb(var(--grey-150), 1);
+  color: rgb(var(--grey-100), 1);
+  font-weight: bold;
 }
 
 #loading-screen #shuffling-word {

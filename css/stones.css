@@ -103,7 +103,7 @@
   will-change: transform;
   backface-visibility: hidden;
   font-weight: 500;
-  background-color: rgba(var(--grey-100), .2);
+  background-color: rgba(var(--grey-100), .6);
 }
 
 .slide::before {
@@ -136,6 +136,7 @@
   max-width: 100%;
   display: block;
   opacity: 1;
+  border-radius: 5px
 }
 
 .slide:hover {
@@ -153,6 +154,7 @@
 
 .slide p {  
   color: rgb(var(--grey-600));
+  margin: 1rem 0;
 }
 
 .slide-inner {
@@ -173,6 +175,13 @@
 .slide img,
 .slide p {
   pointer-events: none; /* ignore clicks, let them pass to parent .slide */
+
+}
+
+.slide p:last-of-type {
+  font-style: italic;
+  text-transform: capitalize; /* ignore clicks, let them pass to parent .slide */
+  font-size: 0.9rem;
 }
 
 #carousel-wrapper {
