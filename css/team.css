@@ -1,0 +1,73 @@
+@import './style.css';
+@import './category.css';
+@import './projects.css';
+@import './detail.css';
+
+/* Container for the team section */
+.teams-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Each team member row */
+.team-member {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr 80px; /* image, text, button */
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 2rem;
+  border-bottom: 1px solid #000;
+  background-color: rgba(var(--grey-100), 0.1); /* light background like in your screenshot */
+}
+
+.team-member:hover {
+  background-color: rgba(var(--grey-800), 1); /* light background like in your screenshot */
+  transition: all 0.3s ease;
+}
+.team-member:hover svg {
+  width: 50px;
+  height: 50px;
+  transition: all 0.3s ease; /* smooth transition for hover effects */
+}
+
+/* Profile image */
+.team-member img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px; /* square with rounded corners (you can make it hex with clip-path if you want to match the screenshot) */
+}
+
+/* Text section */
+.team-member h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.team-member p {
+  margin: 0.2rem 0 0;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Expand button area (SVG placeholder for now) */
+.team-member svg {
+  width: 20px;
+  height: 20px;
+  stroke: #000;
+  cursor: pointer;
+  justify-self: end;
+}
+
+/* Dropdown section */
+.team-dropdown {
+  display: none; /* initially hidden */
+  padding: 1rem;
+  border-bottom: 1px solid #000;
+}
+
+/* When expanded, show dropdown */
+.team-member.active + .team-dropdown {
+  display: block;
+}

@@ -130,5 +130,20 @@
         "type": "render",
         "dimensions": null,
         "tools": "Blender; 3D Scanner"
-        }                    
+        },
+        {     
+        "title": "Aberfeldy",
+        "material": "mixed material",
+        "description": "An exploration of regeneration through point clouds scattering. Aberfeldy is a housing estate in Poplar, East London designed by Ernő Goldfinger in the 1960s. The estate has been undergoing regeneration since 2015, with plans to demolish some of the existing buildings and replace them with new ones. This project explores the idea of regeneration through the use of point clouds, which are a collection of data points that represent the surface of an object or environment. By scattering these points, we can create a new representation of the estate that reflects its changing nature.",
+        "image": "/media/IMG/aberfeldy/aberfeldy.png",
+        "preview-image" : "",
+        "imageStack" : [
+          "/media/IMG/aberfeldy/aberfeldy.png",
+          "/media/IMG/aberfeldy/balfron_tower.jpg"
+        ],
+        "video": "https://player.vimeo.com/video/1082806843?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "type": "render",
+        "dimensions": null,
+        "tools": "Blender; 3D Scanner"
+        }                     
 ]   
