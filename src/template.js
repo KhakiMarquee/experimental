@@ -1,60 +1,98 @@
 import { openTemplateDetail } from '/src/openTemplateDetail.js';
-//import { ImageCompressor } from 'js-image-compressor';
 
 function getCategoryFromURL() {
   const params = new URLSearchParams(window.location.search);
-  return params.get('category');
+  return params.get('category'); // null if missing
+}
+
+function createProjectRow(entry) {
+  const section = document.createElement('div');
+  section.classList.add('project-row');
+  section.innerHTML = `
+    <div class="project-image">
+      <img src="${entry.image}" alt="${entry.title}">
+    </div>
+    <div class="project-details">
+      <p>${entry.title}</p>
+      <span class="project-client">${entry.client || ''}</span>
+      <div class="project-meta">
+        <p class="project-theme">${entry.theme || ''}</p>
+        <p class="project-description">${entry.description || ''}</p>
+        <span class="project-type">${Array.isArray(entry.type) ? entry.type.join(', ') : (entry.type || '')}</span>
+      </div>
+    </div>
+  `;
+  section.addEventListener("click", () => openTemplateDetail(section, entry));
+  return section;
 }
 
 function renderContent(category, jsonPath) {
   const container = document.getElementById('content');
-  const title = document.getElementById('page-title');
-  const sectionDescription = document.getElementById('project-section-description');
+  const titleEl = document.getElementById('page-title');
+  const descEl = document.getElementById('project-section-description');
 
   fetch(jsonPath)
-    .then(response => {
-      if (!response.ok) throw new Error('Failed to fetch data.');
-      return response.json();
+    .then(r => {
+      if (!r.ok) throw new Error('Failed to fetch data.');
+      return r.json();
     })
     .then(data => {
-      const group = data[category];
-      if (!group) throw new Error(`Category "${category}" not found in data.`);
-
-      // Update section title
-      title.textContent = category.charAt(0).toUpperCase() + category.slice(1);
-
-      // Update section description
-      if (sectionDescription) {
-        sectionDescription.textContent = group.description || '';
-      }
-
-      // Clear and repopulate container
       container.innerHTML = '';
-      const entries = group.items;
 
-      if (entries && entries.length) {
-        entries.forEach((entry, entryIdx) => {
-          const section = document.createElement('div');
+      if (category) {
+        // SINGLE CATEGORY MODE: update title/description + render only that category
+        const group = data[category];
+        if (!group) {
+          container.innerHTML = `<p>Category "${category}" not found.</p>`;
+          return;
+        }
 
-          // Set up section content
-          section.classList.add('project-row');
-          section.innerHTML = `
-            <div class="project-image">
-              <img src="${entry.image}" alt="${entry.title}">
-            </div>
-            <div class="project-details">
-              <p>${entry.title}</p>
-              <span class="project-client">${entry.client || ''}</span>
-              <div class="project-meta">
-                <p class="project-theme">${entry.theme || ''}</p>
-                <p class="project-description">${entry.description || ''}</p>   
-                <span class="project-type">${entry.type ? entry.type.join(', ') : ''}</span>
-              </div>
-            </div>
-          `;
+        if (titleEl) titleEl.textContent = category.toUpperCase();
+        if (descEl) descEl.textContent = group.description || '';
 
-          // Append the section to container first
-          container.appendChild(section);
+        (group.items || []).forEach(entry => {
+          container.appendChild(createProjectRow(entry));
+        });
+
+      } else {
+        // DEFAULT MODE (no query): render ALL items flat, do NOT touch title/description
+        Object.keys(data).forEach(cat => {
+          const group = data[cat];
+          if (!group || !Array.isArray(group.items)) return;
+          group.items.forEach(entry => {
+            container.appendChild(createProjectRow(entry));
+          });
+        });
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      container.innerHTML = `<p>Error loading content.</p>`;
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const category = getCategoryFromURL();
+  const jsonPath = '/data/data.json';
+
+  renderContent(category, jsonPath);
+
+  // View toggles (assumes .projects-container wraps #content)
+  const containerEl = document.querySelector('.projects-container');
+  document.getElementById('grid-view').addEventListener('click', () => {
+    containerEl.classList.add('row-view');
+    containerEl.classList.remove('list-view');
+    document.getElementById('grid-view').classList.add('active');
+    document.getElementById('list-view').classList.remove('active');
+  });
+
+  document.getElementById('list-view').addEventListener('click', () => {
+    containerEl.classList.add('list-view');
+    containerEl.classList.remove('row-view');
+    document.getElementById('list-view').classList.add('active');
+    document.getElementById('grid-view').classList.remove('active');
+  });
+});
 
           /*/ Now apply compression for this image immediately
           console.log(`Rendering entry #${entryIdx}, applying compression.`);
@@ -104,50 +142,4 @@ function renderContent(category, jsonPath) {
             })
             .catch(err => console.error('Fetch error during compression:', err));*/
           
-          // OpenDetail Capabilities
-          section.addEventListener("click", () => {
-            openTemplateDetail(section, entry);
-          });
-        });
-      } else {
-        container.innerHTML = `<p>No content found for "${category}".</p>`;
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      container.innerHTML = `<p>Error loading content.</p>`;
-    });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  const category = getCategoryFromURL();
-  if (category) {
-    //const basePath = '/experimental'; // or for local previews
-    //const jsonPath = `${basePath}/data/data.json`;
-    const jsonPath = `/data/data.json`;
-    renderContent(category, jsonPath);
-  } else {
-    document.getElementById('content').innerHTML = `<p>Invalid category.</p>`;
-  }
-
-  document.getElementById('grid-view').addEventListener('click', () => {
-    const container = document.querySelector('.projects-container');
-    container.classList.add('row-view');
-    container.classList.remove('list-view');
-    document.getElementById('grid-view').classList.add('active');
-    document.getElementById('list-view').classList.remove('active');
-
-  });
-
-  document.getElementById('list-view').addEventListener('click', () => {
-    const container = document.querySelector('.projects-container');
-    container.classList.add('list-view');
-    container.classList.remove('row-view');
-    document.getElementById('list-view').classList.add('active');
-    document.getElementById('grid-view').classList.remove('active');
-    
-  })
-});
-
-
 
