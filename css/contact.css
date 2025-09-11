@@ -79,5 +79,10 @@
   .contact-container {
     flex-direction: column;
     padding: 2rem;
+
+  }
+
+  .contact-form label, .contact-form input, .contact-info {
+        font-size:0.8rem
   }
 }

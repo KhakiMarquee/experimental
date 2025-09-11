@@ -282,5 +282,18 @@
 @media (max-width: 768px) {
   .pitch-items {
     grid-template-columns: 1fr;
+    font-size: 0.8rem
   }
+
+  .pitch-items img {
+    width: 100%;
+    border-radius: 5px;
+    height: auto;
+    padding: .25rem;
+    object-fit: cover;
+    object-position: top;
+    display: flex;
+    filter:grayscale(1);
+    transition: filter 0.3s ease;
+}
 }

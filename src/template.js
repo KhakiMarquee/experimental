@@ -27,6 +27,14 @@ function createProjectRow(entry) {
   return section;
 }
 
+// Utility to shuffle an array in-place
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
 export async function renderContent(category, jsonPath) {
   const container = document.getElementById('content');
   const titleEl = document.getElementById('page-title');
@@ -49,17 +57,26 @@ export async function renderContent(category, jsonPath) {
       if (titleEl) titleEl.textContent = category.toUpperCase();
       if (descEl) descEl.textContent = group.description || '';
 
-      (group.items || []).forEach((entry, idx) => {
+      const items = [...(group.items || [])]; // copy array
+      shuffleArray(items);                    // randomize
+      items.forEach((entry, idx) => {
         const row = createProjectRow(entry);
         container.appendChild(row);
         processImage(row, idx);
       });
 
     } else {
-      Object.keys(data).forEach(cat => {
+      const categories = Object.keys(data);
+      shuffleArray(categories); // shuffle the category order
+
+      categories.forEach(cat => {
         const group = data[cat];
         if (!group || !Array.isArray(group.items)) return;
-        group.items.forEach((entry, idx) => {
+
+        const items = [...group.items]; // copy array
+        shuffleArray(items);           // randomize items within category
+
+        items.forEach((entry, idx) => {
           const row = createProjectRow(entry);
           container.appendChild(row);
           processImage(row, idx);
@@ -67,7 +84,7 @@ export async function renderContent(category, jsonPath) {
       });
     }
 
-    return data;  // ✅ return full JSON
+    return data;
   } catch (err) {
     console.error(err);
     container.innerHTML = `<p>Error loading content.</p>`;
