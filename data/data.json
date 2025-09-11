@@ -199,7 +199,12 @@
         "description": "The Hop is a large interactive sculpture by artist Jyll Bradley...",
         "image": "/public/media/IMG/frieze/the_hop_frieze_sculpture.jpg",
         "video": "https://player.vimeo.com/video/875154322?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "type": ["film", "public artwork"]
+        "type": ["film", "public artwork"],
+        "link":null,
+        "story": null,
+         "metadata": {
+          "year": 2021
+        } 
       },
       {     
         "title": "the stone they lay",
@@ -222,7 +227,12 @@
         "description": null,
         "image": "/public/media/IMG/building_crafts_college/the_bcc_thumbnail.jpg",
         "video": "https://player.vimeo.com/video/1110489292?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "type": ["film"]
+        "type": ["film"],
+        "link":null,
+        "story": null,
+         "metadata": {
+          "year": 2022
+        }   
       },
       {
         "title": "Jewellery Design",
@@ -231,7 +241,12 @@
         "description": "Vannetta Seecharran School of Jewellery '23 | New Designers Business Design Centre",
         "image": "/public/media/IMG/vs_jewellery/design_centre_show.jpg",
         "video": "https://player.vimeo.com/video/845515505?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "type": ["film", "installation", "craft"]
+        "type": ["film", "installation", "craft"],
+        "link":null,
+        "story": null,
+         "metadata": {
+          "year": 2021
+        } 
       }
     ]
   },
