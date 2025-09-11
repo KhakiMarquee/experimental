@@ -25,7 +25,14 @@
 
 #team-section-description{
       margin: 2rem 0rem;
+        line-height: normal;
 }
+
+    #team-subsection-description {
+        font-size: 0.8rem;
+        margin: 1rem 0rem;
+        line-height: normal;
+    }
 
 .team-member-container {
     display: flex;

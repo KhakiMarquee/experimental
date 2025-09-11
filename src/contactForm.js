@@ -18,11 +18,13 @@ export async function renderContactForm(containerId = "contact-container", prese
           <br>
           Shadwell, London<br>
         </p>
-        <p><a href="https://maps.google.com" target="_blank">📍 View on maps</a></p>
+        <p><a href="https://maps.app.goo.gl/E3YvDua81eZzKaUWA" target="_blank">📍 View on maps</a></p>
       </div>
 
       <!-- Right Column: Form -->
-      <form id="contact-form" class="contact-form" name="contact" netlify method="POST" data-netlify="true">
+      <form id="contact-form" class="contact-form" name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact">
+
         <label for="name">Your Name</label>
         <input type="text" id="name" name="name" required>
 
@@ -37,10 +39,8 @@ export async function renderContactForm(containerId = "contact-container", prese
 
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="4" required></textarea>
-        <input type="hidden" name="contact" value="contact">
 
-        <button type="submit">Work with us</button>
-        
+        <button type="submit">Start Project</button>
       </form>
     </div>
   `;

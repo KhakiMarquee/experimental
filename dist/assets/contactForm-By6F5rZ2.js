@@ -10,11 +10,13 @@ async function u(n="contact-container",t=null,o=null){const e=document.getElemen
           <br>
           Shadwell, London<br>
         </p>
-        <p><a href="https://maps.google.com" target="_blank">📍 View on maps</a></p>
+        <p><a href="https://maps.app.goo.gl/E3YvDua81eZzKaUWA" target="_blank">📍 View on maps</a></p>
       </div>
 
       <!-- Right Column: Form -->
-      <form id="contact-form" class="contact-form" name="contact" netlify method="POST" data-netlify="true">
+      <form id="contact-form" class="contact-form" name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact">
+
         <label for="name">Your Name</label>
         <input type="text" id="name" name="name" required>
 
@@ -29,10 +31,8 @@ async function u(n="contact-container",t=null,o=null){const e=document.getElemen
 
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="4" required></textarea>
-        <input type="hidden" name="contact" value="contact">
 
-        <button type="submit">Work with us</button>
-        
+        <button type="submit">Start Project</button>
       </form>
     </div>
   `;try{const r=await(await fetch("/data/services.json")).json();console.log("📦 services.json data:",r);const s=e.querySelector(".services-checkboxes");s.innerHTML="",r.forEach(i=>{console.log("➡️ service object:",i);const c=i.service,l=`service-${c.toLowerCase()}`,m=t?.toLowerCase()===c.toLowerCase()?"checked":"";s.innerHTML+=`
