@@ -66,15 +66,16 @@ export function initAnimations() {
       {
         scrollTrigger: {
           trigger: '.secondary-text',
-          start: 'top 40%',
+          start: 'top 20%',
           end: 'bottom 40%',
-          toggleActions: 'play reverse play reverse'
+          toggleActions: 'play reverse'
         },
         duration: 0.8,
         y: 0,
         opacity: 1,
         stagger: 0.2,
         ease: 'power3.out'
+
       }
     );
   }
@@ -282,3 +283,9 @@ export function animateOverlayClose(overlay) {
     });
   });
 }
+
+//animation for team dropdown
+//animation for contact form
+//animation for service slide down
+//animation for open detail maybe image zoom
+//animation for filtering between page subsets

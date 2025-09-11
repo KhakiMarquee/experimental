@@ -3,6 +3,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 let allData = [];     // for carousel (stone.json)
@@ -270,13 +271,3 @@ if (!window.location.pathname.endsWith("stones.html")) {
   });
 }
   
-  function navigateToCategory(category) {
-    const targetUrl = `/pages/projects.html?category=${encodeURIComponent(category)}`;
-
-    // If using asyncLoader:
-    if (typeof window.loadPage === "function") {
-      window.loadPage(targetUrl);
-    } else {
-      window.location.href = targetUrl;
-    }
-  }

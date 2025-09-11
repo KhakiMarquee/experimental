@@ -1,15 +1,55 @@
 {
-  "audiovisuals": {
-    "description": "Audiovisual works spanning film, photography, and digital media. These projects explore heritage, culture, architecture, and identity through moving image and sound.",
+  "experiment": {
+    "description": "Experimental audiovisuals spanning film, photography, and digital media. These projects explore heritage, culture, architecture through moving image and sound.",
     "button": false,
     "buttonContent" : null,
-    "team-member": [
-      {
-        "name": "Goke",
-        "id": "Creative Director"
-      }
-    ],
     "items": [
+      {     
+        "title": "Aik Alif",
+        "client": "UCL",
+        "theme": "Culture",
+        "description": "An experimental documentary tracing a filmmaker’s return to Islam through Sufism. Through spiritual encounters, Bulleh Shah’s poetry, and abstract black-and-white visuals, the film discovers Islam’s theological multiplicities.",
+        "image": "/public/media/IMG/aik_alif/aik_alif_thumbnail.jpg",
+        "preview-image": null,
+        "imageStack" : [
+          "/public/media/IMG/aik_alif/aik_alif_thumbnail.jpg",
+          "/public/media/IMG/aik_alif/aik_alif_2.jpg",
+          "/public/media/IMG/aik_alif/aik_alif_3.jpg",
+          "/public/media/IMG/aik_alif/aik_alif_4.jpg",
+          "/public/media/IMG/aik_alif/aik_alif_5.jpg"
+        ],
+        "video": "https://drive.google.com/file/d/1ekdW_K-ppRi8y8ci4kvi1dnntzK8UWy1/preview",
+        "type": ["film", "audio" ],
+        "links": null,
+        "story": "A personal exploration of faith and identity, this experimental documentary follows a filmmaker's spiritual journey as he reconnects with Islam as an adult through the mystical tradition of Sufism. The filmmaker finds himself questioning his relationship with Allah and understanding that Islam is not a monolithic religion. Through intimate interactions with two Sufi practitioners, the film reveals an alternative understanding of Islam—one that emphasizes inner exploration, devotion, poetic wisdom, and direct spiritual experience over rigid adherence to Islamic law. The central narrative is anchored by the poetry of Bulleh Shah, the 19th-century Sufi poet whose verses form the heart of the film's musical composition 'Aik Alif,' teaching that 'all is one.' Shot in black and white, the film weaves together personal reflection, mystical philosophy, and Kira Winter’s art.",
+        "metadata": {
+          "year": 2025
+        },
+        "collaboration": { "participants": ["Kira Winter"], "focus": "Faith, identity, Sufism", "medium": "film" }
+      },
+      {     
+        "title": "Do You Remember?",
+        "client": "UCL",
+        "theme": "Culture",
+        "description": "Blending narrative, memory, and family archives, a filmmaker confronts childhood abuse, using storytelling as a path to healing and reclaiming his lost memories of childhood.",
+        "image": "/public/media/IMG/do_you_remember/do_you_remember_thumbnail.jpg",
+        "preview-image": null,
+        "imageStack" : [
+          "/public/media/IMG/do_you_remember/do_you_remember_thumbnail.jpg",
+          "/public/media/IMG/do_you_remember/do_you_remember_2.jpg",
+          "/public/media/IMG/do_you_remember/do_you_remember_3.jpg",
+          "/public/media/IMG/do_you_remember/do_you_remember_4.jpg",
+          "/public/media/IMG/do_you_remember/do_you_remember_5.jpg"
+        ],
+        "video": "https://drive.google.com/file/d/1T2UlFymIBuu_2ZjI-0pagO5rjgCquRxc/preview",
+        "type": ["film", "audio"],
+        "links": null,
+        "story": "This experimental documentary follows a filmmaker as he confronts the lack of memories surrounding his childhood abuse. Through a deeply personal process of storytelling, he uses narrative as a means of regaining memory and piecing together a fractured past. Blending family archives, interviews, and artistic collaborations, the film moves fluidly between memory and recreation, holding a space where pain and healing coexist.",
+        "metadata": {
+          "year": 2025
+        },
+        "collaboration": { "participants": ["Kira Winter"], "focus": "Childhood trauma, healing, storytelling", "medium": "film" }
+      },
       {     
         "title": "Stained Glass Restoration",
         "client": "St Anne's",
@@ -20,9 +60,26 @@
         "video": "https://www.youtube.com/embed/9ztq7C1YYsg?si=x6PVVJAtLtk3BMRc",
         "type": ["film"],
         "links": null,
+        "story": "The great East Window at St Anne’s, depicting the Crucifixion on a monumental scale, is over 150 years old and in urgent need of repair, and you can still support its conservation by sponsoring a pane through our ongoing appeal.",
         "metadata": {
           "year": 2023
         }
+      },
+      {     
+        "title": "NOA",
+        "client": "East London Dance Studio",
+        "theme": "Culture",
+        "description": "An experimental film exploring identity and motion...",
+        "image": "/public/media/IMG/noa/noa_cover_imge.png",
+        "preview-image": null,
+        "video": "https://player.vimeo.com/video/1078629828?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "type": ["film", "audio"],
+        "links": "https://gokestudio.substack.com/p/studying-motion-through-cinema",
+        "story": "The genesis of this film lies in a serendipitous meeting at a mental well-being workshop for Black men in East London, where, amidst painting paper hats and shared stories, I met Noa, a dancer whose movements spoke volumes about resilience and expression, leading to a collaboration exploring play\u2014a concept often stripped from Black male experiences\u2014through repeated dance performances in UCL's Black Box studio, using the camera as a tool of discovery to capture nuances of expression and silent dialogue, inspired by Maya Deren's cinematic philosophies to let dance narrate its own story, while navigating institutional resistance and creating a sanctuary within the studio, balancing authentic representation of Noa's artistry with my creative instincts, evolving from an initially silent, black-and-white piece to one enriched with the music that fuels his performances, acknowledging the inseparability of sound and movement in his expression.",
+        "metadata": {
+          "year": 2025
+        },        
+        "collaboration": { "participants": ["Noa"], "focus": "Play and its absence in Black male experiences", "medium": "dance" }
       },
       {     
         "title": "Aberfeldy Estate",
@@ -32,8 +89,9 @@
         "image": "/public/media/IMG/aberfeldy/balfron_tower.jpg",
         "preview-image": null,
         "video": "https://player.vimeo.com/video/1082806843?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "type": ["3d"],
+        "type": ["3d", "coding"],
         "links": null,
+        "story": "",
         "metadata": {
           "year": 2025
         }
@@ -52,7 +110,7 @@
           "/public/media/IMG/passing_the_flame/PTF_anita-05.jpg"
         ],
         "video": null,
-        "type": ["photography"],
+        "type": ["photography", "3d"],
         "links": null,
         "metadata": {
           "year": 2020
@@ -90,8 +148,9 @@
           "/public/media/IMG/archives_also_die/archives_also_die.jpg",
           "/public/media/IMG/archives_also_die/archives_die_cover.jpg"
         ],
-        "type": ["film"],
-        "links": null,
+        "type": ["film", "audio"],
+        "links": "https://gokestudio.substack.com/p/archives-also",
+        "story": "Growing up as \u201cPeter\u201d in the UK, I came of age at the intersection of administrative fiction and diasporic truth. The moment I received a citizenship letter in someone else\u2019s name, I began an odyssey through bureaucracy\u2014a journey that blurred the line between identity and absurdity. The archive became a mirror and a maze. This film is not only a retelling of that journey, but a confrontation with the very structures that mediate belonging, memory, and meaning. Archives Also Die is my attempt to reclaim voice through form\u2014to juxtapose the rationalist facade of empire with the chaotic, affective, lived realities of postcolonial subjects. I did not want to merely critique the archive from afar, but to live within it\u2014to screen record it, mispronounce its metadata, pixelate its hierarchies, and project it onto the walls of the present. My body and voice carry the friction between my ancestral name\u2014Oluwatosin Oluwakayode Ominiyi Temi Tope Peter Adegoke\u2014and the imposed simplicity of \u201cPeter.\u201d This film insists that representation is not enough. Transformation is necessary. Through tunnels, towers, and terminals, I offer a new passage through history\u2014not to retrieve what was lost, but to reshape what remains.",
         "metadata": {
           "year": 2025,
           "director": "G O K E",
@@ -117,8 +176,13 @@
         ],
         "preview-image": null,
         "video": "https://player.vimeo.com/video/1069047556?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "type": ["film"],
-        "links": null
+        "type": ["film", "audio"],
+        "links": null,
+        "story": null,
+        "metadata": {
+          "year": 2025
+        },
+        "collaboration": { "participants": ["Rosal Stone", "Pierre Perraudin" , "Groupwork"], "focus": "Sustainability, architecture", "medium": "film" }        
       }
     ]
   },
@@ -144,7 +208,12 @@
         "description": "Hidden in plain sight, a set of stone benches in London becomes the vessel for a poetic excavation...",
         "image": "/public/media/IMG/stone_they_lay/stone_they_lay_cover.jpg",
         "video": "https://player.vimeo.com/video/1057418229?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "type": ["film", "public artwork"]
+        "type": ["film", "public artwork", "installation"],
+        "link":"https://gokestudio.substack.com/p/the-stone-they-lay",
+        "story": "This project began as a modest exploration of historical street furniture: a set of stone benches dotted across the St Paul\u2019s area, their presence anonymous and unremarked. Yet, these stones were extracted from the Thames Embankment wall, a site underpinned\u2014literally\u2014by Victorian engineering, sanitation systems, and layers of forgotten city planning. I found myself drawn to them, not just for what they were, but for what they contained\u2014earth and water, stillness and memory. As I began filming, I worked through a double-diamond process\u2014an approach borrowed from the tech world, where I once worked\u2014which allowed me to ideate expansively before defining, and later to develop freely before distilling. This journey was not linear, but iterative and often uncertain. The core question was always this: how can the inanimate speak? Through image, sound design, and poetic structure, the film seeks to animate what cannot move, and to hold space for what no longer speaks. We follow the benches as portals between past and present, accompanied by soundscapes built from church bells, hydrophones submerged in the Thames, and EQ\u2019d traffic noise woven into the whip pans between locations.",
+         "metadata": {
+          "year": 2024
+        }     
       },
       {
         "title": "The Building Crafts College",
@@ -162,14 +231,14 @@
         "description": "Vannetta Seecharran School of Jewellery '23 | New Designers Business Design Centre",
         "image": "/public/media/IMG/vs_jewellery/design_centre_show.jpg",
         "video": "https://player.vimeo.com/video/845515505?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "type": ["film"]
+        "type": ["film", "installation", "craft"]
       }
     ]
   },
   "people": {
     "description": "Portraits, workshops, and films centred on individuals, communities, and cultural practitioners. These stories highlight lived experience, creativity, and collective struggles.",
     "button": false,
-    "buttonContent" : null,   
+    "buttonContent" : null,
     "items": [
       {     
         "title": "Echoes of the Empire",
@@ -179,8 +248,13 @@
         "image": "/public/media/IMG/echoes of empire/asif_shakoor.png",
         "video": "https://player.vimeo.com/video/1110662984?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "type": ["workshop"],
-        "links": "https://archivesdie.goke.studio/p/sea-wallahs" 
-      },
+        "links": "https://archivesdie.goke.studio/p/sea-wallahs",
+        "story": null,
+        "metadata": {
+          "year": 2025
+        },
+        "collaboration" : { "participants": ["Dr Georgie Weymms", "James King"], "focus": "Family, History", "medium": "film" } 
+      },  
       {
         "title": "The Lighting Designer",
         "client": "Contemporary Art Society & The Box, Plymouth",
@@ -188,7 +262,12 @@
         "description": "Learn about the Lighting technicians role as we explore an exhibition at the Box in Plymouth.",
         "image": "/public/media/IMG/inside_museums/the_ldr_cover.jpg",
         "video": "https://player.vimeo.com/video/850257026?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "type": ["film"]
+        "type": ["film", "audio"],
+        "story": null,
+        "metadata": {
+          "year": 2022
+        },
+        "collaboration" : { "participants": ["Norwich Castle Museum"], "focus": "Conservation", "medium": "film" } 
       },
       {     
         "title": "Hostile Housing",
@@ -197,34 +276,53 @@
         "description": "Rents are spiralling, housing conditions are worsening and property speculation is rampant...",
         "image": "/public/media/IMG/hostile_housing/gillett_square_lru.jpg",
         "video": "https://player.vimeo.com/video/1057422541?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "type": ["film", "workshop"]
+        "type": ["film", "workshop"],
+        "story": "Rents are spiraling, housing conditions are worsening, property speculation is rampant, gentrification and unregulated landlordism are fracturing communities, social housing is disintegrating, and we must ask: how can we challenge these assaults on the basic human right to a home, learn from past struggles, and envision housing for all?",
+        "metadata": {
+          "year": 2020
+        }
       },
       {    
-        "title": "Eco Soy Wax Candles",
+        "title": "Light for Justice",
         "client": "Bean and Gone",
         "theme": "Culture",
         "description": "Brand Strategy and Content Creation for an eco-friendly candle-making business.",
         "image": "/public/media/IMG/bean_gone_soy_candles/candles_cover.jpg",
-        "type": ["workshop"]
+        "type": ["workshop", "strategy", "photography"],
+        "story": null,
+        "metadata": {
+          "year": 2025
+        },
+        "collaboration" : { "participants": ["Art for Action"], "focus": "Art, Social Justice", "medium": "film" } 
       },
       {
-        "title": "Stacy Lynn Waddell Epitaph",
+        "title": "Stacy Lynn Waddell's Epitaph",
         "client": "Visual Arts Richmond",
         "theme": "Culture",
         "description": "Presented at the Visual Arts Center of Richmond from November 13, 2015 to January 8, 2016...",
         "image": "/public/media/IMG/stacy_lynn_waddell/epitaph_film_cover.jpg",
         "video": "https://player.vimeo.com/video/1089232001?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "type": ["film"]
+        "type": ["film"],
+        "story": null,
+        "metadata": {
+          "year": 2022
+        },
+        "collaboration" : { "participants": ["Norwich Castle Museum"], "focus": "Art", "medium": "film" } 
       },
       {
         "title": "The Conservator",
-        "client": "Contemporary Art Society & Norwich Castle Museum",
+        "client": "Contemporary Art Society",
         "theme": "Culture",
         "description": "Learn about the Conservator role as we explore an exhibition at the Norwich Castle Museum and Art Gallery.",
         "image": "/public/media/IMG/inside_museums/the_conservator_three.jpg",
         "video": "https://player.vimeo.com/video/845516401?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "type": ["film"]
-      },  
+        "type": ["film"],
+        "story": null,
+        "metadata": {
+          "year": 2022
+        },
+        "collaboration" : { "participants": ["Norwich Castle Museum"], "focus": "Conservation", "medium": "film" } 
+      },
       {
         "title": "Frieze Masters",
         "client": "Frieze",
@@ -232,20 +330,12 @@
         "description": "Frieze Masters offers a unique contemporary perspective on thousands of years of art history, from collectible objects to significant masterpieces from the ancient era and Old Masters to the late 20th century. The 2025 edition of the fair will showcase over 130 of the most significant galleries from around the world.",
         "image": "/public/media/IMG/frieze/frieze_masters.jpg",
         "video": "https://player.vimeo.com/video/850257026?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "type": ["film"]
-      },
-      {     
-        "title": "NOA",
-        "client": "East London Dance Studio",
-        "theme": "Culture",
-        "description": "An experimental film exploring identity and motion...",
-        "image": "/public/media/IMG/noa/noa_cover_imge.png",
-        "preview-image": null,
-        "video": "https://player.vimeo.com/video/1078629828?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "type": ["film"],
-        "links": null,
-        "story": "The genesis of this film lies in a serendipitous meeting...",
-        "collaboration": { "participants": ["Noa", "the author"], "focus": "Play and its absence in Black male experiences", "medium": "dance" }
+        "story": null,
+        "metadata": {
+          "year": 2022
+        },
+        "collaboration" : { "participants": ["Hatch"], "focus": "Art", "medium": "film" } 
       }
     ]
   }

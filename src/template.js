@@ -1,4 +1,5 @@
 import { openTemplateDetail } from '/src/openTemplateDetail.js';
+import ImageCompressor from 'js-image-compressor';
 
 function getCategoryFromURL() {
   const params = new URLSearchParams(window.location.search);
@@ -26,56 +27,79 @@ function createProjectRow(entry) {
   return section;
 }
 
-function renderContent(category, jsonPath) {
+export async function renderContent(category, jsonPath) {
   const container = document.getElementById('content');
   const titleEl = document.getElementById('page-title');
   const descEl = document.getElementById('project-section-description');
 
-  fetch(jsonPath)
-    .then(r => {
-      if (!r.ok) throw new Error('Failed to fetch data.');
-      return r.json();
-    })
-    .then(data => {
-      container.innerHTML = '';
+  try {
+    const response = await fetch(jsonPath);
+    if (!response.ok) throw new Error('Failed to fetch data.');
+    const data = await response.json();
 
-      if (category) {
-        // SINGLE CATEGORY MODE: update title/description + render only that category
-        const group = data[category];
-        if (!group) {
-          container.innerHTML = `<p>Category "${category}" not found.</p>`;
-          return;
-        }
+    container.innerHTML = '';
 
-        if (titleEl) titleEl.textContent = category.toUpperCase();
-        if (descEl) descEl.textContent = group.description || '';
-
-        (group.items || []).forEach(entry => {
-          container.appendChild(createProjectRow(entry));
-        });
-
-      } else {
-        // DEFAULT MODE (no query): render ALL items flat, do NOT touch title/description
-        Object.keys(data).forEach(cat => {
-          const group = data[cat];
-          if (!group || !Array.isArray(group.items)) return;
-          group.items.forEach(entry => {
-            container.appendChild(createProjectRow(entry));
-          });
-        });
+    if (category) {
+      const group = data[category];
+      if (!group) {
+        container.innerHTML = `<p>Category "${category}" not found.</p>`;
+        return data;
       }
-    })
-    .catch(err => {
-      console.error(err);
-      container.innerHTML = `<p>Error loading content.</p>`;
-    });
+
+      if (titleEl) titleEl.textContent = category.toUpperCase();
+      if (descEl) descEl.textContent = group.description || '';
+
+      (group.items || []).forEach((entry, idx) => {
+        const row = createProjectRow(entry);
+        container.appendChild(row);
+        processImage(row, idx);
+      });
+
+    } else {
+      Object.keys(data).forEach(cat => {
+        const group = data[cat];
+        if (!group || !Array.isArray(group.items)) return;
+        group.items.forEach((entry, idx) => {
+          const row = createProjectRow(entry);
+          container.appendChild(row);
+          processImage(row, idx);
+        });
+      });
+    }
+
+    return data;  // ✅ return full JSON
+  } catch (err) {
+    console.error(err);
+    container.innerHTML = `<p>Error loading content.</p>`;
+    return null;
+  }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   const category = getCategoryFromURL();
-  const jsonPath = '/data/data.json';
+  const jsonPath = '/data/data_with_ids.json';
 
-  renderContent(category, jsonPath);
+  const allData = await renderContent(category, jsonPath);
+
+  const params = new URLSearchParams(window.location.search);
+  const idParam = params.get("id"); // e.g. "123-my-project-title"
+  if (idParam && allData) {
+    const entryId = idParam.split("-")[0]; // get numeric ID before slug
+
+    // Find the entry across all categories
+    let entryFound = null;
+    for (const cat of Object.keys(allData)) {
+      const group = allData[cat];
+      if (!group?.items) continue;
+      entryFound = group.items.find(e => e.id.toString() === entryId);
+      if (entryFound) break;
+    }
+
+    if (entryFound) {
+      const section = document.createElement("div");
+      openTemplateDetail(section, entryFound);
+    }
+  }
 
   // View toggles (assumes .projects-container wraps #content)
   const containerEl = document.querySelector('.projects-container');
@@ -92,54 +116,56 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('list-view').classList.add('active');
     document.getElementById('grid-view').classList.remove('active');
   });
+
+
 });
 
-          /*/ Now apply compression for this image immediately
-          console.log(`Rendering entry #${entryIdx}, applying compression.`);
+       function processImage(section, entryIdx) {
+  console.log(`Rendering entry #${entryIdx}, applying compression.`);
 
-          const imgEl = section.querySelector('.project-image img');
-          imgEl.crossOrigin = 'anonymous'; // Enable CORS for this image
-          if (!imgEl) {
-            console.warn('No image element found in section:', section);
-            return;
-          }
+  const imgEl = section.querySelector('.project-image img');
+  if (!imgEl) {
+    console.warn('No image element found in section:', section);
+    return;  // ✅ now legal
+  }
 
-          console.log('Processing image:', imgEl.src);
+  imgEl.crossOrigin = 'anonymous';
 
-          fetch(imgEl.src, { mode: 'cors' })
-            .then(res => {
-              console.log('Fetched image blob');
-              return res.blob();
-            })
-            .then(blob => {
-              console.log('Blob ready, size:', blob.size);
-              const file = new File([blob], 'image.jpg', { type: blob.type });
+  console.log('Processing image:', imgEl.src);
 
-              / Compression logic using js-image-compressor
-              const options = {
-                file: file,
-                quality: 0.6,
-                convertSize: Infinity,
-                redressOrientation: true,
-                beforeCompress(result) {
-                  console.log('BeforeCompress:', result.size, result.type);
-                },
-                success(result) {
-                  console.log('Compression success:', result.size, result.type);
-                  imgEl.src = URL.createObjectURL(result);
+  fetch(imgEl.src, { mode: 'cors' })
+    .then(res => res.blob())
+    .then(blob => {
+      const file = new File([blob], 'image.jpg', { type: blob.type });
 
-                      // Calculating compression ratio
-                      const compressionRatio = ((originalSize - compressedSize) / originalSize) * 100;
-                      console.log('Original size:', originalSize, 'bytes');
-                      console.log('Compressed size:', compressedSize, 'bytes');
-                      console.log('Compression reduced size by:', compressionRatio.toFixed(2) + '%');
-                },
-                error(err) {
-                  console.error('Compression error:', err);
-                }
-              };
-              new ImageCompressor(options);
-            })
-            .catch(err => console.error('Fetch error during compression:', err));*/
-          
+      const options = {
+        file,
+        quality: 0.6,
+        convertSize: Infinity,
+        redressOrientation: true,
+        beforeCompress(result) {
+          console.log('BeforeCompress:', result.size, result.type);
+        },
+        success(result) {
+          console.log('Compression success:', result.size, result.type);
+
+          imgEl.src = URL.createObjectURL(result);
+
+          // You need to actually define originalSize & compressedSize
+          const originalSize = blob.size;
+          const compressedSize = result.size;
+          const compressionRatio = ((originalSize - compressedSize) / originalSize) * 100;
+
+          console.log('Original size:', originalSize, 'bytes');
+          console.log('Compressed size:', compressedSize, 'bytes');
+          console.log('Compression reduced size by:', compressionRatio.toFixed(2) + '%');
+        },
+        error(err) {
+          console.error('Compression error:', err);
+        }
+      };
+      new ImageCompressor(options);
+    })
+    .catch(err => console.error('Fetch error during compression:', err));
+}
 

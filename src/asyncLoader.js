@@ -40,7 +40,7 @@ export function initAsyncLoader() {
         const category = el.parentElement.getAttribute("data-category");
         if (!category) return;
         e.preventDefault();
-        const url = `/pages/projects.html?category=${encodeURIComponent(category)}`;
+        const url = `/pages/stories.html?category=${encodeURIComponent(category)}`;
         loadPage(url);
       });
     });
@@ -51,7 +51,7 @@ export function initAsyncLoader() {
         const category = el.getAttribute("data-category");
         if (!category || category === "filter") return;
         e.preventDefault();
-        const url = `/pages/projects.html?category=${encodeURIComponent(category)}`;
+        const url = `/pages/stories.html?category=${encodeURIComponent(category)}`;
         loadPage(url);
       });
     });

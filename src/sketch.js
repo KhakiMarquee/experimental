@@ -3,7 +3,7 @@ import { initTheme } from '/src/theme.js';
 
 export function initSketch(p) {
     let molds = [];
-    let num = window.innerWidth <= 768 ? 150 : 7500; 
+    let num = window.innerWidth <= 768 ? 150 : 1000; 
     let d;
 
     p.setup = function() {

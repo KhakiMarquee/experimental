@@ -1,0 +1,307 @@
+@import './style.css';
+@import './detail.css';
+
+.projects-container {
+  margin: 0 auto;
+  padding: 10rem 2rem;
+  color: rgb(var(--grey-800));
+  font-family:'Geist';
+}
+
+
+.project-background{
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  transform-origin: center;
+/*  scale: 5;*/
+  opacity:0.4;
+  position: fixed;
+}
+
+#project-section-description{
+      padding-bottom: 2rem;
+}
+
+#canvas-container, canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Shared project row styling */
+#content {
+  display: flex;
+  flex-direction: column;
+  gap: 0rem; /* space between rows */
+}
+
+/* Wrap page title + toggle buttons */
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.project-theme, #page-title {
+  font-weight: lighter;
+}
+
+.project-details{
+  font-weight: 200;
+}
+
+
+#page-title{
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-size: 6rem;
+  font-family: 'Geist';
+  }
+
+/* New toggle button styles */
+.view-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0; /* Remove margin-bottom from old CSS */
+}
+
+.view-toggle button {
+  padding: 0.4rem 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+}
+
+.view-toggle button:hover {
+  text-decoration-color: rgb(var(--grey-600));
+}
+
+.view-toggle button.active {
+  background-color: rgba(var(--grey-100),0.2);
+  color: rgb(var(--grey-800));
+  text-decoration-color: rgb(var(--grey-600));
+}
+
+
+
+
+
+/* Meta info line inside project details */
+.project-meta {
+  gap: 2rem;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: rgb(var(--grey-600));
+}
+
+.project-row {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start; /* Changed from center to start for better alignment */
+  cursor: zoom-in;
+  will-change: auto;
+  transform-style: preserve-3d;
+  transition: all 0.3s ease-in-out
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  image-rendering: pixelated;
+  filter: grayscale(1) contrast(1.2);
+}
+/* Update the .project-details to use flexbox for horizontal layout */
+.project-details {
+  display: flex;
+  flex-direction: row; /* Change to row for horizontal layout */
+  justify-content: space-between; /* This pushes items to opposite ends */
+  align-items: baseline; /* Align text baselines */
+  gap: 1rem; /* Add some gap for spacing */
+}
+/* Ensure the title takes up available space and stays on the left */
+.project-title {
+  margin: 0;
+  font-size: 1rem;
+  flex: 1; /* Allow title to grow and take available space */
+}
+/* Keep theme on the right */
+.project-theme {
+  flex-shrink: 0; /* Prevent theme from shrinking */
+}
+
+.project-description {
+  color: rgb(var(--grey-700));
+  line-height: 1.5;
+  display: none; /* Hide descriptions by default */
+}
+
+/* ====== ROW VIEW ====== */
+/* Grid layout - each project is a single cell with details above image */
+.projects-container.row-view #content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: start; /* prevents stretching */
+}
+
+.projects-container.row-view .project-row {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid transparent;
+}
+
+.projects-container.row-view .project-row:hover .project-image{
+  animation: seeMe 0.3s ease-in forwards;
+
+}
+
+.projects-container.row-view .project-row:hover .project-image img{
+    filter: none;
+}
+.projects-container.row-view .project-row:hover {
+  animation: borderMe 0.3s ease-in forwards;
+}
+
+.projects-container.row-view .project-row:hover .project-details{
+  transition: all 0.3s ease-in;
+}
+
+
+.projects-container.row-view .project-details {
+  order: 2; /* Details appear first */
+  margin-bottom: 1rem;
+  width: 100%;
+  position: relative;
+  padding: 0 0.5em;
+  font-weight:500;
+}
+
+.projects-container.row-view .project-image {
+  order: 1; /* Image appears second - FIXED */
+  opacity: 0.8;
+}
+
+@keyframes seeMe {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes borderMe {
+  from {
+    border-bottom: 1px solid transprent;
+    background-color: none;
+  }
+  to {
+    border-bottom: 1px solid rgb(var(--grey-800));
+    background-color: rgba(var(--grey-100),0.2);
+  }
+}
+
+
+.projects-container.row-view .project-meta{
+  display: none;
+}
+
+
+.projects-container.row-view .project-client{
+  display: none;
+}
+
+/* ====== LIST VIEW ====== */
+.projects-container.list-view .project-row {
+  grid-template-columns: 1fr; /* stacked vertically */
+}
+
+.projects-container.list-view .project-details {
+  padding-bottom: 0.5rem;
+}
+
+.projects-container.list-view .project-details p{
+  min-width:300px
+
+}
+
+.projects-container.list-view .project-details .project-them, .projects-container.list-view img, .projects-container.list-view .project-type {
+  display: none;
+}
+
+.project-meta.list-view{
+  display:flex;
+}
+
+
+.projects-container.list-view  .project-theme{
+  text-align:right;
+}
+
+.projects-container.list-view .project-row{
+  border-bottom: 1px solid transparent;
+  transition: border 0.3s ease-in;
+  padding: 0em 1rem;
+}
+
+.projects-container.list-view .project-row:hover {
+  animation: borderMe 0.3s ease-in forwards;
+}
+
+
+
+
+/* Responsive - Mobile breakpoint */
+@media (max-width: 768px) {
+  .projects-container {
+    padding: 5rem 1rem; /* Reduce padding on mobile */
+  }
+
+  .project-details{
+    font-size: 0.8rem;
+    justify-content:unset; /* This pushes items to opposite ends */
+  }
+
+ .projects-container.row-view .project-details{
+    display: inline-block;
+  }
+
+  .projects-container.list-view .project-details p{
+  width: auto;
+  min-width:250px
+
+}
+
+.projects-container.list-view .project-details .project-theme{
+    display: none
+
+}
+  
+#project-section-description{
+  font-size:0.8rem;
+  text-align: center;
+}
+  .projects-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .projects-header #page-title {
+    font-size: 2rem; /* Smaller title on mobile */
+  }
+  
+  .projects-container.row-view #content {
+    grid-template-columns: 1fr; /* Single column on mobile */
+  }
+  
+  .project-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

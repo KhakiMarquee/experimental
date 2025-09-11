@@ -5,6 +5,7 @@
 @import './header.css';
 @import './footer.css';
 @import './category.css';
+@import './contact.css';
 
 /* Reset & Base */
 *, *::before, *::after {
@@ -98,7 +99,8 @@ a:hover, #location-toggle:hover{
 
 .subhead {
   font-size: 1rem;
-  font-weight:500;
+  font-weight: 450;
+  letter-spacing: 1px;
 }
 
 .music_player {
@@ -229,6 +231,12 @@ a:hover, #location-toggle:hover{
   .fade-in {
     opacity: 0;
     transform: translateY(20px);
+    animation: fadeInUp 1.2s ease-out forwards;
+  }
+
+    .fade-in-d {
+    opacity: 0;
+    transform: translateY(-20px);
     animation: fadeInUp 1.2s ease-out forwards;
   }
   .fade-in.delayed { animation-delay: 1s; }

@@ -1,0 +1,22 @@
+[
+        {     
+        "outlet": "Sky Arts",
+        "title": "Bill Bailey's Master Craft",
+        "year":"2024",
+        "type": "Broadcast",
+        "images": ["/public/media/IMG/press/master_crafts_press.webp"],
+        "preview-image" : "",
+        "link": "https://www.nowtv.com/watch/bill-baileys-master-crafters.../iYEQYZHWrEf3mgiwpNzSDN/seasons/3/episodes/2/A5EK4nmp9qb6s1S38Aij9",
+        "statement":""
+        },
+        {     
+        "outlet": "ICA",
+        "title": "Housing Problems",
+        "year":"2025",
+        "type": "Exhibition",
+        "images": ["/public/media/IMG/press/ica_press.jpg"],
+        "preview-image" : "",
+        "link": "https://www.ica.art/lsff25-housing-problems",
+        "statement":""
+        }    
+]

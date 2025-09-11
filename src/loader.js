@@ -27,7 +27,31 @@ const finalWord = "studio";
 
 let wordIndex = 0;
 let shuffleCount = 0;
-const totalShuffles = randInt(20, 30);
+
+
+//TOTAL SHUFFLE ACCELERATOR
+// Store session data in memory
+let pageDepth = 0;
+
+function getTotalShuffles() {
+  pageDepth++;
+
+  // Shrink the range top as depth increases
+  let min = 20;
+  let max = 30 - pageDepth;
+
+  // Clamp so we don't go below min
+  if (max < min) max = min;
+
+  return randInt(min, max);
+}
+
+// Usage:
+console.log("shuffle is", getTotalShuffles()); // somewhere between 20 and 30
+console.log("shuffle is", getTotalShuffles()); // range has shrunk
+console.log("shuffle is", getTotalShuffles()); // keeps shrinking...
+
+const totalShuffles = randInt(1, 20);
 
 
 const updateCenterText = () => {
@@ -154,6 +178,7 @@ const bootstrap = async () => {
     p.draw = () => {
       p.clear();
       drawCustomCursor(p); // pass the p5 instance
+      
     };
   };
 

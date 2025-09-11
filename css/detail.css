@@ -14,3 +14,31 @@
 #detail-app p{
     font-family: system-ui;  
 }
+
+#detail-app button{
+  border: 1px solid rgb(var(--grey-300));
+  color: rgb(var(--grey-800));
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: transparent;
+  margin-bottom: 1rem
+}
+
+#detail-app button:hover svg {
+  animation: spin 1s linear infinite;
+}
+
+.button-container {
+  display: flex;       /* makes the container flex */
+}
+
+.right-button {
+  margin-left: auto;   /* pushes this button to the right */
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

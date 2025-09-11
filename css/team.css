@@ -1,41 +1,64 @@
 @import './style.css';
-@import './category.css';
-@import './projects.css';
-@import './detail.css';
+
+
+#team-title{
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-size: 6rem;
+  font-family: 'Geist';
+    margin-right: 1rem; /* small space between heading and buttons */
+    font-size: 6rem;
+    letter-spacing: 10px;
+  }
+
+  #about-title {
+    margin-bottom: 1rem;
+} 
 
 /* Container for the team section */
-.teams-container {
-  display: flex;
-  flex-direction: column;
+.teams-container{
+    margin: 0 auto;
+    padding: 10rem 2rem;
+    color: rgb(var(--grey-800));
+    font-family: Geist;
+}
+
+#team-section-description{
+      margin: 2rem 0rem;
+}
+
+.team-member-container {
+    display: flex;
+    flex-direction: column;
+    color: rgb(var(--grey-800));
+
+}
+
+.team-member-container:last-of-type{
+      padding-bottom: 5rem;
 }
 
 /* Each team member row */
 .team-member {
   display: grid;
-  grid-template-columns: 80px 1fr 1fr 80px; /* image, text, button */
+  grid-template-columns: 300px 1fr 1fr 1fr 80px;/* image, text, button */
   align-items: center;
   gap: 1rem;
   padding: 3rem 2rem;
-  border-bottom: 1px solid #000;
-  background-color: rgba(var(--grey-100), 0.1); /* light background like in your screenshot */
-}
+  border-bottom: 1px solid rgb(var(--grey-800));
 
-.team-member:hover {
-  background-color: rgba(var(--grey-800), 1); /* light background like in your screenshot */
   transition: all 0.3s ease;
-}
-.team-member:hover svg {
-  width: 50px;
-  height: 50px;
-  transition: all 0.3s ease; /* smooth transition for hover effects */
+  cursor: pointer;
 }
 
 /* Profile image */
 .team-member img {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-  border-radius: 8px; /* square with rounded corners (you can make it hex with clip-path if you want to match the screenshot) */
+  width: 200px;
+  height: 200px;
+  object-fit: cover; /* square with rounded corners (you can make it hex with clip-path if you want to match the screenshot) */
+  object-position: top;
+  filter: grayscale(100%);
+  transition: all 0.3s ease; 
 }
 
 /* Text section */
@@ -48,8 +71,54 @@
 .team-member p {
   margin: 0.2rem 0 0;
   font-size: 0.9rem;
-  color: #333;
 }
+
+.teams-header {
+  display: flex;
+  justify-content: space-between; /* pushes items to opposite ends */
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Team buttons */
+.team-buttons {
+  display: flex;
+  gap: 0.5rem; /* spacing between buttons */
+}
+
+.team-button {
+  cursor: pointer;
+  font-size: 1rem;
+  background: transparent;
+  border: none;
+  font-family: 'Geist';
+  padding: 0.25rem 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.team-button:hover {
+  background-color: transparent;
+}
+
+.team-button svg{
+    width: 16px;
+    height: 16px;
+    stroke: #000;
+    justify-self: end;
+    vertical-align: bottom;
+    margin: 0 0.3rem
+}
+
+.team-button:hover svg {
+  animation: spin 1s linear infinite;
+}
+
+.team-button.active:hover svg {
+  animation: none;
+}
+
+
 
 /* Expand button area (SVG placeholder for now) */
 .team-member svg {
@@ -60,14 +129,113 @@
   justify-self: end;
 }
 
+.team-member:hover svg {
+  animation: spin 1s linear infinite;
+}
+
+.team-member.active:hover svg {
+  animation: none;
+}
+
+.team-member:hover img{
+  filter: none;
+}
+
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
 /* Dropdown section */
 .team-dropdown {
   display: none; /* initially hidden */
   padding: 1rem;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid rgb(var(--grey-800));
 }
+
+.team-dropdown.active {
+  padding: 1rem;
+  min-height: 50px;
+  width: 100%
+}
+
+.team-dropdown svg {
+  animation: spin 1s linear infinite;
+}
+
+.team-dropdown.active:hover svg {
+  animation: none;
+}
+
+.team-dropdown button {
+  border: 1px solid rgb(var(--grey-300));
+  color: rgb(var(--grey-800));
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: transparent;
+  margin: 1rem 0
+}
+
 
 /* When expanded, show dropdown */
 .team-member.active + .team-dropdown {
   display: block;
+}
+/* Responsive - Mobile breakpoint */
+@media (max-width: 768px) {
+    .teams-container {
+        padding: 5rem 1rem 0rem 1rem; /* Reduce padding on mobile */
+    }
+
+    #team-section-description {
+        font-size: 0.8rem;
+        margin: 1rem 0rem;
+        text-align: center;
+    }
+
+    #team-subsection-description {
+        font-size: 0.8rem;
+        margin: 1rem 0rem;
+        text-align: center;
+    }
+
+    #about-title {
+        font-size: 0.9rem; /* Smaller title on mobile */
+        text-align: center;
+    }
+
+    #team-title {
+        font-size: 2rem; /* Smaller title on mobile */
+        text-align: center;
+    }
+
+    .team-member {
+       grid-template-columns: 1fr;
+  }
+
+    .teams-header {
+    flex-direction: column; /* keep in a row */
+    justify-content: space-between; /* heading left, buttons right */
+    gap: 0.5rem;
+  }
+
+  #team-title {
+    font-size: 2rem;
+    white-space: nowrap; /* prevent wrapping */
+  }
+
+  .team-buttons {
+    flex-wrap: wrap; /* allow buttons to wrap if needed */
+    gap: 0.25rem;
+  }
+
+    .team-button {
+    margin: 0.5rem 0;
+  }
+
+
 }

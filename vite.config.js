@@ -17,7 +17,7 @@ export default {
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        projects: resolve(__dirname, 'pages/projects.html'),
+        stories: resolve(__dirname, 'pages/stories.html'),
         stones: resolve(__dirname, 'pages/stones.html'),
         services: resolve(__dirname, 'pages/services.html'),
         team: resolve(__dirname, 'pages/team.html')

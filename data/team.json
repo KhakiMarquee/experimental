@@ -4,29 +4,35 @@
         "lastname": "Adegoke",
         "name":"Goke",
         "role": "Artist Researcher",
-        "images": ["/public/media/IMG/ball_finial_small_image.png"],
+        "images": ["/public/media/IMG/team/colour_tosin2.jpg","/public/media/IMG/team/colour_tosin.jpg"],
         "preview-image" : "",
-        "email": "material@domain.com",
-        "statement":""
+        "email": "goke.studio@gmail.com",
+        "statement":"",
+        "link": "https://substack.com/@gokestudio",
+        "projects": ["noa", "archives also die"]
         },
         {     
         "firstname": "Husam",
         "lastname": "Ibrahim",
         "name":"Husam",
-        "role": "Journalist",
-        "images": ["/public/media/IMG/ball_finial_small_image.png"],
+        "role": "Film Researcher",
+        "images": ["/public/media/IMG/team/colour_husam.png", "/public/media/IMG/team/colour_husam.png"],
         "preview-image" : "",
-        "email": "material@domain.com",
-        "statement":""
+        "email": "husam.ibrahim@gmail.com",
+        "statement":"",
+        "link": "https://substack.com/@husamibr",
+        "projects": ["aik alif", "do you remember?"]
         },
         {     
-        "firstname": "Fuyu",
-        "lastname": "Ibrahim",
-        "name":"Fuyu",
-        "role": "Cinematographer",
-        "images": ["/public/media/IMG/ball_finial_small_image.png"],
+        "firstname": "Anna",
+        "lastname": "Bezelle",
+        "name":"Anna",
+        "role": "Material Researcher",
+        "images": ["/public/media/IMG/team/colour_anna.jpg", "/public/media/IMG/team/colour_anna.jpg"],
         "preview-image" : "",
-        "email": "material@domain.com",
-        "statement":""
-        }         
+        "email": "anna.bezelle@gmail.com",
+        "statement":"",
+        "link": "https://survivingplanetearth.substack.com/",
+        "projects": ["vs jewellery"]
+        }                
 ]

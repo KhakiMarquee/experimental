@@ -1,6 +1,4 @@
 @import './style.css';
-@import './category.css';
-@import './projects.css';
 @import './detail.css';
 
 .stones-background {
@@ -32,6 +30,8 @@
   position: relative; /* ensures the h1 is positioned relative to this container */
   color: rgb(var(--grey-800));
   text-align: center;
+  font-family: 'Geist';
+
 }
 
 .stone-header h1 {
@@ -41,6 +41,7 @@
   text-transform: uppercase;
   letter-spacing: 10px;
   top:10%;
+
 }
 
 .stone-header .tooltip:after { 

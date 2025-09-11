@@ -45,7 +45,7 @@
 
 #loading-screen.loaded {
   background: none !important;
-  z-index: 0 !important;
+  z-index: -1 !important;
   opacity:0.1;
   /*scale:3;*/
   cursor: default;
@@ -79,7 +79,7 @@
 
 .background-text.loaded{
   background-color: rgba(var(--grey-100));
-  opacity: 1;
+  opacity: .9;
 }
 
 @media (max-width: 768px) {

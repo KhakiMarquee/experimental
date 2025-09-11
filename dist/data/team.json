@@ -1,0 +1,38 @@
+[
+        {     
+        "firstname": "Tosin",
+        "lastname": "Adegoke",
+        "name":"Goke",
+        "role": "Artist Researcher",
+        "images": ["/media/IMG/team/colour_tosin2.jpg","/media/IMG/team/colour_tosin.jpg"],
+        "preview-image" : "",
+        "email": "goke.studio@gmail.com",
+        "statement":"",
+        "link": "https://substack.com/@gokestudio",
+        "projects": ["noa", "archives also die"]
+        },
+        {     
+        "firstname": "Husam",
+        "lastname": "Ibrahim",
+        "name":"Husam",
+        "role": "Film Researcher",
+        "images": ["/media/IMG/team/colour_husam.png", "/media/IMG/team/colour_husam.png"],
+        "preview-image" : "",
+        "email": "husam.ibrahim@gmail.com",
+        "statement":"",
+        "link": "https://substack.com/@husamibr",
+        "projects": ["aik alif", "do you remember?"]
+        },
+        {     
+        "firstname": "Anna",
+        "lastname": "Bezelle",
+        "name":"Anna",
+        "role": "Material Researcher",
+        "images": ["/media/IMG/team/colour_anna.jpg", "/media/IMG/team/colour_anna.jpg"],
+        "preview-image" : "",
+        "email": "anna.bezelle@gmail.com",
+        "statement":"",
+        "link": "https://survivingplanetearth.substack.com/",
+        "projects": ["vs jewellery"]
+        }                
+]
