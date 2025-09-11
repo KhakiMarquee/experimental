@@ -2,6 +2,10 @@
 import { renderContactForm } from "./contactForm.js";
 import { clearHashOnTop, attachServicePitchClick, attachServiceItemClick } from "./servicesInteraction.js";
 import { initServiceHighlight } from "./servicesHighlight.js";
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 
 
@@ -65,13 +69,25 @@ function createServiceItem(service) {
     <div class="service-footer">
     </div>
   `;
-
-    const button = document.createElement("button");
-    button.addEventListener("click", () => {
-    window.location.hash = `#${service.service}`;
-    });
+  const button = document.createElement("button");
   button.textContent = "Learn More";
   button.appendChild(createSVG());
+
+  button.addEventListener("click", () => {
+    // Optional: update URL hash
+    window.location.hash = `#${service.service}`;
+
+    // Smooth scroll to element
+    const targetElem = document.getElementById(service.service);
+    if (!targetElem) return;
+
+    gsap.to(window, {
+      duration: 1,
+      scrollTo: { y: targetElem }, // adjust for sticky header
+      ease: "power3.out"
+    });
+  });
+
   div.querySelector(".service-footer").appendChild(button);
 
   return div;
@@ -80,6 +96,10 @@ function createServiceItem(service) {
 function createPitchItem(service) {
   const div = document.createElement("div");
   div.classList.add("service-pitch");
+  div.id = service.service
+  .toLowerCase()           // lowercase
+  .replace(/\s+/g, "-")    // spaces → hyphens
+  .replace(/[^\w-]/g, ""); // remove invalid characters
 
   const imagesHtml = service.images.map(
     src => `<img src="${src}" alt="${service.service}">`
@@ -94,7 +114,7 @@ function createPitchItem(service) {
   ).join("");
 
   div.innerHTML = `
-    <div class="pitch-items fade-in" id="${service.service}">
+    <div class="pitch-items fade-in">
       <div class="pitch-header">
         <h1>${service.service.toUpperCase()}</h1>
       </div>

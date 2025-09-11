@@ -66,6 +66,14 @@ export async function renderContactForm(containerId = "contact-container", prese
     `;
   });
 
+      // Call onReady callback if provided
+    if (typeof onReady === "function") {
+      onReady(container.querySelector("#contact-form"));
+    }
+
+    // ✅ Initialize Netlify form handling
+    setupContactForm("contact-form"); // or use formEl.id if you have a reference
+
     if (typeof onReady === "function") {
       onReady(container.querySelector("#contact-form"));
     }
@@ -84,4 +92,53 @@ function waitForContainer(id, callback) {
     }
   });
   observer.observe(document.body, { childList: true, subtree: true });
+}
+
+export function setupContactForm(formId = "contact-form") {
+  const form = document.getElementById(formId);
+  if (!form) {
+    console.warn(`Form #${formId} not found yet.`);
+    return;
+  }
+
+  // Handle submit
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const submitButton = form.querySelector("button[type='submit']");
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending…";
+
+    const formData = new FormData(form);
+
+    try {
+      // Netlify expects a POST request to the root path
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      });
+
+      if (response.ok) {
+        submitButton.textContent = "Sent!";
+        form.reset();
+        console.log("✅ Form submitted successfully");
+
+        // Redirect to index page after successful submission
+        setTimeout(() => {
+          window.location.href = "/"; // or '/index.html' if needed
+        }, 1000); // small delay so user sees "Sent!" message
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (err) {
+      console.error("❌ Form submission error:", err);
+      submitButton.textContent = "Try again";
+    } finally {
+      setTimeout(() => {
+        submitButton.disabled = false;
+        submitButton.textContent = "Send";
+      }, 3000);
+    }
+  });
 }

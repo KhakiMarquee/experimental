@@ -135,6 +135,27 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
 
+  const catSpans = document.querySelectorAll(".catNum");
+
+  catSpans.forEach(span => {
+    const categoryText = span.innerText.trim().toLowerCase();
+
+    if (categoryText === "all") {
+      // Count all items across all categories
+      let total = 0;
+      Object.keys(allData).forEach(cat => {
+        total += (allData[cat]?.items?.length || 0);
+      });
+      span.title = total;
+    } else {
+      // Count items in this category
+      const group = allData[categoryText];
+      span.title = group?.items?.length || 0;
+    }
+
+    console.log(categoryText, "->", span.title);
+  });
+
 });
 
        function processImage(section, entryIdx) {

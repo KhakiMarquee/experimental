@@ -287,5 +287,6 @@ export function animateOverlayClose(overlay) {
 //animation for team dropdown
 //animation for contact form
 //animation for service slide down
+
 //animation for open detail maybe image zoom
 //animation for filtering between page subsets

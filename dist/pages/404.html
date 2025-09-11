@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stories</title>
+  <title>Stones</title>
   <script src="https://cdn.jsdelivr.net/npm/p5.sound@1.4.0/lib/p5.sound.min.js"></script>
 
 
     <!-- Development: Use local files -->
   <!-- Import map to resolve Three.js modules -->
 
+  
   <script type="importmap">
     {
       "imports": {
@@ -27,83 +28,56 @@
         "gsap/PixiPlugin": "https://unpkg.com/gsap@3.13.0/PixiPlugin.js",
         "gsap/TextPlugin": "https://unpkg.com/gsap@3.13.0/TextPlugin.js",
         "p5": "https://cdn.jsdelivr.net/npm/p5@1.9.0/+esm",
-        "js-image-compressor": "https://cdn.jsdelivr.net/npm/js-image-compressor/dist/js-image-compressor.min.js"
+        "js-image-compressor": "https://cdn.jsdelivr.net/npm/js-image-compressor/dist/js-image-compressor.min.js"        
       }
     }
   </script>
-  <script type="module" crossorigin src="/assets/stories-CSWuP7cO.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/category-CRuVcF4M.js">
-  <link rel="stylesheet" crossorigin href="/assets/stories-BexA1z9q.css">
+  <script type="module" crossorigin src="/assets/category-CRuVcF4M.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/error-CzgW3EVk.css">
 </head>
   <body>
-    
+      
   <div id="cursor"></div>  
-  <!-- Header comments-->
+  <!-- Header-->
   <header class="site-header fade-in"></header>
-  <!-- Loader-->
+  <!-- Loading-->
   <div id="loading-screen">
-      <div class="background-text">
-        <div id="canvas-container"></div>
-      </div>
-      <div class="shuffling-wrapper" id="ls-small">
-        <span id="shuffling-word">studio</span> 
-        <span>.G O K E</span> 
-        <span>.studio</span>
-      </div>
+    <div class="background-text">
+      <div id="canvas-container"></div>
+    </div>
+    <div class="shuffling-wrapper" id="ls-small">
+      <span id="shuffling-word">studio</span> 
+      <span>.G O K E</span> 
+      <span>.studio</span>
+    </div>
   </div>
 
   <div id="app" style="display: none;"></div>
   <!-- Main-->
   <main class="site-body">
-    <div class="projects-container row-view">
-      
-      <div class="projects-header">
-        <h1 id="page-title" class="fade-in">Stories</h1>
-        <div class="view-toggle">
-          <button id="grid-view" class="active">Grid</button>
-          <button id="list-view">List</button>
-        </div>
+    <div class="error-container">
+      <div class="error-header">
+        <h1><span title="[error]" class="tooltip">404</span></h1>
       </div>
-      <p id="project-section-description" class="fade-in delayed">  A showcase of audiovisual works that explore diverse themes and narratives: <b>Experimental</b>, <b>Sculpture-based</b>, and <b>People-led</b> audiovisuals. Each piece offers a unique perspective on contemporary creative practice.</p>
-      <div id="content" class="fade-in delayed">
-        <!-- Example project -->
-        <div class="project-row">
-          <div class="project-image">
-            <img src="https://example.com/images/pavilion.jpg" alt="Ancient Pavilion">
-          </div>
-          <div class="project-details">
-            <p class="project-title">Title</p>
-            <span class="project-client">Client</span>
-            <div class="project-meta">
-              <p class="project-theme">theme</p>
-              <p class="project-description">description</p>
-              <span class="project-type">Project Type</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
   </main>
+    
   <!-- Footer + Dynamic Page Filter-->
   <div id="filter">
-    <div id="category-buttons">
-      <button data-category="filter"><span id="filter_text">filter</span>
-        <!--FILTER SYMBOL-->        
-        <span>   
+    <div id="category-buttons" class="fade-in">
+      <button data-category="filter"><span id="filter_text">Projects</span>
+        <!--FILTER SYMBOL-->
+        <span> 
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="16" height="16" viewBox="0 0 256 256" xml:space="preserve">
             <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
               <path d="M 45 0 C 20.147 0 0 20.147 0 45 c 0 24.853 20.147 45 45 45 s 45 -20.147 45 -45 C 90 20.147 69.853 0 45 0 z M 63.831 50.245 H 50.962 V 65 H 39.076 V 50.245 H 26.169 V 39.34 h 12.906 V 25 h 11.886 v 14.34 h 12.869 V 50.245 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(var(--grey-500)); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
             </g>
             </svg>
         </span>
-    </button>
-      <!--<button data-category="all">all</button>-->
-      <a data-category="experiment"><span title="experiment" class="catNum">experiment</span></a>
-      <a data-category="sculptures"><span title="sculptures" class="catNum">sculptures</span></a>
-      <a data-category="people"><span title="people" class="catNum">people</span></a>
-    </div>
-    <footer class="footer fade-in"></footer>
+      </button>
+      <a href="/pages/stones.html" data-category="audiovisuals">stone</a>
+      <a href="/pages/stories.html" data-category="sculptures">stories</a>
+  </div>
+  <footer class="footer fade-in"></footer>
   </div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 import { renderContent } from '/src/template.js';
 
 function navigateToCategory(category) {
-  const jsonPath = '/data/data.json';
+  const jsonPath = '/data/data_with_ids.json';
 
   // Build the target URL
   const targetUrl = category
@@ -18,7 +18,7 @@ function navigateToCategory(category) {
 // Handle back/forward navigation
 window.addEventListener('popstate', (event) => {
   const category = event.state?.category || null;
-  const jsonPath = '/data/data.json';
+  const jsonPath = '/data/data_with_ids.json';
   renderContent(category, jsonPath);
 });
 
@@ -36,4 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
       navigateToCategory(category === 'all' ? null : category);
     });
   });
+
+  
 });
