@@ -22,7 +22,7 @@ export async function renderContactForm(containerId = "contact-container", prese
       </div>
 
       <!-- Right Column: Form -->
-      <form id="contact-form" class="contact-form">
+      <form id="contact-form" class="contact-form" name="contact" netlify method="POST" data-netlify="true">
         <label for="name">Your Name</label>
         <input type="text" id="name" name="name" required>
 
@@ -38,7 +38,7 @@ export async function renderContactForm(containerId = "contact-container", prese
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="4" required></textarea>
 
-        <button type="submit">Send</button>
+        <button type="submit">Work with us</button>
       </form>
     </div>
   `;
@@ -120,7 +120,7 @@ export function setupContactForm(formId = "contact-form") {
       });
 
       if (response.ok) {
-        submitButton.textContent = "Sent!";
+        submitButton.textContent = "Thank You!";
         form.reset();
         console.log("✅ Form submitted successfully");
 

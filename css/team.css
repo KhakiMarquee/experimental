@@ -163,6 +163,7 @@
 
 .team-dropdown svg {
   animation: spin 1s linear infinite;
+  vertical-align: bottom;
 }
 
 .team-dropdown.active:hover svg {

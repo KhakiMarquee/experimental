@@ -140,25 +140,25 @@ document.addEventListener('DOMContentLoaded', async () => {
   catSpans.forEach(span => {
     const categoryText = span.innerText.trim().toLowerCase();
 
-    if (categoryText === "all") {
-      // Count all items across all categories
-      let total = 0;
-      Object.keys(allData).forEach(cat => {
-        total += (allData[cat]?.items?.length || 0);
-      });
-      span.title = total;
+    // Find the matching key regardless of case
+    const matchedKey = Object.keys(allData).find(
+      key => key.toLowerCase() === categoryText
+    );
+
+    if (matchedKey) {
+      span.title = allData[matchedKey]?.items?.length || 0;
     } else {
-      // Count items in this category
-      const group = allData[categoryText];
-      span.title = group?.items?.length || 0;
+      console.warn(`No category found for "${categoryText}" in data.json`);
+      span.title = 0;
     }
+
 
     console.log(categoryText, "->", span.title);
   });
 
 });
 
-       function processImage(section, entryIdx) {
+  function processImage(section, entryIdx) {
   console.log(`Rendering entry #${entryIdx}, applying compression.`);
 
   const imgEl = section.querySelector('.project-image img');

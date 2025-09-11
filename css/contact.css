@@ -37,7 +37,8 @@
 }
 
 .contact-form input,
-.contact-form textarea {
+.contact-form textarea,
+.contact-form select {
   background: rgb(var(--grey-100));
   border: 1px solid rgb(var(--grey-300));
   border-radius: 5px;
@@ -45,7 +46,9 @@
   font-size: 0.9rem;
   width: 100%;
   box-sizing: border-box;
+  display: block;    /* prevent inline squashing */
 }
+
 
 .services-checkboxes {
   display: flex;
