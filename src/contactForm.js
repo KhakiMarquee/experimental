@@ -37,8 +37,10 @@ export async function renderContactForm(containerId = "contact-container", prese
 
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="4" required></textarea>
+        <input type="hidden" name="contact" value="contact">
 
         <button type="submit">Work with us</button>
+        
       </form>
     </div>
   `;
@@ -103,42 +105,46 @@ export function setupContactForm(formId = "contact-form") {
 
   // Handle submit
   form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const submitButton = form.querySelector("button[type='submit']");
-    submitButton.disabled = true;
-    submitButton.textContent = "Sending…";
+  const submitButton = form.querySelector("button[type='submit']");
+  submitButton.disabled = true;
+  submitButton.textContent = "Sending…";
 
-    const formData = new FormData(form);
+  const formData = new FormData(form);
 
-    try {
-      // Netlify expects a POST request to the root path
-      const response = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString()
-      });
+  // ✅ Ensure "form-name" is included for Netlify
+  if (!formData.has("contact")) {
+    formData.append("contact", form.getAttribute("name") || "contact");
+  }
 
-      if (response.ok) {
-        submitButton.textContent = "Thank You!";
-        form.reset();
-        console.log("✅ Form submitted successfully");
+  try {
+    const response = await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    });
 
-        // Redirect to index page after successful submission
-        setTimeout(() => {
-          window.location.href = "/"; // or '/index.html' if needed
-        }, 1000); // small delay so user sees "Sent!" message
-      } else {
-        throw new Error("Form submission failed");
-      }
-    } catch (err) {
-      console.error("❌ Form submission error:", err);
-      submitButton.textContent = "Try again";
-    } finally {
+    if (response.ok) {
+      submitButton.textContent = "Thank You!";
+      form.reset();
+      console.log("✅ Form submitted successfully");
+
+      // Redirect to index page after successful submission
       setTimeout(() => {
-        submitButton.disabled = false;
-        submitButton.textContent = "Send";
-      }, 3000);
+        window.location.href = "/"; // or '/index.html' if needed
+      }, 1000); // show "Thank You!" briefly before redirect
+    } else {
+      throw new Error("Form submission failed");
     }
-  });
+  } catch (err) {
+    console.error("❌ Form submission error:", err);
+    submitButton.textContent = "Try again";
+  } finally {
+    setTimeout(() => {
+      submitButton.disabled = false;
+      submitButton.textContent = "Send";
+    }, 3000);
+  }
+});
 }
