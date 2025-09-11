@@ -30,7 +30,7 @@ export default {
       },
     },
     commonjsOptions: {
-      include: [/node_modules/, /p5.sound/], // ensure CJS modules are handled
+      include: [/node_modules/, /p5.sound/, /js-image-compressor/], // ensure CJS modules are handled
     },
   },
   server: {
