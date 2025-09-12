@@ -1,0 +1,96 @@
+#category-buttons {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 99999;
+    overflow: hidden;
+    bottom:5rem;
+    position: fixed;
+    display: flex;
+    right: 0;
+}
+
+#category-buttons button:hover, #category-buttons a:hover:not([data-category="footer"]) {
+  text-decoration-color: rgb(var(--grey-600));
+  background-color: rgba(var(--grey-100), .5);
+}
+
+#filter_text{
+  opacity: 0;
+  display: none;
+  transition: all 0.3s ease-in-out;
+}
+
+#category-buttons button:hover #filter_text, #category-buttons a:hover #filter_text{
+  opacity: 1;
+  display: flex;
+}
+
+#category-buttons button:hover svg, #category-buttons a:hover svg{
+  opacity: 0;
+  display: none;
+}
+
+#filter button svg{
+  opacity: 1;
+  display: flex;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+#filter button:active, #filter a:active {
+  transform: translateY(0);
+}
+
+#filter{
+    position:fixed;
+    bottom:0;
+}
+
+#category-buttons button, #category-buttons a:not([data-category="footer"]) {
+  align-self: flex-end; /* stop stretching */
+  width: auto;            /* shrink to content */
+  padding: 1rem 2rem;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border: transparent;
+  background-color: rgba(var(--grey-100), .8);
+  margin: 0!important;
+  flex-direction: row!important;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-transform: capitalize;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: rgb(var(--grey-800));
+}
+
+.flex{
+ flex-direction: column!important;
+}
+
+#category-buttons.show-buttons button:not([data-category="filter"]), #category-buttons.show-buttons a:not([data-category="filter"]) {
+  display: inherit; /* or flex */
+}
+
+/* Hide all non-filter buttons by default */
+#category-buttons button:not([data-category="filter"]), #category-buttons a:not([data-category="filter"]) {
+  display: none;
+}
+
+.catNum:after{
+    font-size: .5rem;
+    content: attr(title);
+    color: var(--grey-500);
+    font-size: .5em;
+    position: absolute;
+    padding: 0.2rem;
+}
+
+
+
+@media (max-width: 768px) {
+#category-buttons {
+    bottom: 5rem
+  }
+}

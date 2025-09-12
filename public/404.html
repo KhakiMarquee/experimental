@@ -3,52 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stones</title>
-  <link rel="stylesheet" href="../css/404.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/p5.sound@1.4.0/lib/p5.sound.min.js"></script>
+  <link rel="stylesheet" href="/css/404.css"/>
 
+  <title>404 Not Found</title>
 
-    <!-- Development: Use local files -->
-  <!-- Import map to resolve Three.js modules -->
-  <script type="importmap">
-    {
-      "imports": {
-        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-        "three/examples/jsm/loaders/DRACOLoader.js": "https://cdn.jsdelivr.net/npm/three@0.155.0/examples/jsm/loaders/DRACOLoader.js",
-        "three/examples/jsm/controls/OrbitControls.js": "https://unpkg.com/three@0.160.0/examples/jsm/controls/OrbitControls.js",
-        "three/examples/jsm/loaders/GLTFLoader.js": "https://unpkg.com/three@0.160.0/examples/jsm/loaders/GLTFLoader.js",
-        "gsap": "https://unpkg.com/gsap@3.13.0/index.js",
-        "gsap/ScrollTrigger": "https://unpkg.com/gsap@3.13.0/ScrollTrigger.js",
-        "gsap/ScrollToPlugin": "https://unpkg.com/gsap@3.13.0/ScrollToPlugin.js",
-        "gsap/Draggable": "https://unpkg.com/gsap@3.13.0/Draggable.js",
-        "gsap/EaselPlugin": "https://unpkg.com/gsap@3.13.0/EaselPlugin.js",
-        "gsap/MotionPathPlugin": "https://unpkg.com/gsap@3.13.0/MotionPathPlugin.js",
-        "gsap/Observer": "https://unpkg.com/gsap@3.13.0/Observer.js",
-        "gsap/PixiPlugin": "https://unpkg.com/gsap@3.13.0/PixiPlugin.js",
-        "gsap/TextPlugin": "https://unpkg.com/gsap@3.13.0/TextPlugin.js",
-        "p5": "https://cdn.jsdelivr.net/npm/p5@1.9.0/+esm",
-        "js-image-compressor": "https://cdn.jsdelivr.net/npm/js-image-compressor/dist/js-image-compressor.min.js"        
-      }
-    }
-  </script>
   
 </head>
   <body>
       
   <div id="cursor"></div>  
   <!-- Header-->
-  <header class="site-header fade-in"></header>
-  <!-- Loading-->
-  <div id="loading-screen">
-    <div class="background-text">
-      <div id="canvas-container"></div>
+  <header class="site-header fade-in">
+  <div class="header-container">
+    <!-- Desktop Left Navigation -->
+    <div class="nav-left">
+      <span title="sculptures" class='tooltip'><a href="/pages/stones.html">stone</a></span>
     </div>
-    <div class="shuffling-wrapper" id="ls-small">
-      <span id="shuffling-word">studio</span> 
-      <span>.G O K E</span> 
-      <span>.studio</span>
+
+    <!-- Logo / Mobile Menu Toggle -->
+    <div class="logo" id="home-link">
+      <a href="https://studio.goke.studio" id="mobile-menu-toggle">studio G O K E studio</a>
     </div>
+
+    <!-- Desktop Right Navigation -->
+    <div class="nav-right">
+      <span title="audiovisual" class='tooltip'><a href="/pages/stories.html">stories</a></span>
+    </div>
+
+
+    <!-- Mobile Dropdown Menu -->
+    <nav id="mobile-menu" class="mobile-nav">
+      <ul>
+        <a href="https://studio.goke.studio"><li>home</li></a>
+        <a href="/pages/stones.html"><li>stone</li></a>
+        <a href="/pages/stories.html"><li>stories</li></a>
+        <!-- Dynamic links will be injected here by JS -->
+      </ul>
+    </nav>
   </div>
+
+  </header>
 
   <div id="app" style="display: none;"></div>
   <!-- Main-->
@@ -61,24 +55,26 @@
     
   <!-- Footer + Dynamic Page Filter-->
   <div id="filter">
-    <div id="category-buttons" class="fade-in">
-      <button data-category="filter"><span id="filter_text">Projects</span>
-        <!--FILTER SYMBOL-->
-        <span> 
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="16" height="16" viewBox="0 0 256 256" xml:space="preserve">
-            <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
-              <path d="M 45 0 C 20.147 0 0 20.147 0 45 c 0 24.853 20.147 45 45 45 s 45 -20.147 45 -45 C 90 20.147 69.853 0 45 0 z M 63.831 50.245 H 50.962 V 65 H 39.076 V 50.245 H 26.169 V 39.34 h 12.906 V 25 h 11.886 v 14.34 h 12.869 V 50.245 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(var(--grey-500)); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
-            </g>
-            </svg>
-        </span>
+  <footer class="footer fade-in at-bottom">
+    <ul>
+    <!-- <li>
+        <p id="contact-toggle" class="fade-text"><a href="#">work with us</a></p>
+        <p id="location-toggle" class="fade-text"><a href="#">based in london</a></p>
+      </li>-->
+      <li>
+        <p class="fade-text"><a href="/pages/services.html" data-category="footer">Services</a></p>
+        <p class="fade-text"><a href="/pages/team.html" data-category="footer">Team</a></p>
+      </li>
+      <li>
+        <p  title="magazine"><a href="https://archivesdie.goke.studio" target="_blank" rel="noopener noreferrer" data-category="footer">archivesDie</a></p>
+        <p><a href="https://gokestudio.substack.com/embed" target="_blank" rel="noopener noreferrer" data-category="footer">subscribe</a></p>
+      </li>
+        <button id="theme-toggle">
+        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="rgba(var(--grey-150))"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>dark-mode</title> <g id="Layer_2" data-name="Layer 2"> <g id="Icons"> <g> <rect width="48" height="48" fill="none"></rect> <g> <path d="M14,24A10,10,0,0,0,24,34V14A10,10,0,0,0,14,24Z"></path> <path d="M24,2A22,22,0,1,0,46,24,21.9,21.9,0,0,0,24,2ZM6,24A18.1,18.1,0,0,1,24,6v8a10,10,0,0,1,0,20v8A18.1,18.1,0,0,1,6,24Z"></path> </g> </g> </g> </g> </g></svg>
+
       </button>
-      <a href="/pages/stones.html" data-category="audiovisuals">stone</a>
-      <a href="/pages/stories.html" data-category="sculptures">stories</a>
+    </ul>
+  </footer>
   </div>
-  <footer class="footer fade-in"></footer>
-  </div>
-  <script type="module" src="../src/loader.js"></script>
-  <script type="module" src="/src/ui.js"></script>
-  <script type="module" src="/src/category.js"></script>
 </body>
 </html>

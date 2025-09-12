@@ -1,0 +1,102 @@
+/*FOOTER*/
+footer {
+  transition: opacity 0.6s ease-in-out, margin 0.6s ease-in-out, background-color 0.6s ease-in-out;
+  padding: 1rem 2rem;
+  align-items: center;
+  width: 100%;
+  font-size: .9rem;
+  justify-content: flex-end;
+  color: white;
+  bottom:0;
+  z-index: 1000;
+  background-color: rgba(var(--grey-600), 0.3);
+  color: white;
+  border-top: 1px solid rgb(var(--grey-200));
+  position: fixed
+}
+
+footer.at-bottom {
+  background-color: rgba(var(--grey-600), 1);
+}
+
+footer.at-bottom a {
+  color: rgb(var(--grey-200));
+}
+
+footer li p::first-letter{
+  text-transform: capitalize;
+}
+
+footer ul{
+  list-style: none;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* Matches main grid */
+}
+
+footer ul li{
+    text-decoration-color:transparent;
+    font-weight:bold;
+    color: rgb(var(--grey-150));
+}
+
+footer li:first-of-type{
+    grid-column: 1 / span 3; /* Left-aligned section */
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+footer li p:last-of-type{
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  line-height:2em;
+  font-weight:lighter;
+}
+
+footer li:last-of-type{
+    grid-column: 10 / span 3; /* Left-aligned section */
+    overflow: hidden;
+    text-align: right;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+footer.hide{
+  transition: opacity 0.4s ease;
+  opacity: 0
+}
+
+footer button{
+    position: fixed;
+    left: 50%;
+}
+
+#theme-toggle{
+  background-color: transparent!important;
+}
+
+#theme-toggle svg {
+  height: 30px
+}
+
+#theme-toggle:hover svg {
+  transform: scale(1.05);
+  fill: rgb(var(--grey-500));
+}
+
+footer.at-bottom #theme-toggle svg{
+  fill: rgb(var(--grey-150));
+}
+
+@media (max-device-width: 768px) {
+  /* Styles for landscape iPad */
+  footer{
+    font-size: 0.7rem;
+  }
+
+  footer #theme-toggle svg {
+    height: 20px
+  }
+
+}
