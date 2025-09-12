@@ -65,7 +65,7 @@ export default function stoneViewSketch(p) {
     const progress = scrollOffset / totalLength;
     const dot = document.querySelector('.progress-dot');
     if (dot) {
-      dot.style.backgroundColor = progress >= 0.8 ? 'var(--grey-800)' : 'rgba(var(--grey-100), 0.4)';
+      dot.style.backgroundColor = progress >= 0.8 ? 'rgb(var(--grey-800))' : 'rgba(var(--grey-100), 0.4)';
     }
 
     slides.forEach((slide, i) => {
