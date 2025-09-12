@@ -22,14 +22,14 @@ export default {
         services: resolve(__dirname, 'pages/services.html'),
         team: resolve(__dirname, 'pages/team.html')
       },
-      external: ['p5.sound'], // mark p5.sound external so it’s not bundled
+      external: ['p5.sound', 'js-image-compressor'], // mark p5.sound external so it’s not bundled
       
       output: {
         manualChunks: undefined,
       },
     },
     commonjsOptions: {
-      include: [/node_modules/, /p5.sound/], // ensure CJS modules are handled
+      include: [/node_modules/, /p5.sound/, /js-image-compressor/], // ensure CJS modules are handled
     },
   },
   server: {
