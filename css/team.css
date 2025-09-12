@@ -13,6 +13,8 @@
 
   #about-title {
     margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
 } 
 
 /* Container for the team section */
@@ -24,20 +26,22 @@
 }
 
 #team-section-description{
-      margin: 2rem 0rem;
-        line-height: normal;
+    margin: 2rem 0rem;
+    line-height: normal;
+    font-size: 0.8rem;
 }
 
-    #team-subsection-description {
-        font-size: 0.8rem;
-        margin: 1rem 0rem;
-        line-height: normal;
-    }
+#team-subsection-description {
+    font-size: 0.8rem;
+    margin: 1rem 0rem;
+    line-height: normal;
+}
 
 .team-member-container {
     display: flex;
     flex-direction: column;
     color: rgb(var(--grey-800));
+    font-family: Geist;
 
 }
 
@@ -214,6 +218,7 @@
     #about-title {
         font-size: 0.9rem; /* Smaller title on mobile */
         text-align: center;
+
     }
 
     #team-title {

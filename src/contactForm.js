@@ -10,10 +10,10 @@ export async function renderContactForm(containerId = "contact-container", prese
     <div class="contact-container" id="contact-area">
       <!-- Left Column: Info -->
       <div class="contact-info">
-        <h2>Start a project</h2>
+        <h2>Start a Project</h2>
         <p><a href="mailto:goke.studio@gmail.com">goke.studio@gmail.com</a></p>
 
-        <h2>We are based in London</h2>
+        <h2>Based in London</h2>
         <p>
           <br>
           Shadwell, London<br>
@@ -114,8 +114,8 @@ export function setupContactForm(formId = "contact-form") {
   const formData = new FormData(form);
 
   // ✅ Ensure "form-name" is included for Netlify
-  if (!formData.has("contact")) {
-    formData.append("contact", form.getAttribute("name") || "contact");
+  if (!formData.has("form-name")) {
+    formData.append("form-name", form.getAttribute("name") || "contact");
   }
 
   try {

@@ -103,7 +103,7 @@
   display: grid;
   gap: 1.5rem;
   align-items: start; /* Changed from center to start for better alignment */
-  cursor: zoom-in;
+  cursor: pointer;
   will-change: auto;
   transform-style: preserve-3d;
   transition: all 0.3s ease-in-out

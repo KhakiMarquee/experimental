@@ -1,9 +1,11 @@
 
 import { renderContactForm } from "./contactForm.js";
-import { clearHashOnTop, attachServicePitchClick, attachServiceItemClick } from "./servicesInteraction.js";
+import { clearHashOnTop, attachServicePitchClick, attachServiceItemClick, handleHashOnLoad } from "./servicesInteraction.js";
 import { initServiceHighlight } from "./servicesHighlight.js";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -209,6 +211,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //Add Serivce-Pitch highlight
   initServiceHighlight();
+
+  //check id
+  handleHashOnLoad();
+  clearHashOnTop();
+
 
 });
 

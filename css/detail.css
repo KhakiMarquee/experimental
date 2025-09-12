@@ -30,6 +30,11 @@
   animation: spin 1s linear infinite;
 }
 
+.detail-app svg {
+  animation: spin 1s linear infinite;
+  vertical-align: bottom;
+}
+
 .button-container {
   display: flex;       /* makes the container flex */
 }

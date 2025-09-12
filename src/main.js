@@ -34,23 +34,6 @@ export function initApp() {
     });
 
 
-    //Load dynamic buttons for page
-    if (document.querySelector('.third-list')) {
-      const items = document.querySelectorAll('.third-list p');
-      // your code here
-          // Determine base URL dynamically
-    const currentPath = window.location.pathname;
-    const basePath = currentPath.substring(0, currentPath.lastIndexOf('/'));
-
-    items.forEach(item => {
-      item.addEventListener('click', () => {
-        const category = item.getAttribute('data-category');
-        // Redirect to template page with category in the query string
-        window.location.href = `${basePath}/pages/projects.html?category=${encodeURIComponent(category)}`;
-        console.log(category);
-      });
-    });
-    }
   };
 
 

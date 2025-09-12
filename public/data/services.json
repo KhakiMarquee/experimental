@@ -14,9 +14,9 @@
     "price": ["enquire"],
     "type": ["film", "audio", "photography"],
     "packages": [
-      {"name": "Documentary", "description": "Description for package 1"},
-      {"name": "Exhibition", "description": "Description for package 2"},
-      {"name": "Interior", "description": "Description for package 3"}
+      {"name": "Documentary", "description": "Long form film spotlighting points of interest. Where qualiy sound meets quality audio"},
+      {"name": "Exhibition", "description": "Art based film showcasing exhibiting Artists. A delicate approach use to support the work of artist and galleries"},
+      {"name": "Interior", "description": "Architecture focused film highlighting stunning features: drone, 360 caputure, up to 8k foootage"}
     ],
     "timeline": ["Concept Research", "Storyboarding", "Post-Production"]
   },
@@ -35,8 +35,9 @@
     "price": ["enquire"],
     "type": ["craft", "installation", "3d"],
     "packages": [
-      {"name": "Stone Carving", "description": "Description for package 1"},
-      {"name": "3D Modelling", "description": "Description for package 2"}
+      {"name": "Stone Carving", "description": "End-to-end production of objects made from stone"},
+      {"name": "3D Modelling", "description": "Comprehensive modelling of designed objects"},
+      {"name": "Draughtsperson", "description": "Drawing specifications of designed objects"}
     ],
     "timeline": ["Research & Development", "Fabrication", "Project Management"]
   },
@@ -76,8 +77,8 @@
     "price": ["enquire"],
     "type": ["3d", "strategy", "coding", "webflow", "shopify"],
     "packages": [
-      {"name": "Web Development", "description": "Digital session"},
-      {"name": "Digital Strategy", "description": "Extended session"}
+      {"name": "Web Development", "description": "Development of Content Management System"},
+      {"name": "Digital Strategy", "description": "360 digital based strategic approach to audience growth"}
     ],
     "timeline": ["Brand Identity", "Asset Creation", "Audience Engagement"]
   }

@@ -54,3 +54,17 @@ export function attachServicePitchClick(pitchDiv) {
   });
 }
 
+
+/**
+ * On page load, check the URL hash (e.g. #digital) and scroll to that section.
+ */
+export function handleHashOnLoad() {
+  const hash = window.location.hash;
+  if (!hash) return;
+
+  // Find the element by its ID
+  const target = document.querySelector(hash);
+  if (target) {
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}

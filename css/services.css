@@ -105,7 +105,7 @@
   font-size: 1.4rem;
   margin: 1rem 0 0.5rem;
   font-family: "Geist";
-  letter-spacing: 1px;
+  letter-spacing:  4px;
 }
 
 .service-intro {
@@ -143,7 +143,6 @@
   font-weight: 600;
   cursor: pointer;
   background-color: transparent;
-
 }
 
 
@@ -176,7 +175,7 @@
 .pitch-header h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  letter-spacing: 1px;
+  letter-spacing: 4px;
 }
 .pitch-intro p {
   font-size: 1rem;
@@ -274,6 +273,7 @@
     color:rgb(var(--grey-800));
     background-color: transparent;
     margin: 1rem;
+    font-weight: 600;
 }
 
 
