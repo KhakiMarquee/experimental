@@ -73,8 +73,7 @@ export async function renderContactForm(containerId = "contact-container", prese
       onReady(container.querySelector("#contact-form"));
     }
 
-    // ✅ Initialize Netlify form handling
-    setupContactForm("contact-form"); // or use formEl.id if you have a reference
+
 
     if (typeof onReady === "function") {
       onReady(container.querySelector("#contact-form"));
@@ -96,55 +95,3 @@ function waitForContainer(id, callback) {
   observer.observe(document.body, { childList: true, subtree: true });
 }
 
-export function setupContactForm(formId = "contact-form") {
-  const form = document.getElementById(formId);
-  if (!form) {
-    console.warn(`Form #${formId} not found yet.`);
-    return;
-  }
-
-  // Handle submit
-  form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const submitButton = form.querySelector("button[type='submit']");
-  submitButton.disabled = true;
-  submitButton.textContent = "Sending…";
-
-  const formData = new FormData(form);
-
-  // ✅ Ensure "form-name" is included for Netlify
-  if (!formData.has("form-name")) {
-    formData.append("form-name", form.getAttribute("name") || "contact");
-  }
-
-  try {
-    const response = await fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
-    });
-
-    if (response.ok) {
-      submitButton.textContent = "Thank You!";
-      form.reset();
-      console.log("✅ Form submitted successfully");
-
-      // Redirect to index page after successful submission
-      setTimeout(() => {
-        window.location.href = "/"; // or '/index.html' if needed
-      }, 1000); // show "Thank You!" briefly before redirect
-    } else {
-      throw new Error("Form submission failed");
-    }
-  } catch (err) {
-    console.error("❌ Form submission error:", err);
-    submitButton.textContent = "Try again";
-  } finally {
-    setTimeout(() => {
-      submitButton.disabled = false;
-      submitButton.textContent = "Send";
-    }, 3000);
-  }
-});
-}
