@@ -16,7 +16,7 @@ async function u(n="contact-container",t=null,o=null){const e=document.getElemen
       </div>
 
       <!-- Right Column: Form -->
-      <form id="contact-form" class="contact-form" name="contact" method="POST" data-netlify="true">
+      <form id="contact-form" class="contact-form" name="contact" method="POST" data-netlify="true" netlify>
         <input type="hidden" name="form-name" value="contact">
 
         <label for="name">Your Name</label>

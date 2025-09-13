@@ -241,12 +241,60 @@
         "description": "Vannetta Seecharran School of Jewellery '23 | New Designers Business Design Centre",
         "image": "/public/media/IMG/vs_jewellery/design_centre_show.jpg",
         "video": "https://player.vimeo.com/video/845515505?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "imageStack": [
+          "/public/media/IMG/material/jewellery/features/_F4A8050.jpg",
+          "/public/media/IMG/material/jewellery/features/_F4A8117.jpg"
+        ],
         "type": ["film", "installation", "craft"],
         "link":null,
         "story": null,
          "metadata": {
           "year": 2021
-        } 
+        },
+        "collaboration": { "participants": ["Joia Jewellery"], "focus": "Design, product development", "medium": "metalwork" }
+      },
+      {
+        "title": "Material interrogation",
+        "client": "Joia Jewellery",
+        "theme": "Culture",
+        "description": "Material Research",
+        "image": "/public/media/IMG/material/jewellery/joia_2.jpg",
+        "video": null,
+        "imageStack": [
+          "/public/media/IMG/material/jewellery/joia_ice.jpg",
+          "/public/media/IMG/material/jewellery/joia_ice_2.jpg",
+          "/public/media/IMG/material/jewellery/joia_ice_3.jpg",
+          "/public/media/IMG/material/jewellery/joia_ice_4.jpg",
+          "/public/media/IMG/material/jewellery/joia_ice_5.jpg",
+          "/public/media/IMG/material/jewellery/joia_ice_6.png",
+          "/public/media/IMG/material/jewellery/joia_ice_7.jpg"
+        ],
+        "type": ["film", "installation", "craft"],
+        "link":null,
+        "story": "material interrogation, I created ice cubes using encapsulated silicone with handcrafted jewellery suspended inside. Ice, usually a fleeting and transient mineral, was subverted through the use of stable silicone, hoodwinking the observer and provoking questions of material perception. Silicone’s qualities, unmelting yet oddly bouncy, introduced further perceptual oddities. Jewellery, durable and permanent, appeared fragile, suspended in time. By translating an impermanent mineral into permanence, the piece highlights how extractive processes fuel gluttony; not only in consumption (jewellery as a symbol of that), but in our urge to preserve and manipulate minerals, resisting their impermanence.",
+         "metadata": {
+          "year": 2023
+        },
+        "collaboration": { "participants": ["4D Modelshop"], "focus": "Minerals, silicone", "medium": "metalwork" }
+      },
+      {
+        "title": "Jewellery as Prop",
+        "client": "Joia Jewellery",
+        "theme": "Culture",
+        "description": "Material Research",
+        "image": "/public/media/IMG/material/jewellery/joia.jpg",
+        "imageStack": [
+          "/public/media/IMG/material/jewellery/features/THE LORE OF PROTOTYPES-147.jpg",
+          "/public/media/IMG/material/jewellery/features/LORE OF PROTOTYPE SCAN57.png"
+        ],
+        "video": null,
+        "type": ["film", "installation", "craft"],
+        "link":null,
+        "story": "Made as jewellery props, the concrete pillows interrogate the presumptive relationship between form and material. A pillow conventionally evokes comfort and familiarity, yet here its weight and hardness provoke unease. This dissonance reflects how extractive materials permeate domestic life in ways we often overlook. Concrete, one of the most mineral-heavy substances, produces vast CO₂ emissions, making its translation into a soft, intimate object both absurd and confronting. By re-coding form through material contradiction, the work draws attention to how objects can be estranged, compelling us to reconsider their making, meaning, and ecological burden.",
+         "metadata": {
+          "year": 2025
+        },
+        "collaboration": { "participants": ["Harry"], "focus": "photography, styling, lighting", "medium": "film" }
       }
     ]
   },

@@ -326,6 +326,10 @@
         "description": "Vannetta Seecharran School of Jewellery '23 | New Designers Business Design Centre",
         "image": "/media/IMG/vs_jewellery/design_centre_show.jpg",
         "video": "https://player.vimeo.com/video/845515505?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "imageStack": [
+          "/media/IMG/material/jewellery/features/_F4A8050.jpg",
+          "/media/IMG/material/jewellery/features/_F4A8117.jpg"
+        ],
         "type": [
           "film",
           "installation",
@@ -336,7 +340,79 @@
         "metadata": {
           "year": 2021
         },
-        "id": "09573bb553e856be044d48a3a084f7cb"
+        "collaboration": {
+          "participants": [
+            "Joia Jewellery"
+          ],
+          "focus": "Design, product development",
+          "medium": "metalwork"
+        },
+        "id": "21aecec7b0ab34735dd407fbf2e53be8"
+      },
+      {
+        "title": "Material interrogation",
+        "client": "Joia Jewellery",
+        "theme": "Culture",
+        "description": "Material Research",
+        "image": "/media/IMG/material/jewellery/joia_2.jpg",
+        "video": null,
+        "imageStack": [
+          "/media/IMG/material/jewellery/joia_ice.jpg",
+          "/media/IMG/material/jewellery/joia_ice_2.jpg",
+          "/media/IMG/material/jewellery/joia_ice_3.jpg",
+          "/media/IMG/material/jewellery/joia_ice_4.jpg",
+          "/media/IMG/material/jewellery/joia_ice_5.jpg",
+          "/media/IMG/material/jewellery/joia_ice_6.png",
+          "/media/IMG/material/jewellery/joia_ice_7.jpg"
+        ],
+        "type": [
+          "film",
+          "installation",
+          "craft"
+        ],
+        "link": null,
+        "story": "material interrogation, I created ice cubes using encapsulated silicone with handcrafted jewellery suspended inside. Ice, usually a fleeting and transient mineral, was subverted through the use of stable silicone, hoodwinking the observer and provoking questions of material perception. Silicone\u2019s qualities, unmelting yet oddly bouncy, introduced further perceptual oddities. Jewellery, durable and permanent, appeared fragile, suspended in time. By translating an impermanent mineral into permanence, the piece highlights how extractive processes fuel gluttony; not only in consumption (jewellery as a symbol of that), but in our urge to preserve and manipulate minerals, resisting their impermanence.",
+        "metadata": {
+          "year": 2023
+        },
+        "collaboration": {
+          "participants": [
+            "4D Modelshop"
+          ],
+          "focus": "Minerals, silicone",
+          "medium": "metalwork"
+        },
+        "id": "c413047052dd6fb5fa32d78e04f180b8"
+      },
+      {
+        "title": "Jewellery as Prop",
+        "client": "Joia Jewellery",
+        "theme": "Culture",
+        "description": "Material Research",
+        "image": "/media/IMG/material/jewellery/joia.jpg",
+        "imageStack": [
+          "/media/IMG/material/jewellery/features/THE LORE OF PROTOTYPES-147.jpg",
+          "/media/IMG/material/jewellery/features/LORE OF PROTOTYPE SCAN57.png"
+        ],
+        "video": null,
+        "type": [
+          "film",
+          "installation",
+          "craft"
+        ],
+        "link": null,
+        "story": "Made as jewellery props, the concrete pillows interrogate the presumptive relationship between form and material. A pillow conventionally evokes comfort and familiarity, yet here its weight and hardness provoke unease. This dissonance reflects how extractive materials permeate domestic life in ways we often overlook. Concrete, one of the most mineral-heavy substances, produces vast CO\u2082 emissions, making its translation into a soft, intimate object both absurd and confronting. By re-coding form through material contradiction, the work draws attention to how objects can be estranged, compelling us to reconsider their making, meaning, and ecological burden.",
+        "metadata": {
+          "year": 2025
+        },
+        "collaboration": {
+          "participants": [
+            "Harry"
+          ],
+          "focus": "photography, styling, lighting",
+          "medium": "film"
+        },
+        "id": "03bb139919d8584a2a5005811339b3dc"
       }
     ]
   },
@@ -392,7 +468,7 @@
           "focus": "Conservation",
           "medium": "film"
         },
-        "id": "a62011721950c3a9bf46ea587fe7a377"
+        "id": "4ea2bf0dd1ff4a5e0acf75779cd6b663"
       },
       {
         "title": "Hostile Housing",
