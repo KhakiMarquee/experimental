@@ -143,7 +143,7 @@
 
 /* ====== ROW VIEW ====== */
 /* Grid layout - each project is a single cell with details above image */
-.projects-container.row-view #content {
+.projects-container.row-view #content{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   align-items: start; /* prevents stretching */

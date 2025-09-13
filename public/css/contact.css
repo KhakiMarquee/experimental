@@ -18,6 +18,9 @@
   font-size: 1rem;
   font-weight: 600;
 }
+.contact-info  p{
+  margin: 0.2rem 0 0.2rem;
+}
 
 .contact-info a {
   color: rgb(var(--grey-800));

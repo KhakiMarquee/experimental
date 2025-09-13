@@ -30,7 +30,7 @@
   animation: spin 1s linear infinite;
 }
 
-.detail-app svg {
+#detail-app svg {
   animation: spin 1s linear infinite;
   vertical-align: bottom;
 }

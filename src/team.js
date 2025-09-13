@@ -53,7 +53,8 @@ function renderTeam(team) {
   // ✅ Initialize dropdowns AFTER members are in the DOM
   initTeamDropdowns();
 
-  //initialize hover preview teamHoverPreview();
+  //initialize hover preview 
+  teamHoverPreview();
 }   
 
 export function loadTeam() {

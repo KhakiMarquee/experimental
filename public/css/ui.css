@@ -132,8 +132,8 @@ button:hover{
   top: 0;
   width: 100vw;
   height: 100vh;
-  background: rgb(var(--grey-800)); /* Match your existing dark background */
-  color: rgba(var(--grey-100),1); /* Match your existing light text */
+  background: rgb(var(--grey-100)); /* Match your existing dark background */
+  color: rgba(var(--grey-800),1); /* Match your existing light text */
   z-index: 1000; /* Higher than your existing z-index: 999 */
   display: none;
   opacity: 0;
@@ -175,23 +175,29 @@ button:hover{
 }
 
 .overlay p{
-    max-width: 500px;
-    min-width: 100px;
-    font-size: 1.2rem;
-    padding: 2rem;
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 0.5rem 2rem;
     line-height: 1.8;
-    margin-bottom: 2rem;
-    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    font-family: system-ui;
-    letter-spacing: 2px;
+    font-family: 'Geist';
 }
 
 .overlay h1{
-  font-size: 2rem;
+  font-size: 1.3rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  margin: 1rem;
+  letter-spacing: 10px;
+  font-family: system-ui;
+}
+
+.overlay h2{
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  margin: 1rem;
+  font-family: system-ui;
 }
 
 /* Hide main content when overlay is active */

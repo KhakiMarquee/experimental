@@ -1,0 +1,277 @@
+@import './detail.css';
+.quickview-container {
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  color: rgb(var(--grey-800));
+  font-family:'Geist';
+  margin-top:5rem
+}
+
+
+.quickview-container .tooltip:after { 
+  content: attr(title);
+  color:rgb(var(--grey-500));
+  display: block;           /* force new line */
+  margin-top: 10px;
+  font-size: 0.5em;         
+} 
+
+.quickview-container .tooltip{
+  position: relative;
+  cursor: default; /* optional */
+}
+
+/*MOODBOARD*/
+.moodboard-scroller {
+  display: flex;
+  gap: 1rem; /* space between images */
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 0.5rem; /* space for scrollbar */
+  scroll-behavior: smooth;
+}
+
+.moodboard-image {
+  flex: 0 0 auto;
+  height: 200px; /* adjust as needed */
+  object-fit: cover;
+  border-radius: 0.5rem;
+  cursor: zoom-in;
+  filter: grayscale(1), contrast(1.2)!important;
+}
+
+/* Scrollbar styling (Webkit browsers: Chrome, Safari, Edge) */
+.moodboard-scroller::-webkit-scrollbar {
+  height: 8px; /* horizontal scrollbar thickness */
+}
+
+.moodboard-scroller::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.moodboard-scroller::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--grey-500));
+  border-radius: 4px;
+}
+
+/* Firefox scrollbar */
+.moodboard-scroller {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(var(--grey-500)) transparent;
+}
+
+.project-background{
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  transform-origin: center;
+/*  scale: 5;*/
+  opacity:0.4;
+  position: fixed;
+}
+
+#project-section-description{
+      padding-bottom: 2rem;
+}
+
+#canvas-container, canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Shared project row styling */
+#content {
+  display: flex;
+  flex-direction: column;
+  gap: 0rem; /* space between rows */
+}
+
+
+/* Wrap page title + toggle buttons */
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.project-theme, #page-title {
+  font-weight: lighter;
+}
+
+.project-details{
+  font-weight: 200;
+}
+
+
+#page-title{
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-size: 6rem;
+  font-family: 'Geist';
+  }
+
+
+.project-row {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start; /* Changed from center to start for better alignment */
+  cursor: pointer;
+  will-change: auto;
+  transform-style: preserve-3d;
+  transition: all 0.3s ease-in-out
+}
+
+.project-image {
+  width: 100%;
+  max-height: 300px;
+  overflow: scroll;
+  cursor: zoom-in;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fill the container, crops excess */
+  filter: grayscale(1) contrast(1.2);
+  display: block;
+}
+/* Update the .project-details to use flexbox for horizontal layout */
+.project-details {
+  display: flex;
+  flex-direction: row; /* Change to row for horizontal layout */
+  justify-content: space-between; /* This pushes items to opposite ends */
+  align-items: baseline; /* Align text baselines */
+}
+/* Ensure the title takes up available space and stays on the left */
+.project-title {
+  margin: 0;
+  font-size: 1rem;
+  flex: 1; /* Allow title to grow and take available space */
+}
+/* Keep theme on the right */
+.project-theme {
+  flex-shrink: 0; /* Prevent theme from shrinking */
+}
+
+.project-description {
+  color: rgb(var(--grey-700));
+  line-height: 1.5;
+  display: none; /* Hide descriptions by default */
+}
+
+/* ====== ROW VIEW ====== */
+/* Grid layout - each project is a single cell with details above image */
+#archicture-quickview{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: start; /* prevents stretching */
+}
+
+.quickview-container.row-view .project-row {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid transparent;
+}
+
+.quickview-container.row-view .project-row:hover .project-image{
+  animation: seeMe 0.3s ease-in forwards;
+
+}
+
+.quickview-container.row-view .project-row:hover .project-image img{
+    filter: none;
+}
+.quickview-container.row-view .project-row:hover {
+  animation: borderMe 0.3s ease-in forwards;
+}
+
+.quickview-container.row-view .project-row:hover .project-details{
+  transition: all 0.3s ease-in;
+}
+
+
+.quickview-container.row-view .project-details {
+  order: 2; /* Details appear first */
+  width: 100%;
+  position: relative;
+  padding: 0 0.5em;
+  font-weight:500;
+}
+
+.quickview-container.row-view .project-image {
+  order: 1; /* Image appears second - FIXED */
+  opacity: 0.8;
+}
+
+@keyframes seeMe {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes borderMe {
+  from {
+    border-bottom: 1px solid transprent;
+    background-color: none;
+  }
+  to {
+    border-bottom: 1px solid rgb(var(--grey-800));
+    background-color: rgba(var(--grey-100),0.2);
+  }
+}
+
+
+.quickview-container.row-view .project-meta{
+  display: none;
+}
+
+
+.quickview-container.row-view .project-client{
+  display: none;
+}
+
+
+
+
+
+/* Responsive - Mobile breakpoint */
+@media (max-width: 768px) {
+  .quickview-container {
+    padding: 0.1rem 1rem; /* Reduce padding on mobile */
+  }
+
+  .project-details{
+    font-size: 0.8rem;
+    justify-content:unset; /* This pushes items to opposite ends */
+  }
+
+ .quickview-container.row-view .project-details{
+    display: inline-block;
+  }
+
+  
+#project-section-description{
+  font-size:0.8rem;
+  text-align: center;
+}
+  .projects-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .projects-header #page-title {
+    font-size: 2rem; /* Smaller title on mobile */
+  }
+  
+  .quickview-container.row-view #content {
+    grid-template-columns: 1fr; /* Single column on mobile */
+  }
+  
+}

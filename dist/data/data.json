@@ -272,7 +272,7 @@
       },  
       {
         "title": "The Lighting Designer",
-        "client": "Contemporary Art Society & The Box, Plymouth",
+        "client": "Contemporary Art Society",
         "theme": "Culture",
         "description": "Learn about the Lighting technicians role as we explore an exhibition at the Box in Plymouth.",
         "image": "/media/IMG/inside_museums/the_ldr_cover.jpg",
@@ -282,7 +282,7 @@
         "metadata": {
           "year": 2022
         },
-        "collaboration" : { "participants": ["Norwich Castle Museum"], "focus": "Conservation", "medium": "film" } 
+        "collaboration" : { "participants": ["The Box, Plymouth"], "focus": "Conservation", "medium": "film" } 
       },
       {     
         "title": "Hostile Housing",

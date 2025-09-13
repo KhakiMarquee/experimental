@@ -4,6 +4,7 @@ import { initThreeScene } from '/src/three_scene.js';
 import { loadHeader } from '/src/header.js';
 import { loadFooter } from '/src/footer.js';
 import { initTheme, toggleTheme } from '/src/theme.js';
+import { renderQuickviewContent } from '/src/templateQuickview.js';
 
 
 //Init Main Application
@@ -32,6 +33,20 @@ export function initApp() {
         console.warn("⚠️ No #theme-toggle button found in DOM");
       }
     });
+
+    // Render quickview
+      const container = [document.getElementById('culture-quickview'),document.getElementById('heritage-quickview'),document.getElementById('architecture-quickview')];
+      const categoryOrTheme = 'architecture'; // could be a theme
+      const jsonPath = '/data/data_with_ids.json';
+
+      // Render 3 items by theme
+      renderQuickviewContent('architecture', jsonPath, container[2]);
+      renderQuickviewContent('heritage', jsonPath, container[1]);
+      renderQuickviewContent('culture', jsonPath, container[0]);
+
+      /* Or render 3 items by entry ID
+      const entryId = '123';
+      renderQuickviewContent(entryId, jsonPath, container, true); */
 
 
   };

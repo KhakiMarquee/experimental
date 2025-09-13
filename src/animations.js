@@ -28,7 +28,7 @@ export function initAnimations() {
       y: 30,
       opacity: 0,
       ease: 'power3.out',
-      delay: 0.6
+      delay: 0.1
     });
   }
 

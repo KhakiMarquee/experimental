@@ -28,7 +28,6 @@ body {
   background: inherit; /* Sets background color */
   color: inherit; /* Sets text color */
   line-height: 1.2; /* Improves readability */
-  letter-spacing: 0em; /* Default letter spacing */
 }
 
 #cursor {
