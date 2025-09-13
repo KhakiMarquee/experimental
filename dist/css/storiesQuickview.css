@@ -241,6 +241,12 @@
 
 /* Responsive - Mobile breakpoint */
 @media (max-width: 768px) {
+
+.moodboard-image {
+
+  height: 100px; /* adjust as needed */
+
+}
   .quickview-container {
     padding: 0.1rem 1rem; /* Reduce padding on mobile */
   }

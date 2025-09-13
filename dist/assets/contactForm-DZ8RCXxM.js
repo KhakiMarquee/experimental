@@ -3,9 +3,9 @@ async function u(n="contact-container",t=null,o=null){const e=document.getElemen
       <!-- Left Column: Info -->
       <div class="contact-info">
         <h2>Start a Project</h2>
-        <p>Most Enquiries: <a href="mailto:goke.studio@gmail.com">goke.studio@gmail.com</a></p>
-        <p>Stone/Material Research: <a href="mailto:stone@goke.studio">stone@goke.studio</a></p>
-        <p>Stories/Audiovisual Resarch: <a href="mailto:stories@goke.studio">stories@goke.studio</a></p>
+        <p>General: <a href="mailto:goke.studio@gmail.com">goke.studio@gmail.com</a></p>
+        <p>Material Research: <a href="mailto:stone@goke.studio">stone@goke.studio</a></p>
+        <p>Audiovisual Resarch: <a href="mailto:stories@goke.studio">stories@goke.studio</a></p>
 
         <h2>Based in London</h2>
         <p>
@@ -37,7 +37,7 @@ async function u(n="contact-container",t=null,o=null){const e=document.getElemen
         <button type="submit">Start Project</button>
       </form>
     </div>
-  `;try{const r=await(await fetch("/data/services.json")).json();console.log("📦 services.json data:",r);const i=e.querySelector(".services-checkboxes");i.innerHTML="",r.forEach(c=>{console.log("➡️ service object:",c);const s=c.service,l=`service-${s.toLowerCase()}`,m=t?.toLowerCase()===s.toLowerCase()?"checked":"";i.innerHTML+=`
+  `;try{const r=await(await fetch("/data/services.json")).json();console.log("📦 services.json data:",r);const c=e.querySelector(".services-checkboxes");c.innerHTML="",r.forEach(i=>{console.log("➡️ service object:",i);const s=i.service,l=`service-${s.toLowerCase()}`,m=t?.toLowerCase()===s.toLowerCase()?"checked":"";c.innerHTML+=`
       <label for="${l}">
         <input type="checkbox" id="${l}" name="services" value="${s}" ${m}>
         ${s.charAt(0).toUpperCase()+s.slice(1)}

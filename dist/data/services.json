@@ -21,10 +21,10 @@
     "timeline": ["Concept Research", "Storyboarding", "Post-Production"]
   },
   {
-    "service": "crafts",
-    "intro": "Object making",
+    "service": "materials",
+    "intro": "Object Facbrication",
     "value": "Product Development",
-    "short-description": "Craft and object making",
+    "short-description": "Craftswork and object end-to-end design",
     "description": "Craft and object making create meaningful experiences. We believe in the power of hands-on creation to foster connection and understanding. Our expertise in stone carving, 3D modelling, and network of artisans allows us to bring unique visions to life.",
     "images": [
         "/media/IMG/services/crafts.jpg",

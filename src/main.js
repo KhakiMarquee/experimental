@@ -48,7 +48,6 @@ export function initApp() {
       const entryId = '123';
       renderQuickviewContent(entryId, jsonPath, container, true); */
 
-
   };
 
 

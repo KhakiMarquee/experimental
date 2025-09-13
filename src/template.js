@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 });
 
-  function processImage(section, entryIdx) {
+  export function processImage(section, entryIdx) {
   console.log(`Rendering entry #${entryIdx}, applying compression.`);
 
   const imgEl = section.querySelector('.project-image img');

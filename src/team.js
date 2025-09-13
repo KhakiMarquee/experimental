@@ -1,11 +1,57 @@
 import { initTeamDropdowns } from '/src/teamDropdown.js';
-import { teamHoverPreview }  from '/src/teamHover.js';
+import { teamHoverPreview } from '/src/teamHover.js';
 import { renderContactForm } from "./contactForm.js";
 import { loadPressContent } from './press.js';
+import ImageCompressor from 'js-image-compressor';
 
+// ✅ Reuse your compression utility
+function processImage(imgEl, label = "") {
+  if (!imgEl) {
+    console.warn('No image element found for compression.');
+    return;
+  }
+
+  imgEl.crossOrigin = 'anonymous';
+
+  fetch(imgEl.src, { mode: 'cors' })
+    .then(res => res.blob())
+    .then(blob => {
+      const file = new File([blob], 'image.jpg', { type: blob.type });
+
+      const options = {
+        file,
+        quality: 0.6,
+        convertSize: Infinity,
+        redressOrientation: true,
+        beforeCompress(result) {
+          console.log(`BeforeCompress ${label}:`, result.size, result.type);
+        },
+        success(result) {
+          console.log(`Compression success ${label}:`, result.size, result.type);
+          imgEl.src = URL.createObjectURL(result);
+
+          const originalSize = blob.size;
+          const compressedSize = result.size;
+          const compressionRatio = ((originalSize - compressedSize) / originalSize) * 100;
+
+          console.log(
+            `${label} original size:`, originalSize, 'bytes',
+            '| compressed size:', compressedSize, 'bytes',
+            '| reduced:', compressionRatio.toFixed(2) + '%'
+          );
+        },
+        error(err) {
+          console.error(`Compression error (${label}):`, err);
+        }
+      };
+
+      new ImageCompressor(options);
+    })
+    .catch(err => console.error(`Fetch error during compression (${label}):`, err));
+}
 
 function renderTeam(team) {
-  const container = document.getElementById('team-members');;
+  const container = document.getElementById('team-members');
   if (!container) {
     console.error("❌ Could not find #team-member-container in DOM");
     return;
@@ -48,14 +94,17 @@ function renderTeam(team) {
     `;
 
     container.appendChild(memberDiv);
+
+    // ✅ Compress both bw and colour images
+    const bwImg = memberDiv.querySelector('img.bw');
+    const colourImg = memberDiv.querySelector('img.colour');
+    processImage(bwImg, `${member.firstname} bw`);
+    processImage(colourImg, `${member.firstname} colour`);
   });
 
-  // ✅ Initialize dropdowns AFTER members are in the DOM
   initTeamDropdowns();
-
-  //initialize hover preview 
   teamHoverPreview();
-}   
+}
 
 export function loadTeam() {
   console.log("📥 Fetching team data from /data/team.json");
@@ -77,19 +126,15 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log("✅ DOM fully loaded, calling loadTeam()");
   loadTeam();
 
-  // Handle top buttons PRESS or CONTACT
   const teamMembersContainer = document.getElementById("team-members");
   const buttons = document.querySelectorAll(".team-button");
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const label = button.textContent.trim();
-
-      // Clear current content
       teamMembersContainer.innerHTML = "";
 
       if (label === "Contact") {
-        // Load contact form
         const formWrapper = document.createElement("div");
         formWrapper.id = "contact-area";
         teamMembersContainer.appendChild(formWrapper);
@@ -102,8 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
           });
         });
       } else if (label === "Press") {
-        // For now, do nothing or add a placeholder
-        loadPressContent(teamMembersContainer); // ✅ load press content asynchronously
+        loadPressContent(teamMembersContainer);
       }
     });
   });
