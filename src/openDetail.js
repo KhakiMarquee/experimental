@@ -1,5 +1,10 @@
 // openDetail.js
 export function openDetail(slide, item) {
+
+  //change URL
+  const newUrl = `${window.location.origin}${window.location.pathname}?id=${item.id}&title=${encodeURIComponent(item.title)}`;
+  window.history.replaceState({ itemTitle: item.title }, item.title, newUrl);
+  
   // Stop p5 from moving this slide
   slide.classList.add("expanding");
   if (window.p5Instance) {
@@ -114,6 +119,11 @@ function loadNewApp(item) {
 
   // Wire close to reload original app (or navigate back)
   document.getElementById("close-detail").addEventListener("click", () => {
+    // Clear the URL (remove query params)
+    const newUrl = window.location.origin + window.location.pathname;
+    window.history.replaceState({}, document.title, newUrl);
+
     location.reload(); // quick way to reset original carousel
   });
 }
+

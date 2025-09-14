@@ -5,16 +5,16 @@ const isMobile = () =>
   window.innerWidth <= 768;
 
 //RENDER STONEVIEW
-
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Fetching:", `data/stone.json`);
-  fetch(`/data/stone.json`) 
+    console.log("Fetching:", `data/stone_with_ids.json`);
+  fetch(`/data/stone_with_ids.json`) 
     .then(res => res.json())
     .then(data => {
 
       // ✅ store globally so you can inspect it in DevTools
       window.stoneData = data;
       console.log("[stoneData] loaded", Array.isArray(window.stoneData), window.stoneData?.length);
+      
 
       // 🔀 Randomize order based on the 'id' column
       window.stoneData.sort(() => Math.random() - 0.5);
@@ -134,3 +134,5 @@ function setupSingleTap(slide, item) {
     }, 150);
   });
 }
+
+

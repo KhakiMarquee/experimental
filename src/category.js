@@ -87,15 +87,33 @@ function renderCarousel(data) {
   });
 
   if (window.p5Instance?.refreshSlides) window.p5Instance.refreshSlides();
+
+// --- NEW: Check URL for id/title ---
+  const params = new URLSearchParams(window.location.search);
+  const urlId = params.get("id");
+  const urlTitle = params.get("title");
+
+  if (urlId) {
+    // Find the first matching item by id (or optionally title)
+    const matchedItemIndex = data.findIndex(item =>
+      String(item.id) === urlId && (!urlTitle || item.title === urlTitle)
+    );
+
+    if (matchedItemIndex !== -1) {
+      const matchedSlide = carousel.children[matchedItemIndex];
+      openDetailSafe(matchedSlide, data[matchedItemIndex]);
+    }
+  }
 }
 
 // Carousel setup
 document.addEventListener("DOMContentLoaded", () => {
-  fetch('/data/stone.json')
+  fetch('/data/stone_with_ids.json')
     .then(res => res.json())
     .then(data => {
       allData = data;
       renderCarousel(allData);
+      console.log('data',allData)
     })
     .catch(err => console.error("Error loading stone data:", err));
 

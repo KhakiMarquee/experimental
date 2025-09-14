@@ -1,4 +1,4 @@
-function d(t,n){t.classList.add("expanding"),window.p5Instance&&window.p5Instance.noLoop();const o=t.getBoundingClientRect(),r=o.top+window.scrollY,s=o.left+window.scrollX,l=o.width,p=o.height;t.parentElement,t.nextSibling,t.style.transition="none",t.style.position="fixed",t.style.top=`${r}px`,t.style.left=`${s}px`,t.style.width=`${l}px`,t.style.height=`${p}px`,t.style.margin="0",t.style.transform="none",t.style.zIndex="10000",t.style.willChange="top,left,width,height,transform",document.body.appendChild(t),t.getBoundingClientRect();const e=600;t.style.transition=`top ${e}ms ease, left ${e}ms ease, width ${e}ms ease, height ${e}ms ease, transform ${e}ms ease`,t.style.top="0px",t.style.left="0px",t.style.width="100vw",t.style.height="100vh",t.classList.add("fullscreen");const a=c=>{c.target===t&&t.classList.contains("fullscreen")&&(t.removeEventListener("transitionend",a),t.style.willChange="",i(n))};t.addEventListener("transitionend",a),setTimeout(()=>{document.body.contains(t)&&i(n)},e+50)}function i(t){document.body.innerHTML=`
+function g(t,e){const r=`${window.location.origin}${window.location.pathname}?id=${e.id}&title=${encodeURIComponent(e.title)}`;window.history.replaceState({itemTitle:e.title},e.title,r),t.classList.add("expanding"),window.p5Instance&&window.p5Instance.noLoop();const o=t.getBoundingClientRect(),l=o.top+window.scrollY,s=o.left+window.scrollX,p=o.width,c=o.height;t.parentElement,t.nextSibling,t.style.transition="none",t.style.position="fixed",t.style.top=`${l}px`,t.style.left=`${s}px`,t.style.width=`${p}px`,t.style.height=`${c}px`,t.style.margin="0",t.style.transform="none",t.style.zIndex="10000",t.style.willChange="top,left,width,height,transform",document.body.appendChild(t),t.getBoundingClientRect();const n=600;t.style.transition=`top ${n}ms ease, left ${n}ms ease, width ${n}ms ease, height ${n}ms ease, transform ${n}ms ease`,t.style.top="0px",t.style.left="0px",t.style.width="100vw",t.style.height="100vh",t.classList.add("fullscreen");const i=d=>{d.target===t&&t.classList.contains("fullscreen")&&(t.removeEventListener("transitionend",i),t.style.willChange="",a(e))};t.addEventListener("transitionend",i),setTimeout(()=>{document.body.contains(t)&&a(e)},n+50)}function a(t){document.body.innerHTML=`
     <div id="detail-app">
       <button id="close-detail" aria-label="Close" style="align-self:flex-end; font-size:1.25rem; background:none; border:none; cursor:pointer;">✕</button>
       <main style="max-width:960px; width:100%; margin:0 auto;">
@@ -20,10 +20,10 @@ function d(t,n){t.classList.add("expanding"),window.p5Instance&&window.p5Instanc
 
         <!-- Grid of extra images -->
         ${t.imageStack&&t.imageStack.length?`<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin-top:16px;">
-               ${t.imageStack.map(n=>`
-                 <img src="${n}" alt="${t.title}" style="width:100%; height:auto; border-radius:8px; object-fit:cover;">
+               ${t.imageStack.map(e=>`
+                 <img src="${e}" alt="${t.title}" style="width:100%; height:auto; border-radius:8px; object-fit:cover;">
                `).join("")}
              </div>`:""}
       </main>
     </div>
-  `,document.getElementById("close-detail").addEventListener("click",()=>{location.reload()})}export{d as openDetail};
+  `,document.getElementById("close-detail").addEventListener("click",()=>{const e=window.location.origin+window.location.pathname;window.history.replaceState({},document.title,e),location.reload()})}export{g as openDetail};

@@ -2,8 +2,12 @@
         {     
         "title": "Ball Finial",
         "material": "bath stone",
-        "description": "A study of a classical ornamentation in english architecture. Designed by hand, this was cut using traditional masonry techniques",
+        "description": "In this work, I wanted to expand on the literature relating to the ball finial, which is a typical ornamentation found in roman Architecture. Starting from a single point, extended into a line - this mechanism gets instanced across every point radiated outwards from the centre. This logic births a sphere. Though, I wanted to expand on this, intermediating the design with features from nature. I turned to the willow tree as a form of inspiration. Finding form in its leaves to hold up the ball. Some tensions with the design came up when trying to combine the thin nature of a leaf with the thickness of a ball held at height. Because of this, it was vital to design a leaf that was big enough to hold the ball. In this way, the design slowly veered away from the original inspiration to create a hybridity of tradition meets earth.",
         "image": "/public/media/IMG/ball_finial_small_image.png",
+        "imageStack": [
+          "/public/media/IMG/ball_finial_sketch.jpg",
+          "/public/media/IMG/ball_finial_sketch_2.jpg"
+        ],
         "preview-image" : "",
         "video": "",
         "type": "material",
@@ -13,7 +17,7 @@
         {     
         "title": "Trefoil",
         "material": "limestone",
-        "description": "A study of a classical ornamentation in french architecture. Designed by hand, this was cut using traditional masonry techniques",
+        "description": "In this work, I explore the relationship of french ornamentation on traditional in traditional Georgian architecture. This shape is directly connected to sacred geometry where the goal was to frame the light peering into the church. Because of this, careful mathematics are required to properly executed this work. I committed to various drawings and research to uncover various draughtsmen tricks to produce accurate curves, circles, and overlaps. Trefoils and quattrefoils can be found at the south window of Lincoln Cathedral.",
         "image": "/public/media/IMG/trefoil_small_image.png",
         "imageStack" : [
                 "/public/media/IMG/trefoil_sketch.jpg"
@@ -27,7 +31,7 @@
         {     
         "title": "Volute",
         "material": "moleanis limestone",
-        "description": "A study of a classical ornamentation in cathedral architecture. Designed by hand, this was cut using traditional masonry techniques",
+        "description": "The need to explore texture started with the choice of stone. Moleanis limestone is a soft sedimentary stone that maintains crystal sharp edges. As such, we are able to achieve a level of sharpness unique to the material and other not found in sedimentary material. With the addition of a spiral like mathematical shape, the greek ionic volute begins to introducing ascension and curvature to an already inherently interesting material. From this, we are intermediated by the embedded fossils which add cavities and bone to the material, re-introducing calcium in bone form to the spectator - the core mineral of limestone. The final refinement of the design where the curved surfaces are further roughed out, whilst some completely sanded down, meets at the top to a crown clover leaf.",
         "image": "/public/media/IMG/volute_small_image.png",
         "preview-image" : "",
         "imageStack" : [
