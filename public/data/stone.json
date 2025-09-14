@@ -11,6 +11,10 @@
         "preview-image" : "",
         "video": "",
         "type": "material",
+         "metadata": {
+          "question": "How can nature intervene in the design of a sphere?",
+          "process": "Material Specification -> Design Specification with Cutting Schedule -> Stone Fabrication"
+        },
         "dimensions": "250 by 250 by 500mm",
         "tools": "Draughtsman"
         },
@@ -25,6 +29,10 @@
         "preview-image" : "",
         "video": "",
         "type": "material",
+         "metadata": {
+          "question": "What is the french trefoil in architectural ornamentation?",
+          "process": "Material Specification -> Design Specification with Cutting Schedule -> Stone Fabrication"
+        },
         "dimensions": "500 by 500 by 250mm",
         "tools": "Draughtsman"
         },
@@ -39,6 +47,10 @@
         ],
         "video": "",
         "type": "material",
+         "metadata": {
+          "question": "To what degree can texture play role ornamental design?",
+          "process": "Material Specification -> Design Specification with Cutting Schedule -> Stone Fabrication"
+        },
         "dimensions": "150 by 150 by 250mm",
         "tools": "Draughtsman"
         },  

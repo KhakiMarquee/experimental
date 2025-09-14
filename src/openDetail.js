@@ -85,6 +85,13 @@ function loadNewApp(item) {
       <main style="max-width:960px; width:100%; margin:0 auto;">
         <h1 style="margin:0 0 12px 0;">${item.title}</h1>
         <p style="margin:0 0 8px 0;"><strong>Material:</strong> ${item.material ?? ""}</p>
+        ${item.metadata?.question 
+          ? `<p style="margin:0 0 8px 0;"><strong>Question:</strong> ${item.metadata.question}</p>` 
+          : ""}
+
+        ${item.metadata?.process 
+          ? `<p style="margin:0 0 8px 0;"><strong>Process:</strong> ${item.metadata.process}</p>` 
+          : ""}
         <p style="margin:0 0 16px 0;">${item.description ?? ""}</p>
         <p style="margin:0 0 8px 0;"><strong>Dimensions:</strong> ${item.dimensions ?? ""}</p>
         <p style="margin:0 0 8px 0;"><strong>Tools:</strong> ${item.tools ?? ""}</p>
