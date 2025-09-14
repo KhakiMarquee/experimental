@@ -3,6 +3,7 @@ import { teamHoverPreview } from '/src/teamHover.js';
 import { renderContactForm } from "./contactForm.js";
 import { loadPressContent } from './press.js';
 import ImageCompressor from 'js-image-compressor';
+import { renderQuickviewContent } from '/src/templateQuickview.js';
 
 // ✅ Reuse your compression utility
 function processImage(imgEl, label = "") {
@@ -90,9 +91,10 @@ function renderTeam(team) {
             </svg>              
           </button>
         ` : ""}
-      </div>
+        <h5 id="quick-title">Related Stories</h5>
+        <div id="${member.name}-quickview" style="  display: grid;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));align-items: start; /* prevents stretching */"></div>
     `;
-
+    
     container.appendChild(memberDiv);
 
     // ✅ Compress both bw and colour images
@@ -100,7 +102,16 @@ function renderTeam(team) {
     const colourImg = memberDiv.querySelector('img.colour');
     processImage(bwImg, `${member.firstname} bw`);
     processImage(colourImg, `${member.firstname} colour`);
-  });
+
+     // ✅ Render quickview for THIS member
+    const containerQuickview = document.getElementById(`${member.name}-quickview`);
+    const jsonPath = '/data/data_with_ids.json';
+    const entryId = member.projects; // assuming this is an array of IDs or a single ID
+
+    if (containerQuickview && entryId) {
+      renderQuickviewContent(entryId, jsonPath, containerQuickview, true, '/data/stone_with_ids.json');
+      }
+    });
 
   initTeamDropdowns();
   teamHoverPreview();

@@ -1,4 +1,5 @@
 @import './style.css';
+@import './storiesQuickview.css';
 
 
 #team-title{
@@ -12,6 +13,12 @@
   }
 
   #about-title {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+} 
+
+  #quick-title {
     margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: 4px;

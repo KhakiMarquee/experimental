@@ -221,4 +221,7 @@ button:hover{
     font-size: 1rem;
   }
   
+  .overlay h2{
+    font-size: .8rem;
+  }
 }

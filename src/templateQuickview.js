@@ -63,59 +63,98 @@ function processImage(section) {
  * @param {HTMLElement} container - Container element to append items
  * @param {boolean} useId - If true, match by entry id; otherwise, match by theme
  */
-export async function renderQuickviewContent(key, jsonPath, container, useId = false) {
+export async function renderQuickviewContent(
+  key,
+  jsonPath,
+  container,
+  useId = false,
+  fallbackPath = null
+) {
   container.innerHTML = '';
 
-  try {
-    const response = await fetch(jsonPath);
-    if (!response.ok) throw new Error('Failed to fetch data.');
-    const data = await response.json();
+  async function fetchData(path) {
+    const response = await fetch(path);
+    if (!response.ok) throw new Error(`Failed to fetch ${path}`);
+    return response.json();
+  }
 
+  async function searchData(data, searchKey, useId) {
     let matchedItems = [];
 
     if (useId) {
-      // Search all categories for entries matching ID
+      // Search by ID
       for (const cat of Object.keys(data)) {
         const group = data[cat];
         if (!group?.items) continue;
-        const found = group.items.filter(e => e.id.toString() === key.toString());
-        if (found.length) {
-          matchedItems.push(...found);
-        }
+
+        const found = group.items.filter(e => e.id.toString() === searchKey.toString());
+        if (found.length) matchedItems.push(...found);
       }
     } else {
-      // Match by category or theme
-      const categoryGroup = data[key];
+      // Search by category or theme
+      const categoryGroup = data[searchKey];
       if (categoryGroup?.items) {
         matchedItems.push(...categoryGroup.items);
       } else {
-        // fallback: search by theme across all categories
         for (const cat of Object.keys(data)) {
           const group = data[cat];
           if (!group?.items) continue;
-          const found = group.items.filter(e => e.theme?.toLowerCase() === key.toLowerCase());
+          const found = group.items.filter(
+            e => e.theme?.toLowerCase() === searchKey.toLowerCase()
+          );
           if (found.length) matchedItems.push(...found);
         }
       }
     }
 
-    if (!matchedItems.length) {
-      container.innerHTML = `<p>No items found for "${key}"</p>`;
-      return;
+    return matchedItems;
+  }
+
+  try {
+    const primaryData = await fetchData(jsonPath);
+    const fallbackData = fallbackPath ? await fetchData(fallbackPath) : null;
+
+    let matchedItems = [];
+
+    if (Array.isArray(key)) {
+      // Loop over each key/ID
+      for (const k of key) {
+        const fromPrimary = await searchData(primaryData, k, useId);
+        const fromFallback = fallbackData ? await searchData(fallbackData, k, useId) : [];
+        matchedItems.push(...fromPrimary, ...fromFallback);
+      }
+    } else {
+      // Single key
+      const fromPrimary = await searchData(primaryData, key, useId);
+      const fromFallback = fallbackData ? await searchData(fallbackData, key, useId) : [];
+      matchedItems.push(...fromPrimary, ...fromFallback);
     }
 
-    // Shuffle + limit items
-    shuffleArray(matchedItems);
-    const selected = matchedItems.slice(0, 6); // grab a few more for the moodboard
+    // 🔹 Deduplicate by ID
+    const seen = new Set();
+    matchedItems = matchedItems.filter(item => {
+      if (seen.has(item.id)) return false;
+      seen.add(item.id);
+      return true;
+    });
 
-    // Instead of appending DOM rows, pass to moodboard
+    if (!matchedItems.length) {
+      container.innerHTML = `<p>No items found for "${key}"</p>`;
+      return [];
+    }
+
+    // Shuffle + limit
+    shuffleArray(matchedItems);
+    const selected = matchedItems.slice(0, 6);
+
+    // Render moodboard
     createMoodboard(container, selected);
 
     return matchedItems.slice(0, 3);
-
   } catch (err) {
     console.error(err);
     container.innerHTML = `<p>Error loading quickview content.</p>`;
     return [];
   }
 }
+

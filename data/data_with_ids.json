@@ -354,7 +354,7 @@
         "client": "Joia Jewellery",
         "theme": "Culture",
         "description": "Material Research",
-        "image": "/public/media/IMG/material/jewellery/joia_2.jpg",
+        "image": "/public/media/IMG/material/jewellery/joia_ice_7.jpg",
         "video": null,
         "imageStack": [
           "/public/media/IMG/material/jewellery/joia_ice.jpg",
@@ -362,8 +362,7 @@
           "/public/media/IMG/material/jewellery/joia_ice_3.jpg",
           "/public/media/IMG/material/jewellery/joia_ice_4.jpg",
           "/public/media/IMG/material/jewellery/joia_ice_5.jpg",
-          "/public/media/IMG/material/jewellery/joia_ice_6.png",
-          "/public/media/IMG/material/jewellery/joia_ice_7.jpg"
+          "/public/media/IMG/material/jewellery/joia_ice_6.png"
         ],
         "type": [
           "film",

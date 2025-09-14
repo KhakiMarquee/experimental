@@ -1,4 +1,4 @@
-import"./category-B7rZq-dZ.js";import"./main-B2Qi3vca.js";import"./index-D4s6B3rk.js";import"./openTemplateDetail-C02LQNdb.js";(function(D){/**
+import"./category-b9Vj-sZl.js";import"./main-Cdy9W5qr.js";import"./templateQuickview-Bb9Du4q7.js";import"./index-B0oIV-ya.js";(function(D){/**
 * @license Fraction.js v4.3.7 31/08/2023
 * https://www.xarg.org/2014/03/rational-numbers-in-javascript/
 *
