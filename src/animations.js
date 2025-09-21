@@ -21,18 +21,7 @@ export function initAnimations() {
     });
   }
 
-const subhead = document.querySelector('.subhead');
 
-// Run only if not on mobile (example: > 768px wide)
-if (subhead && window.matchMedia('(min-width: 769px)').matches) {
-  gsap.from('.subhead', {
-    duration: 1.3,
-    y: 30,
-    opacity: 0,
-    ease: 'power3.out',
-    delay: 0.1
-  });
-}
 
   const navContainerDivs = document.querySelectorAll('.site-header .container div');
   if (navContainerDivs.length) {
@@ -59,7 +48,8 @@ if (subhead && window.matchMedia('(min-width: 769px)').matches) {
     });
   }
 
-  if (document.querySelector('.secondary-text li')) {
+  if (window.matchMedia('(min-width: 769px)').matches) {
+    if (document.querySelector('.secondary-text li')) {
     gsap.fromTo('.secondary-text li', 
       {
         y: 30,
@@ -81,6 +71,7 @@ if (subhead && window.matchMedia('(min-width: 769px)').matches) {
       }
     );
   }
+}
 
   if (document.querySelector('.third-section .third-box')) {
     gsap.fromTo('.third-section .third-box',
