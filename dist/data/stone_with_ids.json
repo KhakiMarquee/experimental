@@ -17,7 +17,8 @@
   },
     "dimensions": "250 by 250 by 500mm",
     "tools": "Draughtsperson",
-    "id": "4e5dca48bb4e799387c3aac6ff552556"
+    "id": "4e5dca48bb4e799387c3aac6ff552556",
+    "ignore": false
   },
   {
     "title": "Trefoil",
@@ -36,7 +37,8 @@
   },
     "dimensions": "500 by 500 by 250mm",
     "tools": "Draughtsperson",
-    "id": "21a3dee295d9fc5dc82fb02396c9874b"
+    "id": "21a3dee295d9fc5dc82fb02396c9874b",
+    "ignore": false
   },
   {
     "title": "Volute",
@@ -55,7 +57,8 @@
   },
     "dimensions": "150 by 150 by 250mm",
     "tools": "Draughtsperson",
-    "id": "14f4a6cac60f78c99e5410e7fd8d8ec8"
+    "id": "14f4a6cac60f78c99e5410e7fd8d8ec8",
+    "ignore": false
   },
   {
     "title": "Stonewater",
@@ -67,7 +70,8 @@
     "type": "render",
     "dimensions": "750 by 750 by 750mm",
     "tools": "Rhino; Blender",
-    "id": "4ec9ce12bdcde5fb25a8a74012aa7a10"
+    "id": "4ec9ce12bdcde5fb25a8a74012aa7a10",
+    "ignore": false
   },
   {
     "title": "Rose",
@@ -79,7 +83,8 @@
     "type": "render",
     "dimensions": null,
     "tools": "Blender; Geometry Nodes",
-    "id": "e21512212e3adff4654e76df1b7f16d2"
+    "id": "e21512212e3adff4654e76df1b7f16d2",
+    "ignore": true
   },
   {
     "title": "Whey Protein",
@@ -91,7 +96,8 @@
     "type": "render",
     "dimensions": null,
     "tools": "Blender",
-    "id": "bada179f68473ab03744440812ef295e"
+    "id": "bada179f68473ab03744440812ef295e",
+    "ignore": true
   },
   {
     "title": "Perfume",
@@ -107,7 +113,8 @@
     "type": "render",
     "dimensions": null,
     "tools": "Blender; Photography",
-    "id": "08fe25c56751927f3c7cab595e8a0159"
+    "id": "08fe25c56751927f3c7cab595e8a0159",
+    "ignore": true
   },
   {
     "title": "Jewellery",
@@ -145,6 +152,7 @@
     "type": "render",
     "dimensions": null,
     "tools": "Blender; 3D Scanner",
-    "id": "13ef7b023134edb59ba5a66808abe930"
+    "id": "13ef7b023134edb59ba5a66808abe930",
+    "ignore": true
   }
 ]
