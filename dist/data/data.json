@@ -183,6 +183,27 @@
           "year": 2025
         },
         "collaboration": { "participants": ["Rosal Stone", "Pierre Perraudin" , "Groupwork"], "focus": "Sustainability, architecture", "medium": "film" }        
+      },
+      {
+        "title": "Black Mary’s Pleasure Garden",
+        "client": "Studio Gaylene Gould",
+        "theme": "Culture",
+        "description": "A poetic short film documenting the community-led unveiling of a memorial to 17th-century healer Mary Woolaston, where music, ritual, and dance become acts of remembrance and collective healing.",
+        "image": "/media/IMG/black_marys_pleasure_garden/Black Mary’s Pleasure Garden-5.jpeg",
+        "imageStack": [
+          "/media/IMG/black_marys_pleasure_garden/Black Mary’s Pleasure Garden.jpeg",
+          "/media/IMG/black_marys_pleasure_garden/Black Mary’s Pleasure Garden-2.jpeg",
+          "/media/IMG/black_marys_pleasure_garden/Black Mary’s Pleasure Garden-3.jpeg",
+          "/media/IMG/black_marys_pleasure_garden/Black Mary’s Pleasure Garden-4.jpeg",
+          "/media/IMG/black_marys_pleasure_garden/Black Mary’s Pleasure Garden-5.jpeg"
+        ],
+        "video": "https://drive.google.com/file/d/1OV6eFMq088QNIYB0P2BVe8R1wRKt6HCI/preview",
+        "type": ["film", "installation", "craft"],
+        "link": null,
+        "story": "A short documentary film for the Black Mary Project (2025, King’s Cross), capturing the unveiling of a memorial sculpture for Mary Woolaston - a 17th-century Black healer whose well once served London’s poor. The film documents communal ritual, global majority musical performances, healing ceremonies, and collective dance, exploring how spiritual practice and embodied celebration can reclaim erased Black working-class histories.",
+         "metadata": {
+          "year": 2025
+        }
       }
     ]
   },
@@ -458,6 +479,26 @@
           "participants": ["National Archives KEW"],
           "focus": "Gendered city, fear, sound, history",
           "medium": "film"
+        }
+      },
+      {
+        "title": "Hiraeth",
+        "client": null,
+        "theme": "Culture",
+        "description": "Co-wrote, co-directed, and performed in Hiraeth, an ensemble-devised theatre piece exploring cultural identity and displacement through movement, rhythm, and abstraction rather than linear narrative.",
+        "image": "/media/IMG/Hiraeth/Hiraeth-4.jpeg",
+        "imageStack": [
+          "/media/IMG/Hiraeth/Hiraeth.jpg",
+          "/media/IMG/Hiraeth/Hiraeth-2.jpeg",
+          "/media/IMG/Hiraeth/Hiraeth-3.jpeg",
+          "/media/IMG/Hiraeth/Hiraeth-4.jpeg"
+        ],
+        "video": null,
+        "type": ["performance", "story"],
+        "link": null,
+        "story": "Co-wrote, co-directed, and performed in Hiraeth, an avant-garde ensemble-devised theatre piece exploring cultural identity and belonging. Working collaboratively with the cast, we collected personal stories and created original poetry to investigate the question 'Who am I?' The production used movement, dance, and stark visual imagery to express displacement and cultural longing—eschewing linear narrative for a rhythm-based, gestural language. The devising process prioritized embodied storytelling over text, allowing personal histories to emerge through collective choreography and improvisation.",
+         "metadata": {
+          "year": 2025
         }
       }
     ]

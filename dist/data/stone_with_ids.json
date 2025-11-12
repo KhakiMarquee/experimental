@@ -74,49 +74,6 @@
     "ignore": false
   },
   {
-    "title": "Rose",
-    "material": "genus Rosa",
-    "description": "A short study on the rose, its petals that tesselate to form a crown",
-    "image": "/media/S_IMG/renders/items/rose.png",
-    "preview-image": "",
-    "video": "https://www.youtube.com/embed/vZxGfa-umOw?si=82VOLgJCgzWI5T6-",
-    "type": "render",
-    "dimensions": null,
-    "tools": "Blender; Geometry Nodes",
-    "id": "e21512212e3adff4654e76df1b7f16d2",
-    "ignore": true
-  },
-  {
-    "title": "Whey Protein",
-    "material": "plastic",
-    "description": "A short form study of commercial whey protein",
-    "image": "/media/S_IMG/renders/items/whey.png",
-    "preview-image": "",
-    "video": "",
-    "type": "render",
-    "dimensions": null,
-    "tools": "Blender",
-    "id": "bada179f68473ab03744440812ef295e",
-    "ignore": true
-  },
-  {
-    "title": "Perfume",
-    "material": "glass",
-    "description": "An artwork proposal for Wellingborugh Development project.",
-    "image": "/media/S_IMG/renders/items/perfume.png",
-    "preview-image": "",
-    "imageStack": [
-      "/media/IMG/items/perfume.png",
-      "/media/IMG/items/perfume_2.png"
-    ],
-    "video": "https://www.youtube.com/embed/otKWW6U2NXk?si=cJF4-mh-fEcHm5kb",
-    "type": "render",
-    "dimensions": null,
-    "tools": "Blender; Photography",
-    "id": "08fe25c56751927f3c7cab595e8a0159",
-    "ignore": true
-  },
-  {
     "title": "Jewellery",
     "material": "metal",
     "description": "A study in contemporary craft and design in collaboration iwht Joia Jewellery.",
@@ -130,29 +87,5 @@
     "dimensions": "50 by 25 by 50mm",
     "tools": "Rhino; Blender",
     "id": "fd300d56c687e384a268067bc42ac80c"
-  },
-  {
-    "title": "Timehri",
-    "material": "mixed material",
-    "description": "A study exploring mudlarking, a traditional activity of searching the riverbanks of the Thames for historical artifacts. Timehri, the Boat belongs to Remiiya Badru. This object was used to promote our event that explored south asian seafarers.",
-    "image": "/media/IMG/renders/timehri.png",
-    "preview-image": "",
-    "imageStack": [
-      "/media/IMG/timehri/7W8A0843.JPG",
-      "/media/IMG/timehri/7W8A0846.JPG",
-      "/media/IMG/timehri/7W8A0850.JPG",
-      "/media/IMG/timehri/7W8A0853.JPG",
-      "/media/IMG/timehri/7W8A0854.JPG",
-      "/media/IMG/timehri/7W8A0855.JPG",
-      "/media/IMG/timehri/7W8A0859.JPG",
-      "/media/IMG/timehri/7W8A0860.JPG",
-      "/media/IMG/timehri/7W8A0861.JPG"
-    ],
-    "video": "https://player.vimeo.com/video/1110662984?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-    "type": "render",
-    "dimensions": null,
-    "tools": "Blender; 3D Scanner",
-    "id": "13ef7b023134edb59ba5a66808abe930",
-    "ignore": true
   }
 ]
