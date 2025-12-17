@@ -701,6 +701,57 @@
           "year": 2018
         },
         "id": "66c108318a45712580ac615dd06ca334"
+      },
+      {
+        "title": "Climate Ambassadors",
+        "client": "STEM AMBASSADORS",
+        "theme": "Culture",
+        "description": "Climate Ambassadors is a Department for Education–funded initiative led by the University of Reading and EAUC that supports nurseries, schools, and colleges in creating Climate Action Plans to prepare young people for a green economy and help education settings respond to climate change.",
+        "image": "/media/IMG/climate_action/climate_action.png",
+        "imageStack": [
+          "/media/IMG/climate_action/climate_action.png",
+          "/media/IMG/climate_action/climate_action_2.png",
+          "/media/IMG/climate_action/climate_action_3.png",
+          "/media/IMG/climate_action/climate_action_4.png",
+          "/media/IMG/climate_action/climate_action_5.png",
+          "/media/IMG/climate_action/climate_action_6.png"
+        ],
+        "video": "https://drive.google.com/file/d/1w-gkkkWPdvQedfcFsxueHW4WPPs8F-jP/preview",
+        "type": [
+          "education",
+          "sustainability"
+        ],
+        "link": "https://www.stem.org.uk/climate-ambassadors",
+        "story": "[Project Ongoing] Climate Ambassadors is an initiative funded by the Department for Education with the aim of helping all education settings make and implement a Climate Action Plan. The initiative is led by the University of Reading and EAUC and is delivered by a consortium of organisations across England. By supporting nurseries, schools and colleges to build their climate action plans, Climate Ambassadors can help to ensure that young people have access to the learning and skills they will need for their future in the green economy while also helping education settings meet the challenges of a changing climate.",
+        "metadata": {
+          "year": 2025
+        },
+        "id": "17bbd61c47e9f334e1d8659c1a522b17"
+      },
+      {
+        "title": "Primary School Promotion",
+        "client": "St John's Baptist Church",
+        "theme": "Culture",
+        "description": "",
+        "image": "/media/IMG/St Johns/ST_JOHNS 5.png",
+        "imageStack": [
+          "/media/IMG/St Johns/ST_JOHNS 5.png",
+          "/media/IMG/St Johns/ST_JOHNS 2.png",
+          "/media/IMG/St Johns/ST_JOHNS 3.png",
+          "/media/IMG/St Johns/ST_JOHNS 4.png",
+          "/media/IMG/St Johns/ST_JOHNS 1.png"
+        ],
+        "video": null,
+        "type": [
+          "education",
+          "sustainability"
+        ],
+        "link": null,
+        "story": "",
+        "metadata": {
+          "year": 2025
+        },
+        "id": "343eeb9af963f980d27c84edbc2f5626"
       }
     ]
   }
