@@ -6,7 +6,6 @@
     "array-union": "^2.1.0",
     "async": "^3.2.6",
     "braces": "^3.0.3",
-    "canvas": "^3.1.2",
     "cli": "^1.0.1",
     "commander": "^13.1.0",
     "commondir": "^1.0.1",
