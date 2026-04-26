@@ -265,6 +265,7 @@ a:hover, #location-toggle:hover{
     margin: 0 auto;
     transition: font-size 1s ease-in;
     width: 75%;
+    line-height: 1.5em;
   }
 
   .music_player {
