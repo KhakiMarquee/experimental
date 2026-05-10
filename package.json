@@ -86,7 +86,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npx vite build",
     "preview": "vite preview",
     "build:images": "node ./scripts/compress-image.js"
   },
