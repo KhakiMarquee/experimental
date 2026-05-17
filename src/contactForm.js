@@ -11,7 +11,7 @@ export async function renderContactForm(containerId = "contact-container", prese
       <!-- Left Column: Info -->
       <div class="contact-info">
         <h2>Start a Project</h2>
-        <p>General: <a href="mailto:goke.studio@proton.me">goke.studio@proton.me</a></p>
+        <p>General: <a href="mailto:contact@goke.studio">contact@goke.studio</a></p>
 
         <h2>Based in London</h2>
         <p>
