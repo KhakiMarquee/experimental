@@ -23,16 +23,16 @@ export async function renderContactForm(containerId = "contact-container", prese
 
       <!-- Right Column: Form -->
       <form id="contact-form" class="contact-form" name="contact" method="POST" data-netlify="true" netlify>
-        <input type="hidden" name="form-name" value="contact">
+        <input type="hidden" name="form-name" value="contact"/>
 
         <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" required/>
 
         <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" required/>
 
         <label for="company">Company</label>
-        <input type="text" id="company" name="company">
+        <input type="text" id="company" name="company"/>
 
         <label>Services</label>
         <div class="services-checkboxes">Loading...</div>
