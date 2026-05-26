@@ -68,11 +68,6 @@ export async function renderContactForm(containerId = "contact-container", prese
     `;
   });
 
-      // Call onReady callback if provided
-    if (typeof onReady === "function") {
-      onReady(container.querySelector("#contact-form"));
-    }
-
     // ✅ Initialize Netlify form handling
     setupContactForm("contact-form"); // or use formEl.id if you have a reference
 
@@ -122,7 +117,9 @@ export function setupContactForm(formId = "contact-form") {
     const response = await fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
+      body: Array.from(formData.entries())
+        .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
+        .join("&"),
     });
 
     if (response.ok) {
@@ -143,7 +140,9 @@ export function setupContactForm(formId = "contact-form") {
   } finally {
     setTimeout(() => {
       submitButton.disabled = false;
-      submitButton.textContent = "Send";
+      if (submitButton.textContent !== "Thank You!") {
+        submitButton.textContent = "Send";
+      }
     }, 3000);
   }
 });
