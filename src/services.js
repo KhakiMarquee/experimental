@@ -1,5 +1,5 @@
 
-import { renderContactForm } from "./contactForm.js";
+// import { renderContactForm } from "./contactForm.js";
 import { clearHashOnTop, attachServicePitchClick, attachServiceItemClick, handleHashOnLoad } from "./servicesInteraction.js";
 import { initServiceHighlight } from "./servicesHighlight.js";
 import gsap from "gsap";
@@ -142,9 +142,9 @@ function createPitchItem(service) {
   button.id = "contact-button";
   button.classList.add("service-button");
   button.dataset.category = service.service;
-  button.textContent = "Contact Us ";
+  /*button.textContent = "Contact Us ";
   button.appendChild(createSVG());
-  div.querySelector(".pitch-footer").appendChild(button);
+  div.querySelector(".pitch-footer").appendChild(button);*/
 
   // Attach handler directly to THIS button
   button.addEventListener("click", () => {

@@ -100,7 +100,7 @@ a:hover, #location-toggle:hover{
   font-size: 1rem;
   font-weight: 450;
   letter-spacing: 1px;
-  line-height: 1rem;
+  line-height: 2rem;
   font-family:'Geist'
 }
 
@@ -110,6 +110,49 @@ a:hover, #location-toggle:hover{
   display:none;
   box-sizing: border-box;
   width: 100%; /* Full width of the viewport */
+}
+
+.icons-containers {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 5% 0;
+}
+
+.icons-containers ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.icons-containers li {
+  display: flex;
+}
+
+.icons-containers a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icons-containers svg {
+  width: 32px;
+  height: 32px;
+}
+
+.icon-bg {
+  fill: rgb(var(--grey-800));
+}
+
+.icon-bg:hover {
+  fill: rgb(var(--grey-600));
+}
+
+.icon-fg {
+  fill: rgb(var(--grey-100));
 }
 
 /*SECOND*/
@@ -265,7 +308,7 @@ a:hover, #location-toggle:hover{
     margin: 0 auto;
     transition: font-size 1s ease-in;
     width: 75%;
-    line-height: 1.5em;
+    line-height: 2em;
   }
 
   .music_player {

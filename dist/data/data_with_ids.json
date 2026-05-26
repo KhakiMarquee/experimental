@@ -616,69 +616,6 @@
         "id": "ae5d2f329ef38296775a75448801bbe9"
       },
       {
-        "title": "Jen",
-        "client": "Jen's Flowers and Plants",
-        "theme": "Culture",
-        "description": "A short documentary about Jen, who left a career in banking to follow her passion for creativity and nature. Now running Jen\u2019s Plants and Flowers on Brick Lane and selling at Broadway Market, Jen\u2019s story is one of courage, kindness, and dedication to building the life she truly wants.",
-        "image": "/media/IMG_optimised/jen/jen_2.png",
-        "preview-image": null,
-        "imageStack": [
-          "/media/IMG_optimised/jen/jen_3.png",
-          "/media/IMG_optimised/jen/jen_2.png",
-          "/media/IMG_optimised/jen/jen.png"
-        ],
-        "video": "https://player.vimeo.com/video/1042946472?h=ca12712f34",
-        "type": [
-          "film",
-          "audio"
-        ],
-        "link": null,
-        "story": "A short documentary made with the wonderful Jen, who runs Jen\u2019s Plants and Flowers.\n\nJen interprets the work and the people she meets through her arrangements\u2014like a filmmaker with reels in the edit, only her reels are stems and petals.\n\nThe film tells the story of passion, creativity, and the courage to become who you truly want to be. After years working in banking in the City, Jen left it all behind to pursue her love of nature, opening her own shop and selling at Broadway Market on weekends.\n\nI first met Jen while buying a houseplant, and her warmth immediately lifted my day. I knew I had to return and ask if she\u2019d make a film with me. The process was incredible, and I\u2019m deeply inspired by her dedication, kindness, and the beauty she brings into the world.",
-        "metadata": {
-          "year": 2025
-        },
-        "collaboration": {
-          "participants": [
-            "Jen"
-          ],
-          "focus": "Passion, creativity, nature",
-          "medium": "film"
-        },
-        "id": "95c9d0f3b3b1e4c769fbc8cb7dbaf5ca"
-      },
-      {
-        "title": "Text me when you're home",
-        "client": "National Archives KEW",
-        "theme": "Culture",
-        "description": "A sonically focused experimental film about the fear we embody as women walking the streets at nighttime. A sensory experience that blurs past and present, the anachronism of living in the gendered city.",
-        "image": "/media/IMG_optimised/TMWH/TMWH_3.png",
-        "preview-image": null,
-        "imageStack": [
-          "/media/IMG_optimised/TMWH/TMWH.png",
-          "/media/IMG_optimised/TMWH/TMWH_2.png",
-          "/media/IMG_optimised/TMWH/TMWH_3.png",
-          "/media/IMG_optimised/TMWH/TMWH_4.png"
-        ],
-        "video": "https://player.vimeo.com/video/1068835712?h=40943a8b64",
-        "type": [
-          "film",
-          "audio"
-        ],
-        "link": null,
-        "story": "\"Five women live in this house. Five women died in these streets.\"\n\nA sonically driven experimental film that traces the echoes of violence in the East End, where the streets themselves hold memory of the murders of Jack the Ripper in 1888.\n\nTheir absence lingers in the alleys and passageways, folding into the present-day fear women embody while walking home at night. The streets become an important archival component of negotiating this gendered history, yet continue to embody that fear for women walking home today.\n\nThrough layered sound and fractured imagery, the film unsettles the boundary between past and present, exposing how the city remains gendered, haunted, and unresolved.",
-        "metadata": {
-          "year": 2025
-        },
-        "collaboration": {
-          "participants": [
-            "National Archives KEW"
-          ],
-          "focus": "Gendered city, fear, sound, history",
-          "medium": "film"
-        },
-        "id": "2aa1a03aaf4892c7ae9d19700382942a"
-      },
-      {
         "title": "Hiraeth",
         "client": null,
         "theme": "Culture",

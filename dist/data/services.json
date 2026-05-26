@@ -1,6 +1,6 @@
 [
   {
-    "service": "audiovisuals",
+    "service": "stories",
     "intro": "Cultural placemaking",
     "value": "Brand Storytelling",
     "short-description": "Film, Audio, and Photography production",
@@ -21,7 +21,7 @@
     "timeline": ["Concept Research", "Storyboarding", "Post-Production"]
   },
   {
-    "service": "materials",
+    "service": "objects",
     "intro": "Object Facbrication",
     "value": "Product Development",
     "short-description": "Craftswork and object end-to-end design",

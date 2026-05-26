@@ -3,6 +3,7 @@
   justify-content: space-between;
   gap: 2rem;
   padding: 3rem;
+  margin:0 15%;
   background: transparent; /* blends with background */
   font-family: 'Geist', sans-serif;
 }

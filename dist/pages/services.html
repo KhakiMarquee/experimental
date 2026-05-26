@@ -32,9 +32,8 @@
       }
     }
   </script>
-  <script type="module" crossorigin src="/assets/services-Bv_sq_YW.js"></script>
+  <script type="module" crossorigin src="/assets/services-BRZHKoYZ.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/category-Dij8vCmn.js">
-  <link rel="modulepreload" crossorigin href="/assets/contactForm-DXdElMYI.js">
 </head>
   <body>
     
@@ -144,6 +143,48 @@
           </div>
         </div>
       </div>
+
+    <div class="contact-container" id="contact-area">
+      <!-- Left Column: Info -->
+      <div class="contact-info">
+        <h2>Start a Project</h2>
+        <p>General: <a href="mailto:contact@goke.studio">contact@goke.studio</a></p>
+
+        <h2>Based in London</h2>
+        <p>
+          <br>
+          Shadwell, London<br>
+        </p>
+        <p><a href="https://maps.app.goo.gl/E3YvDua81eZzKaUWA" target="_blank">📍 View on maps</a></p>
+      </div>
+
+      <!-- Right Column: Form -->
+      <form id="contact-form" class="contact-form" name="contact" method="POST" data-netlify="true" netlify>
+        <input type="hidden" name="form-name" value="contact"/>
+
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required/>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required/>
+
+        <label for="company">Company</label>
+        <input type="text" id="company" name="company"/>
+
+        <label>Services</label>
+        <div class="services-checkboxes">
+          <label for="stories"><input id="stories" type="checkbox" name="services" value="Stories">Stories</label>
+          <label for="objects"><input id="objects" type="checkbox" name="services" value="Objects"> Objects</label>
+          <label for="workshops"><input id="workshops" type="checkbox" name="services" value="Workshops"> Workshops</label>
+          <label for="digital"><input id="digital" type="checkbox" name="services" value="Digital"> Digital</label>
+        </div>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Start Project</button>
+      </form>
+    </div>
 
       <div id="pitch-container">
         <div class='service-pitch'>
