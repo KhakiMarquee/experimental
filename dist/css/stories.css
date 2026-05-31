@@ -116,7 +116,6 @@
   height: auto;
   object-fit: cover;
   image-rendering: pixelated;
-  filter: grayscale(1) contrast(1.2);
 }
 /* Update the .project-details to use flexbox for horizontal layout */
 .project-details {

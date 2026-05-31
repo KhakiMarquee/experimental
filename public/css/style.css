@@ -145,10 +145,12 @@ a:hover, #location-toggle:hover{
 
 .icon-bg {
   fill: rgb(var(--grey-800));
+  opacity:0.8
 }
 
 .icon-bg:hover {
   fill: rgb(var(--grey-600));
+  opacity:1
 }
 
 .icon-fg {
@@ -202,7 +204,48 @@ a:hover, #location-toggle:hover{
   text-align: right; /* Align text to the right */
 }
 
+/*Video Block*/
 
+.video-block {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: rgb(var(--grey-150));
+}
+
+.video-player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  /* Style the native controls */
+  accent-color: rgb(var(--grey-600));
+}
+
+/* Remove default focus outline and replace */
+.video-player:focus {
+  outline: 1px solid rgb(var(--grey-600));
+  outline-offset: 2px;
+}
+
+/*the above is now redundant, specifically .video-players*/
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0; /* replaces frameborder="0" on the element */
+}
 
 /*THIRD*/
 .third-section {
