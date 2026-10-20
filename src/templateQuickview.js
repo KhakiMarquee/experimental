@@ -72,6 +72,8 @@ export async function renderQuickviewContent(
 ) {
   container.innerHTML = '';
 
+  const isAllKey = k => k?.toString().toLowerCase() === 'all';
+
   async function fetchData(path) {
     const response = await fetch(path);
     if (!response.ok) throw new Error(`Failed to fetch ${path}`);
@@ -79,15 +81,24 @@ export async function renderQuickviewContent(
   }
 
   async function searchData(data, searchKey, useId) {
-    let matchedItems = [];
+    const matchedItems = [];
+
+    // "all" works whether or not useId is set
+    if (isAllKey(searchKey)) {
+      for (const cat of Object.keys(data)) {
+        if (data[cat]?.items) matchedItems.push(...data[cat].items);
+      }
+      return matchedItems;
+    }
 
     if (useId) {
       // Search by ID
       for (const cat of Object.keys(data)) {
         const group = data[cat];
         if (!group?.items) continue;
-
-        const found = group.items.filter(e => e.id.toString() === searchKey.toString());
+        const found = group.items.filter(
+          e => e.id.toString() === searchKey.toString()
+        );
         if (found.length) matchedItems.push(...found);
       }
     } else {
@@ -115,22 +126,15 @@ export async function renderQuickviewContent(
     const fallbackData = fallbackPath ? await fetchData(fallbackPath) : null;
 
     let matchedItems = [];
+    const keys = Array.isArray(key) ? key : [key];
 
-    if (Array.isArray(key)) {
-      // Loop over each key/ID
-      for (const k of key) {
-        const fromPrimary = await searchData(primaryData, k, useId);
-        const fromFallback = fallbackData ? await searchData(fallbackData, k, useId) : [];
-        matchedItems.push(...fromPrimary, ...fromFallback);
-      }
-    } else {
-      // Single key
-      const fromPrimary = await searchData(primaryData, key, useId);
-      const fromFallback = fallbackData ? await searchData(fallbackData, key, useId) : [];
+    for (const k of keys) {
+      const fromPrimary = await searchData(primaryData, k, useId);
+      const fromFallback = fallbackData ? await searchData(fallbackData, k, useId) : [];
       matchedItems.push(...fromPrimary, ...fromFallback);
     }
 
-    // 🔹 Deduplicate by ID
+    // Deduplicate by ID
     const seen = new Set();
     matchedItems = matchedItems.filter(item => {
       if (seen.has(item.id)) return false;
@@ -143,14 +147,14 @@ export async function renderQuickviewContent(
       return [];
     }
 
-    // Shuffle + limit
+    // Shuffle, then limit to 6 unless "all" was requested
     shuffleArray(matchedItems);
-    const selected = matchedItems.slice(0, 6);
+    const showAll = keys.some(isAllKey);
+    const selected = showAll ? matchedItems : matchedItems.slice(0, 6);
 
-    // Render moodboard
     createMoodboard(container, selected);
 
-    return matchedItems.slice(0, 3);
+    return selected;
   } catch (err) {
     console.error(err);
     container.innerHTML = `<p>Error loading quickview content.</p>`;

@@ -7,7 +7,7 @@ function randInt(min, max) {
 }
 
 const words = [
-    "studio",
+    "flm",
     "carving", 
     "lab",
     "research",

@@ -40,9 +40,11 @@ export function initApp() {
       const jsonPath = '/data/data_with_ids.json';
 
       // Render 3 items by theme
-      renderQuickviewContent('architecture', jsonPath, container[2]);
+
+      renderQuickviewContent('architecture', jsonPath, container[3]);
       renderQuickviewContent('heritage', jsonPath, container[1]);
       renderQuickviewContent('culture', jsonPath, container[0]);
+      renderQuickviewContent('all', jsonPath, document.getElementById('all-quickview'));
 
       /* Or render 3 items by entry ID
       const entryId = '123';

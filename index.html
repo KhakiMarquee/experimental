@@ -71,9 +71,9 @@
       <div id="canvas-container"></div>
     </div>  
     <div class="shuffling-wrapper" id="ls-small">
-      <span id="shuffling-word">studio</span> 
-      <span>.G O K E</span> 
-      <span>.studio</span>
+      <span id="shuffling-word" style="display: none;">studio</span> 
+      <span > G O K E </span> 
+
     </div>
   </div>
 
@@ -92,15 +92,14 @@
     </div>
     <div class="main-text blend-edges ">
       <h1 class="headline fade-in">
-        <u> Stories</u>
-          <button class="tap-button" aria-label="tap">[tap]</button><br /> through sculpture 
+        G O K E
       </h1>
 
       <p class="subhead fade-in delayed">
-        Engaging with ideas that occupy spaces by <br/> working at the intersection of architecture, placemaking, and digital storytelling.
+        An Artist Filmmaker Studio
       </p>
 
-      <span class="icons-containers fade-in delayed">
+      <!--<span class="icons-containers fade-in delayed">
         <ul>
           <li>
             <a href="https://substack.goke.studio" target="_blank" rel="noopener noreferrer">
@@ -123,20 +122,13 @@
             </a>
           </li>
         </ul>
-      </span>
+      </span>-->
     </div>
     
-    <div class="video-block">
-      <div class="video-wrapper">
-        <iframe
-          src="https://player.vimeo.com/video/1197140143?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&color=ff0000"
-          frameborder="0"
-          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-          loading="lazy"
-          title=0
-        ></iframe>
+    <div>
+      <div class="quickview-container row-view" id="content">
+        <h2><span title="[slide]" class="tooltip">Quick View</span></h2>
+        <div id="all-quickview" style="  display: grid;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));align-items: start; /* prevents stretching */"></div>
       </div>
     </div>
 
@@ -165,19 +157,13 @@
       <ul>
         <li>
           <span class="trigger-text-container" data-overlay="heritage-overlay">
-            <span class="clickable-word">heritage</span>
+            <span class="clickable-word">documentaries</span>
             <span class="tap-button small" aria-hidden="true">[tap]</span>
           </span>
         </li>
         <li>
           <span class="trigger-text-container" data-overlay="culture-overlay">
-            <span class="clickable-word">culture</span>
-            <span class="tap-button small" aria-hidden="true">[tap]</span>
-          </span>
-        </li>
-        <li>
-          <span class="trigger-text-container" data-overlay="architecture-overlay">
-            <span class="clickable-word">architecture</span>
+            <span class="clickable-word">commissions</span>
             <span class="tap-button small" aria-hidden="true">[tap]</span>
           </span>
         </li>
@@ -186,20 +172,22 @@
 
     <div id="heritage-overlay" class="overlay">
       <button class="close-overlay">x</button>
-      <h1>Preserving Heritage</h1>
-      <p>Bringing history to life through filmmaking, digital transformation, and placemaking. Helping heritage sites, museums, and councils engage the archives. Honouring the past while shaping meaningful experiences in the present.</p>
-      <div class="quickview-container row-view" id="content">
-        <h2><span title="[slide]" class="tooltip">Related Stories</span></h2>
+      <h1>Documentaries</h1>
+      <p>Engaging with heritage sites, museums, and councils to bring history to life through filmmaking</p>
+
+      <div class="quickview-container row-view">
+        <h2><span title="[slide]" class="tooltip"></span></h2>
         <div id="heritage-quickview" style="  display: grid;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));align-items: start; /* prevents stretching */"></div>
       </div>
     </div>
 
     <div id="culture-overlay" class="overlay">
       <button class="close-overlay">x</button>
-      <h1>Supporting Culture</h1>
-      <p>Capturing the pulse of communities and creative expression. Working with artists and cultural organisations to explore identity, tradition, and contemporary practice through filmmaking and interactive workshops.</p>
-      <div class="quickview-container row-view" id="content">
-        <h2><span title="[slide]" class="tooltip">Related Stories</span></h2>
+      <h1>Commissions</h1>
+      <p>Working with artists, brands, and cultural organisations to create compelling narratives</p>
+      <p><a href="/pages/contact.html">Contact for more information</a></p>
+      <div class="quickview-container row-view">
+        <h2><span title="[slide]" class="tooltip"></span></h2>
         <div id="culture-quickview" style="  display: grid;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));align-items: start; /* prevents stretching */"></div>
       </div>   
     </div>
@@ -208,7 +196,7 @@
       <button class="close-overlay">x</button>
       <h1>Sustaining Architecture</h1>
       <p>Celebrating built environments through filmmaking and sculptural interventions. Highlight the narratives embedded in materials and design from public spaces to private projects. </p>
-      <div class="quickview-container row-view" id="content">
+      <div class="quickview-container row-view">
         <h2><span title="[slide]" class="tooltip">Related Stories</span></h2>
         <div id="architecture-quickview" style="  display: grid;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));align-items: start; /* prevents stretching */"></div>
       </div>
@@ -219,12 +207,12 @@
         <div class="third-grid">
 
           <div class="third-box" >
-            <iframe title="vimeo-player" src="https://player.vimeo.com/video/1082806843?h=616303867f" width="auto" height="auto" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
+            <iframe title="vimeo-player" src="https://www.youtube.com/embed/53ddI5tiZgY?si=AUQTnD2NWBXAefw4" width="auto" height="auto" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
           </div>
           <div class="third-text">
-            <p>crafting motion,</p>
-            <p>objects <span>and</span></p>
-            <p>cultural placemaking</p>
+            <p>visual fx,</p>
+            <p>3d scanning <span>and</span></p>
+            <p>object design</p>
           </div>
           <div class="third-list">
             <p class="chromatic-text" ><a href="/pages/stories.html"><span title="[tap]" class="tooltip">Stories</span></a></p>
