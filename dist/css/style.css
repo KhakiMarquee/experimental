@@ -85,11 +85,11 @@ a:hover, #location-toggle:hover{
 }
 
 .headline {
-  font-size: 4.5rem;
+  font-size: 7rem;
   font-weight: lighter;
   text-transform: uppercase;
   margin-bottom: 1rem; /* Space between headline and music_player */
-  font-family:'Geist'
+  font-family:'GottaCatch-Rock';
 }
 
 .headline u{
@@ -163,7 +163,7 @@ a:hover, #location-toggle:hover{
   /*background-color:var(--grey-100);*/
   width: 100vw;
   height: auto;
-  padding: 20% 0%;
+  padding: 10% 0%;
 
 }
 
@@ -196,13 +196,7 @@ a:hover, #location-toggle:hover{
   
 }
 
-.secondary-text ul li:first-child {
-  text-align: left; /* Align text to the left */
-}
 
-.secondary-text ul li:nth-last-child(2) {
-  text-align: right; /* Align text to the right */
-}
 
 /*Video Block*/
 
@@ -249,7 +243,7 @@ a:hover, #location-toggle:hover{
 
 /*THIRD*/
 .third-section {
-  padding: 20% 5%;
+  padding: 10% 5%;
   width: 100%;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -271,7 +265,7 @@ a:hover, #location-toggle:hover{
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  min-height: 100dvh;
+  min-height: 50dvh;
   height:auto
 }
 
@@ -308,7 +302,7 @@ a:hover, #location-toggle:hover{
 /* Responsive Styles */
 
 /* Base headline scaling across breakpoints (largest → smallest) */
-@media (max-width: 1000px) {
+@media (max-width: 600px) {
   /* Layout */
   .container {
     grid-template-columns: repeat(6, 1fr); /* your mobile grid */
@@ -350,7 +344,6 @@ a:hover, #location-toggle:hover{
     font-size: 0.7rem;
     margin: 0 auto;
     transition: font-size 1s ease-in;
-    width: 75%;
     line-height: 2em;
   }
 
@@ -370,7 +363,7 @@ a:hover, #location-toggle:hover{
   .container.collapse { padding: 0; }
 
   .secondary-text ul li {
-    font-size: 3rem; /* mobile phone second text */
+    font-size: 4rem; /* mobile phone second text */
     color: rgb(var(--grey-400));
     transition: all 0.3s ease-in;
   }
@@ -453,24 +446,28 @@ a:hover, #location-toggle:hover{
   .third-list p:nth-of-type(2){ text-align: center; }
 }
 
+@media (max-width: 400px) {
+  .secondary-text ul li { font-size: 2rem; }
+
+}
 /* Step down at <=900px */
 @media (max-width: 900px) {
-  .headline { font-size: 2rem; }
+  .headline { font-size: 5rem; }
 }
 
 /* Phones / narrow tablets <=768px */
 @media (max-width: 768px) {
-  .headline { font-size: 1.5rem; }
+  .headline { font-size: 4rem; }
 }
 
 
 
 /* Very large screens (you had these) */
 @media (min-width: 1000px) and (min-height: 1000px) {
-  .secondary-text ul li { font-size: 12rem; }
+  .secondary-text ul li { font-size: 10rem; }
 }
 @media (min-width: 2000px) and (min-height: 1000px) {
-  .secondary-text ul li { font-size: 18rem; }
+  .secondary-text ul li { font-size: 17rem; }
 }
 
 /* iPad landscape (more reliable than device-width) */

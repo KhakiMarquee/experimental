@@ -1,17 +1,16 @@
 @font-face {
   font-family: 'Geist';
   src: local('Geist Mono Regular'),
-       url('/css/fonts/geist-font-1.5.0/fonts/GeistMono/webfonts/GeistMono-Regular.woff2') format('woff2'),
+       url('/fonts/geist-font-1.5.0/fonts/GeistMono/webfonts/GeistMono-Regular.woff2') format('woff2'),
        url('https://freight.cargo.site/m/E2495587642789183695143670468577/GeistMono-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Gotta Catch Typeface';
-  src: local('Gotta Catch Typeface'),
-       url('/css/fonts/gotta-catch-typeface/fonts/webfonts/GottaCatch-Rock.woff2') format('woff2'),
-       url('https://gitlab.com/bonjour-monde/fonderie/gotta-catch-typeface/-/blob/0df9463920d4f8aa24b653fc8b8765d3d665f98b/fonts/webfonts/GottaCatch-Rock.woff2') format('woff2');
+  font-family: 'GottaCatch-Rock';
+  src: local('GottaCatch-Rock'),
+       url('/fonts/gotta-catch-typeface/fonts/webfonts/GottaCatch-Rock.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
 }

@@ -12,12 +12,17 @@
   color:rgb(var(--grey-500));
   display: block;           /* force new line */
   margin-top: 10px;
-  font-size: 0.5em;         
+  font-size: 0.75em;         
 } 
 
 .quickview-container .tooltip{
   position: relative;
   cursor: default; /* optional */
+}
+
+.quickview-container h2{
+  padding: 5% 0%;
+  font-size: 1.25rem;
 }
 
 /*MOODBOARD*/
@@ -32,7 +37,7 @@
 
 .moodboard-image {
   flex: 0 0 auto;
-  height: 200px; /* adjust as needed */
+  height: 300px; /* adjust as needed */
   object-fit: cover;
   border-radius: 0.5rem;
   cursor: zoom-in;
