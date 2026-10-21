@@ -10,7 +10,7 @@
 @font-face {
   font-family: 'GottaCatch-Rock';
   src: local('GottaCatch-Rock'),
-       url('/fonts/gotta-catch-typeface/fonts/webfonts/GottaCatch-Rock.woff2') format('woff2');
+       url('/fonts/gotta-catch-typeface/fonts/webfonts/GottaCatch-Rock.woff2') format('woff2'); 
   font-weight: 400;
   font-style: normal;
 }
