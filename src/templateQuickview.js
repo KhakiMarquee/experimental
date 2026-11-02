@@ -1,7 +1,8 @@
 // templateQuickview.js
-import { openTemplateDetail } from '/src/openTemplateDetail.js';
-import ImageCompressor from 'js-image-compressor';
 import { createMoodboard } from "/src/moodboard.js";
+// CHANGED: removed the unused imports (openTemplateDetail, ImageCompressor)
+// and the unused createProjectRow / processImage functions, since nothing calls them.
+// Put them back if you use them elsewhere.
 
 // Utility to shuffle an array in-place
 function shuffleArray(array) {
@@ -11,57 +12,12 @@ function shuffleArray(array) {
   }
 }
 
-// Reuse the existing project row creation function
-function createProjectRow(entry) {
-  const section = document.createElement('div');
-  section.classList.add('project-row');
-  section.innerHTML = `
-    <div class="project-image">
-      <img src="${entry.image}" alt="${entry.title}">
-    </div>
-    <div class="project-details">
-      <p>${entry.title}</p>
-    </div>
-  `;
-  section.addEventListener("click", () => openTemplateDetail(section, entry));
-  return section;
-}
-
-// Optional: image processing function
-function processImage(section) {
-  const imgEl = section.querySelector('.project-image img');
-  if (!imgEl) return;
-
-  imgEl.crossOrigin = 'anonymous';
-
-  fetch(imgEl.src, { mode: 'cors' })
-    .then(res => res.blob())
-    .then(blob => {
-      const file = new File([blob], 'image.jpg', { type: blob.type });
-
-      const options = {
-        file,
-        quality: 0.6,
-        convertSize: Infinity,
-        redressOrientation: true,
-        success(result) {
-          imgEl.src = URL.createObjectURL(result);
-        },
-        error(err) {
-          console.error('Compression error:', err);
-        }
-      };
-      new ImageCompressor(options);
-    })
-    .catch(err => console.error('Fetch error during compression:', err));
-}
-
 /**
- * Render a quick preview of 3 items by category or id/theme
- * @param {string} key - Either category name, theme, or ID
+ * Render a quick preview of up to 6 items by category, theme, metadata.type or id
+ * @param {string|string[]} key - Category name, theme, metadata.type, or ID
  * @param {string} jsonPath - Path to data.json
  * @param {HTMLElement} container - Container element to append items
- * @param {boolean} useId - If true, match by entry id; otherwise, match by theme
+ * @param {boolean} useId - If true, match by entry id; otherwise by category/theme/type
  */
 export async function renderQuickviewContent(
   key,
@@ -70,6 +26,11 @@ export async function renderQuickviewContent(
   useId = false,
   fallbackPath = null
 ) {
+  if (!container) {
+    console.error('renderQuickviewContent: container missing', { key, jsonPath, container });
+    return [];
+  }
+
   container.innerHTML = '';
 
   const isAllKey = k => k?.toString().toLowerCase() === 'all';
@@ -82,8 +43,8 @@ export async function renderQuickviewContent(
 
   async function searchData(data, searchKey, useId) {
     const matchedItems = [];
+    
 
-    // "all" works whether or not useId is set
     if (isAllKey(searchKey)) {
       for (const cat of Object.keys(data)) {
         if (data[cat]?.items) matchedItems.push(...data[cat].items);
@@ -92,26 +53,31 @@ export async function renderQuickviewContent(
     }
 
     if (useId) {
-      // Search by ID
       for (const cat of Object.keys(data)) {
         const group = data[cat];
         if (!group?.items) continue;
         const found = group.items.filter(
-          e => e.id.toString() === searchKey.toString()
+          // CHANGED: e.id?.  so items without an id don't throw
+          e => e.id?.toString() === searchKey.toString()
         );
         if (found.length) matchedItems.push(...found);
       }
     } else {
-      // Search by category or theme
       const categoryGroup = data[searchKey];
       if (categoryGroup?.items) {
         matchedItems.push(...categoryGroup.items);
       } else {
+        // CHANGED: String(...) guard so non-string keys don't throw
+        const key = String(searchKey ?? '').toLowerCase();
+
         for (const cat of Object.keys(data)) {
           const group = data[cat];
           if (!group?.items) continue;
+
           const found = group.items.filter(
-            e => e.theme?.toLowerCase() === searchKey.toLowerCase()
+            e =>
+              e.theme?.toLowerCase() === key ||
+              e.metadata?.type?.toLowerCase() === key
           );
           if (found.length) matchedItems.push(...found);
         }
@@ -123,7 +89,14 @@ export async function renderQuickviewContent(
 
   try {
     const primaryData = await fetchData(jsonPath);
-    const fallbackData = fallbackPath ? await fetchData(fallbackPath) : null;
+
+    // CHANGED: a failed fallback fetch no longer kills the primary results
+    const fallbackData = fallbackPath
+      ? await fetchData(fallbackPath).catch(err => {
+          console.warn('Fallback failed:', err);
+          return null;
+        })
+      : null;
 
     let matchedItems = [];
     const keys = Array.isArray(key) ? key : [key];
@@ -131,14 +104,17 @@ export async function renderQuickviewContent(
     for (const k of keys) {
       const fromPrimary = await searchData(primaryData, k, useId);
       const fromFallback = fallbackData ? await searchData(fallbackData, k, useId) : [];
+      console.log('quickview search:', k, fromPrimary.length, fromFallback.length); // CHANGED: debug, remove later
+
       matchedItems.push(...fromPrimary, ...fromFallback);
     }
 
-    // Deduplicate by ID
+    // CHANGED: dedupe falls back to title|client when there's no id
     const seen = new Set();
     matchedItems = matchedItems.filter(item => {
-      if (seen.has(item.id)) return false;
-      seen.add(item.id);
+      const uid = item.id ?? `${item.title}|${item.client}`;
+      if (seen.has(uid)) return false;
+      seen.add(uid);
       return true;
     });
 
@@ -147,7 +123,6 @@ export async function renderQuickviewContent(
       return [];
     }
 
-    // Shuffle, then limit to 6 unless "all" was requested
     shuffleArray(matchedItems);
     const showAll = keys.some(isAllKey);
     const selected = showAll ? matchedItems : matchedItems.slice(0, 6);
@@ -156,9 +131,8 @@ export async function renderQuickviewContent(
 
     return selected;
   } catch (err) {
-    console.error(err);
+    console.error('quickview error:', err); // CHANGED: labelled so it's easy to find
     container.innerHTML = `<p>Error loading quickview content.</p>`;
     return [];
   }
 }
-

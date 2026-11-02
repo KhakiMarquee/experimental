@@ -5,72 +5,6 @@
     "buttonContent": null,
     "items": [
       {
-        "title": "Aik Alif",
-        "client": "UCL",
-        "theme": "Culture",
-        "description": "An experimental documentary tracing a filmmaker\u2019s return to Islam through Sufism. Through spiritual encounters, Bulleh Shah\u2019s poetry, and abstract black-and-white visuals, the film discovers Islam\u2019s theological multiplicities.",
-        "image": "/media/IMG_optimised/aik_alif/aik_alif_thumbnail.jpg",
-        "preview-image": null,
-        "imageStack": [
-          "/media/IMG_optimised/aik_alif/aik_alif_thumbnail.jpg",
-          "/media/IMG_optimised/aik_alif/aik_alif_2.jpg",
-          "/media/IMG_optimised/aik_alif/aik_alif_3.jpg",
-          "/media/IMG_optimised/aik_alif/aik_alif_4.jpg",
-          "/media/IMG_optimised/aik_alif/aik_alif_5.jpg"
-        ],
-        "video": "https://drive.google.com/file/d/1ekdW_K-ppRi8y8ci4kvi1dnntzK8UWy1/preview",
-        "type": [
-          "film",
-          "audio"
-        ],
-        "link": null,
-        "story": "A personal exploration of faith and identity, this experimental documentary follows a filmmaker's spiritual journey as he reconnects with Islam as an adult through the mystical tradition of Sufism. The filmmaker finds himself questioning his relationship with Allah and understanding that Islam is not a monolithic religion. Through intimate interactions with two Sufi practitioners, the film reveals an alternative understanding of Islam\u2014one that emphasizes inner exploration, devotion, poetic wisdom, and direct spiritual experience over rigid adherence to Islamic law. The central narrative is anchored by the poetry of Bulleh Shah, the 19th-century Sufi poet whose verses form the heart of the film's musical composition 'Aik Alif,' teaching that 'all is one.' Shot in black and white, the film weaves together personal reflection, mystical philosophy, and Kira Winter\u2019s art.",
-        "metadata": {
-          "year": 2025
-        },
-        "collaboration": {
-          "participants": [
-            "Kira Winter"
-          ],
-          "focus": "Faith, identity, Sufism",
-          "medium": "film"
-        },
-        "id": "e841ffd88b90956d49443e9576dc2781"
-      },
-      {
-        "title": "Do You Remember?",
-        "client": "UCL",
-        "theme": "Culture",
-        "description": "Blending narrative, memory, and family archives, a filmmaker confronts childhood abuse, using storytelling as a path to healing and reclaiming his lost memories of childhood.",
-        "image": "/media/IMG_optimised/do_you_remember/do_you_remember_thumbnail.jpg",
-        "preview-image": null,
-        "imageStack": [
-          "/media/IMG_optimised/do_you_remember/do_you_remember_thumbnail.jpg",
-          "/media/IMG_optimised/do_you_remember/do_you_remember_2.jpg",
-          "/media/IMG_optimised/do_you_remember/do_you_remember_3.jpg",
-          "/media/IMG_optimised/do_you_remember/do_you_remember_4.jpg",
-          "/media/IMG_optimised/do_you_remember/do_you_remember_5.jpg"
-        ],
-        "video": "https://drive.google.com/file/d/1T2UlFymIBuu_2ZjI-0pagO5rjgCquRxc/preview",
-        "type": [
-          "film",
-          "audio"
-        ],
-        "link": null,
-        "story": "This experimental documentary follows a filmmaker as he confronts the lack of memories surrounding his childhood abuse. Through a deeply personal process of storytelling, he uses narrative as a means of regaining memory and piecing together a fractured past. Blending family archives, interviews, and artistic collaborations, the film moves fluidly between memory and recreation, holding a space where pain and healing coexist.",
-        "metadata": {
-          "year": 2025
-        },
-        "collaboration": {
-          "participants": [
-            "Kira Winter"
-          ],
-          "focus": "Childhood trauma, healing, storytelling",
-          "medium": "film"
-        },
-        "id": "c1e8b6bb4a69277dabc17074de4d6e92"
-      },
-      {
         "title": "Stained Glass Restoration",
         "client": "St Anne's",
         "theme": "Heritage",
@@ -95,7 +29,7 @@
         "description": "An experimental film exploring identity and motion...",
         "image": "/media/IMG_optimised/noa/noa_cover_image.png",
         "preview-image": null,
-        "video": "https://player.vimeo.com/video/1078629828?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "video": "https://www.youtube.com/embed/Vr1vdqef7os?si=wq-eUN5njOu3pOxt",
         "type": [
           "film",
           "audio"
@@ -121,7 +55,7 @@
         "description": "An exploration of regeneration through point clouds scattering.",
         "image": "/media/IMG_optimised/aberfeldy/balfron_tower.jpg",
         "preview-image": null,
-        "video": "https://player.vimeo.com/video/1082806843?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "video": "https://www.youtube.com/embed/53ddI5tiZgY?si=RmgNUOftQYwen-E0",
         "type": [
           "3d",
           "coding"
@@ -200,7 +134,7 @@
         "description": "Caught in a maze of bureaucratic absurdity and colonial remnants, a British-Nigerian filmmaker reassembles their fractured identity through archival images, brutalist architecture, and experimental cinema\u2014interrogating the power and politics of memory.",
         "image": "/media/IMG_optimised/archives_also_die/archives_die_cover.jpg",
         "preview-image": null,
-        "video": "https://player.vimeo.com/video/1097896324?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "video": "https://www.youtube.com/embed/G4-lE8NFcJ4?si=OjcS1_nErIXRsCZx",
         "imageStack": [
           "/media/IMG_optimised/archives_also_die/archives_also_die.jpg",
           "/media/IMG_optimised/archives_also_die/archives_die_cover.jpg"
@@ -236,7 +170,7 @@
           "/media/IMG_optimised/rosal_stones/workshop_view.jpg"
         ],
         "preview-image": null,
-        "video": "https://player.vimeo.com/video/1069047556?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "video": "https://www.youtube.com/embed/Fr5CKeNhED0?si=skmmK9JvicYx9wQv",
         "type": [
           "film",
           "audio"
@@ -256,32 +190,6 @@
           "medium": "film"
         },
         "id": "85c88d46a4517870f29b1381f8281158"
-      },
-      {
-        "title": "Black Mary\u2019s Pleasure Garden",
-        "client": "Studio Gaylene Gould",
-        "theme": "Culture",
-        "description": "A poetic short film documenting the community-led unveiling of a memorial to 17th-century healer Mary Woolaston, where music, ritual, and dance become acts of remembrance and collective healing.",
-        "image": "/media/IMG/black_marys_pleasure_garden/Black Mary\u2019s Pleasure Garden-5.jpeg",
-        "imageStack": [
-          "/media/IMG/black_marys_pleasure_garden/Black Mary\u2019s Pleasure Garden.jpeg",
-          "/media/IMG/black_marys_pleasure_garden/Black Mary\u2019s Pleasure Garden-2.jpeg",
-          "/media/IMG/black_marys_pleasure_garden/Black Mary\u2019s Pleasure Garden-3.jpeg",
-          "/media/IMG/black_marys_pleasure_garden/Black Mary\u2019s Pleasure Garden-4.jpeg",
-          "/media/IMG/black_marys_pleasure_garden/Black Mary\u2019s Pleasure Garden-5.jpeg"
-        ],
-        "video": "https://drive.google.com/file/d/1OV6eFMq088QNIYB0P2BVe8R1wRKt6HCI/preview",
-        "type": [
-          "film",
-          "installation",
-          "craft"
-        ],
-        "link": null,
-        "story": "A short documentary film for the Black Mary Project (2025, King\u2019s Cross), capturing the unveiling of a memorial sculpture for Mary Woolaston - a 17th-century Black healer whose well once served London\u2019s poor. The film documents communal ritual, global majority musical performances, healing ceremonies, and collective dance, exploring how spiritual practice and embodied celebration can reclaim erased Black working-class histories.",
-        "metadata": {
-          "year": 2025
-        },
-        "id": "4381c5b9ca2c805b69b184a762c41139"
       }
     ]
   },
@@ -297,7 +205,7 @@
         "theme": "Culture",
         "description": "The Hop is a large interactive sculpture by artist Jyll Bradley...",
         "image": "/media/IMG_optimised/frieze/the_hop_frieze_sculpture.jpg",
-        "video": "https://player.vimeo.com/video/875154322?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "video": "https://www.youtube.com/embed/pp27_eF2yD0?si=lga7i7SuX411875A",
         "type": [
           "film",
           "public artwork"
@@ -315,7 +223,7 @@
         "theme": "Architecture",
         "description": "Hidden in plain sight, a set of stone benches in London becomes the vessel for a poetic excavation...",
         "image": "/media/IMG_optimised/stone_they_lay/stone_they_lay_cover.jpg",
-        "video": "https://player.vimeo.com/video/1057418229?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "video": "https://www.youtube.com/embed/9RsHWjFJg48?si=DhkWA-y_V_wryY6x",
         "type": [
           "film",
           "public artwork",
@@ -334,7 +242,7 @@
         "theme": "Architecture",
         "description": "We collaborated with the UK’s leading provider of Construction Crafts Education to create a film that told their story in an engaging and visually striking way. Our goal was to showcase not only the institution’s reputation and opportunities but also to capture the energy and ambition of the students they aim to inspire. To achieve this, we used drone cinematography to frame the urban landscape of Stratford, contrasting the area’s architectural evolution with the traditional skills being taught inside the classroom. The combination of sweeping aerial shots and close, human-focused storytelling gave the film both scale and intimacy, helping potential students see themselves as part of a bigger picture while still connecting on a personal level. The finished piece was more than just a promotional video; it was a cinematic narrative designed to elevate the brand, celebrate craftsmanship, and engage the next generation of construction professionals.",
         "image": "/media/IMG_optimised/building_crafts_college/the_bcc_thumbnail.jpg",
-        "video": "https://player.vimeo.com/video/1110489292?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "video": "https://www.youtube.com/embed/kbW6LvBk5FE?si=baeepudP_2OUmk6V",
         "type": [
           "film"
         ],
@@ -486,7 +394,7 @@
         "theme": "Culture",
         "description": "Learn about the Lighting technicians role as we explore an exhibition at the Box in Plymouth.",
         "image": "/media/IMG_optimised/inside_museums/the_ldr_cover.jpg",
-        "video": "https://player.vimeo.com/video/850257026?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "video": "https://www.youtube.com/embed/qII5UhszonY?si=gmFzb8iEv5cIMmet",
         "type": [
           "film",
           "audio"
@@ -510,7 +418,7 @@
         "theme": "Architecture",
         "description": "Rents are spiralling, housing conditions are worsening and property speculation is rampant...",
         "image": "/media/IMG_optimised/hostile_housing/gillett_square_lru.jpg",
-        "video": "https://player.vimeo.com/video/1057422541?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "video": "https://www.youtube.com/embed/f5P1gp_djIw?si=dWa2VKizAUJGTRgK",
         "type": [
           "film",
           "workshop"
@@ -521,30 +429,6 @@
           "year": 2020
         },
         "id": "0003991de1c50cd3e6c9a0a827c11f56"
-      },
-      {
-        "title": "Light for Justice",
-        "client": "Bean and Gone",
-        "theme": "Culture",
-        "description": "Brand Strategy and Content Creation for an eco-friendly candle-making business.",
-        "image": "/media/IMG_optimised/bean_gone_soy_candles/candles_cover.jpg",
-        "type": [
-          "workshop",
-          "strategy",
-          "photography"
-        ],
-        "story": null,
-        "metadata": {
-          "year": 2025
-        },
-        "collaboration": {
-          "participants": [
-            "Art for Action"
-          ],
-          "focus": "Art, Social Justice",
-          "medium": "film"
-        },
-        "id": "861f796a406c5bfaf67efc734f9457e6"
       },
       {
         "title": "Stacy Lynn Waddell's Epitaph",
@@ -575,7 +459,7 @@
         "theme": "Culture",
         "description": "Learn about the Conservator role as we explore an exhibition at the Norwich Castle Museum and Art Gallery.",
         "image": "/media/IMG_optimised/inside_museums/the_conservator_three.jpg",
-        "video": "https://player.vimeo.com/video/845516401?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "video": "https://www.youtube.com/embed/IPOeHWC7aIA?si=-VmnVOmN9btS5Txm",
         "type": [
           "film"
         ],
@@ -598,7 +482,7 @@
         "theme": "Culture",
         "description": "Frieze Masters offers a unique contemporary perspective on thousands of years of art history, from collectible objects to significant masterpieces from the ancient era and Old Masters to the late 20th century. The 2025 edition of the fair will showcase over 130 of the most significant galleries from around the world.",
         "image": "/media/IMG_optimised/frieze/frieze_masters.jpg",
-        "video": "https://player.vimeo.com/video/1110666036?h=5c1d5d1da8",
+        "video": "https://www.youtube.com/embed/UGoEMnM5TYs?si=F_u8i5txbw_8-U_Q",
         "type": [
           "film"
         ],
@@ -614,30 +498,6 @@
           "medium": "film"
         },
         "id": "ae5d2f329ef38296775a75448801bbe9"
-      },
-      {
-        "title": "Hiraeth",
-        "client": null,
-        "theme": "Culture",
-        "description": "Co-wrote, co-directed, and performed in Hiraeth, an ensemble-devised theatre piece exploring cultural identity and displacement through movement, rhythm, and abstraction rather than linear narrative.",
-        "image": "/media/IMG/Hiraeth/Hiraeth-4.jpeg",
-        "imageStack": [
-          "/media/IMG/Hiraeth/Hiraeth.jpg",
-          "/media/IMG/Hiraeth/Hiraeth-2.jpeg",
-          "/media/IMG/Hiraeth/Hiraeth-3.jpeg",
-          "/media/IMG/Hiraeth/Hiraeth-4.jpeg"
-        ],
-        "video": null,
-        "type": [
-          "performance",
-          "story"
-        ],
-        "link": null,
-        "story": "Co-wrote, co-directed, and performed in Hiraeth, an avant-garde ensemble-devised theatre piece exploring cultural identity and belonging. Working collaboratively with the cast, we collected personal stories and created original poetry to investigate the question 'Who am I?' The production used movement, dance, and stark visual imagery to express displacement and cultural longing\u2014eschewing linear narrative for a rhythm-based, gestural language. The devising process prioritized embodied storytelling over text, allowing personal histories to emerge through collective choreography and improvisation.",
-        "metadata": {
-          "year": 2018
-        },
-        "id": "66c108318a45712580ac615dd06ca334"
       },
       {
         "title": "Climate Ambassadors",

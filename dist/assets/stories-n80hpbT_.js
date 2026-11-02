@@ -1,4 +1,4 @@
-import"./category-L6ZO3ebq.js";import{o as w,I as v}from"./index-BeX8hbSm.js";function j(){return new URLSearchParams(window.location.search).get("category")}function f(e){const o=document.createElement("div");return o.classList.add("project-row"),o.innerHTML=`
+import"./category-C5OS17xk.js";import{o as w}from"./openTemplateDetail-B20OnPqL.js";import{I as v}from"./index-xQZE8KGl.js";function j(){return new URLSearchParams(window.location.search).get("category")}function f(e){const o=document.createElement("div");return o.classList.add("project-row"),o.innerHTML=`
     <div class="project-image">
       <img src="${e.image}" alt="${e.title}">
     </div>

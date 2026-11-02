@@ -33,18 +33,18 @@ export function initApp() {
         console.warn("⚠️ No #theme-toggle button found in DOM");
       }
     });
-
     // Render quickview
-      const container = [document.getElementById('culture-quickview'),document.getElementById('heritage-quickview'),document.getElementById('architecture-quickview')];
-      const categoryOrTheme = 'architecture'; // could be a theme
-      const jsonPath = '/data/data_with_ids.json';
+    const jsonPath = '/data/data_with_ids.json';
 
-      // Render 3 items by theme
+    const documentaryEl   = document.getElementById('documentary-quickview');
+    const commissionEl    = document.getElementById('commission-quickview');
+    const architectureEl  = document.getElementById('architecture-quickview');
+    const allEl           = document.getElementById('all-quickview');
 
-      renderQuickviewContent('architecture', jsonPath, container[3]);
-      renderQuickviewContent('heritage', jsonPath, container[1]);
-      renderQuickviewContent('culture', jsonPath, container[0]);
-      renderQuickviewContent('all', jsonPath, document.getElementById('all-quickview'));
+    if (architectureEl) renderQuickviewContent('Architecture', jsonPath, architectureEl);
+    if (documentaryEl)  renderQuickviewContent('documentary',  jsonPath, documentaryEl);
+    if (commissionEl)   renderQuickviewContent('commission',   jsonPath, commissionEl);
+    if (allEl)          renderQuickviewContent('all',          jsonPath, allEl);
 
       /* Or render 3 items by entry ID
       const entryId = '123';

@@ -18,7 +18,8 @@
         "link": null,
         "story": "The great East Window at St Anne\u2019s, depicting the Crucifixion on a monumental scale, is over 150 years old and in urgent need of repair, and you can still support its conservation by sponsoring a pane through our ongoing appeal.",
         "metadata": {
-          "year": 2023
+          "year": 2023,
+          "type": "commission"
         },
         "id": "2e527f920abdbd3115efbdaf2ea6787c"
       },
@@ -29,7 +30,7 @@
         "description": "An experimental film exploring identity and motion...",
         "image": "/media/IMG_optimised/noa/noa_cover_image.png",
         "preview-image": null,
-        "video": "https://www.youtube.com/embed/Vr1vdqef7os?si=wq-eUN5njOu3pOxt",
+        "video": "https://player.vimeo.com/video/1078629828?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "type": [
           "film",
           "audio"
@@ -37,7 +38,8 @@
         "link": "https://gokestudio.substack.com/p/studying-motion-through-cinema",
         "story": "The genesis of this film lies in a serendipitous meeting at a mental well-being workshop for Black men in East London, where, amidst painting paper hats and shared stories, I met Noa, a dancer whose movements spoke volumes about resilience and expression, leading to a collaboration exploring play\u2014a concept often stripped from Black male experiences\u2014through repeated dance performances in UCL's Black Box studio, using the camera as a tool of discovery to capture nuances of expression and silent dialogue, inspired by Maya Deren's cinematic philosophies to let dance narrate its own story, while navigating institutional resistance and creating a sanctuary within the studio, balancing authentic representation of Noa's artistry with my creative instincts, evolving from an initially silent, black-and-white piece to one enriched with the music that fuels his performances, acknowledging the inseparability of sound and movement in his expression.",
         "metadata": {
-          "year": 2025
+          "year": 2025,
+          "type": "documentary"
         },
         "collaboration": {
           "participants": [
@@ -55,15 +57,16 @@
         "description": "An exploration of regeneration through point clouds scattering.",
         "image": "/media/IMG_optimised/aberfeldy/balfron_tower.jpg",
         "preview-image": null,
-        "video": "https://www.youtube.com/embed/53ddI5tiZgY?si=RmgNUOftQYwen-E0",
+        "video": "https://player.vimeo.com/video/1082806843?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "type": [
           "3d",
           "coding"
         ],
         "link": "https://www.poplarharca.co.uk/about-us/news/article/mayor-of-london-gives-go-ahead-for-next-phase-of-aberfeldy-transformation/?utm_source=chatgpt.com",
-        "story": "The Aberfeldy Estate in Poplar, East London, is undergoing a significant transformation aimed at revitalising the area and addressing the city's housing challenges. In partnership with EcoWorld London, Poplar HARCA is redeveloping the estate into Aberfeldy Village, a mixed-use urban village that will include over 1,500 new homes, with approximately 39% designated as affordable housing. This redevelopment is particularly noteworthy in the context of London's social housing landscape. The project has faced scrutiny over concerns of gentrification and the displacement of existing residents. In early 2023, Tower Hamlets Council rejected the proposed plans, citing issues such as increased traffic and the potential for social cleansing. However, following a strong mandate from the estate's residents—93% of whom voted in favour of the redevelopment—the Mayor of London intervened, approving the next phase of the project. The Aberfeldy regeneration highlights the delicate balance between urban renewal and the preservation of affordable housing. While the development promises enhanced amenities and infrastructure, it underscores the broader debate in London about how to meet housing demands without eroding the social fabric of established communities. </br></br>As part of my project on the Aberfeldy Estate, I used 3D scanning to create a detailed point cloud of the site, capturing the geometry and spatial character of the buildings and surrounding public spaces. I then layered this visualisation with audio from the Tower Hamlets council meeting, where residents and officials debated the redevelopment plans. The result is an immersive audiovisual experience that juxtaposes the physical space of the estate with the social and political context of its transformation, highlighting the tensions around gentrification, affordable housing, and community engagement in London’s urban regeneration projects.",
+        "story": "The Aberfeldy Estate in Poplar, East London, is undergoing a significant transformation aimed at revitalising the area and addressing the city's housing challenges. In partnership with EcoWorld London, Poplar HARCA is redeveloping the estate into Aberfeldy Village, a mixed-use urban village that will include over 1,500 new homes, with approximately 39% designated as affordable housing. This redevelopment is particularly noteworthy in the context of London's social housing landscape. The project has faced scrutiny over concerns of gentrification and the displacement of existing residents. In early 2023, Tower Hamlets Council rejected the proposed plans, citing issues such as increased traffic and the potential for social cleansing. However, following a strong mandate from the estate's residents\u201493% of whom voted in favour of the redevelopment\u2014the Mayor of London intervened, approving the next phase of the project. The Aberfeldy regeneration highlights the delicate balance between urban renewal and the preservation of affordable housing. While the development promises enhanced amenities and infrastructure, it underscores the broader debate in London about how to meet housing demands without eroding the social fabric of established communities. </br></br>As part of my project on the Aberfeldy Estate, I used 3D scanning to create a detailed point cloud of the site, capturing the geometry and spatial character of the buildings and surrounding public spaces. I then layered this visualisation with audio from the Tower Hamlets council meeting, where residents and officials debated the redevelopment plans. The result is an immersive audiovisual experience that juxtaposes the physical space of the estate with the social and political context of its transformation, highlighting the tensions around gentrification, affordable housing, and community engagement in London\u2019s urban regeneration projects.",
         "metadata": {
-          "year": 2025
+          "year": 2025,
+          "type": "documentary"
         },
         "id": "ff4f6fb3587b452b9287ae58fe9f3cc7"
       },
@@ -71,7 +74,7 @@
         "title": "Passing the Flame",
         "client": "Newham Council",
         "theme": "Heritage",
-        "description": "A series of images to document Britain’s first black female Olympian. Anita competed in the 100m and the 4x100m relay at the 1968 Olympics in Mexico City and at the 1972 games in Munich. These photos facilitated the digitisation of her memorabilia.",
+        "description": "A series of images to document Britain\u2019s first black female Olympian. Anita competed in the 100m and the 4x100m relay at the 1968 Olympics in Mexico City and at the 1972 games in Munich. These photos facilitated the digitisation of her memorabilia.",
         "image": "/media/IMG_optimised/passing_the_flame/memorabilia.jpg",
         "preview-image": null,
         "imageStack": [
@@ -87,7 +90,8 @@
         ],
         "link": null,
         "metadata": {
-          "year": 2020
+          "year": 2020,
+          "type": "commission"
         },
         "collaborator": {
           "athlete": "Anita",
@@ -134,7 +138,7 @@
         "description": "Caught in a maze of bureaucratic absurdity and colonial remnants, a British-Nigerian filmmaker reassembles their fractured identity through archival images, brutalist architecture, and experimental cinema\u2014interrogating the power and politics of memory.",
         "image": "/media/IMG_optimised/archives_also_die/archives_die_cover.jpg",
         "preview-image": null,
-        "video": "https://www.youtube.com/embed/G4-lE8NFcJ4?si=OjcS1_nErIXRsCZx",
+        "video": "https://player.vimeo.com/video/1097896324?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "imageStack": [
           "/media/IMG_optimised/archives_also_die/archives_also_die.jpg",
           "/media/IMG_optimised/archives_also_die/archives_die_cover.jpg"
@@ -170,15 +174,16 @@
           "/media/IMG_optimised/rosal_stones/workshop_view.jpg"
         ],
         "preview-image": null,
-        "video": "https://www.youtube.com/embed/Fr5CKeNhED0?si=skmmK9JvicYx9wQv",
+        "video": "https://player.vimeo.com/video/1069047556?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "type": [
           "film",
           "audio"
         ],
         "link": null,
-        "story": "Stone has stood at the heart of architecture since the dawn of civilisation. Over the past year, I have been collaborating with Rosal Stones, a stone extraction and fabrication company based in Caravaca, Spain. As part of a three-person team, we travelled across the rocky, sedimentary landscapes of Murcia, a region shaped largely by sandstone. The city’s natural beauty was striking. In observing its architecture, we noticed how vibrant hues such as sky blue and tangerine orange were applied to façades, infusing the built environment with warmth and a sense of well-being.",
+        "story": "Stone has stood at the heart of architecture since the dawn of civilisation. Over the past year, I have been collaborating with Rosal Stones, a stone extraction and fabrication company based in Caravaca, Spain. As part of a three-person team, we travelled across the rocky, sedimentary landscapes of Murcia, a region shaped largely by sandstone. The city\u2019s natural beauty was striking. In observing its architecture, we noticed how vibrant hues such as sky blue and tangerine orange were applied to fa\u00e7ades, infusing the built environment with warmth and a sense of well-being.",
         "metadata": {
-          "year": 2025
+          "year": 2025,
+          "type": "commission"
         },
         "collaboration": {
           "participants": [
@@ -205,7 +210,7 @@
         "theme": "Culture",
         "description": "The Hop is a large interactive sculpture by artist Jyll Bradley...",
         "image": "/media/IMG_optimised/frieze/the_hop_frieze_sculpture.jpg",
-        "video": "https://www.youtube.com/embed/pp27_eF2yD0?si=lga7i7SuX411875A",
+        "video": "https://player.vimeo.com/video/875154322?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "type": [
           "film",
           "public artwork"
@@ -221,9 +226,9 @@
         "title": "the stone they lay",
         "client": "UCL",
         "theme": "Architecture",
-        "description": "Hidden in plain sight, a set of stone benches in London becomes the vessel for a poetic excavation...",
+        "description": "Hidden in plain sight, a set of stone benches in London becomes the vessel for a poetic excavation\u2014where earth meets water, and the static tells a story in motion. Through image, sound, and elemental metaphor, this documentary explores the life of city remnants and their forgotten histories.",
         "image": "/media/IMG_optimised/stone_they_lay/stone_they_lay_cover.jpg",
-        "video": "https://www.youtube.com/embed/9RsHWjFJg48?si=DhkWA-y_V_wryY6x",
+        "video": "https://player.vimeo.com/video/1057418229?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "type": [
           "film",
           "public artwork",
@@ -232,56 +237,65 @@
         "link": "https://gokestudio.substack.com/p/the-stone-they-lay",
         "story": "This project began as a modest exploration of historical street furniture: a set of stone benches dotted across the St Paul\u2019s area, their presence anonymous and unremarked. Yet, these stones were extracted from the Thames Embankment wall, a site underpinned\u2014literally\u2014by Victorian engineering, sanitation systems, and layers of forgotten city planning. I found myself drawn to them, not just for what they were, but for what they contained\u2014earth and water, stillness and memory. As I began filming, I worked through a double-diamond process\u2014an approach borrowed from the tech world, where I once worked\u2014which allowed me to ideate expansively before defining, and later to develop freely before distilling. This journey was not linear, but iterative and often uncertain. The core question was always this: how can the inanimate speak? Through image, sound design, and poetic structure, the film seeks to animate what cannot move, and to hold space for what no longer speaks. We follow the benches as portals between past and present, accompanied by soundscapes built from church bells, hydrophones submerged in the Thames, and EQ\u2019d traffic noise woven into the whip pans between locations.",
         "metadata": {
-          "year": 2024
+          "year": 2024,
+          "type": "documentary"
         },
         "id": "3347b12c022e25da7c42f09a88a3f44d"
+      },
+      {
+        "title": "Black Atlantic Makers",
+        "client": "Crafts Study Centre",
+        "theme": "Culture",
+        "description": "Raising awareness about an exhibition for Black Craftspeople and Makers",
+        "image": "/media/IMG/black_atlantic/Black_atlantic.jpg",
+        "preview-image": null,
+        "imageStack" : [
+          "/media/IMG/black_atlantic/Black_atlantic.jpg"
+        ],
+        "video": "https://www.youtube.com/embed/NU3xtg9RJJA?si=_muIL9_5aPrm6G7k",
+        "type": [
+          "film",
+          "audio"
+        ],
+        "link": null,
+        "story": "This experimental documentary follows a filmmaker as he confronts the lack of memories surrounding his childhood abuse. Through a deeply personal process of storytelling, he uses narrative as a means of regaining memory and piecing together a fractured past. Blending family archives, interviews, and artistic collaborations, the film moves fluidly between memory and recreation, holding a space where pain and healing coexist.",
+        "metadata": {
+          "year": 2025,
+          "type": "commission"
+        },
+        "collaboration": {
+          "participants": [
+            "Stella Dadzie",
+            "Donald Baugh",
+            "Keith Piper",
+            "Marcia Bennet Male",
+            "Crafts Council",
+            "Ronald Moody",
+            "Althea McNish",
+            "Magdalene Odundo"
+          ],
+          "focus": "The Transtatlantic, identity, craft",
+          "medium": "film"
+        },
+        "id": "772a179a40aa7d5c8a865bf807d1eb2d"
       },
       {
         "title": "The Building Crafts College",
         "client": "The BCC",
         "theme": "Architecture",
-        "description": "We collaborated with the UK’s leading provider of Construction Crafts Education to create a film that told their story in an engaging and visually striking way. Our goal was to showcase not only the institution’s reputation and opportunities but also to capture the energy and ambition of the students they aim to inspire. To achieve this, we used drone cinematography to frame the urban landscape of Stratford, contrasting the area’s architectural evolution with the traditional skills being taught inside the classroom. The combination of sweeping aerial shots and close, human-focused storytelling gave the film both scale and intimacy, helping potential students see themselves as part of a bigger picture while still connecting on a personal level. The finished piece was more than just a promotional video; it was a cinematic narrative designed to elevate the brand, celebrate craftsmanship, and engage the next generation of construction professionals.",
+        "description": "We collaborated with the UK\u2019s leading provider of Construction Crafts Education to create a film that told their story in an engaging and visually striking way. Our goal was to showcase not only the institution\u2019s reputation and opportunities but also to capture the energy and ambition of the students they aim to inspire. To achieve this, we used drone cinematography to frame the urban landscape of Stratford, contrasting the area\u2019s architectural evolution with the traditional skills being taught inside the classroom. The combination of sweeping aerial shots and close, human-focused storytelling gave the film both scale and intimacy, helping potential students see themselves as part of a bigger picture while still connecting on a personal level. The finished piece was more than just a promotional video; it was a cinematic narrative designed to elevate the brand, celebrate craftsmanship, and engage the next generation of construction professionals.",
         "image": "/media/IMG_optimised/building_crafts_college/the_bcc_thumbnail.jpg",
-        "video": "https://www.youtube.com/embed/kbW6LvBk5FE?si=baeepudP_2OUmk6V",
+        "video": "https://player.vimeo.com/video/1110489292?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "type": [
           "film"
         ],
         "link": null,
         "story": null,
         "metadata": {
-          "year": 2022
+          "year": 2022,
+          "type": "commission"
         },
         "id": "da6f851f534f23c5ec9bd77872588c6f"
-      },
-      {
-        "title": "Jewellery Design",
-        "client": "VS Jewellery School",
-        "theme": "Culture",
-        "description": "Vannetta Seecharran School of Jewellery '23 | New Designers Business Design Centre",
-        "image": "/media/IMG_optimised/vs_jewellery/design_centre_show.jpg",
-        "video": "https://player.vimeo.com/video/845515505?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "imageStack": [
-          "/media/IMG_optimised/material/jewellery/features/_F4A8050.jpg",
-          "/media/IMG_optimised/material/jewellery/features/_F4A8117.jpg"
-        ],
-        "type": [
-          "film",
-          "installation",
-          "craft"
-        ],
-        "link": null,
-        "story": null,
-        "metadata": {
-          "year": 2021
-        },
-        "collaboration": {
-          "participants": [
-            "Vicky Grout"
-          ],
-          "focus": "Design, product development",
-          "medium": "metalwork"
-        },
-        "id": "21aecec7b0ab34735dd407fbf2e53be8"
       },
       {
         "title": "Material interrogation",
@@ -394,14 +408,15 @@
         "theme": "Culture",
         "description": "Learn about the Lighting technicians role as we explore an exhibition at the Box in Plymouth.",
         "image": "/media/IMG_optimised/inside_museums/the_ldr_cover.jpg",
-        "video": "https://www.youtube.com/embed/qII5UhszonY?si=gmFzb8iEv5cIMmet",
+        "video": "https://player.vimeo.com/video/850257026?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "type": [
           "film",
           "audio"
         ],
         "story": null,
         "metadata": {
-          "year": 2022
+          "year": 2022,
+          "type": "commission"
         },
         "collaboration": {
           "participants": [
@@ -418,7 +433,7 @@
         "theme": "Architecture",
         "description": "Rents are spiralling, housing conditions are worsening and property speculation is rampant...",
         "image": "/media/IMG_optimised/hostile_housing/gillett_square_lru.jpg",
-        "video": "https://www.youtube.com/embed/f5P1gp_djIw?si=dWa2VKizAUJGTRgK",
+        "video": "https://player.vimeo.com/video/1057422541?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "type": [
           "film",
           "workshop"
@@ -426,7 +441,8 @@
         "link": "https://www.hostilehousing.org/videos",
         "story": "Rents are spiraling, housing conditions are worsening, property speculation is rampant, gentrification and unregulated landlordism are fracturing communities, social housing is disintegrating, and we must ask: how can we challenge these assaults on the basic human right to a home, learn from past struggles, and envision housing for all?</br></br>Gentrification and unregulated landlordism are fracturing communities, while social housing disintegrates and profits soar.",
         "metadata": {
-          "year": 2020
+          "year": 2020,
+          "type": "documentary"
         },
         "id": "0003991de1c50cd3e6c9a0a827c11f56"
       },
@@ -442,7 +458,8 @@
         ],
         "story": null,
         "metadata": {
-          "year": 2022
+          "year": 2022,
+          "type": "commission"
         },
         "collaboration": {
           "participants": [
@@ -459,7 +476,7 @@
         "theme": "Culture",
         "description": "Learn about the Conservator role as we explore an exhibition at the Norwich Castle Museum and Art Gallery.",
         "image": "/media/IMG_optimised/inside_museums/the_conservator_three.jpg",
-        "video": "https://www.youtube.com/embed/IPOeHWC7aIA?si=-VmnVOmN9btS5Txm",
+        "video": "https://player.vimeo.com/video/845516401?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "type": [
           "film"
         ],
@@ -482,13 +499,14 @@
         "theme": "Culture",
         "description": "Frieze Masters offers a unique contemporary perspective on thousands of years of art history, from collectible objects to significant masterpieces from the ancient era and Old Masters to the late 20th century. The 2025 edition of the fair will showcase over 130 of the most significant galleries from around the world.",
         "image": "/media/IMG_optimised/frieze/frieze_masters.jpg",
-        "video": "https://www.youtube.com/embed/UGoEMnM5TYs?si=F_u8i5txbw_8-U_Q",
+        "video": "https://player.vimeo.com/video/1110666036?h=5c1d5d1da8",
         "type": [
           "film"
         ],
         "story": null,
         "metadata": {
-          "year": 2022
+          "year": 2022,
+          "type": "commission"
         },
         "collaboration": {
           "participants": [
@@ -503,7 +521,7 @@
         "title": "Climate Ambassadors",
         "client": "STEM AMBASSADORS",
         "theme": "Culture",
-        "description": "Climate Ambassadors is a Department for Education–funded initiative led by the University of Reading and EAUC that supports nurseries, schools, and colleges in creating Climate Action Plans to prepare young people for a green economy and help education settings respond to climate change.",
+        "description": "Climate Ambassadors is a Department for Education\u2013funded initiative led by the University of Reading and EAUC that supports nurseries, schools, and colleges in creating Climate Action Plans to prepare young people for a green economy and help education settings respond to climate change.",
         "image": "/media/IMG/climate_action/climate_action.png",
         "imageStack": [
           "/media/IMG/climate_action/climate_action.png",
@@ -513,15 +531,16 @@
           "/media/IMG/climate_action/climate_action_5.png",
           "/media/IMG/climate_action/climate_action_6.png"
         ],
-        "video": "https://player.vimeo.com/video/1191058933?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479", 
+        "video": "https://player.vimeo.com/video/1191058933?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "type": [
           "education",
           "sustainability"
         ],
         "link": "https://www.stem.org.uk/climate-ambassadors",
-        "story": "[Project Ongoing] Climate Ambassadors is an initiative funded by the Department for Education with the aim of helping all education settings make and implement a Climate Action Plan. The initiative is led by the University of Reading and EAUC and is delivered by a consortium of organisations across England. By supporting nurseries, schools and colleges to build their climate action plans, Climate Ambassadors can help to ensure that young people have access to the learning and skills they will need for their future in the green economy while also helping education settings meet the challenges of a changing climate.",
+        "story": "Climate Ambassadors is an initiative funded by the Department for Education with the aim of helping all education settings make and implement a Climate Action Plan. The initiative is led by the University of Reading and EAUC and is delivered by a consortium of organisations across England. By supporting nurseries, schools and colleges to build their climate action plans, Climate Ambassadors can help to ensure that young people have access to the learning and skills they will need for their future in the green economy while also helping education settings meet the challenges of a changing climate.",
         "metadata": {
-          "year": 2025
+          "year": 2025,
+          "type": "commission"
         },
         "id": "17bbd61c47e9f334e1d8659c1a522b17"
       },
@@ -546,7 +565,8 @@
         "link": null,
         "story": "",
         "metadata": {
-          "year": 2025
+          "year": 2025,
+          "type": "commission"
         },
         "id": "343eeb9af963f980d27c84edbc2f5626"
       }

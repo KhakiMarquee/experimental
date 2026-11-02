@@ -20,7 +20,7 @@ export default {
         stories: resolve(__dirname, 'pages/stories.html'),
         stones: resolve(__dirname, 'pages/stones.html'),
         services: resolve(__dirname, 'pages/services.html'),
-        team: resolve(__dirname, 'pages/team.html')
+        about: resolve(__dirname, 'pages/about.html')
       },
       external: ['p5.sound'], // mark p5.sound external so it’s not bundled
       

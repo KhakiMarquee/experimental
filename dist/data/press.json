@@ -1,5 +1,55 @@
 [
         {     
+        "outlet": "Open House Guildford",
+        "title": "Noa",
+        "year":"2026",
+        "type": "Exhibition",
+        "images": ["/media/IMG/press/ica_press.jpg"],
+        "preview-image" : "",
+        "link": "https://www.ica.art/lsff25-housing-problems",
+        "statement":"Screened at ICA for London Short Film Festival 2025. This programme poses such questions across the intertwined histories of British cinema and housing struggles. "
+        },
+        {     
+        "outlet": "Four Corners",
+        "title": "Limestone + Jute",
+        "year":"2026",
+        "type": "Exhibition",
+        "images": ["/media/IMG/press/ica_press.jpg"],
+        "preview-image" : "",
+        "link": "https://www.ica.art/lsff25-housing-problems",
+        "statement":"Screened at ICA for London Short Film Festival 2025. This programme poses such questions across the intertwined histories of British cinema and housing struggles. "
+        },
+        {     
+        "outlet": "Open City",
+        "title": "Limestone + Jute",
+        "year":"2026",
+        "type": "Screening",
+        "images": ["/media/IMG/press/ica_press.jpg"],
+        "preview-image" : "",
+        "link": "https://www.ica.art/lsff25-housing-problems",
+        "statement":"Screened at ICA for London Short Film Festival 2025. This programme poses such questions across the intertwined histories of British cinema and housing struggles. "
+        },  
+        {     
+        "outlet": "Swiss Anthropological Association",
+        "title": "Archives Also Die",
+        "year":"2026",
+        "type": "Acquisition",
+        "images": ["/media/IMG/press/ica_press.jpg"],
+        "preview-image" : "",
+        "link": "https://www.ica.art/lsff25-housing-problems",
+        "statement":"Screened at ICA for London Short Film Festival 2025. This programme poses such questions across the intertwined histories of British cinema and housing struggles. "
+        },   
+        {     
+        "outlet": "Bury Art Museum",
+        "title": "Noa",
+        "year":"2025",
+        "type": "Exhibition",
+        "images": ["/media/IMG/press/ica_press.jpg"],
+        "preview-image" : "",
+        "link": "https://www.ica.art/lsff25-housing-problems",
+        "statement":"Screened at ICA for London Short Film Festival 2025. This programme poses such questions across the intertwined histories of British cinema and housing struggles. "
+        },   
+        {     
         "outlet": "Sky Arts",
         "title": "Bill Bailey's Master Craft",
         "year":"2024",
@@ -18,5 +68,6 @@
         "preview-image" : "",
         "link": "https://www.ica.art/lsff25-housing-problems",
         "statement":"Screened at ICA for London Short Film Festival 2025. This programme poses such questions across the intertwined histories of British cinema and housing struggles. "
-        }    
+        }
+  
 ]
